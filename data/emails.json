@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 1,
+    "subject": "Flight Confirmation - NYC to Paris",
+    "body": "Your flight booking is confirmed. Departure: May 15, 2024. Please arrive 2 hours early.",
+    "ground_truth": "travel"
+  },
+  {
+    "id": 2,
+    "subject": "New Python Course Available",
+    "body": "Enroll now in our advanced Python programming course. Limited seats available!",
+    "ground_truth": "education"
+  },
+  {
+    "id": 3,
+    "subject": "Your Lab Results Are Ready",
+    "body": "Your recent lab test results are now available in your patient portal.",
+    "ground_truth": "health"
+  },
+  {
+    "id": 4,
+    "subject": "Team Meeting Tomorrow",
+    "body": "Please join us for the quarterly review meeting at 2 PM in the conference room.",
+    "ground_truth": "work"
+  },
+  {
+    "id": 5,
+    "subject": "50% Off Everything!",
+    "body": "Don't miss our biggest sale of the year. Use code SAVE50 at checkout.",
+    "ground_truth": "promotion"
+  }
+]

@@ -8,7 +8,7 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.include_router(api_router, prefix="/api/v1")
+app.include_router(api_router)
 
 @app.get("/health")
 def health_check():

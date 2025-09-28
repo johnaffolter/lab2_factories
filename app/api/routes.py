@@ -1,14 +1,18 @@
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
+import json
+import os
 from app.services.email_topic_inference import EmailTopicInferenceService
 from app.dataclasses import Email
+from app.features.factory import FeatureGeneratorFactory
 
 router = APIRouter()
 
 class EmailRequest(BaseModel):
     subject: str
     body: str
+    use_email_similarity: Optional[bool] = False
 
 class EmailWithTopicRequest(BaseModel):
     subject: str
@@ -25,13 +29,22 @@ class EmailAddResponse(BaseModel):
     message: str
     email_id: int
 
+class TopicRequest(BaseModel):
+    topic_name: str
+    description: str
+
+class EmailStoreRequest(BaseModel):
+    subject: str
+    body: str
+    ground_truth: Optional[str] = None
+
 @router.post("/emails/classify", response_model=EmailClassificationResponse)
 async def classify_email(request: EmailRequest):
     try:
-        inference_service = EmailTopicInferenceService()
+        inference_service = EmailTopicInferenceService(use_email_similarity=request.use_email_similarity)
         email = Email(subject=request.subject, body=request.body)
-        result = inference_service.classify_email(email)
-        
+        result = inference_service.classify_email(email, use_email_similarity=request.use_email_similarity)
+
         return EmailClassificationResponse(
             predicted_topic=result["predicted_topic"],
             topic_scores=result["topic_scores"],
@@ -53,28 +66,90 @@ async def pipeline_info():
     inference_service = EmailTopicInferenceService()
     return inference_service.get_pipeline_info()
 
-# TODO: LAB ASSIGNMENT - Part 2 of 2  
-# Create a GET endpoint at "/features" that returns information about all feature generators
-# available in the system.
-#
-# Requirements:
-# 1. Create a GET endpoint at "/features"
-# 2. Import FeatureGeneratorFactory from app.features.factory
-# 3. Use FeatureGeneratorFactory.get_available_generators() to get generator info
-# 4. Return a JSON response with the available generators and their feature names
-# 5. Handle any exceptions with appropriate HTTP error responses
-#
-# Expected response format:
-# {
-#   "available_generators": [
-#     {
-#       "name": "spam",
-#       "features": ["has_spam_words"]
-#     },
-#     ...
-#   ]
-# }
-#
-# Hint: Look at the existing endpoints above for patterns on error handling
-# Hint: You may need to instantiate generators to get their feature names
+@router.get("/features")
+async def get_features():
+    """Get information about all available feature generators"""
+    try:
+        generators_info = FeatureGeneratorFactory.get_available_generators()
+        return {
+            "available_generators": generators_info
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/topics")
+async def add_topic(request: TopicRequest):
+    """Dynamically add a new topic to the topics file"""
+    try:
+        # Load existing topics
+        data_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        topics_file = os.path.join(data_dir, 'data', 'topic_keywords.json')
+
+        with open(topics_file, 'r') as f:
+            topics = json.load(f)
+
+        # Check if topic already exists
+        if request.topic_name in topics:
+            raise HTTPException(status_code=400, detail=f"Topic '{request.topic_name}' already exists")
+
+        # Add new topic
+        topics[request.topic_name] = {
+            "description": request.description
+        }
+
+        # Save updated topics
+        with open(topics_file, 'w') as f:
+            json.dump(topics, f, indent=2)
+
+        return {"message": f"Topic '{request.topic_name}' added successfully", "topics": list(topics.keys())}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/emails")
+async def store_email(request: EmailStoreRequest):
+    """Store an email with optional ground truth for training"""
+    try:
+        # Load existing emails
+        data_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        emails_file = os.path.join(data_dir, 'data', 'emails.json')
+
+        with open(emails_file, 'r') as f:
+            emails = json.load(f)
+
+        # Create email record
+        email_record = {
+            "id": len(emails) + 1,
+            "subject": request.subject,
+            "body": request.body
+        }
+
+        if request.ground_truth:
+            email_record["ground_truth"] = request.ground_truth
+
+        # Add to emails list
+        emails.append(email_record)
+
+        # Save updated emails
+        with open(emails_file, 'w') as f:
+            json.dump(emails, f, indent=2)
+
+        return {"message": "Email stored successfully", "email_id": email_record["id"], "total_emails": len(emails)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/emails")
+async def get_stored_emails():
+    """Get all stored emails"""
+    try:
+        data_dir = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
+        emails_file = os.path.join(data_dir, 'data', 'emails.json')
+
+        with open(emails_file, 'r') as f:
+            emails = json.load(f)
+
+        return {"emails": emails, "count": len(emails)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 

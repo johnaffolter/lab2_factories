@@ -5,28 +5,33 @@ from app.dataclasses import Email
 
 class EmailTopicInferenceService:
     """Service that orchestrates email topic classification using feature similarity matching"""
-    
-    def __init__(self):
-        self.model = EmailClassifierModel()
+
+    def __init__(self, use_email_similarity: bool = False):
+        self.model = EmailClassifierModel(use_email_similarity=use_email_similarity)
         self.feature_factory = FeatureGeneratorFactory()
-    
-    def classify_email(self, email: Email) -> Dict[str, Any]:
+
+    def classify_email(self, email: Email, use_email_similarity: bool = False) -> Dict[str, Any]:
         """Classify an email into topics using generated features"""
-        
+
+        # Re-initialize model if similarity mode changes
+        if use_email_similarity != self.model.use_email_similarity:
+            self.model = EmailClassifierModel(use_email_similarity=use_email_similarity)
+
         # Step 1: Generate features from email
         features = self.feature_factory.generate_all_features(email)
-        
+
         # Step 2: Classify using features
         predicted_topic = self.model.predict(features)
         topic_scores = self.model.get_topic_scores(features)
-        
+
         # Return comprehensive results
         return {
             "predicted_topic": predicted_topic,
             "topic_scores": topic_scores,
             "features": features,
             "available_topics": self.model.topics,
-            "email": email
+            "email": email,
+            "classification_mode": "email_similarity" if use_email_similarity else "topic_similarity"
         }
     
     def get_pipeline_info(self) -> Dict[str, Any]:

@@ -13,5 +13,14 @@
   },
   "support": {
     "description": "Customer support, help requests, and technical issues"
+  },
+  "travel": {
+    "description": "Travel bookings, itineraries, and vacation planning emails"
+  },
+  "education": {
+    "description": "Educational content, course notifications, and learning materials"
+  },
+  "health": {
+    "description": "Health updates, medical appointments, and wellness information"
   }
 }
