@@ -1,0 +1,27 @@
+{
+  "processed": 50,
+  "stored": 50,
+  "validated": 5,
+  "correct_predictions": 5,
+  "topics": {
+    "health": 3,
+    "shopping": 5,
+    "travel": 3,
+    "education": 5,
+    "support": 5,
+    "entertainment": 4,
+    "social": 3,
+    "newsletter": 5,
+    "promotion": 5,
+    "personal": 5,
+    "work": 5,
+    "finance": 2
+  },
+  "validation_scores": [
+    0.5,
+    0.5,
+    0.8,
+    0.5,
+    0.5
+  ]
+}

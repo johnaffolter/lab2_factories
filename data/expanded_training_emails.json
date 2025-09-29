@@ -1,0 +1,2702 @@
+[
+  {
+    "id": "health_5",
+    "subject": "Prescription ready for pickup at Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: DOCTOR-5",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-11T14:14:57.865323",
+    "metadata": {
+      "keywords": [
+        "doctor",
+        "fitness"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865324"
+    }
+  },
+  {
+    "id": "shopping_6",
+    "subject": "Order #ORD8988 has been shipped",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: DELIVERY-6",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-14T14:14:57.865480",
+    "metadata": {
+      "keywords": [
+        "delivery",
+        "shipped"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865482"
+    }
+  },
+  {
+    "id": "travel_3",
+    "subject": "Travel itinerary for NYC trip",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: CHECK-IN-3",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-12T14:14:57.865190",
+    "metadata": {
+      "keywords": [
+        "check-in",
+        "hotel"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865191"
+    }
+  },
+  {
+    "id": "education_9",
+    "subject": "Study group meeting for Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: CLASS-9",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-08T14:14:57.865277",
+    "metadata": {
+      "keywords": [
+        "class",
+        "assignment"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865279"
+    }
+  },
+  {
+    "id": "support_8",
+    "subject": "Technical assistance needed for 12345",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: PROBLEM-8",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-22T14:14:57.865145",
+    "metadata": {
+      "keywords": [
+        "problem",
+        "resolved"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865147"
+    }
+  },
+  {
+    "id": "support_12",
+    "subject": "Technical assistance needed for 12345",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: TICKET-12",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-14T14:14:57.865162",
+    "metadata": {
+      "keywords": [
+        "ticket",
+        "problem"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865164"
+    }
+  },
+  {
+    "id": "entertainment_12",
+    "subject": "Movie premiere: The Last Episode this streaming",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: VIDEO-12",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-16T14:14:57.865643",
+    "metadata": {
+      "keywords": [
+        "video",
+        "show"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865644"
+    }
+  },
+  {
+    "id": "shopping_12",
+    "subject": "Purchase confirmation: ORD9035",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: PURCHASE-12",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-28T14:14:57.865511",
+    "metadata": {
+      "keywords": [
+        "purchase",
+        "shipped"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865512"
+    }
+  },
+  {
+    "id": "support_2",
+    "subject": "Help request for 12345 feature",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: TICKET-2",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-27T14:14:57.865117",
+    "metadata": {
+      "keywords": [
+        "ticket",
+        "technical"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865119"
+    }
+  },
+  {
+    "id": "education_13",
+    "subject": "Exam schedule for Introduction to ML on Monday",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: EXAM-13",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-10T14:14:57.865294",
+    "metadata": {
+      "keywords": [
+        "exam",
+        "class"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865295"
+    }
+  },
+  {
+    "id": "social_8",
+    "subject": "Networking event: birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: NETWORKING-8",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-22T14:14:57.865560",
+    "metadata": {
+      "keywords": [
+        "networking",
+        "gathering"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865561"
+    }
+  },
+  {
+    "id": "newsletter_5",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: UPDATE-5",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-10T14:14:57.865062",
+    "metadata": {
+      "keywords": [
+        "update",
+        "edition"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865063"
+    }
+  },
+  {
+    "id": "education_4",
+    "subject": "Exam schedule for Introduction to ML on Monday",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: ASSIGNMENT-4",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-04T14:14:57.865257",
+    "metadata": {
+      "keywords": [
+        "assignment",
+        "learning"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865258"
+    }
+  },
+  {
+    "id": "promotion_10",
+    "subject": "Members only: 30 discount on electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: SALE-10",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-18T14:14:57.865019",
+    "metadata": {
+      "keywords": [
+        "sale",
+        "offer"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865021"
+    }
+  },
+  {
+    "id": "personal_14",
+    "subject": "Dinner with Sarah's house on Saturday evening",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: VACATION-14",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-26T14:14:57.864970",
+    "metadata": {
+      "keywords": [
+        "vacation",
+        "birthday"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864971"
+    }
+  },
+  {
+    "id": "work_7",
+    "subject": "Please review the Development report by 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: MEETING-7",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-25T14:14:57.864872",
+    "metadata": {
+      "keywords": [
+        "meeting",
+        "project"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864873"
+    }
+  },
+  {
+    "id": "social_9",
+    "subject": "Party celebration for birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: PARTY-9",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-28T14:14:57.865564",
+    "metadata": {
+      "keywords": [
+        "party",
+        "rsvp"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865565"
+    }
+  },
+  {
+    "id": "education_6",
+    "subject": "New course available: Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: TUTORIAL-6",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-05T14:14:57.865265",
+    "metadata": {
+      "keywords": [
+        "tutorial",
+        "exam"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865266"
+    }
+  },
+  {
+    "id": "travel_9",
+    "subject": "Flight confirmation: NYC to LAX on Dec 15",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: DESTINATION-9",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-10T14:14:57.865215",
+    "metadata": {
+      "keywords": [
+        "destination",
+        "flight"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865216"
+    }
+  },
+  {
+    "id": "personal_3",
+    "subject": "Weekend plans - Sarah's house sounds fun",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: DINNER-3",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-10T14:14:57.864921",
+    "metadata": {
+      "keywords": [
+        "dinner",
+        "weekend"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864923"
+    }
+  },
+  {
+    "id": "promotion_3",
+    "subject": "Members only: 30 discount on electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: LIMITED-3",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-21T14:14:57.864988",
+    "metadata": {
+      "keywords": [
+        "limited",
+        "exclusive"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864989"
+    }
+  },
+  {
+    "id": "promotion_7",
+    "subject": "Limited time deal on 30 - Save electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: DEAL-7",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-21T14:14:57.865006",
+    "metadata": {
+      "keywords": [
+        "deal",
+        "exclusive"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865008"
+    }
+  },
+  {
+    "id": "newsletter_11",
+    "subject": "Tech roundup: What happened this week",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: ROUNDUP-11",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-01T14:14:57.865089",
+    "metadata": {
+      "keywords": [
+        "roundup",
+        "newsletter"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865092"
+    }
+  },
+  {
+    "id": "personal_13",
+    "subject": "Weekend plans - Sarah's house sounds fun",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: HOME-13",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-05T14:14:57.864966",
+    "metadata": {
+      "keywords": [
+        "home",
+        "vacation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864967"
+    }
+  },
+  {
+    "id": "work_11",
+    "subject": "Budget approval required for Development initiative",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: REPORT-11",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-03T14:14:57.864890",
+    "metadata": {
+      "keywords": [
+        "report",
+        "meeting"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864891"
+    }
+  },
+  {
+    "id": "newsletter_10",
+    "subject": "Tech roundup: What happened this week",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: INSIGHTS-10",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-19T14:14:57.865085",
+    "metadata": {
+      "keywords": [
+        "insights",
+        "newsletter"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865086"
+    }
+  },
+  {
+    "id": "newsletter_15",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: EDITION-15",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-13T14:14:57.865108",
+    "metadata": {
+      "keywords": [
+        "edition",
+        "newsletter"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865109"
+    }
+  },
+  {
+    "id": "personal_9",
+    "subject": "Weekend plans - Sarah's house sounds fun",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: FRIEND-9",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-28T14:14:57.864948",
+    "metadata": {
+      "keywords": [
+        "friend",
+        "vacation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864949"
+    }
+  },
+  {
+    "id": "education_12",
+    "subject": "Lecture notes for Introduction to ML class",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: TUTORIAL-12",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-13T14:14:57.865290",
+    "metadata": {
+      "keywords": [
+        "tutorial",
+        "lecture"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865291"
+    }
+  },
+  {
+    "id": "work_9",
+    "subject": "Project Development deadline is approaching on 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: MEETING-9",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-14T14:14:57.864881",
+    "metadata": {
+      "keywords": [
+        "meeting",
+        "presentation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864882"
+    }
+  },
+  {
+    "id": "health_8",
+    "subject": "Prescription ready for pickup at Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: EXERCISE-8",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-10T14:14:57.865336",
+    "metadata": {
+      "keywords": [
+        "exercise",
+        "fitness"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865337"
+    }
+  },
+  {
+    "id": "travel_8",
+    "subject": "Check-in reminder for NYC flight",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: RESERVATION-8",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-08-30T14:14:57.865211",
+    "metadata": {
+      "keywords": [
+        "reservation",
+        "flight"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865212"
+    }
+  },
+  {
+    "id": "support_14",
+    "subject": "Error report: 12345 not working",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: ISSUE-14",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-23T14:14:57.865171",
+    "metadata": {
+      "keywords": [
+        "issue",
+        "technical"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865173"
+    }
+  },
+  {
+    "id": "finance_14",
+    "subject": "Payment confirmation: $250.00 processed",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: BILL-14",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-08T14:14:57.865443",
+    "metadata": {
+      "keywords": [
+        "bill",
+        "account"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865445"
+    }
+  },
+  {
+    "id": "entertainment_2",
+    "subject": "Movie premiere: The Last Episode this streaming",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: STREAMING-2",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-27T14:14:57.865599",
+    "metadata": {
+      "keywords": [
+        "streaming",
+        "concert"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865600"
+    }
+  },
+  {
+    "id": "finance_5",
+    "subject": "Credit card bill for 250.00 is ready",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: PAYMENT-5",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-13T14:14:57.865395",
+    "metadata": {
+      "keywords": [
+        "payment",
+        "transaction"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865397"
+    }
+  },
+  {
+    "id": "shopping_1",
+    "subject": "Delivery scheduled for ORD2017",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: SHIPPED-1",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-17T14:14:57.865453",
+    "metadata": {
+      "keywords": [
+        "shipped",
+        "order"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865454"
+    }
+  },
+  {
+    "id": "entertainment_13",
+    "subject": "Movie premiere: The Last Episode this streaming",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: SHOW-13",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-02T14:14:57.865647",
+    "metadata": {
+      "keywords": [
+        "show",
+        "ticket"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865649"
+    }
+  },
+  {
+    "id": "entertainment_5",
+    "subject": "Game update: The Last Episode new features",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: SHOW-5",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-28T14:14:57.865612",
+    "metadata": {
+      "keywords": [
+        "show",
+        "game"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865614"
+    }
+  },
+  {
+    "id": "newsletter_13",
+    "subject": "Your Tech digest for Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: DIGEST-13",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-26T14:14:57.865099",
+    "metadata": {
+      "keywords": [
+        "digest",
+        "update"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865101"
+    }
+  },
+  {
+    "id": "work_6",
+    "subject": "Team meeting scheduled for Development at 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: REPORT-6",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-08-30T14:14:57.864867",
+    "metadata": {
+      "keywords": [
+        "report",
+        "project"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864868"
+    }
+  },
+  {
+    "id": "shopping_2",
+    "subject": "Delivery scheduled for ORD6199",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: PRODUCT-2",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-13T14:14:57.865458",
+    "metadata": {
+      "keywords": [
+        "product",
+        "tracking"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865460"
+    }
+  },
+  {
+    "id": "promotion_9",
+    "subject": "Members only: 30 discount on electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: FREE-9",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-08T14:14:57.865015",
+    "metadata": {
+      "keywords": [
+        "free",
+        "deal"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865016"
+    }
+  },
+  {
+    "id": "work_15",
+    "subject": "Budget approval required for Development initiative",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: TEAM-15",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-10T14:14:57.864907",
+    "metadata": {
+      "keywords": [
+        "team",
+        "deadline"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864908"
+    }
+  },
+  {
+    "id": "shopping_15",
+    "subject": "Delivery scheduled for ORD4152",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: CHECKOUT-15",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-23T14:14:57.865525",
+    "metadata": {
+      "keywords": [
+        "checkout",
+        "purchase"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865526"
+    }
+  },
+  {
+    "id": "social_2",
+    "subject": "Networking event: birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: CELEBRATION-2",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-07T14:14:57.865534",
+    "metadata": {
+      "keywords": [
+        "celebration",
+        "invitation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865535"
+    }
+  },
+  {
+    "id": "health_13",
+    "subject": "Wellness check scheduled for Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: FITNESS-13",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-23T14:14:57.865360",
+    "metadata": {
+      "keywords": [
+        "fitness",
+        "doctor"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865361"
+    }
+  },
+  {
+    "id": "support_13",
+    "subject": "Support ticket #12345 - login issue",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: PROBLEM-13",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-18T14:14:57.865167",
+    "metadata": {
+      "keywords": [
+        "problem",
+        "error"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865168"
+    }
+  },
+  {
+    "id": "promotion_13",
+    "subject": "FLASH SALE: 30% off all electronics today only",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: DEAL-13",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-11T14:14:57.865032",
+    "metadata": {
+      "keywords": [
+        "deal",
+        "sale"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865034"
+    }
+  },
+  {
+    "id": "personal_4",
+    "subject": "Weekend plans - Sarah's house sounds fun",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: FAMILY-4",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-05T14:14:57.864926",
+    "metadata": {
+      "keywords": [
+        "family",
+        "vacation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864927"
+    }
+  },
+  {
+    "id": "personal_10",
+    "subject": "Family gathering at Sarah's house this Saturday",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: WEEKEND-10",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-14T14:14:57.864952",
+    "metadata": {
+      "keywords": [
+        "weekend",
+        "kids"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864954"
+    }
+  },
+  {
+    "id": "education_2",
+    "subject": "Study group meeting for Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: CLASS-2",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-09T14:14:57.865248",
+    "metadata": {
+      "keywords": [
+        "class",
+        "lecture"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865249"
+    }
+  },
+  {
+    "id": "travel_4",
+    "subject": "Check-in reminder for NYC flight",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: HOTEL-4",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-03T14:14:57.865194",
+    "metadata": {
+      "keywords": [
+        "hotel",
+        "destination"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865195"
+    }
+  },
+  {
+    "id": "travel_7",
+    "subject": "Flight confirmation: NYC to LAX on Dec 15",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: RESERVATION-7",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-08T14:14:57.865206",
+    "metadata": {
+      "keywords": [
+        "reservation",
+        "hotel"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865208"
+    }
+  },
+  {
+    "id": "personal_11",
+    "subject": "Vacation photos from Sarah's house trip",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: KIDS-11",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-05T14:14:57.864957",
+    "metadata": {
+      "keywords": [
+        "kids",
+        "vacation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864958"
+    }
+  },
+  {
+    "id": "promotion_1",
+    "subject": "Members only: 30 discount on electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: SAVE-1",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-02T14:14:57.864979",
+    "metadata": {
+      "keywords": [
+        "save",
+        "sale"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864980"
+    }
+  },
+  {
+    "id": "entertainment_7",
+    "subject": "Game update: The Last Episode new features",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: CONCERT-7",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-12T14:14:57.865621",
+    "metadata": {
+      "keywords": [
+        "concert",
+        "streaming"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865622"
+    }
+  },
+  {
+    "id": "education_15",
+    "subject": "Lecture notes for Introduction to ML class",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: CLASS-15",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-15T14:14:57.865302",
+    "metadata": {
+      "keywords": [
+        "class",
+        "tutorial"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865303"
+    }
+  },
+  {
+    "id": "education_1",
+    "subject": "Study group meeting for Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: ASSIGNMENT-1",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-01T14:14:57.865244",
+    "metadata": {
+      "keywords": [
+        "assignment",
+        "tutorial"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865245"
+    }
+  },
+  {
+    "id": "shopping_7",
+    "subject": "Purchase confirmation: ORD6217",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: PRODUCT-7",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-22T14:14:57.865486",
+    "metadata": {
+      "keywords": [
+        "product",
+        "cart"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865487"
+    }
+  },
+  {
+    "id": "shopping_11",
+    "subject": "Delivery scheduled for ORD2496",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: DELIVERY-11",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-06T14:14:57.865506",
+    "metadata": {
+      "keywords": [
+        "delivery",
+        "shipped"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865507"
+    }
+  },
+  {
+    "id": "newsletter_7",
+    "subject": "Your Tech digest for Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: NEWSLETTER-7",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-01T14:14:57.865070",
+    "metadata": {
+      "keywords": [
+        "newsletter",
+        "roundup"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865072"
+    }
+  },
+  {
+    "id": "personal_15",
+    "subject": "Dinner with Sarah's house on Saturday evening",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: WEEKEND-15",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-05T14:14:57.864974",
+    "metadata": {
+      "keywords": [
+        "weekend",
+        "home"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864975"
+    }
+  },
+  {
+    "id": "social_1",
+    "subject": "Party celebration for birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: INVITATION-1",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-13T14:14:57.865529",
+    "metadata": {
+      "keywords": [
+        "invitation",
+        "celebration"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865530"
+    }
+  },
+  {
+    "id": "newsletter_6",
+    "subject": "Your Tech digest for Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: UPDATE-6",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-08T14:14:57.865066",
+    "metadata": {
+      "keywords": [
+        "update",
+        "weekly"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865067"
+    }
+  },
+  {
+    "id": "support_10",
+    "subject": "Technical assistance needed for 12345",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: RESOLVED-10",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-05T14:14:57.865154",
+    "metadata": {
+      "keywords": [
+        "resolved",
+        "help"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865155"
+    }
+  },
+  {
+    "id": "health_15",
+    "subject": "Fitness goal update: Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: APPOINTMENT-15",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-08-31T14:14:57.865368",
+    "metadata": {
+      "keywords": [
+        "appointment",
+        "prescription"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865369"
+    }
+  },
+  {
+    "id": "finance_8",
+    "subject": "Credit card bill for 250.00 is ready",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: BILL-8",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-05T14:14:57.865412",
+    "metadata": {
+      "keywords": [
+        "bill",
+        "bank"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865413"
+    }
+  },
+  {
+    "id": "health_3",
+    "subject": "Wellness check scheduled for Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: APPOINTMENT-3",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-10T14:14:57.865314",
+    "metadata": {
+      "keywords": [
+        "appointment",
+        "medical"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865316"
+    }
+  },
+  {
+    "id": "health_2",
+    "subject": "Appointment reminder: Annual checkup with Dr. Smith",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: DOCTOR-2",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-08-31T14:14:57.865310",
+    "metadata": {
+      "keywords": [
+        "doctor",
+        "fitness"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865311"
+    }
+  },
+  {
+    "id": "travel_10",
+    "subject": "Travel itinerary for NYC trip",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: CHECK-IN-10",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-05T14:14:57.865219",
+    "metadata": {
+      "keywords": [
+        "check-in",
+        "booking"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865220"
+    }
+  },
+  {
+    "id": "work_12",
+    "subject": "Budget approval required for Development initiative",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: REPORT-12",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-04T14:14:57.864894",
+    "metadata": {
+      "keywords": [
+        "report",
+        "budget"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864896"
+    }
+  },
+  {
+    "id": "work_14",
+    "subject": "Budget approval required for Development initiative",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: PRESENTATION-14",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-15T14:14:57.864903",
+    "metadata": {
+      "keywords": [
+        "presentation",
+        "client"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864904"
+    }
+  },
+  {
+    "id": "health_14",
+    "subject": "Wellness check scheduled for Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: DOCTOR-14",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-26T14:14:57.865364",
+    "metadata": {
+      "keywords": [
+        "doctor",
+        "exercise"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865365"
+    }
+  },
+  {
+    "id": "work_13",
+    "subject": "Client presentation for Development needs your input",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: PROJECT-13",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-09T14:14:57.864899",
+    "metadata": {
+      "keywords": [
+        "project",
+        "budget"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864900"
+    }
+  },
+  {
+    "id": "social_4",
+    "subject": "Networking event: birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: RSVP-4",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-08T14:14:57.865542",
+    "metadata": {
+      "keywords": [
+        "rsvp",
+        "invitation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865544"
+    }
+  },
+  {
+    "id": "promotion_8",
+    "subject": "Members only: 30 discount on electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: FREE-8",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-09T14:14:57.865011",
+    "metadata": {
+      "keywords": [
+        "free",
+        "deal"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865012"
+    }
+  },
+  {
+    "id": "travel_5",
+    "subject": "Hotel booking at NYC for LAX",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: BOOKING-5",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-08-30T14:14:57.865198",
+    "metadata": {
+      "keywords": [
+        "booking",
+        "hotel"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865199"
+    }
+  },
+  {
+    "id": "health_9",
+    "subject": "Appointment reminder: Annual checkup with Dr. Smith",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: WELLNESS-9",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-19T14:14:57.865340",
+    "metadata": {
+      "keywords": [
+        "wellness",
+        "appointment"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865341"
+    }
+  },
+  {
+    "id": "finance_13",
+    "subject": "Invoice #250.00 due on 4923",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: CREDIT-13",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-08-31T14:14:57.865439",
+    "metadata": {
+      "keywords": [
+        "credit",
+        "invoice"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865440"
+    }
+  },
+  {
+    "id": "health_6",
+    "subject": "Prescription ready for pickup at Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: EXERCISE-6",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-22T14:14:57.865327",
+    "metadata": {
+      "keywords": [
+        "exercise",
+        "doctor"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865329"
+    }
+  },
+  {
+    "id": "entertainment_10",
+    "subject": "Concert tickets for The Last Episode on sale",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: MUSIC-10",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-19T14:14:57.865635",
+    "metadata": {
+      "keywords": [
+        "music",
+        "video"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865636"
+    }
+  },
+  {
+    "id": "entertainment_11",
+    "subject": "Streaming recommendation: The Last Episode",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: SHOW-11",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-29T14:14:57.865639",
+    "metadata": {
+      "keywords": [
+        "show",
+        "ticket"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865640"
+    }
+  },
+  {
+    "id": "promotion_2",
+    "subject": "Limited time deal on 30 - Save electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: OFFER-2",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-09T14:14:57.864983",
+    "metadata": {
+      "keywords": [
+        "offer",
+        "discount"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864985"
+    }
+  },
+  {
+    "id": "social_12",
+    "subject": "Networking event: birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: GATHERING-12",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-29T14:14:57.865577",
+    "metadata": {
+      "keywords": [
+        "gathering",
+        "celebration"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865578"
+    }
+  },
+  {
+    "id": "newsletter_8",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: NEWSLETTER-8",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-18T14:14:57.865076",
+    "metadata": {
+      "keywords": [
+        "newsletter",
+        "roundup"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865077"
+    }
+  },
+  {
+    "id": "entertainment_1",
+    "subject": "Streaming recommendation: The Last Episode",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: VIDEO-1",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-15T14:14:57.865595",
+    "metadata": {
+      "keywords": [
+        "video",
+        "game"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865596"
+    }
+  },
+  {
+    "id": "health_7",
+    "subject": "Fitness goal update: Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: DOCTOR-7",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-26T14:14:57.865332",
+    "metadata": {
+      "keywords": [
+        "doctor",
+        "fitness"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865333"
+    }
+  },
+  {
+    "id": "personal_6",
+    "subject": "Dinner with Sarah's house on Saturday evening",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: DINNER-6",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-12T14:14:57.864935",
+    "metadata": {
+      "keywords": [
+        "dinner",
+        "birthday"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864936"
+    }
+  },
+  {
+    "id": "finance_4",
+    "subject": "Credit card bill for 250.00 is ready",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: CREDIT-4",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-17T14:14:57.865390",
+    "metadata": {
+      "keywords": [
+        "credit",
+        "transaction"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865391"
+    }
+  },
+  {
+    "id": "social_10",
+    "subject": "Party celebration for birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: GATHERING-10",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-14T14:14:57.865568",
+    "metadata": {
+      "keywords": [
+        "gathering",
+        "rsvp"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865570"
+    }
+  },
+  {
+    "id": "support_6",
+    "subject": "Error report: 12345 not working",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: TICKET-6",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-21T14:14:57.865137",
+    "metadata": {
+      "keywords": [
+        "ticket",
+        "problem"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865138"
+    }
+  },
+  {
+    "id": "health_4",
+    "subject": "Appointment reminder: Annual checkup with Dr. Smith",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: APPOINTMENT-4",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-02T14:14:57.865319",
+    "metadata": {
+      "keywords": [
+        "appointment",
+        "medical"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865320"
+    }
+  },
+  {
+    "id": "education_10",
+    "subject": "Study group meeting for Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: STUDY-10",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-08T14:14:57.865281",
+    "metadata": {
+      "keywords": [
+        "study",
+        "lecture"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865282"
+    }
+  },
+  {
+    "id": "promotion_12",
+    "subject": "Limited time deal on 30 - Save electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: SALE-12",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-11T14:14:57.865028",
+    "metadata": {
+      "keywords": [
+        "sale",
+        "offer"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865029"
+    }
+  },
+  {
+    "id": "social_14",
+    "subject": "RSVP needed for birthday party by Friday 7pm",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: EVENT-14",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-19T14:14:57.865586",
+    "metadata": {
+      "keywords": [
+        "event",
+        "rsvp"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865587"
+    }
+  },
+  {
+    "id": "finance_9",
+    "subject": "Payment confirmation: $250.00 processed",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: INVOICE-9",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-04T14:14:57.865418",
+    "metadata": {
+      "keywords": [
+        "invoice",
+        "balance"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865419"
+    }
+  },
+  {
+    "id": "travel_13",
+    "subject": "Flight confirmation: NYC to LAX on Dec 15",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: DESTINATION-13",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-19T14:14:57.865231",
+    "metadata": {
+      "keywords": [
+        "destination",
+        "check-in"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865233"
+    }
+  },
+  {
+    "id": "shopping_8",
+    "subject": "Your cart has ORD4199 items waiting",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: ORDER-8",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-25T14:14:57.865492",
+    "metadata": {
+      "keywords": [
+        "order",
+        "purchase"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865493"
+    }
+  },
+  {
+    "id": "shopping_9",
+    "subject": "Delivery scheduled for ORD6600",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: ORDER-9",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-10T14:14:57.865496",
+    "metadata": {
+      "keywords": [
+        "order",
+        "tracking"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865498"
+    }
+  },
+  {
+    "id": "personal_7",
+    "subject": "Vacation photos from Sarah's house trip",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: WEEKEND-7",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-08T14:14:57.864939",
+    "metadata": {
+      "keywords": [
+        "weekend",
+        "kids"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864941"
+    }
+  },
+  {
+    "id": "promotion_5",
+    "subject": "Limited time deal on 30 - Save electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: DEAL-5",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-01T14:14:57.864996",
+    "metadata": {
+      "keywords": [
+        "deal",
+        "sale"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864998"
+    }
+  },
+  {
+    "id": "social_7",
+    "subject": "Party celebration for birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: INVITATION-7",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-08-30T14:14:57.865555",
+    "metadata": {
+      "keywords": [
+        "invitation",
+        "rsvp"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865557"
+    }
+  },
+  {
+    "id": "education_3",
+    "subject": "Lecture notes for Introduction to ML class",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: COURSE-3",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-23T14:14:57.865252",
+    "metadata": {
+      "keywords": [
+        "course",
+        "learning"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865253"
+    }
+  },
+  {
+    "id": "support_9",
+    "subject": "Help request for 12345 feature",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: RESOLVED-9",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-07T14:14:57.865150",
+    "metadata": {
+      "keywords": [
+        "resolved",
+        "technical"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865151"
+    }
+  },
+  {
+    "id": "travel_1",
+    "subject": "Reservation confirmed for NYC",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: ITINERARY-1",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-20T14:14:57.865180",
+    "metadata": {
+      "keywords": [
+        "itinerary",
+        "flight"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865181"
+    }
+  },
+  {
+    "id": "newsletter_12",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: WEEKLY-12",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-28T14:14:57.865095",
+    "metadata": {
+      "keywords": [
+        "weekly",
+        "insights"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865096"
+    }
+  },
+  {
+    "id": "finance_11",
+    "subject": "Payment confirmation: $250.00 processed",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: BANK-11",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-19T14:14:57.865430",
+    "metadata": {
+      "keywords": [
+        "bank",
+        "account"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865431"
+    }
+  },
+  {
+    "id": "support_1",
+    "subject": "Support ticket #12345 - login issue",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: ASSISTANCE-1",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-11T14:14:57.865113",
+    "metadata": {
+      "keywords": [
+        "assistance",
+        "help"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865114"
+    }
+  },
+  {
+    "id": "support_3",
+    "subject": "Technical assistance needed for 12345",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: TECHNICAL-3",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-01T14:14:57.865122",
+    "metadata": {
+      "keywords": [
+        "technical",
+        "help"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865123"
+    }
+  },
+  {
+    "id": "travel_14",
+    "subject": "Check-in reminder for NYC flight",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: RESERVATION-14",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-11T14:14:57.865236",
+    "metadata": {
+      "keywords": [
+        "reservation",
+        "flight"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865237"
+    }
+  },
+  {
+    "id": "finance_3",
+    "subject": "Credit card bill for 250.00 is ready",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: CREDIT-3",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-19T14:14:57.865384",
+    "metadata": {
+      "keywords": [
+        "credit",
+        "bill"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865385"
+    }
+  },
+  {
+    "id": "shopping_14",
+    "subject": "Tracking number for your ORD6254 order",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: DELIVERY-14",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-13T14:14:57.865520",
+    "metadata": {
+      "keywords": [
+        "delivery",
+        "shipped"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865521"
+    }
+  },
+  {
+    "id": "shopping_13",
+    "subject": "Delivery scheduled for ORD5068",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: DELIVERY-13",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-09T14:14:57.865515",
+    "metadata": {
+      "keywords": [
+        "delivery",
+        "checkout"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865517"
+    }
+  },
+  {
+    "id": "social_11",
+    "subject": "RSVP needed for birthday party by Friday 7pm",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: INVITATION-11",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-11T14:14:57.865573",
+    "metadata": {
+      "keywords": [
+        "invitation",
+        "event"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865574"
+    }
+  },
+  {
+    "id": "health_12",
+    "subject": "Appointment reminder: Annual checkup with Dr. Smith",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: EXERCISE-12",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-06T14:14:57.865355",
+    "metadata": {
+      "keywords": [
+        "exercise",
+        "prescription"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865357"
+    }
+  },
+  {
+    "id": "finance_12",
+    "subject": "Payment confirmation: $250.00 processed",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: INVOICE-12",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-17T14:14:57.865434",
+    "metadata": {
+      "keywords": [
+        "invoice",
+        "balance"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865436"
+    }
+  },
+  {
+    "id": "personal_12",
+    "subject": "Happy birthday! Hope you have a great Sarah's house",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: WEEKEND-12",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-07T14:14:57.864961",
+    "metadata": {
+      "keywords": [
+        "weekend",
+        "dinner"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864963"
+    }
+  },
+  {
+    "id": "social_5",
+    "subject": "Party celebration for birthday party",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: CELEBRATION-5",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-20T14:14:57.865547",
+    "metadata": {
+      "keywords": [
+        "celebration",
+        "rsvp"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865548"
+    }
+  },
+  {
+    "id": "entertainment_9",
+    "subject": "New episode of The Last Episode available now",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: GAME-9",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-29T14:14:57.865630",
+    "metadata": {
+      "keywords": [
+        "game",
+        "music"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865631"
+    }
+  },
+  {
+    "id": "entertainment_15",
+    "subject": "New episode of The Last Episode available now",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: STREAMING-15",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-21T14:14:57.865656",
+    "metadata": {
+      "keywords": [
+        "streaming",
+        "game"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865657"
+    }
+  },
+  {
+    "id": "entertainment_4",
+    "subject": "Game update: The Last Episode new features",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: MUSIC-4",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-07T14:14:57.865608",
+    "metadata": {
+      "keywords": [
+        "music",
+        "concert"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865609"
+    }
+  },
+  {
+    "id": "personal_8",
+    "subject": "Dinner with Sarah's house on Saturday evening",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: KIDS-8",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-09T14:14:57.864944",
+    "metadata": {
+      "keywords": [
+        "kids",
+        "family"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864945"
+    }
+  },
+  {
+    "id": "support_15",
+    "subject": "Your 12345 problem has been resolved",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: ERROR-15",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-10T14:14:57.865176",
+    "metadata": {
+      "keywords": [
+        "error",
+        "resolved"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865177"
+    }
+  },
+  {
+    "id": "shopping_3",
+    "subject": "Your cart has ORD5218 items waiting",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: PRODUCT-3",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-14T14:14:57.865463",
+    "metadata": {
+      "keywords": [
+        "product",
+        "shipped"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865464"
+    }
+  },
+  {
+    "id": "health_10",
+    "subject": "Wellness check scheduled for Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: FITNESS-10",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-06T14:14:57.865345",
+    "metadata": {
+      "keywords": [
+        "fitness",
+        "medical"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865347"
+    }
+  },
+  {
+    "id": "education_7",
+    "subject": "Lecture notes for Introduction to ML class",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: EXAM-7",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-16T14:14:57.865269",
+    "metadata": {
+      "keywords": [
+        "exam",
+        "tutorial"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865270"
+    }
+  },
+  {
+    "id": "work_3",
+    "subject": "Client presentation for Development needs your input",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: PROJECT-3",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-06T14:14:57.864851",
+    "metadata": {
+      "keywords": [
+        "project",
+        "meeting"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864853"
+    }
+  },
+  {
+    "id": "work_2",
+    "subject": "Team meeting scheduled for Development at 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: TEAM-2",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-19T14:14:57.864843",
+    "metadata": {
+      "keywords": [
+        "team",
+        "report"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864846"
+    }
+  },
+  {
+    "id": "promotion_11",
+    "subject": "FREE shipping on orders over 30",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: SAVE-11",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T14:14:57.865024",
+    "metadata": {
+      "keywords": [
+        "save",
+        "limited"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865025"
+    }
+  },
+  {
+    "id": "promotion_4",
+    "subject": "FLASH SALE: 30% off all electronics today only",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: DISCOUNT-4",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-27T14:14:57.864992",
+    "metadata": {
+      "keywords": [
+        "discount",
+        "exclusive"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864993"
+    }
+  },
+  {
+    "id": "promotion_6",
+    "subject": "Members only: 30 discount on electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: OFFER-6",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-01T14:14:57.865001",
+    "metadata": {
+      "keywords": [
+        "offer",
+        "sale"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865002"
+    }
+  },
+  {
+    "id": "travel_2",
+    "subject": "Travel itinerary for NYC trip",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: FLIGHT-2",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T14:14:57.865184",
+    "metadata": {
+      "keywords": [
+        "flight",
+        "check-in"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865186"
+    }
+  },
+  {
+    "id": "support_7",
+    "subject": "Help request for 12345 feature",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: ERROR-7",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-08-30T14:14:57.865141",
+    "metadata": {
+      "keywords": [
+        "error",
+        "help"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865142"
+    }
+  },
+  {
+    "id": "finance_7",
+    "subject": "Transaction alert: $250.00 at 1875",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: BALANCE-7",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-27T14:14:57.865406",
+    "metadata": {
+      "keywords": [
+        "balance",
+        "invoice"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865408"
+    }
+  },
+  {
+    "id": "personal_5",
+    "subject": "Happy birthday! Hope you have a great Sarah's house",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: KIDS-5",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-07T14:14:57.864930",
+    "metadata": {
+      "keywords": [
+        "kids",
+        "home"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864932"
+    }
+  },
+  {
+    "id": "education_11",
+    "subject": "Study group meeting for Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: TUTORIAL-11",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-24T14:14:57.865285",
+    "metadata": {
+      "keywords": [
+        "tutorial",
+        "learning"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865287"
+    }
+  },
+  {
+    "id": "promotion_14",
+    "subject": "Members only: 30 discount on electronics",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: SALE-14",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-11T14:14:57.865036",
+    "metadata": {
+      "keywords": [
+        "sale",
+        "deal"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865038"
+    }
+  },
+  {
+    "id": "social_13",
+    "subject": "RSVP needed for birthday party by Friday 7pm",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: GATHERING-13",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-17T14:14:57.865581",
+    "metadata": {
+      "keywords": [
+        "gathering",
+        "party"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865583"
+    }
+  },
+  {
+    "id": "personal_2",
+    "subject": "Happy birthday! Hope you have a great Sarah's house",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: HOME-2",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-09T14:14:57.864917",
+    "metadata": {
+      "keywords": [
+        "home",
+        "friend"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864918"
+    }
+  },
+  {
+    "id": "social_6",
+    "subject": "Event reminder: birthday party at Friday 7pm",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: EVENT-6",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-17T14:14:57.865551",
+    "metadata": {
+      "keywords": [
+        "event",
+        "invitation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865552"
+    }
+  },
+  {
+    "id": "finance_15",
+    "subject": "Transaction alert: $250.00 at 7009",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: CREDIT-15",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-08T14:14:57.865448",
+    "metadata": {
+      "keywords": [
+        "credit",
+        "account"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865449"
+    }
+  },
+  {
+    "id": "support_4",
+    "subject": "Help request for 12345 feature",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: ASSISTANCE-4",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-12T14:14:57.865128",
+    "metadata": {
+      "keywords": [
+        "assistance",
+        "error"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865129"
+    }
+  },
+  {
+    "id": "entertainment_14",
+    "subject": "Game update: The Last Episode new features",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: STREAMING-14",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-19T14:14:57.865652",
+    "metadata": {
+      "keywords": [
+        "streaming",
+        "game"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865653"
+    }
+  },
+  {
+    "id": "support_11",
+    "subject": "Error report: 12345 not working",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: ASSISTANCE-11",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-21T14:14:57.865158",
+    "metadata": {
+      "keywords": [
+        "assistance",
+        "problem"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865160"
+    }
+  },
+  {
+    "id": "work_1",
+    "subject": "Project Development deadline is approaching on 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: CLIENT-1",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-27T14:14:57.864823",
+    "metadata": {
+      "keywords": [
+        "client",
+        "meeting"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864834"
+    }
+  },
+  {
+    "id": "support_5",
+    "subject": "Support ticket #12345 - login issue",
+    "body": "We've received your request and our technical team is investigating. We'll update you within 24 hours. Reference: TECHNICAL-5",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-27T14:14:57.865132",
+    "metadata": {
+      "keywords": [
+        "technical",
+        "issue"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865133"
+    }
+  },
+  {
+    "id": "shopping_10",
+    "subject": "Your cart has ORD9855 items waiting",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: CART-10",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-01T14:14:57.865501",
+    "metadata": {
+      "keywords": [
+        "cart",
+        "delivery"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865502"
+    }
+  },
+  {
+    "id": "work_8",
+    "subject": "Project Development deadline is approaching on 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: MEETING-8",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-24T14:14:57.864876",
+    "metadata": {
+      "keywords": [
+        "meeting",
+        "budget"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864877"
+    }
+  },
+  {
+    "id": "finance_6",
+    "subject": "Credit card bill for 250.00 is ready",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: BANK-6",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-13T14:14:57.865401",
+    "metadata": {
+      "keywords": [
+        "bank",
+        "transaction"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865402"
+    }
+  },
+  {
+    "id": "travel_6",
+    "subject": "Flight confirmation: NYC to LAX on Dec 15",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: CHECK-IN-6",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-26T14:14:57.865202",
+    "metadata": {
+      "keywords": [
+        "check-in",
+        "flight"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865204"
+    }
+  },
+  {
+    "id": "education_5",
+    "subject": "Lecture notes for Introduction to ML class",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: LEARNING-5",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-06T14:14:57.865261",
+    "metadata": {
+      "keywords": [
+        "learning",
+        "lecture"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865262"
+    }
+  },
+  {
+    "id": "newsletter_9",
+    "subject": "Weekly Tech Newsletter - Weekly Edition",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: INSIGHTS-9",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-23T14:14:57.865081",
+    "metadata": {
+      "keywords": [
+        "insights",
+        "update"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865082"
+    }
+  },
+  {
+    "id": "work_4",
+    "subject": "Project Development deadline is approaching on 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: PROJECT-4",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-05T14:14:57.864857",
+    "metadata": {
+      "keywords": [
+        "project",
+        "presentation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864858"
+    }
+  },
+  {
+    "id": "newsletter_2",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: WEEKLY-2",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-27T14:14:57.865049",
+    "metadata": {
+      "keywords": [
+        "weekly",
+        "update"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865051"
+    }
+  },
+  {
+    "id": "newsletter_1",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: EDITION-1",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-12T14:14:57.865045",
+    "metadata": {
+      "keywords": [
+        "edition",
+        "update"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865046"
+    }
+  },
+  {
+    "id": "social_3",
+    "subject": "You're invited to birthday party on Friday 7pm",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: RSVP-3",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-01T14:14:57.865538",
+    "metadata": {
+      "keywords": [
+        "rsvp",
+        "networking"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865539"
+    }
+  },
+  {
+    "id": "work_10",
+    "subject": "Budget approval required for Development initiative",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: DEADLINE-10",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-05T14:14:57.864885",
+    "metadata": {
+      "keywords": [
+        "deadline",
+        "client"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864887"
+    }
+  },
+  {
+    "id": "education_8",
+    "subject": "Assignment due date: Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: STUDY-8",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-19T14:14:57.865273",
+    "metadata": {
+      "keywords": [
+        "study",
+        "course"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865274"
+    }
+  },
+  {
+    "id": "health_11",
+    "subject": "Wellness check scheduled for Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: EXERCISE-11",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T14:14:57.865349",
+    "metadata": {
+      "keywords": [
+        "exercise",
+        "wellness"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865351"
+    }
+  },
+  {
+    "id": "finance_2",
+    "subject": "Transaction alert: $250.00 at 9921",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: INVOICE-2",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-18T14:14:57.865379",
+    "metadata": {
+      "keywords": [
+        "invoice",
+        "payment"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865381"
+    }
+  },
+  {
+    "id": "newsletter_14",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: INSIGHTS-14",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-28T14:14:57.865104",
+    "metadata": {
+      "keywords": [
+        "insights",
+        "digest"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865105"
+    }
+  },
+  {
+    "id": "social_15",
+    "subject": "RSVP needed for birthday party by Friday 7pm",
+    "body": "We're hosting a special celebration and would love for you to join us. Please confirm your attendance. Reference: GATHERING-15",
+    "sender": "events@social.com",
+    "label": "social",
+    "timestamp": "2025-09-24T14:14:57.865590",
+    "metadata": {
+      "keywords": [
+        "gathering",
+        "invitation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865591"
+    }
+  },
+  {
+    "id": "work_5",
+    "subject": "Team meeting scheduled for Development at 2pm",
+    "body": "Please review the attached documents and provide feedback by end of day. The client needs our response for their planning. Reference: PRESENTATION-5",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-01T14:14:57.864862",
+    "metadata": {
+      "keywords": [
+        "presentation",
+        "team"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864864"
+    }
+  },
+  {
+    "id": "shopping_4",
+    "subject": "Order #ORD1565 has been shipped",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: ORDER-4",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-25T14:14:57.865469",
+    "metadata": {
+      "keywords": [
+        "order",
+        "cart"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865470"
+    }
+  },
+  {
+    "id": "education_14",
+    "subject": "New course available: Introduction to ML",
+    "body": "The course begins next Monday. All materials are available in the student portal. Join the first live session. Reference: EXAM-14",
+    "sender": "admin@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-19T14:14:57.865298",
+    "metadata": {
+      "keywords": [
+        "exam",
+        "learning"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865299"
+    }
+  },
+  {
+    "id": "newsletter_3",
+    "subject": "Your Tech digest for Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: EDITION-3",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-11T14:14:57.865054",
+    "metadata": {
+      "keywords": [
+        "edition",
+        "digest"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865055"
+    }
+  },
+  {
+    "id": "travel_11",
+    "subject": "Flight confirmation: NYC to LAX on Dec 15",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: FLIGHT-11",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-04T14:14:57.865223",
+    "metadata": {
+      "keywords": [
+        "flight",
+        "reservation"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865225"
+    }
+  },
+  {
+    "id": "entertainment_6",
+    "subject": "New episode of The Last Episode available now",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: CONCERT-6",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-25T14:14:57.865617",
+    "metadata": {
+      "keywords": [
+        "concert",
+        "show"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865618"
+    }
+  },
+  {
+    "id": "health_1",
+    "subject": "Medical results available for Annual checkup",
+    "body": "Please bring your insurance card and arrive 15 minutes early to complete paperwork. Reference: WELLNESS-1",
+    "sender": "appointments@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-20T14:14:57.865306",
+    "metadata": {
+      "keywords": [
+        "wellness",
+        "medical"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865307"
+    }
+  },
+  {
+    "id": "entertainment_3",
+    "subject": "Movie premiere: The Last Episode this streaming",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: SHOW-3",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-04T14:14:57.865603",
+    "metadata": {
+      "keywords": [
+        "show",
+        "video"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865605"
+    }
+  },
+  {
+    "id": "promotion_15",
+    "subject": "FLASH SALE: 30% off all electronics today only",
+    "body": "Don't miss out on this limited time offer. Use code SAVE30 at checkout. Offer expires tonight at midnight. Reference: EXCLUSIVE-15",
+    "sender": "deals@retailer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-22T14:14:57.865041",
+    "metadata": {
+      "keywords": [
+        "exclusive",
+        "discount"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865042"
+    }
+  },
+  {
+    "id": "finance_1",
+    "subject": "Invoice #250.00 due on 9040",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: TRANSACTION-1",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-20T14:14:57.865374",
+    "metadata": {
+      "keywords": [
+        "transaction",
+        "bill"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865375"
+    }
+  },
+  {
+    "id": "entertainment_8",
+    "subject": "New episode of The Last Episode available now",
+    "body": "New content is available now. Start watching immediately on any device with your subscription. Reference: STREAMING-8",
+    "sender": "info@streaming.com",
+    "label": "entertainment",
+    "timestamp": "2025-09-28T14:14:57.865625",
+    "metadata": {
+      "keywords": [
+        "streaming",
+        "ticket"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865627"
+    }
+  },
+  {
+    "id": "travel_15",
+    "subject": "Flight confirmation: NYC to LAX on Dec 15",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: RESERVATION-15",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-14T14:14:57.865240",
+    "metadata": {
+      "keywords": [
+        "reservation",
+        "flight"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865241"
+    }
+  },
+  {
+    "id": "newsletter_4",
+    "subject": "Top Tech insights from Weekly",
+    "body": "This week's highlights include major updates in technology and industry trends. Read the full article below. Reference: DIGEST-4",
+    "sender": "updates@newsletter.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-13T14:14:57.865058",
+    "metadata": {
+      "keywords": [
+        "digest",
+        "newsletter"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865059"
+    }
+  },
+  {
+    "id": "shopping_5",
+    "subject": "Order #ORD6701 has been shipped",
+    "body": "Your order has been processed and is being prepared for shipment. Expected delivery in 3-5 business days. Reference: PRODUCT-5",
+    "sender": "orders@shop.com",
+    "label": "shopping",
+    "timestamp": "2025-09-23T14:14:57.865474",
+    "metadata": {
+      "keywords": [
+        "product",
+        "delivery"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865476"
+    }
+  },
+  {
+    "id": "travel_12",
+    "subject": "Travel itinerary for NYC trip",
+    "body": "Your booking is confirmed. Please arrive at least 2 hours before departure for international flights. Reference: FLIGHT-12",
+    "sender": "bookings@travel.com",
+    "label": "travel",
+    "timestamp": "2025-09-04T14:14:57.865227",
+    "metadata": {
+      "keywords": [
+        "flight",
+        "itinerary"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865229"
+    }
+  },
+  {
+    "id": "personal_1",
+    "subject": "Happy birthday! Hope you have a great Sarah's house",
+    "body": "Looking forward to seeing you! Bring the whole family and we can catch up over dinner. Reference: DINNER-1",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-27T14:14:57.864912",
+    "metadata": {
+      "keywords": [
+        "dinner",
+        "weekend"
+      ],
+      "generated_at": "2025-09-29T14:14:57.864913"
+    }
+  },
+  {
+    "id": "finance_10",
+    "subject": "Invoice #250.00 due on 1542",
+    "body": "This is an automated notification from your bank. Your account balance has been updated. Reference: TRANSACTION-10",
+    "sender": "alerts@bank.com",
+    "label": "finance",
+    "timestamp": "2025-09-03T14:14:57.865424",
+    "metadata": {
+      "keywords": [
+        "transaction",
+        "balance"
+      ],
+      "generated_at": "2025-09-29T14:14:57.865426"
+    }
+  }
+]

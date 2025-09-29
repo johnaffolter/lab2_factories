@@ -1,0 +1,34 @@
+{
+  "total_emails": 180,
+  "topics": [
+    "work",
+    "personal",
+    "promotion",
+    "newsletter",
+    "support",
+    "travel",
+    "education",
+    "health",
+    "finance",
+    "shopping",
+    "social",
+    "entertainment"
+  ],
+  "num_topics": 12,
+  "emails_per_topic": {
+    "work": 15,
+    "personal": 15,
+    "promotion": 15,
+    "newsletter": 15,
+    "support": 15,
+    "travel": 15,
+    "education": 15,
+    "health": 15,
+    "finance": 15,
+    "shopping": 15,
+    "social": 15,
+    "entertainment": 15
+  },
+  "generated_at": "2025-09-29T14:14:57.865712",
+  "expanded": true
+}
