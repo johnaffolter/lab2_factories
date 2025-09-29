@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Archive directories (may contain sensitive data)
+archive/
+docs_archive/
+*_archive_*/
