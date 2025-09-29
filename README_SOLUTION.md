@@ -7,18 +7,18 @@
 
 ---
 
-## 📋 Assignment Requirements Completed
+## Assignment Requirements Completed
 
-✅ **Forked the lab2_factories repository**
-✅ **Created endpoint to dynamically add new topics**
-✅ **Created endpoint to store emails with optional ground truth**
-✅ **Updated classifier to use topic or email similarity**
-✅ **Demonstrated creating new topics**
-✅ **Demonstrated inference on new topics**
-✅ **Demonstrated adding new emails**
-✅ **Demonstrated inference from email data**
+- **Forked the lab2_factories repository**
+- **Created endpoint to dynamically add new topics**
+- **Created endpoint to store emails with optional ground truth**
+- **Updated classifier to use topic or email similarity**
+- **Demonstrated creating new topics**
+- **Demonstrated inference on new topics**
+- **Demonstrated adding new emails**
+- **Demonstrated inference from email data**
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 ```bash
@@ -41,7 +41,7 @@ streamlit run streamlit_app.py
 python test_new_features.py
 ```
 
-## 📦 Solution Components
+## Solution Components
 
 ### Core Implementation Files
 
@@ -57,7 +57,7 @@ python test_new_features.py
 7. **`airflow_dags/email_classification_dag.py`** - Automation pipeline
 8. **`test_new_features.py`** - Comprehensive test suite
 
-## 🔧 New API Endpoints
+## New API Endpoints
 
 ### 1. Dynamic Topic Management
 ```http
@@ -104,7 +104,7 @@ GET /features
 GET /emails
 ```
 
-## 📊 Classification Modes
+## Classification Modes
 
 ### 1. Topic Similarity (Default)
 - Uses cosine similarity with topic descriptions
@@ -121,31 +121,31 @@ GET /emails
 - Highest accuracy
 - Requires API key
 
-## 🎯 Test Results
+## Test Results
 
 ```
-✅ Feature Generators Test
+Feature Generators Test: PASSED
    - Successfully retrieved 5 generators
    - New NonTextCharacterFeatureGenerator working
 
-✅ Dynamic Topics Test
+Dynamic Topics Test: PASSED
    - Added: travel, education, health
    - Topics persist to file
 
-✅ Email Storage Test
+Email Storage Test: PASSED
    - Stored 5 emails with ground truth
    - Auto-incrementing IDs working
 
-✅ Classification Modes Test
+Classification Modes Test: PASSED
    - Topic similarity operational
    - Email similarity functional
 
-✅ Non-Text Feature Test
+Non-Text Feature Test: PASSED
    - Correctly counting special characters
    - Integration with factory pattern successful
 ```
 
-## 📸 Demonstration Screenshots
+## Demonstration Screenshots
 
 ### Streamlit UI - Main Classification Interface
 The Streamlit app provides an intuitive interface for:
@@ -160,7 +160,7 @@ Access interactive API docs at: `http://localhost:8000/docs`
 - View request/response schemas
 - Test with sample data
 
-## 🔄 Airflow Integration
+## Airflow Integration
 
 The solution includes a production-ready Airflow DAG that:
 - Fetches new emails hourly
@@ -169,29 +169,29 @@ The solution includes a production-ready Airflow DAG that:
 - Generates analytics reports
 - Performs maintenance tasks
 
-## 🎓 Learning Objectives Achieved
+## Learning Objectives Achieved
 
-1. ✅ **Factory Pattern Implementation**
+1. **Factory Pattern Implementation**
    - Extended with new generator
    - Maintained SOLID principles
    - Clean abstraction
 
-2. ✅ **Dynamic System Design**
+2. **Dynamic System Design**
    - Topics can be added at runtime
    - System learns from examples
    - No code changes needed
 
-3. ✅ **REST API Design**
+3. **REST API Design**
    - Proper HTTP methods
    - Consistent error handling
    - Well-structured responses
 
-4. ✅ **Machine Learning Pipeline**
+4. **Machine Learning Pipeline**
    - Multiple classification strategies
    - Feature generation pipeline
    - Training data management
 
-## 🛠️ Technical Highlights
+## Technical Highlights
 
 ### Factory Pattern Extension
 ```python
@@ -219,7 +219,7 @@ topics[request.topic_name] = {
 }
 ```
 
-## 📈 Future Enhancements
+## Future Enhancements
 
 1. **Batch Classification API** - Process multiple emails
 2. **Confidence Thresholds** - Configurable similarity thresholds
@@ -227,12 +227,12 @@ topics[request.topic_name] = {
 4. **Model Retraining** - Automated retraining pipeline
 5. **Multi-Language Support** - Classify non-English emails
 
-## 🔒 Repository Access
+## Repository Access
 
 This repository is **private** and shared with:
 - Professor: [@jhoward](https://github.com/jhoward)
 
-## 📝 Conclusion
+## Conclusion
 
 This solution successfully extends the original Factory Pattern email classification system with:
 - Dynamic topic management

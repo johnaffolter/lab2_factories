@@ -28,5 +28,149 @@
     "subject": "50% Off Everything!",
     "body": "Don't miss our biggest sale of the year. Use code SAVE50 at checkout.",
     "ground_truth": "promotion"
+  },
+  {
+    "id": 6,
+    "subject": "New Learning Path Available",
+    "body": "Certificate earned! You've successfully completed Data Science with A% score. Your certificate is attached.",
+    "ground_truth": "education"
+  },
+  {
+    "id": 7,
+    "subject": "Monthly Roundup: Best of March",
+    "body": "Here's your Daily digest of the most important news in Retail. Top story: Merger completed. Plus, exclusive insights on innovation.",
+    "ground_truth": "newsletter"
+  },
+  {
+    "id": 8,
+    "subject": "How's innovation going?",
+    "body": "Hey Emma! Hope you're doing well. It's been too long since we last caught up. How about we catch up sometime soon?",
+    "ground_truth": "personal"
+  },
+  {
+    "id": 9,
+    "subject": "\u26a1 Lightning Deal: Accessories at 70% Off",
+    "body": "Special offer just for you! Buy any Shoes and get 50% off your second item. Perfect for the gift!",
+    "ground_truth": "promotion"
+  },
+  {
+    "id": 10,
+    "subject": "Important: Account Update Needed",
+    "body": "We've received your support request regarding Budget Overrun. Ticket #52 has been created. Our team will respond within 9:00 AM hours.",
+    "ground_truth": "support"
+  },
+  {
+    "id": 11,
+    "subject": "Congratulations on Completing Data Science!",
+    "body": "Feedback on your Lab Report: Grade: B. Instructor comments: {comment}. Office hours available Wednesday at 4:45 PM.",
+    "ground_truth": "education"
+  },
+  {
+    "id": 12,
+    "subject": "Meeting Request: March 15 at 3:15 PM",
+    "body": "As discussed in the last meeting, we need to finalize budget allocation. Please share your thoughts before Tomorrow 5PM.",
+    "ground_truth": "work"
+  },
+  {
+    "id": 13,
+    "subject": "Newsletter #48: Expert Insights",
+    "body": "This week's highlights: {achievement} reached new milestone. TechCorp announces {announcement}. Market analysis inside.",
+    "ground_truth": "newsletter"
+  },
+  {
+    "id": 14,
+    "subject": "Registration Open: {program}",
+    "body": "Feedback on your Lab Report: Grade: B. Instructor comments: {comment}. Office hours available Monday at 2:00 PM.",
+    "ground_truth": "education"
+  },
+  {
+    "id": 15,
+    "subject": "How's strategy going?",
+    "body": "Happy Birthday! I hope your day is filled with joy and laughter. Can't wait to celebrate with you!",
+    "ground_truth": "personal"
+  },
+  {
+    "id": 16,
+    "subject": "Performance Review Schedule",
+    "body": "I'm reaching out regarding the Deadline Change we discussed. The proposed solution involves process automation. Let me know your thoughts.",
+    "ground_truth": "work"
+  },
+  {
+    "id": 17,
+    "subject": "Black Friday Early Access \ud83d\udecd\ufe0f",
+    "body": "As a valued customer, you're getting early access to our Reunion sale. Save up to 60% on Books. Limited quantities available!",
+    "ground_truth": "promotion"
+  },
+  {
+    "id": 18,
+    "subject": "Weekly Report - Week 14 Summary",
+    "body": "Please review the attached document and provide your approval. This is related to performance and requires sign-off by Tomorrow.",
+    "ground_truth": "work"
+  },
+  {
+    "id": 19,
+    "subject": "New Message from Dr. Williams",
+    "body": "Telehealth appointment confirmed with Dr. Brown on April 1st at 4:45 PM. Video link will be sent {minutes} minutes before.",
+    "ground_truth": "health"
+  },
+  {
+    "id": 20,
+    "subject": "Account Security Alert",
+    "body": "We've received your support request regarding Budget Overrun. Ticket #163 has been created. Our team will respond within 4:45 PM hours.",
+    "ground_truth": "support"
+  },
+  {
+    "id": 21,
+    "subject": "Response to Your Inquiry",
+    "body": "We've received your support request regarding Deadline Change. Ticket #48 has been created. Our team will respond within 10:30 AM hours.",
+    "ground_truth": "support"
+  },
+  {
+    "id": 22,
+    "subject": "Appointment Reminder: April 1st at 9:00 AM",
+    "body": "It's time for your annual Physical checkup. Please schedule an appointment at your earliest convenience.",
+    "ground_truth": "health"
+  },
+  {
+    "id": 23,
+    "subject": "Wellness Check Reminder",
+    "body": "Telehealth appointment confirmed with Dr. Brown on Next Week at 2:00 PM. Video link will be sent {minutes} minutes before.",
+    "ground_truth": "health"
+  },
+  {
+    "id": 24,
+    "subject": "Essential Reading: innovation Guide",
+    "body": "Welcome to this week's newsletter! This edition covers {topic1}, {topic2}, and {topic3}. Read on for insights and updates.",
+    "ground_truth": "newsletter"
+  },
+  {
+    "id": 25,
+    "subject": "Boarding Pass - Lufthansa AA123",
+    "body": "Travel advisory for London: Health notice. Please review before your departure on Tomorrow.",
+    "ground_truth": "travel"
+  },
+  {
+    "id": 26,
+    "subject": "VIP Member Exclusive: Save Big Today",
+    "body": "VIP Access Granted! You're invited to our exclusive sale. Save up to 20% on premium Home & Garden. This link expires in 6 hours.",
+    "ground_truth": "promotion"
+  },
+  {
+    "id": 27,
+    "subject": "Family Reunion - Save the Date",
+    "body": "Just wanted to say thank you for being such a great friend. Your support with the move meant everything.",
+    "ground_truth": "personal"
+  },
+  {
+    "id": 28,
+    "subject": "7 Days Until Your Trip!",
+    "body": "Welcome to London! Local tips: Local transport, {tip2}. Emergency contact: 48. Enjoy your stay!",
+    "ground_truth": "travel"
+  },
+  {
+    "id": 29,
+    "subject": "Flight LH654 - Check-in Now Available",
+    "body": "Travel insurance for your Tokyo trip: Coverage includes Lost luggage. Premium: $100. Protect your trip today.",
+    "ground_truth": "travel"
   }
 ]

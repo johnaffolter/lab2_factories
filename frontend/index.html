@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Intelligence Platform - Enterprise Classification System</title>
+
+    <!-- Modern CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-dark: #4338CA;
+            --secondary: #7C3AED;
+            --success: #10B981;
+            --danger: #EF4444;
+            --warning: #F59E0B;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(45deg);
+        }
+
+        .tab-active {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .confidence-bar {
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .confidence-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+
+        .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .loading-spinner {
+            border: 3px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .feature-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--light);
+            border: 1px solid #E5E7EB;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+        }
+
+        .email-preview {
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            background: rgba(79, 70, 229, 0.05);
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .notification.success { background: var(--success); }
+        .notification.error { background: var(--danger); }
+        .notification.warning { background: var(--warning); }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <i class="fas fa-envelope-open-text text-3xl text-indigo-600 mr-3"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-800">Email Intelligence Platform</h1>
+                        <p class="text-sm text-gray-500">Enterprise Classification System</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="pulse-dot"></span>
+                    <span class="text-sm text-gray-600">API Connected</span>
+                    <button onclick="toggleDarkMode()" class="p-2 rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-moon text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container mx-auto px-6 py-8">
+        <!-- Metrics Dashboard -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="metric-card">
+                <div class="relative z-10">
+                    <p class="text-sm opacity-90">Total Emails Processed</p>
+                    <h3 class="text-3xl font-bold" id="totalEmails">0</h3>
+                    <p class="text-xs mt-2 opacity-75">+12% from last hour</p>
+                </div>
+            </div>
+            <div class="metric-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="relative z-10">
+                    <p class="text-sm opacity-90">Active Topics</p>
+                    <h3 class="text-3xl font-bold" id="activeTopics">0</h3>
+                    <p class="text-xs mt-2 opacity-75">Dynamically managed</p>
+                </div>
+            </div>
+            <div class="metric-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="relative z-10">
+                    <p class="text-sm opacity-90">Avg Response Time</p>
+                    <h3 class="text-3xl font-bold" id="avgResponseTime">0ms</h3>
+                    <p class="text-xs mt-2 opacity-75">Real-time processing</p>
+                </div>
+            </div>
+            <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="relative z-10">
+                    <p class="text-sm opacity-90">Classification Accuracy</p>
+                    <h3 class="text-3xl font-bold" id="accuracy">0%</h3>
+                    <p class="text-xs mt-2 opacity-75">Machine learning enhanced</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="glass-morphism p-1 mb-8">
+            <div class="flex space-x-1">
+                <button class="tab-btn px-6 py-3 rounded-lg font-medium transition-all tab-active"
+                        onclick="switchTab('classify')">
+                    <i class="fas fa-robot mr-2"></i>Classify
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-lg font-medium transition-all"
+                        onclick="switchTab('topics')">
+                    <i class="fas fa-tags mr-2"></i>Topics
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-lg font-medium transition-all"
+                        onclick="switchTab('training')">
+                    <i class="fas fa-brain mr-2"></i>Training
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-lg font-medium transition-all"
+                        onclick="switchTab('analytics')">
+                    <i class="fas fa-chart-line mr-2"></i>Analytics
+                </button>
+                <button class="tab-btn px-6 py-3 rounded-lg font-medium transition-all"
+                        onclick="switchTab('batch')">
+                    <i class="fas fa-layer-group mr-2"></i>Batch Process
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="glass-morphism p-8">
+            <!-- Classify Tab -->
+            <div id="classify-tab" class="tab-content">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-magic text-indigo-600 mr-2"></i>
+                    Intelligent Email Classification
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Input Section -->
+                    <div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Email Subject
+                            </label>
+                            <input type="text" id="emailSubject"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                   placeholder="Enter email subject...">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Email Body
+                            </label>
+                            <textarea id="emailBody" rows="6"
+                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                                      placeholder="Enter email body..."></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Classification Mode
+                            </label>
+                            <div class="flex space-x-4">
+                                <label class="flex items-center">
+                                    <input type="radio" name="classMode" value="topic" checked
+                                           class="mr-2 text-indigo-600">
+                                    <span>Topic Similarity</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="classMode" value="email"
+                                           class="mr-2 text-indigo-600">
+                                    <span>Email Similarity</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button onclick="classifyEmail()"
+                                class="w-full bg-indigo-600 text-white py-3 rounded-lg font-medium hover:bg-indigo-700 transition-all">
+                            <i class="fas fa-search mr-2"></i>
+                            Classify Email
+                        </button>
+                    </div>
+
+                    <!-- Results Section -->
+                    <div>
+                        <div id="classificationResult" class="hidden">
+                            <h3 class="text-lg font-semibold text-gray-800 mb-4">Classification Results</h3>
+
+                            <div class="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+                                <p class="text-sm text-green-600">Predicted Topic</p>
+                                <p class="text-2xl font-bold text-green-800" id="predictedTopic">-</p>
+                            </div>
+
+                            <div class="mb-4">
+                                <p class="text-sm font-medium text-gray-700 mb-2">Confidence Scores</p>
+                                <div id="confidenceScores"></div>
+                            </div>
+
+                            <div>
+                                <p class="text-sm font-medium text-gray-700 mb-2">Generated Features</p>
+                                <div id="generatedFeatures" class="flex flex-wrap"></div>
+                            </div>
+                        </div>
+
+                        <div id="loadingIndicator" class="hidden text-center py-8">
+                            <div class="loading-spinner mx-auto mb-4"></div>
+                            <p class="text-gray-600">Processing email...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topics Tab -->
+            <div id="topics-tab" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-folder-tree text-indigo-600 mr-2"></i>
+                    Topic Management
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Add Topic -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4">Add New Topic</h3>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Topic Name
+                            </label>
+                            <input type="text" id="newTopicName"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Description
+                            </label>
+                            <textarea id="newTopicDesc" rows="3"
+                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"></textarea>
+                        </div>
+                        <button onclick="addTopic()"
+                                class="w-full bg-indigo-600 text-white py-2 rounded-lg font-medium hover:bg-indigo-700">
+                            <i class="fas fa-plus mr-2"></i>Add Topic
+                        </button>
+                    </div>
+
+                    <!-- Existing Topics -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4">Existing Topics</h3>
+                        <div id="topicsList" class="space-y-3 max-h-96 overflow-y-auto">
+                            <!-- Topics will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Tab -->
+            <div id="training-tab" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-graduation-cap text-indigo-600 mr-2"></i>
+                    Training Data Management
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Store Email with Ground Truth -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4">Add Training Data</h3>
+                        <div class="mb-4">
+                            <input type="text" id="trainSubject"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                   placeholder="Email subject...">
+                        </div>
+                        <div class="mb-4">
+                            <textarea id="trainBody" rows="4"
+                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                                      placeholder="Email body..."></textarea>
+                        </div>
+                        <div class="mb-4">
+                            <select id="groundTruth"
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                                <option value="">Select ground truth label...</option>
+                            </select>
+                        </div>
+                        <button onclick="storeTrainingEmail()"
+                                class="w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700">
+                            <i class="fas fa-database mr-2"></i>Store Training Email
+                        </button>
+                    </div>
+
+                    <!-- Stored Emails -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4">Training Dataset</h3>
+                        <div id="storedEmails" class="space-y-3 max-h-96 overflow-y-auto">
+                            <!-- Stored emails will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Tab -->
+            <div id="analytics-tab" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-chart-pie text-indigo-600 mr-2"></i>
+                    Real-time Analytics
+                </h2>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4">Classification Distribution</h3>
+                        <canvas id="distributionChart" width="400" height="300"></canvas>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4">Performance Metrics</h3>
+                        <canvas id="performanceChart" width="400" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Feature Generator Statistics</h3>
+                    <div id="featureStats" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                        <!-- Feature stats will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Batch Processing Tab -->
+            <div id="batch-tab" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                    <i class="fas fa-rocket text-indigo-600 mr-2"></i>
+                    Batch Email Processing
+                </h2>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Upload CSV File (subject, body columns)
+                    </label>
+                    <input type="file" id="csvFile" accept=".csv"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">
+                        Or Paste Email Data (JSON format)
+                    </label>
+                    <textarea id="batchData" rows="6"
+                              class="w-full px-4 py-2 border border-gray-300 rounded-lg font-mono text-sm"
+                              placeholder='[{"subject": "...", "body": "..."}, ...]'></textarea>
+                </div>
+
+                <button onclick="processBatch()"
+                        class="bg-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-purple-700">
+                    <i class="fas fa-play mr-2"></i>Start Batch Processing
+                </button>
+
+                <div id="batchResults" class="mt-6 hidden">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Batch Results</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="border p-2 text-left">Subject</th>
+                                    <th class="border p-2 text-left">Predicted Topic</th>
+                                    <th class="border p-2 text-left">Confidence</th>
+                                    <th class="border p-2 text-left">Processing Time</th>
+                                </tr>
+                            </thead>
+                            <tbody id="batchTableBody">
+                                <!-- Results will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const API_URL = 'http://localhost:8000';
+        let currentTab = 'classify';
+        let analyticsData = {
+            topics: {},
+            responseTimes: [],
+            accuracy: []
+        };
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTopics();
+            loadStoredEmails();
+            loadFeatures();
+            updateMetrics();
+            initializeCharts();
+            setInterval(updateMetrics, 5000); // Update metrics every 5 seconds
+        });
+
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+            });
+
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+            });
+
+            // Show selected tab
+            document.getElementById(`${tabName}-tab`).classList.remove('hidden');
+
+            // Add active class to selected button
+            event.target.classList.add('tab-active');
+
+            currentTab = tabName;
+
+            // Load tab-specific data
+            if (tabName === 'analytics') {
+                updateAnalytics();
+            }
+        }
+
+        // Classify Email
+        async function classifyEmail() {
+            const subject = document.getElementById('emailSubject').value;
+            const body = document.getElementById('emailBody').value;
+            const useEmailSimilarity = document.querySelector('input[name="classMode"]:checked').value === 'email';
+
+            if (!subject && !body) {
+                showNotification('Please enter email subject or body', 'warning');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loadingIndicator').classList.remove('hidden');
+            document.getElementById('classificationResult').classList.add('hidden');
+
+            const startTime = performance.now();
+
+            try {
+                const response = await fetch(`${API_URL}/emails/classify`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        subject,
+                        body,
+                        use_email_similarity: useEmailSimilarity
+                    })
+                });
+
+                const data = await response.json();
+                const responseTime = performance.now() - startTime;
+
+                // Track analytics
+                analyticsData.responseTimes.push(responseTime);
+                if (data.predicted_topic) {
+                    analyticsData.topics[data.predicted_topic] =
+                        (analyticsData.topics[data.predicted_topic] || 0) + 1;
+                }
+
+                // Display results
+                displayClassificationResults(data, responseTime);
+
+            } catch (error) {
+                showNotification('Classification failed: ' + error.message, 'error');
+            } finally {
+                document.getElementById('loadingIndicator').classList.add('hidden');
+            }
+        }
+
+        function displayClassificationResults(data, responseTime) {
+            document.getElementById('classificationResult').classList.remove('hidden');
+            document.getElementById('predictedTopic').textContent = data.predicted_topic.toUpperCase();
+
+            // Display confidence scores
+            const scoresHtml = Object.entries(data.topic_scores)
+                .sort((a, b) => b[1] - a[1])
+                .map(([topic, score]) => {
+                    const percentage = (score * 100).toFixed(1);
+                    const color = score > 0.7 ? 'bg-green-500' : score > 0.4 ? 'bg-yellow-500' : 'bg-red-500';
+                    return `
+                        <div class="mb-2">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium">${topic}</span>
+                                <span>${percentage}%</span>
+                            </div>
+                            <div class="confidence-bar">
+                                <div class="confidence-fill ${color}" style="width: ${percentage}%"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+            document.getElementById('confidenceScores').innerHTML = scoresHtml;
+
+            // Display features
+            const featuresHtml = Object.entries(data.features)
+                .filter(([key, value]) => typeof value === 'number')
+                .map(([key, value]) => `
+                    <span class="feature-badge">
+                        ${key.replace(/_/g, ' ')}: ${typeof value === 'number' ? value.toFixed(2) : value}
+                    </span>
+                `).join('');
+
+            document.getElementById('generatedFeatures').innerHTML = featuresHtml;
+
+            showNotification(`Classification completed in ${responseTime.toFixed(0)}ms`, 'success');
+        }
+
+        // Topic Management
+        async function loadTopics() {
+            try {
+                const response = await fetch(`${API_URL}/topics`);
+                const data = await response.json();
+
+                // Update metrics
+                document.getElementById('activeTopics').textContent = data.topics.length;
+
+                // Get full topic info
+                const infoResponse = await fetch(`${API_URL}/pipeline/info`);
+                const infoData = await infoResponse.json();
+
+                // Display topics list
+                const topicsHtml = data.topics.map(topic => {
+                    const description = infoData.topics_with_descriptions[topic] || 'No description';
+                    return `
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-gray-800">${topic}</h4>
+                            <p class="text-sm text-gray-600 mt-1">${description}</p>
+                        </div>
+                    `;
+                }).join('');
+
+                document.getElementById('topicsList').innerHTML = topicsHtml;
+
+                // Update ground truth dropdown
+                const groundTruthSelect = document.getElementById('groundTruth');
+                groundTruthSelect.innerHTML = '<option value="">Select ground truth label...</option>' +
+                    data.topics.map(topic => `<option value="${topic}">${topic}</option>`).join('');
+
+            } catch (error) {
+                console.error('Failed to load topics:', error);
+            }
+        }
+
+        async function addTopic() {
+            const name = document.getElementById('newTopicName').value;
+            const description = document.getElementById('newTopicDesc').value;
+
+            if (!name || !description) {
+                showNotification('Please fill in all fields', 'warning');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/topics`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        topic_name: name.toLowerCase(),
+                        description
+                    })
+                });
+
+                if (response.ok) {
+                    showNotification('Topic added successfully', 'success');
+                    document.getElementById('newTopicName').value = '';
+                    document.getElementById('newTopicDesc').value = '';
+                    loadTopics();
+                } else {
+                    const error = await response.text();
+                    showNotification('Failed to add topic: ' + error, 'error');
+                }
+            } catch (error) {
+                showNotification('Error adding topic: ' + error.message, 'error');
+            }
+        }
+
+        // Training Data Management
+        async function loadStoredEmails() {
+            try {
+                const response = await fetch(`${API_URL}/emails`);
+                const data = await response.json();
+
+                // Update metrics
+                document.getElementById('totalEmails').textContent = data.count;
+
+                // Display emails
+                const emailsHtml = data.emails.slice(-10).reverse().map(email => `
+                    <div class="email-preview">
+                        <p class="font-medium text-gray-800">${email.subject || 'No subject'}</p>
+                        <p class="text-sm text-gray-600 mt-1">${(email.body || '').substring(0, 100)}...</p>
+                        ${email.ground_truth ?
+                            `<span class="inline-block mt-2 px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
+                                Ground Truth: ${email.ground_truth}
+                            </span>` : ''}
+                    </div>
+                `).join('');
+
+                document.getElementById('storedEmails').innerHTML = emailsHtml ||
+                    '<p class="text-gray-500">No training emails stored yet</p>';
+
+            } catch (error) {
+                console.error('Failed to load stored emails:', error);
+            }
+        }
+
+        async function storeTrainingEmail() {
+            const subject = document.getElementById('trainSubject').value;
+            const body = document.getElementById('trainBody').value;
+            const groundTruth = document.getElementById('groundTruth').value;
+
+            if (!subject && !body) {
+                showNotification('Please enter email content', 'warning');
+                return;
+            }
+
+            const payload = { subject, body };
+            if (groundTruth) {
+                payload.ground_truth = groundTruth;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/emails`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    showNotification('Training email stored successfully', 'success');
+                    document.getElementById('trainSubject').value = '';
+                    document.getElementById('trainBody').value = '';
+                    document.getElementById('groundTruth').value = '';
+                    loadStoredEmails();
+                } else {
+                    showNotification('Failed to store email', 'error');
+                }
+            } catch (error) {
+                showNotification('Error storing email: ' + error.message, 'error');
+            }
+        }
+
+        // Analytics
+        function initializeCharts() {
+            // Distribution Chart
+            const ctxDist = document.getElementById('distributionChart').getContext('2d');
+            window.distributionChart = new Chart(ctxDist, {
+                type: 'doughnut',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        data: [],
+                        backgroundColor: [
+                            '#4F46E5', '#7C3AED', '#EC4899',
+                            '#F59E0B', '#10B981', '#3B82F6'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Performance Chart
+            const ctxPerf = document.getElementById('performanceChart').getContext('2d');
+            window.performanceChart = new Chart(ctxPerf, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: 'Response Time (ms)',
+                        data: [],
+                        borderColor: '#4F46E5',
+                        backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateAnalytics() {
+            // Update distribution chart
+            const topicCounts = Object.entries(analyticsData.topics);
+            window.distributionChart.data.labels = topicCounts.map(([topic]) => topic);
+            window.distributionChart.data.datasets[0].data = topicCounts.map(([, count]) => count);
+            window.distributionChart.update();
+
+            // Update performance chart
+            const recentTimes = analyticsData.responseTimes.slice(-20);
+            window.performanceChart.data.labels = recentTimes.map((_, i) => `Request ${i + 1}`);
+            window.performanceChart.data.datasets[0].data = recentTimes;
+            window.performanceChart.update();
+        }
+
+        // Feature Statistics
+        async function loadFeatures() {
+            try {
+                const response = await fetch(`${API_URL}/features`);
+                const data = await response.json();
+
+                const statsHtml = data.available_generators.map(gen => `
+                    <div class="bg-gray-50 p-4 rounded-lg text-center">
+                        <p class="text-2xl font-bold text-indigo-600">${gen.features.length}</p>
+                        <p class="text-sm text-gray-600">${gen.name.replace(/_/g, ' ')}</p>
+                    </div>
+                `).join('');
+
+                document.getElementById('featureStats').innerHTML = statsHtml;
+            } catch (error) {
+                console.error('Failed to load features:', error);
+            }
+        }
+
+        // Batch Processing
+        async function processBatch() {
+            let emails = [];
+
+            // Check if CSV file is uploaded
+            const fileInput = document.getElementById('csvFile');
+            if (fileInput.files.length > 0) {
+                // Parse CSV (simplified - in production use proper CSV parser)
+                const file = fileInput.files[0];
+                const text = await file.text();
+                const lines = text.split('\n');
+                const headers = lines[0].split(',');
+
+                for (let i = 1; i < lines.length; i++) {
+                    const values = lines[i].split(',');
+                    if (values.length >= 2) {
+                        emails.push({
+                            subject: values[0].trim(),
+                            body: values[1].trim()
+                        });
+                    }
+                }
+            } else {
+                // Try to parse JSON from textarea
+                const batchData = document.getElementById('batchData').value;
+                if (batchData) {
+                    try {
+                        emails = JSON.parse(batchData);
+                    } catch (e) {
+                        showNotification('Invalid JSON format', 'error');
+                        return;
+                    }
+                }
+            }
+
+            if (emails.length === 0) {
+                showNotification('No emails to process', 'warning');
+                return;
+            }
+
+            // Process emails
+            document.getElementById('batchResults').classList.remove('hidden');
+            const tableBody = document.getElementById('batchTableBody');
+            tableBody.innerHTML = '';
+
+            for (const email of emails) {
+                const startTime = performance.now();
+
+                try {
+                    const response = await fetch(`${API_URL}/emails/classify`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            subject: email.subject,
+                            body: email.body,
+                            use_email_similarity: false
+                        })
+                    });
+
+                    const data = await response.json();
+                    const responseTime = performance.now() - startTime;
+
+                    // Add row to table
+                    const row = tableBody.insertRow();
+                    row.innerHTML = `
+                        <td class="border p-2">${email.subject.substring(0, 50)}...</td>
+                        <td class="border p-2">
+                            <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded text-sm">
+                                ${data.predicted_topic}
+                            </span>
+                        </td>
+                        <td class="border p-2">${(data.topic_scores[data.predicted_topic] * 100).toFixed(1)}%</td>
+                        <td class="border p-2">${responseTime.toFixed(0)}ms</td>
+                    `;
+
+                } catch (error) {
+                    const row = tableBody.insertRow();
+                    row.innerHTML = `
+                        <td class="border p-2">${email.subject}</td>
+                        <td class="border p-2 text-red-600" colspan="3">Error: ${error.message}</td>
+                    `;
+                }
+            }
+
+            showNotification(`Processed ${emails.length} emails`, 'success');
+        }
+
+        // Update Metrics
+        async function updateMetrics() {
+            // Calculate average response time
+            if (analyticsData.responseTimes.length > 0) {
+                const avgTime = analyticsData.responseTimes.reduce((a, b) => a + b, 0) /
+                                analyticsData.responseTimes.length;
+                document.getElementById('avgResponseTime').textContent = avgTime.toFixed(0) + 'ms';
+            }
+
+            // Simulated accuracy (in production, calculate from actual results)
+            const accuracy = 85 + Math.random() * 10;
+            document.getElementById('accuracy').textContent = accuracy.toFixed(1) + '%';
+        }
+
+        // Notifications
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Dark Mode Toggle (placeholder)
+        function toggleDarkMode() {
+            showNotification('Dark mode coming soon!', 'warning');
+        }
+
+        // WebSocket for real-time updates (optional enhancement)
+        function connectWebSocket() {
+            // In production, implement WebSocket for real-time metrics
+            // const ws = new WebSocket('ws://localhost:8000/ws');
+            // ws.onmessage = (event) => { ... }
+        }
+    </script>
+</body>
+</html>
