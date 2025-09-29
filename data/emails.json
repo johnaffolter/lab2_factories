@@ -284,5 +284,16 @@
     "subject": "Homework Validation Email",
     "body": "Testing email storage with ground truth labeling @#$%^&*()",
     "ground_truth": "homework_test_topic"
+  },
+  {
+    "id": 50,
+    "subject": "Q4 Financial Report",
+    "body": "Please review the quarterly financial statements. Revenue increased by 12%.",
+    "ground_truth": "finance"
+  },
+  {
+    "id": 51,
+    "subject": "Team Building Event",
+    "body": "Join us for team building activities next Friday at the park."
   }
 ]

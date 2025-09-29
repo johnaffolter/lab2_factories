@@ -1,0 +1,73 @@
+{
+  "total": 13,
+  "passed": 13,
+  "failed": 0,
+  "pass_rate": 100.0,
+  "results": [
+    {
+      "test": "All Components Registered",
+      "passed": true,
+      "details": "Found 10/10 components"
+    },
+    {
+      "test": "Component Search",
+      "passed": true,
+      "details": "Found 1 components for 'entity'"
+    },
+    {
+      "test": "Entity Extractor",
+      "passed": true,
+      "details": "Extracted 1 entities: ['support@company.com']"
+    },
+    {
+      "test": "Topic Classifier",
+      "passed": true,
+      "details": "Topic: work (confidence: 1.0)"
+    },
+    {
+      "test": "Readability Analyzer",
+      "passed": true,
+      "details": "Readability: moderate (3 sentences)"
+    },
+    {
+      "test": "Language Detector",
+      "passed": true,
+      "details": "Language: en (mixed: True)"
+    },
+    {
+      "test": "Action Item Extractor",
+      "passed": true,
+      "details": "Actions: 4 (priority: high)"
+    },
+    {
+      "test": "Word Length Analysis",
+      "passed": true,
+      "details": "Words: 24, Richness: 1.0"
+    },
+    {
+      "test": "Spam Detection Accuracy",
+      "passed": true,
+      "details": "Spam: 1.00, Legit: 0.00"
+    },
+    {
+      "test": "Urgency Detection Levels",
+      "passed": true,
+      "details": "Technical: medium, Personal: low"
+    },
+    {
+      "test": "Sentiment Analysis",
+      "passed": true,
+      "details": "Personal: positive, Work: neutral"
+    },
+    {
+      "test": "Complex Multi-Component Pipeline",
+      "passed": true,
+      "details": "Executed 8 components successfully"
+    },
+    {
+      "test": "Pipeline with Custom Config",
+      "passed": true,
+      "details": "Executed 2 components with custom config"
+    }
+  ]
+}

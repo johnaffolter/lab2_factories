@@ -1,0 +1,195 @@
+{
+  "timestamp": "2025-09-29T14:47:49.349423",
+  "features_test": {
+    "status": "PASS",
+    "generator_count": 5,
+    "generators": [
+      "spam",
+      "word_length",
+      "email_embeddings",
+      "raw_email",
+      "non_text"
+    ],
+    "response_time": 0.000883
+  },
+  "topic_management_test": {
+    "status": "PASS",
+    "initial_count": 18,
+    "final_count": 19,
+    "new_topic": "test_reproducible_1759175269",
+    "response_time": 0.001584
+  },
+  "email_storage_test": {
+    "status": "PASS",
+    "with_ground_truth": {
+      "message": "Email stored successfully",
+      "email_id": 50,
+      "total_emails": 50
+    },
+    "without_ground_truth": {
+      "message": "Email stored successfully",
+      "email_id": 51,
+      "total_emails": 51
+    },
+    "response_times": [
+      0.001912,
+      0.001592
+    ]
+  },
+  "classification_test": {
+    "status": "PASS",
+    "topic_mode": {
+      "predicted_topic": "promotion",
+      "topic_scores": {
+        "work": 0.6440364210831414,
+        "personal": 0.8025187979624785,
+        "promotion": 0.9607894391523232,
+        "newsletter": 0.9417645335842487,
+        "support": 0.9417645335842487,
+        "travel": 0.9607894391523232,
+        "education": 0.835270211411272,
+        "health": 0.8869204367171575,
+        "new ai deal": 0.6703200460356393,
+        "finance": 0.8869204367171575,
+        "test_topic_1759107444": 0.5712090638488149,
+        "test_topic_1759108278": 0.5066169923655895,
+        "test_reproducible_1759109850": 0.5168513344916992,
+        "test_reproducible_1759111037": 0.5168513344916992,
+        "test_analysis_1759111124": 0.6838614092123558,
+        "final_test_topic": 0.5066169923655895,
+        "test_homework": 0.5379444375946745,
+        "homework_test_topic": 0.6440364210831414,
+        "test_reproducible_1759175269": 0.5168513344916992
+      },
+      "features": {
+        "spam_has_spam_words": 0,
+        "word_length_average_word_length": 5.705882352941177,
+        "email_embeddings_average_embedding": 56.0,
+        "raw_email_email_subject": "Budget Allocation Meeting",
+        "raw_email_email_body": "We need to discuss the budget allocation for Q1 2024. Please prepare financial reports.",
+        "non_text_non_text_char_count": 2
+      },
+      "available_topics": [
+        "work",
+        "personal",
+        "promotion",
+        "newsletter",
+        "support",
+        "travel",
+        "education",
+        "health",
+        "new ai deal",
+        "finance",
+        "test_topic_1759107444",
+        "test_topic_1759108278",
+        "test_reproducible_1759109850",
+        "test_reproducible_1759111037",
+        "test_analysis_1759111124",
+        "final_test_topic",
+        "test_homework",
+        "homework_test_topic",
+        "test_reproducible_1759175269"
+      ]
+    },
+    "email_mode": {
+      "predicted_topic": "promotion",
+      "topic_scores": {
+        "work": 0.6440364210831414,
+        "personal": 0.8025187979624785,
+        "promotion": 0.9607894391523232,
+        "newsletter": 0.9417645335842487,
+        "support": 0.9417645335842487,
+        "travel": 0.9607894391523232,
+        "education": 0.835270211411272,
+        "health": 0.8869204367171575,
+        "new ai deal": 0.6703200460356393,
+        "finance": 0.8869204367171575,
+        "test_topic_1759107444": 0.5712090638488149,
+        "test_topic_1759108278": 0.5066169923655895,
+        "test_reproducible_1759109850": 0.5168513344916992,
+        "test_reproducible_1759111037": 0.5168513344916992,
+        "test_analysis_1759111124": 0.6838614092123558,
+        "final_test_topic": 0.5066169923655895,
+        "test_homework": 0.5379444375946745,
+        "homework_test_topic": 0.6440364210831414,
+        "test_reproducible_1759175269": 0.5168513344916992
+      },
+      "features": {
+        "spam_has_spam_words": 0,
+        "word_length_average_word_length": 5.705882352941177,
+        "email_embeddings_average_embedding": 56.0,
+        "raw_email_email_subject": "Budget Allocation Meeting",
+        "raw_email_email_body": "We need to discuss the budget allocation for Q1 2024. Please prepare financial reports.",
+        "non_text_non_text_char_count": 2
+      },
+      "available_topics": [
+        "work",
+        "personal",
+        "promotion",
+        "newsletter",
+        "support",
+        "travel",
+        "education",
+        "health",
+        "new ai deal",
+        "finance",
+        "test_topic_1759107444",
+        "test_topic_1759108278",
+        "test_reproducible_1759109850",
+        "test_reproducible_1759111037",
+        "test_analysis_1759111124",
+        "final_test_topic",
+        "test_homework",
+        "homework_test_topic",
+        "test_reproducible_1759175269"
+      ]
+    },
+    "modes_different": false,
+    "response_times": [
+      0.001532,
+      0.001356
+    ]
+  },
+  "nontext_generator_test": {
+    "status": "COMPLETED",
+    "test_results": [
+      {
+        "test_name": "Basic Special Characters",
+        "char_count": 13,
+        "expected_range": [
+          10,
+          20
+        ],
+        "in_range": true,
+        "status": "PASS"
+      },
+      {
+        "test_name": "Email with Punctuation",
+        "char_count": 6,
+        "expected_range": [
+          5,
+          15
+        ],
+        "in_range": true,
+        "status": "PASS"
+      },
+      {
+        "test_name": "Clean Text",
+        "char_count": 0,
+        "expected_range": [
+          0,
+          5
+        ],
+        "in_range": true,
+        "status": "PASS"
+      }
+    ]
+  },
+  "performance_analysis": {
+    "avg_response_time": 0.0010578155517578125,
+    "min_response_time": 0.0009388923645019531,
+    "max_response_time": 0.0012161731719970703,
+    "success_rate": 1.0,
+    "total_requests": 10
+  }
+}

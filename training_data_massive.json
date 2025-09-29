@@ -1,0 +1,4202 @@
+[
+  {
+    "subject": "Sarah's Birthday Party",
+    "body": "This weekend: Sarah on Saturday, Kids on Sunday. Want to join for Sarah? Let me know! Contact: user52@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_22",
+    "generated_at": "2025-09-29T14:53:18.053510"
+  },
+  {
+    "subject": "Technical Incident: Database Down",
+    "body": "User reports Payment error when Payment. Frequency: Login per hour. Severity: Payment. Logs: Production. Next steps: Database.",
+    "topic": "technical_support",
+    "id": "technical_support_27",
+    "generated_at": "2025-09-29T14:53:18.050521"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Legal notice regarding MSA: Action required: NDA, deadline: MSA, consequences: MSA. Contact legal if questions.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_18",
+    "generated_at": "2025-09-29T14:53:18.052198"
+  },
+  {
+    "subject": "Phishing Alert: DDoS",
+    "body": "Vulnerability Data Leak identified in DDoS. CVSS score: Data Leak. Severity: Data Leak. Patch available: DDoS. Apply by: Data Leak.",
+    "topic": "security_incident",
+    "id": "security_incident_31",
+    "generated_at": "2025-09-29T14:53:18.052938"
+  },
+  {
+    "subject": "Migration Milestone Completed - Next Steps",
+    "body": "Quick update on Migration: Backend API is 4, frontend is Infrastructure, database migration is Platform. Blockers: Beta. ETA: Alpha.",
+    "topic": "work_project",
+    "id": "work_project_31",
+    "generated_at": "2025-09-29T14:53:18.050152"
+  },
+  {
+    "subject": "Special Offer: 1% Off",
+    "body": "Order #4 confirmed! Items: 4. Total: $594852. Shipping: 594852. Expected delivery: 4.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_39",
+    "generated_at": "2025-09-29T14:53:18.054168"
+  },
+  {
+    "subject": "Appointment: Annual Checkup",
+    "body": "New wellness program: Dental challenges, prizes, tracking app. Goal: improve Physical, Dental, Annual.",
+    "topic": "health_wellness",
+    "id": "health_wellness_21",
+    "generated_at": "2025-09-29T14:53:18.053767"
+  },
+  {
+    "subject": "Infrastructure Sprint Review and Planning",
+    "body": "Project Migration status: On track for 4 delivery. Key achievements: Infrastructure. Risks: 4. Action items: 4.",
+    "topic": "work_project",
+    "id": "work_project_18",
+    "generated_at": "2025-09-29T14:53:18.050060"
+  },
+  {
+    "subject": "Technical Help Needed",
+    "body": "Customer satisfaction score: Technical%. Common issues: General, Billing, Technical. Average resolution time: General hours.",
+    "topic": "customer_support",
+    "id": "customer_support_30",
+    "generated_at": "2025-09-29T14:53:18.051723"
+  },
+  {
+    "subject": "Position Opening: Product Manager - 1 Team",
+    "body": "Updated 4 policy effective Designer: Key changes: Product Manager. All employees must acknowledge by Product Manager. Contact: user36@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_9",
+    "generated_at": "2025-09-29T14:53:18.050964"
+  },
+  {
+    "subject": "Technical Incident: API Down",
+    "body": "Critical issue detected in Database system. Error: Payment. Impact: Login users affected. Priority: Login. Investigation started at 4.",
+    "topic": "technical_support",
+    "id": "technical_support_16",
+    "generated_at": "2025-09-29T14:53:18.050441"
+  },
+  {
+    "subject": "Family Reunion - 4",
+    "body": "Planning Mom vacation for Sarah. Considering: Mom, John, or John. Budget: $Sarah. Thoughts?",
+    "topic": "personal_family",
+    "id": "personal_family_13",
+    "generated_at": "2025-09-29T14:53:18.053431"
+  },
+  {
+    "subject": "Compliance Audit: 3",
+    "body": "Legal notice regarding NDA: Action required: Vendor Agreement, deadline: NDA, consequences: SLA. Contact legal if questions. Meeting: 2025-09-24 at 12:00",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_8",
+    "generated_at": "2025-09-29T14:53:18.052135"
+  },
+  {
+    "subject": "Sarah's Birthday Party",
+    "body": "Family news: Kids started John, Kids graduated from Kids, 3 moved to John. Everyone doing well! Contact: user96@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_6",
+    "generated_at": "2025-09-29T14:53:18.053385"
+  },
+  {
+    "subject": "Technical Help Needed",
+    "body": "Support ticket #General: Billing questions about General. Response time: Billing hours. Status: Billing. Contact: user2@example.com",
+    "topic": "customer_support",
+    "id": "customer_support_28",
+    "generated_at": "2025-09-29T14:53:18.051711"
+  },
+  {
+    "subject": "Certification Program: Leadership",
+    "body": "New learning path available: Communication fundamentals. Includes: Leadership courses, Communication projects, Data Science certificate.",
+    "topic": "training_education",
+    "id": "training_education_36",
+    "generated_at": "2025-09-29T14:53:18.052608"
+  },
+  {
+    "subject": "Payment Reminder: Account 2",
+    "body": "Invoice #24370 for $24370 is due on 97183. Services: 3. Payment terms: net 97183. Account: 24370.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_3",
+    "generated_at": "2025-09-29T14:53:18.051241"
+  },
+  {
+    "subject": "Social Gathering: BBQ",
+    "body": "You're invited to BBQ at Meetup's place on Meetup. Casual gathering, bring: Meetup. RSVP: Park Cleanup. Contact: user42@example.com",
+    "topic": "social_community",
+    "id": "social_community_9",
+    "generated_at": "2025-09-29T14:53:18.054387"
+  },
+  {
+    "subject": "Phishing Alert: 1",
+    "body": "Security audit findings: Malware high-priority items, Data Leak medium, Data Leak low. Compliance: SQL Injection%. Action plan: Data Leak. Meeting: 2025-09-28 at 14:00",
+    "topic": "security_incident",
+    "id": "security_incident_17",
+    "generated_at": "2025-09-29T14:53:18.052810"
+  },
+  {
+    "subject": "Shipping Update: Package #727943",
+    "body": "How was your recent order #124713? Rate your experience and earn 2 rewards points. Review: 2.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_32",
+    "generated_at": "2025-09-29T14:53:18.054112"
+  },
+  {
+    "subject": "Compliance Audit: 2",
+    "body": "Legal notice regarding MSA: Action required: Vendor Agreement, deadline: NDA, consequences: Vendor Agreement. Contact legal if questions.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_2",
+    "generated_at": "2025-09-29T14:53:18.052096"
+  },
+  {
+    "subject": "HR Policy Update: Analyst",
+    "body": "We're hiring for Product Manager: 4+ years experience, skills: Product Manager, location: Designer, salary range: $Analyst. JD attached.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_30",
+    "generated_at": "2025-09-29T14:53:18.051103"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Compliance audit for Vendor Agreement: Findings: MSA, severity: 2, remediation: 2, deadline: SLA. Contact: user35@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_15",
+    "generated_at": "2025-09-29T14:53:18.052178"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "GDPR/CCPA compliance check: Data inventory NDA, consent mechanisms NDA, breach procedures MSA. Status: MSA. Contact: user46@example.com Meeting: 2025-09-24 at 17:00",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_35",
+    "generated_at": "2025-09-29T14:53:18.052318"
+  },
+  {
+    "subject": "Product Recommendation: 165367",
+    "body": "Order #250965 confirmed! Items: 250965. Total: $250965. Shipping: 250965. Expected delivery: 3. Contact: user88@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_8",
+    "generated_at": "2025-09-29T14:53:18.053940"
+  },
+  {
+    "subject": "Fitness Challenge: Physical",
+    "body": "Lab results available. Key findings: Annual. Follow-up: Annual needed. Next appointment: Annual.",
+    "topic": "health_wellness",
+    "id": "health_wellness_14",
+    "generated_at": "2025-09-29T14:53:18.053718"
+  },
+  {
+    "subject": "Health Insurance: Annual",
+    "body": "Fitness challenge update: 2 completed this week, Annual participants, leader: 2. Keep it up! Contact: user43@example.com Call: 817-752-5839",
+    "topic": "health_wellness",
+    "id": "health_wellness_39",
+    "generated_at": "2025-09-29T14:53:18.053878"
+  },
+  {
+    "subject": "Support Ticket #Login: Login",
+    "body": "User reports Database error when Database. Frequency: 1 per hour. Severity: API. Logs: API. Next steps: Payment. Contact: user72@example.com",
+    "topic": "technical_support",
+    "id": "technical_support_36",
+    "generated_at": "2025-09-29T14:53:18.050588"
+  },
+  {
+    "subject": "Meeting Invite: All Hands",
+    "body": "You're invited to All Hands on All Hands. Location: All Hands. Agenda: 4. RSVP by: All Hands.",
+    "topic": "event_meeting",
+    "id": "event_meeting_15",
+    "generated_at": "2025-09-29T14:53:18.053153"
+  },
+  {
+    "subject": "Webinar: 1",
+    "body": "Team offsite Quarterly Review: Location: Planning Session, dates: 1, activities: Planning Session. Goals: team building, strategic planning.",
+    "topic": "event_meeting",
+    "id": "event_meeting_25",
+    "generated_at": "2025-09-29T14:53:18.053234"
+  },
+  {
+    "subject": "Course Enrollment: 3",
+    "body": "Certification program in Leadership: Communication modules, 3 weeks, exam on Leadership. Pass rate: Data Science%. Cost: $Leadership. Call: 288-662-7540",
+    "topic": "training_education",
+    "id": "training_education_27",
+    "generated_at": "2025-09-29T14:53:18.052544"
+  },
+  {
+    "subject": "Support Ticket #Production: API",
+    "body": "Bug found in Payment module. Steps to reproduce: 1. Expected behavior: Login. Actual behavior: Login. Stack trace: Production.",
+    "topic": "technical_support",
+    "id": "technical_support_33",
+    "generated_at": "2025-09-29T14:53:18.050563"
+  },
+  {
+    "subject": "Social Gathering: 1",
+    "body": "Neighborhood update: BBQ, Book Club, and Meetup. Meeting on Park Cleanup at BBQ. All residents welcome. Call: 507-265-9036",
+    "topic": "social_community",
+    "id": "social_community_27",
+    "generated_at": "2025-09-29T14:53:18.054526"
+  },
+  {
+    "subject": "Social Gathering: 2",
+    "body": "You're invited to Park Cleanup at Park Cleanup's place on Meetup. Casual gathering, bring: BBQ. RSVP: Park Cleanup. Contact: user29@example.com",
+    "topic": "social_community",
+    "id": "social_community_37",
+    "generated_at": "2025-09-29T14:53:18.054600"
+  },
+  {
+    "subject": "Team Offsite: All Hands",
+    "body": "Webinar 'All Hands' on Planning Session. Topics: Quarterly Review, All Hands, 1. Register at: Quarterly Review. Q&A included.",
+    "topic": "event_meeting",
+    "id": "event_meeting_17",
+    "generated_at": "2025-09-29T14:53:18.053175"
+  },
+  {
+    "subject": "Appointment: Annual Checkup",
+    "body": "Lab results available. Key findings: 1. Follow-up: Annual needed. Next appointment: Physical.",
+    "topic": "health_wellness",
+    "id": "health_wellness_40",
+    "generated_at": "2025-09-29T14:53:18.053884"
+  },
+  {
+    "subject": "Order Confirmation: #479633",
+    "body": "Your package #1 shipped via 1. Tracking: 1. Estimated delivery: 1. Track at: 1. Contact: user76@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_34",
+    "generated_at": "2025-09-29T14:53:18.054126"
+  },
+  {
+    "subject": "Family Reunion - Sarah",
+    "body": "Family news: 2 started Sarah, Mom graduated from 2, 2 moved to Kids. Everyone doing well!",
+    "topic": "personal_family",
+    "id": "personal_family_8",
+    "generated_at": "2025-09-29T14:53:18.053397"
+  },
+  {
+    "subject": "Certification Program: Data Science",
+    "body": "New learning path available: 2 fundamentals. Includes: Communication courses, Python projects, Leadership certificate. Call: 542-827-2236",
+    "topic": "training_education",
+    "id": "training_education_1",
+    "generated_at": "2025-09-29T14:53:18.052357"
+  },
+  {
+    "subject": "Phishing Alert: DDoS",
+    "body": "Phishing campaign targeting employees. Subject line: 'SQL Injection'. Indicators: SQL Injection. Report suspicious emails immediately.",
+    "topic": "security_incident",
+    "id": "security_incident_12",
+    "generated_at": "2025-09-29T14:53:18.052759"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "This weekend: 1 on Saturday, 1 on Sunday. Want to join for 1? Let me know! Contact: user8@example.com Meeting: 2025-07-30 at 10:00",
+    "topic": "personal_family",
+    "id": "personal_family_32",
+    "generated_at": "2025-09-29T14:53:18.053572"
+  },
+  {
+    "subject": "A/B Test Results: Dashboard",
+    "body": "Product launch plan for Mobile App: Target date: API, marketing: Analytics, docs: Mobile App, training: Dashboard. Risks: Dashboard.",
+    "topic": "product_development",
+    "id": "product_development_23",
+    "generated_at": "2025-09-29T14:53:18.051973"
+  },
+  {
+    "subject": "Customer Acquisition: Content Quarter",
+    "body": "Sales pipeline review: Content qualified leads, Digital in negotiation, Digital closing this quarter. Win rate: 2%. Meeting: 2025-07-09 at 10:00 Call: 133-982-2671",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_35",
+    "generated_at": "2025-09-29T14:53:18.050868"
+  },
+  {
+    "subject": "Budget Review: 4 Department",
+    "body": "Expense report for 3: Total $51244, categories: travel $3, meals $3, software $3. Approval needed. Meeting: 2025-07-18 at 9:00",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_35",
+    "generated_at": "2025-09-29T14:53:18.051472"
+  },
+  {
+    "subject": "HR Policy Update: 2",
+    "body": "Updated Analyst policy effective Product Manager: Key changes: 2. All employees must acknowledge by Senior Engineer.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_26",
+    "generated_at": "2025-09-29T14:53:18.051072"
+  },
+  {
+    "subject": "Medical Results",
+    "body": "New wellness program: Vision challenges, prizes, tracking app. Goal: improve Dental, Dental, Annual. Call: 842-475-1505",
+    "topic": "health_wellness",
+    "id": "health_wellness_6",
+    "generated_at": "2025-09-29T14:53:18.053668"
+  },
+  {
+    "subject": "Learning Path: 1",
+    "body": "New learning path available: Python fundamentals. Includes: 4 courses, Communication projects, Data Science certificate.",
+    "topic": "training_education",
+    "id": "training_education_17",
+    "generated_at": "2025-09-29T14:53:18.052472"
+  },
+  {
+    "subject": "Technical Incident: Login Down",
+    "body": "Bug found in Production module. Steps to reproduce: 2. Expected behavior: Production. Actual behavior: Database. Stack trace: Payment.",
+    "topic": "technical_support",
+    "id": "technical_support_8",
+    "generated_at": "2025-09-29T14:53:18.050343"
+  },
+  {
+    "subject": "Security Patch: 1",
+    "body": "CRITICAL: Security incident detected. Type: 4. Affected systems: Data Leak. Exposure: Data Leak. Containment: in progress. Meeting: 2025-08-06 at 16:00 Call: 183-640-3799",
+    "topic": "security_incident",
+    "id": "security_incident_35",
+    "generated_at": "2025-09-29T14:53:18.052982"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Legal notice regarding SLA: Action required: Vendor Agreement, deadline: 4, consequences: MSA. Contact legal if questions. Contact: user16@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_14",
+    "generated_at": "2025-09-29T14:53:18.052172"
+  },
+  {
+    "subject": "Project Deliverables for Infrastructure",
+    "body": "The 4 project is progressing well. We've completed Migration of the planned features. Next sprint focuses on Beta. Team velocity is Migration story points per week. Contact: user18@example.com",
+    "topic": "work_project",
+    "id": "work_project_37",
+    "generated_at": "2025-09-29T14:53:18.050190"
+  },
+  {
+    "subject": "Legal Notice: NDA",
+    "body": "Legal notice regarding 3: Action required: MSA, deadline: MSA, consequences: MSA. Contact legal if questions.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_40",
+    "generated_at": "2025-09-29T14:53:18.052347"
+  },
+  {
+    "subject": "Support Ticket #2: Database",
+    "body": "Bug found in Database module. Steps to reproduce: Database. Expected behavior: Payment. Actual behavior: Production. Stack trace: Payment. Contact: user13@example.com Meeting: 2025-09-19 at 16:00",
+    "topic": "technical_support",
+    "id": "technical_support_29",
+    "generated_at": "2025-09-29T14:53:18.050538"
+  },
+  {
+    "subject": "Refund Request: Order #Technical",
+    "body": "Customer Billing reports Feature issue. Order #Feature. Problem: 3. Urgency: Billing. Last contact: Billing. Contact: user5@example.com",
+    "topic": "customer_support",
+    "id": "customer_support_31",
+    "generated_at": "2025-09-29T14:53:18.051730"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Contract review for MSA: Key terms: 3, liability: MSA, termination: 3. Legal review: SLA.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_34",
+    "generated_at": "2025-09-29T14:53:18.052310"
+  },
+  {
+    "subject": "Feature Request: Mobile App",
+    "body": "Feature request from API customers: API. Business value: API. Effort: API story points. Priority: Dashboard.",
+    "topic": "product_development",
+    "id": "product_development_8",
+    "generated_at": "2025-09-29T14:53:18.051873"
+  },
+  {
+    "subject": "Community Event: 2",
+    "body": "You're invited to Park Cleanup at Meetup's place on 3. Casual gathering, bring: BBQ. RSVP: Book Club. Contact: user66@example.com Meeting: 2025-07-20 at 11:00 Call: 255-799-9686",
+    "topic": "social_community",
+    "id": "social_community_5",
+    "generated_at": "2025-09-29T14:53:18.054357"
+  },
+  {
+    "subject": "Wellness Program: Physical",
+    "body": "Lab results available. Key findings: Physical. Follow-up: Vision needed. Next appointment: Annual.",
+    "topic": "health_wellness",
+    "id": "health_wellness_28",
+    "generated_at": "2025-09-29T14:53:18.053808"
+  },
+  {
+    "subject": "Product Question: General",
+    "body": "Customer satisfaction score: Billing%. Common issues: General, General, 4. Average resolution time: Technical hours. Meeting: 2025-09-24 at 10:00 Call: 530-100-8330",
+    "topic": "customer_support",
+    "id": "customer_support_14",
+    "generated_at": "2025-09-29T14:53:18.051613"
+  },
+  {
+    "subject": "Vulnerability: SQL Injection Detected",
+    "body": "Security audit findings: Data Leak high-priority items, Data Leak medium, Data Leak low. Compliance: SQL Injection%. Action plan: SQL Injection.",
+    "topic": "security_incident",
+    "id": "security_incident_25",
+    "generated_at": "2025-09-29T14:53:18.052884"
+  },
+  {
+    "subject": "Appointment: 3 Checkup",
+    "body": "New wellness program: 2 challenges, prizes, tracking app. Goal: improve Vision, Physical, Vision.",
+    "topic": "health_wellness",
+    "id": "health_wellness_19",
+    "generated_at": "2025-09-29T14:53:18.053755"
+  },
+  {
+    "subject": "Product Launch: Dashboard",
+    "body": "A/B test 'Dashboard': Variant A Dashboard% conversion, Variant B Analytics% conversion. Winner: Analytics. Confidence: Dashboard%.",
+    "topic": "product_development",
+    "id": "product_development_9",
+    "generated_at": "2025-09-29T14:53:18.051879"
+  },
+  {
+    "subject": "Order Confirmation: #987215",
+    "body": "FLASH SALE: 682777% off 2 today only! Use code: 682777. Expires: 2. Shop now: 2.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_18",
+    "generated_at": "2025-09-29T14:53:18.054010"
+  },
+  {
+    "subject": "System Alert: Login Degradation",
+    "body": "Production incident: Login service is Database. Root cause: Production. Workaround: 2. ETA for fix: Production. Call: 657-716-9249",
+    "topic": "technical_support",
+    "id": "technical_support_2",
+    "generated_at": "2025-09-29T14:53:18.050228"
+  },
+  {
+    "subject": "Expense Approval: 23444",
+    "body": "Expense report for 65474: Total $4, categories: travel $16611, meals $65474, software $16611. Approval needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_36",
+    "generated_at": "2025-09-29T14:53:18.051478"
+  },
+  {
+    "subject": "Migration Sprint Review and Planning",
+    "body": "Sprint retrospective for Beta: What went well: 3. What needs improvement: Migration. Action items: Platform. Contact: user97@example.com Call: 156-446-7315",
+    "topic": "work_project",
+    "id": "work_project_28",
+    "generated_at": "2025-09-29T14:53:18.050133"
+  },
+  {
+    "subject": "Special Offer: 283408% Off",
+    "body": "Order #967235 confirmed! Items: 4. Total: $967235. Shipping: 967235. Expected delivery: 967235.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_24",
+    "generated_at": "2025-09-29T14:53:18.054050"
+  },
+  {
+    "subject": "Team Onboarding: Analyst Starts Analyst",
+    "body": "QProduct Manager performance reviews: Analyst% completion rate, average rating: Product Manager/5, promotions: Analyst, raises: Senior Engineer%. Contact: user11@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_19",
+    "generated_at": "2025-09-29T14:53:18.051028"
+  },
+  {
+    "subject": "Position Opening: Product Manager - 2 Team",
+    "body": "We're hiring for Analyst: Designer+ years experience, skills: Senior Engineer, location: Analyst, salary range: $Senior Engineer. JD attached. Contact: user72@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_8",
+    "generated_at": "2025-09-29T14:53:18.050958"
+  },
+  {
+    "subject": "Product Launch: Digital Market Analysis",
+    "body": "Sales pipeline review: Digital qualified leads, 2 in negotiation, Content closing this quarter. Win rate: 2%. Contact: user39@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_21",
+    "generated_at": "2025-09-29T14:53:18.050769"
+  },
+  {
+    "subject": "Candidate Interview: Designer for Product Manager",
+    "body": "Interview feedback for 1 (1): Technical skills: 1/5, culture fit: Senior Engineer/5, communication: Senior Engineer/5. Recommendation: 1. Call: 167-106-2510",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_17",
+    "generated_at": "2025-09-29T14:53:18.051016"
+  },
+  {
+    "subject": "Course Enrollment: 1",
+    "body": "Training completion: 3% finished Data Science, Python% passed assessment, 3 hours logged. Next: Communication.",
+    "topic": "training_education",
+    "id": "training_education_39",
+    "generated_at": "2025-09-29T14:53:18.052633"
+  },
+  {
+    "subject": "Product Roadmap: QAnalytics Priorities",
+    "body": "Feature request from Analytics customers: Analytics. Business value: Dashboard. Effort: Mobile App story points. Priority: 3. Contact: user71@example.com",
+    "topic": "product_development",
+    "id": "product_development_21",
+    "generated_at": "2025-09-29T14:53:18.051961"
+  },
+  {
+    "subject": "Technical Incident: Database Down",
+    "body": "Critical issue detected in API system. Error: Login. Impact: Production users affected. Priority: Payment. Investigation started at Production.",
+    "topic": "technical_support",
+    "id": "technical_support_37",
+    "generated_at": "2025-09-29T14:53:18.050596"
+  },
+  {
+    "subject": "Order Confirmation: #362062",
+    "body": "Based on your purchase of 3, you might like: 862063, 3, 862063. Special price: $862063.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_27",
+    "generated_at": "2025-09-29T14:53:18.054076"
+  },
+  {
+    "subject": "Q23974 Financial Report",
+    "body": "Budget variance analysis: 12089 department overspent by 4% due to 8971. Forecast adjustment needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_7",
+    "generated_at": "2025-09-29T14:53:18.051278"
+  },
+  {
+    "subject": "Phishing Alert: DDoS",
+    "body": "Vulnerability DDoS identified in Malware. CVSS score: DDoS. Severity: Data Leak. Patch available: Malware. Apply by: Malware. Contact: user90@example.com Call: 227-239-3303",
+    "topic": "security_incident",
+    "id": "security_incident_24",
+    "generated_at": "2025-09-29T14:53:18.052876"
+  },
+  {
+    "subject": "Review Request: Your Order",
+    "body": "Your package #785249 shipped via 785249. Tracking: 1. Estimated delivery: 1. Track at: 1.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_3",
+    "generated_at": "2025-09-29T14:53:18.053903"
+  },
+  {
+    "subject": "Workshop: Python Skills",
+    "body": "New learning path available: Python fundamentals. Includes: Python courses, Leadership projects, 4 certificate. Contact: user66@example.com",
+    "topic": "training_education",
+    "id": "training_education_25",
+    "generated_at": "2025-09-29T14:53:18.052531"
+  },
+  {
+    "subject": "Privacy Policy Update",
+    "body": "Privacy policy updated per MSA regulations. Changes: MSA, effective: NDA, user notification: 3.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_7",
+    "generated_at": "2025-09-29T14:53:18.052127"
+  },
+  {
+    "subject": "Project Status: Platform - QInfrastructure Update",
+    "body": "Project Migration status: On track for 1 delivery. Key achievements: Migration. Risks: 1. Action items: Beta. Contact: user5@example.com",
+    "topic": "work_project",
+    "id": "work_project_22",
+    "generated_at": "2025-09-29T14:53:18.050092"
+  },
+  {
+    "subject": "Product Question: General",
+    "body": "Customer Feature reports Feature issue. Order #Billing. Problem: Technical. Urgency: Billing. Last contact: General.",
+    "topic": "customer_support",
+    "id": "customer_support_12",
+    "generated_at": "2025-09-29T14:53:18.051593"
+  },
+  {
+    "subject": "Meeting Invite: 3",
+    "body": "Team offsite Quarterly Review: Location: Planning Session, dates: Quarterly Review, activities: Quarterly Review. Goals: team building, strategic planning. Call: 944-289-3424",
+    "topic": "event_meeting",
+    "id": "event_meeting_12",
+    "generated_at": "2025-09-29T14:53:18.053127"
+  },
+  {
+    "subject": "Webinar: All Hands",
+    "body": "Team offsite All Hands: Location: Planning Session, dates: All Hands, activities: 4. Goals: team building, strategic planning. Meeting: 2025-08-07 at 9:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_11",
+    "generated_at": "2025-09-29T14:53:18.053118"
+  },
+  {
+    "subject": "Customer Acquisition: 1 Quarter",
+    "body": "QContent sales performance: Revenue $Email, Digital deals closed, Content pipeline. Top performers: Content. Forecast: Content.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_14",
+    "generated_at": "2025-09-29T14:53:18.050725"
+  },
+  {
+    "subject": "HR Policy Update: Analyst",
+    "body": "Designer joins the Senior Engineer team on Analyst. Onboarding checklist: hardware setup, access provisioning, training schedule. Contact: user37@example.com Meeting: 2025-08-07 at 13:00",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_38",
+    "generated_at": "2025-09-29T14:53:18.051191"
+  },
+  {
+    "subject": "Customer Acquisition: 1 Quarter",
+    "body": "QOutbound sales performance: Revenue $Social, 3 deals closed, 3 pipeline. Top performers: Outbound. Forecast: Content.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_19",
+    "generated_at": "2025-09-29T14:53:18.050757"
+  },
+  {
+    "subject": "Neighborhood Update",
+    "body": "Volunteer opportunity: Book Club needs help with BBQ. Time commitment: 2 hours. Sign up: Meetup.",
+    "topic": "social_community",
+    "id": "social_community_32",
+    "generated_at": "2025-09-29T14:53:18.054558"
+  },
+  {
+    "subject": "Review Request: Your Order",
+    "body": "Order #2 confirmed! Items: 432965. Total: $2. Shipping: 432965. Expected delivery: 432965. Contact: user95@example.com Call: 267-759-9321",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_13",
+    "generated_at": "2025-09-29T14:53:18.053979"
+  },
+  {
+    "subject": "System Alert: API Degradation",
+    "body": "Critical issue detected in 2 system. Error: Login. Impact: Login users affected. Priority: Login. Investigation started at Login. Contact: user64@example.com",
+    "topic": "technical_support",
+    "id": "technical_support_40",
+    "generated_at": "2025-09-29T14:53:18.050622"
+  },
+  {
+    "subject": "Certification Program: Data Science",
+    "body": "New learning path available: Python fundamentals. Includes: Python courses, 2 projects, Leadership certificate. Meeting: 2025-07-11 at 17:00",
+    "topic": "training_education",
+    "id": "training_education_6",
+    "generated_at": "2025-09-29T14:53:18.052395"
+  },
+  {
+    "subject": "Product Launch: Email Market Analysis",
+    "body": "Sales pipeline review: 4 qualified leads, Content in negotiation, 4 closing this quarter. Win rate: Outbound%. Contact: user82@example.com Meeting: 2025-09-07 at 13:00 Call: 889-140-9901",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_34",
+    "generated_at": "2025-09-29T14:53:18.050859"
+  },
+  {
+    "subject": "User Feedback: API Feature",
+    "body": "User feedback on 2: 2% satisfied, common complaints: Dashboard, feature requests: 2. Insights: Dashboard. Contact: user94@example.com",
+    "topic": "product_development",
+    "id": "product_development_16",
+    "generated_at": "2025-09-29T14:53:18.051925"
+  },
+  {
+    "subject": "Support Ticket #Payment: Production",
+    "body": "Bug found in 1 module. Steps to reproduce: Login. Expected behavior: API. Actual behavior: API. Stack trace: Database.",
+    "topic": "technical_support",
+    "id": "technical_support_38",
+    "generated_at": "2025-09-29T14:53:18.050604"
+  },
+  {
+    "subject": "Social Gathering: Book Club",
+    "body": "Neighborhood update: BBQ, Meetup, and Meetup. Meeting on Meetup at 1. All residents welcome.",
+    "topic": "social_community",
+    "id": "social_community_40",
+    "generated_at": "2025-09-29T14:53:18.054623"
+  },
+  {
+    "subject": "Marketing Campaign: Social Results",
+    "body": "QOutbound sales performance: Revenue $Email, Digital deals closed, 3 pipeline. Top performers: Digital. Forecast: Email.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_12",
+    "generated_at": "2025-09-29T14:53:18.050710"
+  },
+  {
+    "subject": "Product Launch: Mobile App",
+    "body": "QDashboard product roadmap: Priority 1: Analytics, Priority 2: Dashboard, Priority 3: Mobile App. Resources: Analytics engineers. Contact: user43@example.com",
+    "topic": "product_development",
+    "id": "product_development_19",
+    "generated_at": "2025-09-29T14:53:18.051949"
+  },
+  {
+    "subject": "Event: All Hands on Quarterly Review",
+    "body": "Webinar 'Quarterly Review' on All Hands. Topics: Quarterly Review, 2, All Hands. Register at: All Hands. Q&A included. Meeting: 2025-07-29 at 16:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_16",
+    "generated_at": "2025-09-29T14:53:18.053167"
+  },
+  {
+    "subject": "Course Enrollment: Leadership",
+    "body": "New learning path available: Communication fundamentals. Includes: Data Science courses, Data Science projects, Data Science certificate.",
+    "topic": "training_education",
+    "id": "training_education_23",
+    "generated_at": "2025-09-29T14:53:18.052515"
+  },
+  {
+    "subject": "Family Update",
+    "body": "This weekend: 2 on Saturday, Sarah on Sunday. Want to join for Mom? Let me know!",
+    "topic": "personal_family",
+    "id": "personal_family_9",
+    "generated_at": "2025-09-29T14:53:18.053402"
+  },
+  {
+    "subject": "Legal Notice: SLA",
+    "body": "Privacy policy updated per MSA regulations. Changes: NDA, effective: NDA, user notification: NDA. Contact: user64@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_3",
+    "generated_at": "2025-09-29T14:53:18.052103"
+  },
+  {
+    "subject": "Webinar: All Hands",
+    "body": "Webinar 'Quarterly Review' on Planning Session. Topics: Planning Session, 3, Quarterly Review. Register at: All Hands. Q&A included. Meeting: 2025-07-17 at 12:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_40",
+    "generated_at": "2025-09-29T14:53:18.053341"
+  },
+  {
+    "subject": "Alpha Milestone Completed - Next Steps",
+    "body": "The Infrastructure project is progressing well. We've completed Beta of the planned features. Next sprint focuses on Beta. Team velocity is Beta story points per week.",
+    "topic": "work_project",
+    "id": "work_project_39",
+    "generated_at": "2025-09-29T14:53:18.050202"
+  },
+  {
+    "subject": "Expense Approval: 10802",
+    "body": "Expense report for 6187: Total $90246, categories: travel $6187, meals $4, software $90246. Approval needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_22",
+    "generated_at": "2025-09-29T14:53:18.051374"
+  },
+  {
+    "subject": "Meeting Invite: All Hands",
+    "body": "Annual conference 'Quarterly Review': All Hands speakers, 4 sessions, networking. Early bird: $4, regular: $Quarterly Review. Contact: user35@example.com Meeting: 2025-07-27 at 16:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_29",
+    "generated_at": "2025-09-29T14:53:18.053264"
+  },
+  {
+    "subject": "Mom's Birthday Party",
+    "body": "Join us for John's birthday on 1! Location: Mom. Time: 1. Bring: 1. RSVP: 1.",
+    "topic": "personal_family",
+    "id": "personal_family_35",
+    "generated_at": "2025-09-29T14:53:18.053590"
+  },
+  {
+    "subject": "Feature Request: Mobile App",
+    "body": "A/B test 'Analytics': Variant A 2% conversion, Variant B API% conversion. Winner: Dashboard. Confidence: 2%. Contact: user38@example.com",
+    "topic": "product_development",
+    "id": "product_development_24",
+    "generated_at": "2025-09-29T14:53:18.051979"
+  },
+  {
+    "subject": "Position Opening: Analyst - 1 Team",
+    "body": "We're hiring for Product Manager: Analyst+ years experience, skills: Product Manager, location: 3, salary range: $3. JD attached. Meeting: 2025-08-23 at 16:00",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_5",
+    "generated_at": "2025-09-29T14:53:18.050940"
+  },
+  {
+    "subject": "Community Event: Park Cleanup",
+    "body": "Community event 'Meetup' this Park Cleanup! Join Book Club neighbors for Park Cleanup. Location: Park Cleanup. Time: 3. Contact: user10@example.com Meeting: 2025-07-04 at 10:00 Call: 386-875-3398",
+    "topic": "social_community",
+    "id": "social_community_8",
+    "generated_at": "2025-09-29T14:53:18.054381"
+  },
+  {
+    "subject": "Course Enrollment: Data Science",
+    "body": "Workshop '1': Learn Communication, Leadership, and Communication. Instructor: Leadership. Materials: included. Capacity: Data Science attendees.",
+    "topic": "training_education",
+    "id": "training_education_22",
+    "generated_at": "2025-09-29T14:53:18.052505"
+  },
+  {
+    "subject": "4's Birthday Party",
+    "body": "This weekend: Kids on Saturday, Sarah on Sunday. Want to join for Sarah? Let me know! Contact: user74@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_10",
+    "generated_at": "2025-09-29T14:53:18.053409"
+  },
+  {
+    "subject": "Vacation Planning: Sarah",
+    "body": "This weekend: 4 on Saturday, Mom on Sunday. Want to join for Kids? Let me know! Meeting: 2025-09-03 at 15:00",
+    "topic": "personal_family",
+    "id": "personal_family_11",
+    "generated_at": "2025-09-29T14:53:18.053418"
+  },
+  {
+    "subject": "Project Deliverables for Platform",
+    "body": "Sprint retrospective for Migration: What went well: Migration. What needs improvement: Beta. Action items: 4.",
+    "topic": "work_project",
+    "id": "work_project_27",
+    "generated_at": "2025-09-29T14:53:18.050125"
+  },
+  {
+    "subject": "System Alert: Database Degradation",
+    "body": "Production incident: API service is Database. Root cause: Production. Workaround: Login. ETA for fix: Database.",
+    "topic": "technical_support",
+    "id": "technical_support_19",
+    "generated_at": "2025-09-29T14:53:18.050461"
+  },
+  {
+    "subject": "Team Onboarding: Senior Engineer Starts Product Manager",
+    "body": "Interview feedback for Analyst (Designer): Technical skills: Product Manager/5, culture fit: Senior Engineer/5, communication: 2/5. Recommendation: Product Manager.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_34",
+    "generated_at": "2025-09-29T14:53:18.051137"
+  },
+  {
+    "subject": "Feature Request: API",
+    "body": "Q4 product roadmap: Priority 1: Dashboard, Priority 2: API, Priority 3: API. Resources: API engineers. Meeting: 2025-09-11 at 13:00",
+    "topic": "product_development",
+    "id": "product_development_15",
+    "generated_at": "2025-09-29T14:53:18.051919"
+  },
+  {
+    "subject": "Alpha Milestone Completed - Next Steps",
+    "body": "Sprint retrospective for Infrastructure: What went well: Infrastructure. What needs improvement: Platform. Action items: 3. Contact: user87@example.com",
+    "topic": "work_project",
+    "id": "work_project_11",
+    "generated_at": "2025-09-29T14:53:18.050015"
+  },
+  {
+    "subject": "Product Recommendation: 4",
+    "body": "How was your recent order #223364? Rate your experience and earn 223364 rewards points. Review: 223364.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_40",
+    "generated_at": "2025-09-29T14:53:18.054175"
+  },
+  {
+    "subject": "Event: All Hands on 3",
+    "body": "Webinar 'Quarterly Review' on All Hands. Topics: Planning Session, 4, All Hands. Register at: 4. Q&A included. Contact: user98@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_38",
+    "generated_at": "2025-09-29T14:53:18.053325"
+  },
+  {
+    "subject": "Technical Help Needed",
+    "body": "Customer Feature reports Technical issue. Order #2. Problem: 2. Urgency: Feature. Last contact: Technical. Contact: user41@example.com",
+    "topic": "customer_support",
+    "id": "customer_support_27",
+    "generated_at": "2025-09-29T14:53:18.051705"
+  },
+  {
+    "subject": "Team Onboarding: Senior Engineer Starts Senior Engineer",
+    "body": "QDesigner performance reviews: Product Manager% completion rate, average rating: Analyst/5, promotions: Analyst, raises: 2%. Contact: user3@example.com Call: 612-623-4008",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_28",
+    "generated_at": "2025-09-29T14:53:18.051087"
+  },
+  {
+    "subject": "Special Offer: 834702% Off",
+    "body": "Based on your purchase of 286141, you might like: 2, 2, 286141. Special price: $286141.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_33",
+    "generated_at": "2025-09-29T14:53:18.054118"
+  },
+  {
+    "subject": "Expense Approval: 4",
+    "body": "Invoice #7804 for $7804 is due on 79489. Services: 79489. Payment terms: net 7804. Account: 79489. Contact: user43@example.com",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_19",
+    "generated_at": "2025-09-29T14:53:18.051356"
+  },
+  {
+    "subject": "Q4 Financial Report",
+    "body": "Payment overdue for invoice #87357. Amount: $87357. Original due date: 87357. Please remit payment ASAP. Contact: user53@example.com",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_10",
+    "generated_at": "2025-09-29T14:53:18.051297"
+  },
+  {
+    "subject": "Payment Reminder: Account 18588",
+    "body": "Budget variance analysis: 4 department overspent by 34623% due to 34623. Forecast adjustment needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_16",
+    "generated_at": "2025-09-29T14:53:18.051338"
+  },
+  {
+    "subject": "Volunteer Opportunity: Book Club",
+    "body": "Neighborhood update: 1, BBQ, and 1. Meeting on BBQ at 1. All residents welcome. Meeting: 2025-07-28 at 11:00",
+    "topic": "social_community",
+    "id": "social_community_34",
+    "generated_at": "2025-09-29T14:53:18.054577"
+  },
+  {
+    "subject": "Conference: All Hands Registration",
+    "body": "Webinar 'Quarterly Review' on 1. Topics: Planning Session, 1, All Hands. Register at: Planning Session. Q&A included. Contact: user90@example.com Meeting: 2025-09-03 at 17:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_22",
+    "generated_at": "2025-09-29T14:53:18.053215"
+  },
+  {
+    "subject": "Webinar: Quarterly Review",
+    "body": "Webinar 'All Hands' on Quarterly Review. Topics: All Hands, Planning Session, Planning Session. Register at: 4. Q&A included. Meeting: 2025-08-17 at 12:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_35",
+    "generated_at": "2025-09-29T14:53:18.053307"
+  },
+  {
+    "subject": "Privacy Policy Update",
+    "body": "Contract review for MSA: Key terms: NDA, liability: Vendor Agreement, termination: SLA. Legal review: 3. Meeting: 2025-07-20 at 9:00",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_16",
+    "generated_at": "2025-09-29T14:53:18.052186"
+  },
+  {
+    "subject": "Technical Incident: Payment Down",
+    "body": "Critical issue detected in Production system. Error: Production. Impact: Payment users affected. Priority: API. Investigation started at Payment. Meeting: 2025-09-16 at 16:00",
+    "topic": "technical_support",
+    "id": "technical_support_21",
+    "generated_at": "2025-09-29T14:53:18.050478"
+  },
+  {
+    "subject": "Conference: Quarterly Review Registration",
+    "body": "You're invited to 4 on Planning Session. Location: All Hands. Agenda: Quarterly Review. RSVP by: Planning Session.",
+    "topic": "event_meeting",
+    "id": "event_meeting_37",
+    "generated_at": "2025-09-29T14:53:18.053319"
+  },
+  {
+    "subject": "Feature Request: Mobile App",
+    "body": "A/B test 'Mobile App': Variant A API% conversion, Variant B Dashboard% conversion. Winner: Analytics. Confidence: Analytics%. Contact: user51@example.com",
+    "topic": "product_development",
+    "id": "product_development_26",
+    "generated_at": "2025-09-29T14:53:18.051996"
+  },
+  {
+    "subject": "Support Ticket #3: Billing",
+    "body": "Support ticket #General: 3 questions about 3. Response time: General hours. Status: Feature.",
+    "topic": "customer_support",
+    "id": "customer_support_40",
+    "generated_at": "2025-09-29T14:53:18.051807"
+  },
+  {
+    "subject": "Wellness Program: Annual",
+    "body": "Health insurance enrollment: Plan options: Dental, Vision, 2. Deadline: 2. Benefits: Vision.",
+    "topic": "health_wellness",
+    "id": "health_wellness_7",
+    "generated_at": "2025-09-29T14:53:18.053674"
+  },
+  {
+    "subject": "Performance Review: QSenior Engineer Cycle",
+    "body": "Interview feedback for Designer (Senior Engineer): Technical skills: Analyst/5, culture fit: Analyst/5, communication: Designer/5. Recommendation: Designer.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_25",
+    "generated_at": "2025-09-29T14:53:18.051066"
+  },
+  {
+    "subject": "Wellness Program: Dental",
+    "body": "New wellness program: Vision challenges, prizes, tracking app. Goal: improve 3, Dental, Annual.",
+    "topic": "health_wellness",
+    "id": "health_wellness_33",
+    "generated_at": "2025-09-29T14:53:18.053838"
+  },
+  {
+    "subject": "Marketing Campaign: Outbound Results",
+    "body": "Sales pipeline review: 3 qualified leads, Outbound in negotiation, Content closing this quarter. Win rate: Outbound%.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_3",
+    "generated_at": "2025-09-29T14:53:18.050651"
+  },
+  {
+    "subject": "Payment Reminder: Account 2",
+    "body": "Q4 financials: Revenue $84567, expenses $4, profit margin 4%, burn rate $4/month, runway 46403 months.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_40",
+    "generated_at": "2025-09-29T14:53:18.051502"
+  },
+  {
+    "subject": "Customer Inquiry: Technical Issue",
+    "body": "Escalated case #Feature: Customer 1 frustrated with Technical. History: General previous tickets. Action: Technical. Contact: user67@example.com",
+    "topic": "customer_support",
+    "id": "customer_support_29",
+    "generated_at": "2025-09-29T14:53:18.051718"
+  },
+  {
+    "subject": "Course Enrollment: Communication",
+    "body": "Training on Python scheduled for Python. Duration: Python hours. Prerequisites: Data Science. Registration: Python.",
+    "topic": "training_education",
+    "id": "training_education_11",
+    "generated_at": "2025-09-29T14:53:18.052429"
+  },
+  {
+    "subject": "Support Ticket #Technical: Feature",
+    "body": "Support ticket #General: Feature questions about Billing. Response time: Billing hours. Status: Technical.",
+    "topic": "customer_support",
+    "id": "customer_support_39",
+    "generated_at": "2025-09-29T14:53:18.051799"
+  },
+  {
+    "subject": "Product Roadmap: QDashboard Priorities",
+    "body": "Product launch plan for 1: Target date: Analytics, marketing: 1, docs: API, training: API. Risks: 1. Contact: user18@example.com",
+    "topic": "product_development",
+    "id": "product_development_34",
+    "generated_at": "2025-09-29T14:53:18.052048"
+  },
+  {
+    "subject": "Product Question: 2",
+    "body": "Support ticket #Technical: General questions about Billing. Response time: 2 hours. Status: Technical. Contact: user56@example.com Meeting: 2025-08-11 at 10:00",
+    "topic": "customer_support",
+    "id": "customer_support_8",
+    "generated_at": "2025-09-29T14:53:18.051562"
+  },
+  {
+    "subject": "Shipping Update: Package #2",
+    "body": "Order #4 confirmed! Items: 570064. Total: $4. Shipping: 570064. Expected delivery: 4. Contact: user34@example.com Meeting: 2025-08-16 at 11:00",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_26",
+    "generated_at": "2025-09-29T14:53:18.054067"
+  },
+  {
+    "subject": "Order Confirmation: #3",
+    "body": "Based on your purchase of 513464, you might like: 3, 3, 3. Special price: $513464. Contact: user85@example.com Call: 920-859-5999",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_21",
+    "generated_at": "2025-09-29T14:53:18.054031"
+  },
+  {
+    "subject": "Kids's Birthday Party",
+    "body": "Family reunion at 1 from Mom to Kids. Accommodations: Mom. Activities: Kids. Looking forward to seeing everyone! Call: 846-315-7766",
+    "topic": "personal_family",
+    "id": "personal_family_12",
+    "generated_at": "2025-09-29T14:53:18.053425"
+  },
+  {
+    "subject": "Project Status: Alpha - QAlpha Update",
+    "body": "Quick update on Platform: Backend API is Migration, frontend is Platform, database migration is Migration. Blockers: Migration. ETA: Migration. Meeting: 2025-07-24 at 12:00",
+    "topic": "work_project",
+    "id": "work_project_26",
+    "generated_at": "2025-09-29T14:53:18.050119"
+  },
+  {
+    "subject": "Phishing Alert: SQL Injection",
+    "body": "Vulnerability DDoS identified in DDoS. CVSS score: SQL Injection. Severity: SQL Injection. Patch available: DDoS. Apply by: Data Leak.",
+    "topic": "security_incident",
+    "id": "security_incident_29",
+    "generated_at": "2025-09-29T14:53:18.052923"
+  },
+  {
+    "subject": "Learning Path: Data Science",
+    "body": "Training on Python scheduled for 2. Duration: Leadership hours. Prerequisites: 2. Registration: Python. Contact: user57@example.com Meeting: 2025-09-25 at 13:00 Call: 748-668-1616",
+    "topic": "training_education",
+    "id": "training_education_13",
+    "generated_at": "2025-09-29T14:53:18.052445"
+  },
+  {
+    "subject": "Health Insurance: Dental",
+    "body": "New wellness program: Vision challenges, prizes, tracking app. Goal: improve Vision, Annual, Vision. Meeting: 2025-09-12 at 10:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_34",
+    "generated_at": "2025-09-29T14:53:18.053846"
+  },
+  {
+    "subject": "Group Discussion: Park Cleanup",
+    "body": "Neighborhood update: BBQ, Book Club, and 2. Meeting on Book Club at Book Club. All residents welcome.",
+    "topic": "social_community",
+    "id": "social_community_39",
+    "generated_at": "2025-09-29T14:53:18.054615"
+  },
+  {
+    "subject": "Candidate Interview: Analyst for Analyst",
+    "body": "Interview feedback for 1 (Product Manager): Technical skills: Senior Engineer/5, culture fit: 1/5, communication: 1/5. Recommendation: 1.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_7",
+    "generated_at": "2025-09-29T14:53:18.050952"
+  },
+  {
+    "subject": "Product Recommendation: 239480",
+    "body": "Order #972067 confirmed! Items: 972067. Total: $1. Shipping: 1. Expected delivery: 972067.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_36",
+    "generated_at": "2025-09-29T14:53:18.054142"
+  },
+  {
+    "subject": "Meeting Invite: Quarterly Review",
+    "body": "Team offsite Quarterly Review: Location: Quarterly Review, dates: All Hands, activities: Planning Session. Goals: team building, strategic planning. Contact: user83@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_26",
+    "generated_at": "2025-09-29T14:53:18.053240"
+  },
+  {
+    "subject": "Q2 Sales Targets - Social Region",
+    "body": "Sales pipeline review: Outbound qualified leads, Digital in negotiation, Digital closing this quarter. Win rate: Email%.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_7",
+    "generated_at": "2025-09-29T14:53:18.050679"
+  },
+  {
+    "subject": "Performance Review: QSenior Engineer Cycle",
+    "body": "We're hiring for Analyst: Product Manager+ years experience, skills: Designer, location: Product Manager, salary range: $Senior Engineer. JD attached.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_24",
+    "generated_at": "2025-09-29T14:53:18.051060"
+  },
+  {
+    "subject": "4's Birthday Party",
+    "body": "Family reunion at John from Mom to Sarah. Accommodations: Sarah. Activities: Kids. Looking forward to seeing everyone! Contact: user2@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_37",
+    "generated_at": "2025-09-29T14:53:18.053602"
+  },
+  {
+    "subject": "Health Insurance: 4",
+    "body": "Fitness challenge update: Physical completed this week, 2 participants, leader: Dental. Keep it up! Contact: user63@example.com Meeting: 2025-08-02 at 16:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_2",
+    "generated_at": "2025-09-29T14:53:18.053636"
+  },
+  {
+    "subject": "User Feedback: Mobile App Feature",
+    "body": "A/B test 'Analytics': Variant A 4% conversion, Variant B 4% conversion. Winner: Mobile App. Confidence: Analytics%.",
+    "topic": "product_development",
+    "id": "product_development_12",
+    "generated_at": "2025-09-29T14:53:18.051898"
+  },
+  {
+    "subject": "Infrastructure Sprint Review and Planning",
+    "body": "Alpha project requires attention. Current status: Alpha. Critical path: Beta. Resources needed: Alpha.",
+    "topic": "work_project",
+    "id": "work_project_36",
+    "generated_at": "2025-09-29T14:53:18.050183"
+  },
+  {
+    "subject": "Marketing Campaign: 4 Results",
+    "body": "Market analysis for Content: TAM $Outbound, competitors: 3, our USP: Email, growth rate: Digital% YoY. Contact: user3@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_40",
+    "generated_at": "2025-09-29T14:53:18.050903"
+  },
+  {
+    "subject": "Product Launch: 4",
+    "body": "Feature request from 1 customers: Mobile App. Business value: API. Effort: Analytics story points. Priority: Dashboard.",
+    "topic": "product_development",
+    "id": "product_development_32",
+    "generated_at": "2025-09-29T14:53:18.052035"
+  },
+  {
+    "subject": "Order Confirmation: #3",
+    "body": "Your package #423660 shipped via 423660. Tracking: 1. Estimated delivery: 423660. Track at: 1.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_7",
+    "generated_at": "2025-09-29T14:53:18.053932"
+  },
+  {
+    "subject": "Performance Review: QAnalyst Cycle",
+    "body": "QAnalyst performance reviews: Product Manager% completion rate, average rating: Product Manager/5, promotions: Analyst, raises: 3%.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_16",
+    "generated_at": "2025-09-29T14:53:18.051009"
+  },
+  {
+    "subject": "Customer Inquiry: Feature Issue",
+    "body": "Escalated case #Billing: Customer 4 frustrated with Technical. History: 4 previous tickets. Action: Billing. Contact: user59@example.com",
+    "topic": "customer_support",
+    "id": "customer_support_33",
+    "generated_at": "2025-09-29T14:53:18.051744"
+  },
+  {
+    "subject": "Product Question: General",
+    "body": "Customer 1 reports 1 issue. Order #1. Problem: Technical. Urgency: Technical. Last contact: Billing.",
+    "topic": "customer_support",
+    "id": "customer_support_1",
+    "generated_at": "2025-09-29T14:53:18.051509"
+  },
+  {
+    "subject": "Event: 1 on Quarterly Review",
+    "body": "Annual conference '1': All Hands speakers, Planning Session sessions, networking. Early bird: $Quarterly Review, regular: $All Hands. Contact: user19@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_23",
+    "generated_at": "2025-09-29T14:53:18.053222"
+  },
+  {
+    "subject": "Invoice #44331: $1",
+    "body": "Q3 financials: Revenue $18212, expenses $51502, profit margin 3%, burn rate $18212/month, runway 51502 months.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_23",
+    "generated_at": "2025-09-29T14:53:18.051380"
+  },
+  {
+    "subject": "Conference: All Hands Registration",
+    "body": "Team offsite Planning Session: Location: 1, dates: Quarterly Review, activities: 1. Goals: team building, strategic planning.",
+    "topic": "event_meeting",
+    "id": "event_meeting_33",
+    "generated_at": "2025-09-29T14:53:18.053291"
+  },
+  {
+    "subject": "Vulnerability: Malware Detected",
+    "body": "Security audit findings: DDoS high-priority items, SQL Injection medium, Malware low. Compliance: DDoS%. Action plan: Data Leak. Contact: user52@example.com",
+    "topic": "security_incident",
+    "id": "security_incident_28",
+    "generated_at": "2025-09-29T14:53:18.052915"
+  },
+  {
+    "subject": "Team Sync: Beta Discussion Points",
+    "body": "Sprint retrospective for Infrastructure: What went well: Infrastructure. What needs improvement: Infrastructure. Action items: Platform.",
+    "topic": "work_project",
+    "id": "work_project_12",
+    "generated_at": "2025-09-29T14:53:18.050021"
+  },
+  {
+    "subject": "System Alert: Login Degradation",
+    "body": "User reports API error when Production. Frequency: 4 per hour. Severity: API. Logs: 4. Next steps: Payment.",
+    "topic": "technical_support",
+    "id": "technical_support_22",
+    "generated_at": "2025-09-29T14:53:18.050484"
+  },
+  {
+    "subject": "Team Offsite: Planning Session",
+    "body": "Annual conference 'Quarterly Review': 2 speakers, Quarterly Review sessions, networking. Early bird: $Quarterly Review, regular: $All Hands. Contact: user90@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_30",
+    "generated_at": "2025-09-29T14:53:18.053270"
+  },
+  {
+    "subject": "Team Sync: Platform Discussion Points",
+    "body": "Alpha project requires attention. Current status: Beta. Critical path: Beta. Resources needed: 3.",
+    "topic": "work_project",
+    "id": "work_project_6",
+    "generated_at": "2025-09-29T14:53:18.049983"
+  },
+  {
+    "subject": "Incident Report: SQL Injection Breach",
+    "body": "Phishing campaign targeting employees. Subject line: 'SQL Injection'. Indicators: Malware. Report suspicious emails immediately.",
+    "topic": "security_incident",
+    "id": "security_incident_37",
+    "generated_at": "2025-09-29T14:53:18.052998"
+  },
+  {
+    "subject": "Volunteer Opportunity: Park Cleanup",
+    "body": "Community event 'Park Cleanup' this BBQ! Join 4 neighbors for 4. Location: Meetup. Time: Park Cleanup.",
+    "topic": "social_community",
+    "id": "social_community_21",
+    "generated_at": "2025-09-29T14:53:18.054480"
+  },
+  {
+    "subject": "Incident Report: Data Leak Breach",
+    "body": "CRITICAL: Security incident detected. Type: Malware. Affected systems: Data Leak. Exposure: Data Leak. Containment: in progress. Meeting: 2025-09-20 at 10:00",
+    "topic": "security_incident",
+    "id": "security_incident_27",
+    "generated_at": "2025-09-29T14:53:18.052906"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Family reunion at Kids from John to 1. Accommodations: 1. Activities: 1. Looking forward to seeing everyone!",
+    "topic": "personal_family",
+    "id": "personal_family_30",
+    "generated_at": "2025-09-29T14:53:18.053557"
+  },
+  {
+    "subject": "Social Gathering: Meetup",
+    "body": "You're invited to BBQ at Meetup's place on Park Cleanup. Casual gathering, bring: BBQ. RSVP: Book Club.",
+    "topic": "social_community",
+    "id": "social_community_19",
+    "generated_at": "2025-09-29T14:53:18.054465"
+  },
+  {
+    "subject": "Payment Reminder: Account 30500",
+    "body": "Invoice #29732 for $29732 is due on 16554. Services: 16554. Payment terms: net 29732. Account: 1.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_34",
+    "generated_at": "2025-09-29T14:53:18.051463"
+  },
+  {
+    "subject": "Customer Inquiry: General Issue",
+    "body": "Customer satisfaction score: Technical%. Common issues: Feature, 4, Feature. Average resolution time: General hours. Contact: user5@example.com Meeting: 2025-08-15 at 9:00",
+    "topic": "customer_support",
+    "id": "customer_support_7",
+    "generated_at": "2025-09-29T14:53:18.051552"
+  },
+  {
+    "subject": "Invoice #1: $17982",
+    "body": "Payment overdue for invoice #51881. Amount: $1. Original due date: 1. Please remit payment ASAP.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_37",
+    "generated_at": "2025-09-29T14:53:18.051483"
+  },
+  {
+    "subject": "Invoice #46921: $4",
+    "body": "Expense report for 49679: Total $2, categories: travel $2, meals $2, software $2. Approval needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_13",
+    "generated_at": "2025-09-29T14:53:18.051318"
+  },
+  {
+    "subject": "A/B Test Results: Analytics",
+    "body": "User feedback on Dashboard: Analytics% satisfied, common complaints: Analytics, feature requests: 2. Insights: API. Meeting: 2025-08-22 at 9:00 Call: 295-288-2576",
+    "topic": "product_development",
+    "id": "product_development_25",
+    "generated_at": "2025-09-29T14:53:18.051989"
+  },
+  {
+    "subject": "User Feedback: Analytics Feature",
+    "body": "User feedback on Mobile App: Analytics% satisfied, common complaints: Analytics, feature requests: API. Insights: API. Contact: user91@example.com",
+    "topic": "product_development",
+    "id": "product_development_11",
+    "generated_at": "2025-09-29T14:53:18.051892"
+  },
+  {
+    "subject": "ISSUE: Payment - Database Environment",
+    "body": "Bug found in Production module. Steps to reproduce: Login. Expected behavior: API. Actual behavior: API. Stack trace: Payment. Contact: user77@example.com Meeting: 2025-09-08 at 13:00",
+    "topic": "technical_support",
+    "id": "technical_support_25",
+    "generated_at": "2025-09-29T14:53:18.050507"
+  },
+  {
+    "subject": "Team Sync: Migration Discussion Points",
+    "body": "Infrastructure project requires attention. Current status: Platform. Critical path: Beta. Resources needed: Migration.",
+    "topic": "work_project",
+    "id": "work_project_8",
+    "generated_at": "2025-09-29T14:53:18.049996"
+  },
+  {
+    "subject": "Appointment: Physical Checkup",
+    "body": "New wellness program: 4 challenges, prizes, tracking app. Goal: improve Dental, 4, Dental.",
+    "topic": "health_wellness",
+    "id": "health_wellness_27",
+    "generated_at": "2025-09-29T14:53:18.053802"
+  },
+  {
+    "subject": "System Alert: Production Degradation",
+    "body": "Bug found in API module. Steps to reproduce: 2. Expected behavior: Database. Actual behavior: 2. Stack trace: API. Contact: user81@example.com",
+    "topic": "technical_support",
+    "id": "technical_support_23",
+    "generated_at": "2025-09-29T14:53:18.050491"
+  },
+  {
+    "subject": "Q3849 Financial Report",
+    "body": "Invoice #98858 for $29084 is due on 98858. Services: 29084. Payment terms: net 98858. Account: 98858. Contact: user80@example.com Meeting: 2025-07-13 at 9:00",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_25",
+    "generated_at": "2025-09-29T14:53:18.051396"
+  },
+  {
+    "subject": "Expense Approval: 37107",
+    "body": "Invoice #16292 for $1 is due on 1. Services: 16292. Payment terms: net 50434. Account: 16292.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_32",
+    "generated_at": "2025-09-29T14:53:18.051451"
+  },
+  {
+    "subject": "Candidate Interview: 3 for Designer",
+    "body": "Analyst joins the Senior Engineer team on 2. Onboarding checklist: hardware setup, access provisioning, training schedule.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_36",
+    "generated_at": "2025-09-29T14:53:18.051173"
+  },
+  {
+    "subject": "Training Session: 2",
+    "body": "Workshop 'Data Science': Learn Communication, Data Science, and Python. Instructor: Data Science. Materials: included. Capacity: Leadership attendees.",
+    "topic": "training_education",
+    "id": "training_education_15",
+    "generated_at": "2025-09-29T14:53:18.052457"
+  },
+  {
+    "subject": "Health Insurance: Dental",
+    "body": "Lab results available. Key findings: Dental. Follow-up: Dental needed. Next appointment: Physical.",
+    "topic": "health_wellness",
+    "id": "health_wellness_20",
+    "generated_at": "2025-09-29T14:53:18.053761"
+  },
+  {
+    "subject": "Wellness Program: Annual",
+    "body": "Fitness challenge update: 2 completed this week, Dental participants, leader: Annual. Keep it up! Contact: user47@example.com",
+    "topic": "health_wellness",
+    "id": "health_wellness_24",
+    "generated_at": "2025-09-29T14:53:18.053784"
+  },
+  {
+    "subject": "User Feedback: 1 Feature",
+    "body": "A/B test 'Analytics': Variant A Analytics% conversion, Variant B Analytics% conversion. Winner: Mobile App. Confidence: API%.",
+    "topic": "product_development",
+    "id": "product_development_39",
+    "generated_at": "2025-09-29T14:53:18.052077"
+  },
+  {
+    "subject": "Meeting Invite: Quarterly Review",
+    "body": "Annual conference 'All Hands': Planning Session speakers, 3 sessions, networking. Early bird: $3, regular: $3. Contact: user88@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_28",
+    "generated_at": "2025-09-29T14:53:18.053255"
+  },
+  {
+    "subject": "Feature Request: API",
+    "body": "Feature request from Dashboard customers: API. Business value: API. Effort: Mobile App story points. Priority: 1. Contact: user34@example.com Meeting: 2025-08-12 at 15:00",
+    "topic": "product_development",
+    "id": "product_development_31",
+    "generated_at": "2025-09-29T14:53:18.052029"
+  },
+  {
+    "subject": "Fitness Challenge: Dental",
+    "body": "New wellness program: Physical challenges, prizes, tracking app. Goal: improve Annual, Dental, Dental.",
+    "topic": "health_wellness",
+    "id": "health_wellness_29",
+    "generated_at": "2025-09-29T14:53:18.053813"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Privacy policy updated per Vendor Agreement regulations. Changes: NDA, effective: SLA, user notification: MSA. Contact: user25@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_5",
+    "generated_at": "2025-09-29T14:53:18.052115"
+  },
+  {
+    "subject": "Family Update",
+    "body": "Planning Kids vacation for Sarah. Considering: John, Sarah, or 1. Budget: $1. Thoughts?",
+    "topic": "personal_family",
+    "id": "personal_family_3",
+    "generated_at": "2025-09-29T14:53:18.053363"
+  },
+  {
+    "subject": "Community Event: BBQ",
+    "body": "Neighborhood update: 4, BBQ, and Meetup. Meeting on BBQ at Book Club. All residents welcome. Contact: user24@example.com",
+    "topic": "social_community",
+    "id": "social_community_10",
+    "generated_at": "2025-09-29T14:53:18.054394"
+  },
+  {
+    "subject": "Phishing Alert: Data Leak",
+    "body": "Phishing campaign targeting employees. Subject line: 'DDoS'. Indicators: Data Leak. Report suspicious emails immediately. Contact: user39@example.com Meeting: 2025-09-27 at 9:00",
+    "topic": "security_incident",
+    "id": "security_incident_20",
+    "generated_at": "2025-09-29T14:53:18.052846"
+  },
+  {
+    "subject": "Product Recommendation: 621875",
+    "body": "How was your recent order #2? Rate your experience and earn 2 rewards points. Review: 703173.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_30",
+    "generated_at": "2025-09-29T14:53:18.054095"
+  },
+  {
+    "subject": "Candidate Interview: Analyst for Designer",
+    "body": "Updated Designer policy effective Product Manager: Key changes: Analyst. All employees must acknowledge by Analyst. Contact: user62@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_1",
+    "generated_at": "2025-09-29T14:53:18.050911"
+  },
+  {
+    "subject": "Community Event: Book Club",
+    "body": "Community event 'Meetup' this Park Cleanup! Join BBQ neighbors for BBQ. Location: 4. Time: 4.",
+    "topic": "social_community",
+    "id": "social_community_28",
+    "generated_at": "2025-09-29T14:53:18.054532"
+  },
+  {
+    "subject": "Product Launch: 2",
+    "body": "User feedback on Analytics: Analytics% satisfied, common complaints: Dashboard, feature requests: 2. Insights: 2.",
+    "topic": "product_development",
+    "id": "product_development_40",
+    "generated_at": "2025-09-29T14:53:18.052083"
+  },
+  {
+    "subject": "Bug Report: Login in Payment Module",
+    "body": "Performance degradation in Login: Response time increased Login%. CPU utilization: Production%. Memory: Login%. Database queries: slow. Meeting: 2025-07-29 at 10:00",
+    "topic": "technical_support",
+    "id": "technical_support_3",
+    "generated_at": "2025-09-29T14:53:18.050239"
+  },
+  {
+    "subject": "Privacy Policy Update",
+    "body": "Compliance audit for NDA: Findings: NDA, severity: NDA, remediation: 1, deadline: Vendor Agreement.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_31",
+    "generated_at": "2025-09-29T14:53:18.052291"
+  },
+  {
+    "subject": "Event: Planning Session on 3",
+    "body": "Webinar 'Quarterly Review' on Quarterly Review. Topics: 4, All Hands, All Hands. Register at: Planning Session. Q&A included. Contact: user23@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_7",
+    "generated_at": "2025-09-29T14:53:18.053079"
+  },
+  {
+    "subject": "Neighborhood Update",
+    "body": "Community event '4' this 4! Join 4 neighbors for Park Cleanup. Location: BBQ. Time: BBQ.",
+    "topic": "social_community",
+    "id": "social_community_16",
+    "generated_at": "2025-09-29T14:53:18.054446"
+  },
+  {
+    "subject": "Volunteer Opportunity: BBQ",
+    "body": "Active discussion on Meetup: 4 comments, 4 participants. Top insights: Park Cleanup. Join at: 4. Call: 300-466-8985",
+    "topic": "social_community",
+    "id": "social_community_12",
+    "generated_at": "2025-09-29T14:53:18.054415"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Planning John vacation for John. Considering: 3, Kids, or John. Budget: $Mom. Thoughts?",
+    "topic": "personal_family",
+    "id": "personal_family_38",
+    "generated_at": "2025-09-29T14:53:18.053608"
+  },
+  {
+    "subject": "Q53892 Financial Report",
+    "body": "Expense report for 49509: Total $3, categories: travel $755, meals $755, software $755. Approval needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_33",
+    "generated_at": "2025-09-29T14:53:18.051457"
+  },
+  {
+    "subject": "Security Patch: SQL Injection",
+    "body": "Incident response for DDoS: Detection time: 2, containment: SQL Injection, investigation: Malware, remediation: SQL Injection.",
+    "topic": "security_incident",
+    "id": "security_incident_2",
+    "generated_at": "2025-09-29T14:53:18.052661"
+  },
+  {
+    "subject": "A/B Test Results: Mobile App",
+    "body": "A/B test '2': Variant A 2% conversion, Variant B 2% conversion. Winner: API. Confidence: Analytics%.",
+    "topic": "product_development",
+    "id": "product_development_13",
+    "generated_at": "2025-09-29T14:53:18.051904"
+  },
+  {
+    "subject": "Position Opening: Product Manager - Designer Team",
+    "body": "Designer joins the Designer team on Designer. Onboarding checklist: hardware setup, access provisioning, training schedule.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_32",
+    "generated_at": "2025-09-29T14:53:18.051120"
+  },
+  {
+    "subject": "Product Recommendation: 619021",
+    "body": "Based on your purchase of 385907, you might like: 385907, 4, 385907. Special price: $385907.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_9",
+    "generated_at": "2025-09-29T14:53:18.053946"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Join us for 3's birthday on Sarah! Location: 3. Time: 3. Bring: John. RSVP: Kids. Contact: user66@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_16",
+    "generated_at": "2025-09-29T14:53:18.053458"
+  },
+  {
+    "subject": "Medical Results",
+    "body": "Health insurance enrollment: Plan options: Vision, Annual, Annual. Deadline: Annual. Benefits: Vision. Contact: user79@example.com",
+    "topic": "health_wellness",
+    "id": "health_wellness_12",
+    "generated_at": "2025-09-29T14:53:18.053707"
+  },
+  {
+    "subject": "Training Session: Communication",
+    "body": "Workshop '3': Learn 3, 3, and 3. Instructor: Python. Materials: included. Capacity: Python attendees.",
+    "topic": "training_education",
+    "id": "training_education_12",
+    "generated_at": "2025-09-29T14:53:18.052435"
+  },
+  {
+    "subject": "Marketing Campaign: Outbound Results",
+    "body": "Sales pipeline review: Outbound qualified leads, Content in negotiation, Outbound closing this quarter. Win rate: Outbound%. Contact: user90@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_15",
+    "generated_at": "2025-09-29T14:53:18.050731"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Contract review for Vendor Agreement: Key terms: 3, liability: Vendor Agreement, termination: NDA. Legal review: SLA. Contact: user35@example.com Meeting: 2025-07-25 at 9:00",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_21",
+    "generated_at": "2025-09-29T14:53:18.052221"
+  },
+  {
+    "subject": "Privacy Policy Update",
+    "body": "Legal notice regarding 3: Action required: MSA, deadline: SLA, consequences: 3. Contact legal if questions.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_17",
+    "generated_at": "2025-09-29T14:53:18.052192"
+  },
+  {
+    "subject": "Refund Request: Order #Technical",
+    "body": "Customer satisfaction score: Billing%. Common issues: 3, Feature, Billing. Average resolution time: Technical hours. Contact: user66@example.com Meeting: 2025-07-07 at 17:00",
+    "topic": "customer_support",
+    "id": "customer_support_10",
+    "generated_at": "2025-09-29T14:53:18.051577"
+  },
+  {
+    "subject": "Payment Reminder: Account 43758",
+    "body": "Q3 financials: Revenue $94950, expenses $94950, profit margin 3%, burn rate $14762/month, runway 94950 months.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_18",
+    "generated_at": "2025-09-29T14:53:18.051350"
+  },
+  {
+    "subject": "User Feedback: API Feature",
+    "body": "Product launch plan for 1: Target date: Analytics, marketing: Mobile App, docs: API, training: Dashboard. Risks: Analytics.",
+    "topic": "product_development",
+    "id": "product_development_38",
+    "generated_at": "2025-09-29T14:53:18.052072"
+  },
+  {
+    "subject": "A/B Test Results: Analytics",
+    "body": "QAnalytics product roadmap: Priority 1: Dashboard, Priority 2: 2, Priority 3: Dashboard. Resources: 2 engineers.",
+    "topic": "product_development",
+    "id": "product_development_22",
+    "generated_at": "2025-09-29T14:53:18.051967"
+  },
+  {
+    "subject": "QOutbound Sales Targets - Email Region",
+    "body": "Market analysis for Email: TAM $Outbound, competitors: Digital, our USP: 4, growth rate: 4% YoY.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_5",
+    "generated_at": "2025-09-29T14:53:18.050663"
+  },
+  {
+    "subject": "Team Onboarding: 2 Starts Designer",
+    "body": "We're hiring for Designer: Senior Engineer+ years experience, skills: 2, location: Analyst, salary range: $Analyst. JD attached.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_4",
+    "generated_at": "2025-09-29T14:53:18.050930"
+  },
+  {
+    "subject": "Appointment: Annual Checkup",
+    "body": "Appointment reminder: 2 checkup on Annual at Annual. Location: Vision. Bring: insurance card, ID. Contact: user98@example.com Meeting: 2025-08-05 at 15:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_11",
+    "generated_at": "2025-09-29T14:53:18.053700"
+  },
+  {
+    "subject": "4 Milestone Completed - Next Steps",
+    "body": "Project Infrastructure status: On track for Migration delivery. Key achievements: Platform. Risks: Alpha. Action items: Platform.",
+    "topic": "work_project",
+    "id": "work_project_20",
+    "generated_at": "2025-09-29T14:53:18.050074"
+  },
+  {
+    "subject": "Customer Acquisition: 2 Quarter",
+    "body": "Sales pipeline review: Digital qualified leads, Social in negotiation, Email closing this quarter. Win rate: 4%. Contact: user39@example.com Meeting: 2025-08-21 at 12:00",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_6",
+    "generated_at": "2025-09-29T14:53:18.050673"
+  },
+  {
+    "subject": "Performance Review: Q2 Cycle",
+    "body": "We're hiring for Analyst: Senior Engineer+ years experience, skills: Senior Engineer, location: Analyst, salary range: $Senior Engineer. JD attached.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_11",
+    "generated_at": "2025-09-29T14:53:18.050976"
+  },
+  {
+    "subject": "Shipping Update: Package #371862",
+    "body": "Your package #1 shipped via 350445. Tracking: 1. Estimated delivery: 1. Track at: 1.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_16",
+    "generated_at": "2025-09-29T14:53:18.053998"
+  },
+  {
+    "subject": "Product Launch: Digital Market Analysis",
+    "body": "Sales pipeline review: Social qualified leads, Social in negotiation, 4 closing this quarter. Win rate: Digital%.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_33",
+    "generated_at": "2025-09-29T14:53:18.050849"
+  },
+  {
+    "subject": "Invoice #42874: $29439",
+    "body": "Budget variance analysis: 44577 department overspent by 76000% due to 76000. Forecast adjustment needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_9",
+    "generated_at": "2025-09-29T14:53:18.051290"
+  },
+  {
+    "subject": "Customer Acquisition: Outbound Quarter",
+    "body": "Social campaign metrics: Digital leads generated, Digital% conversion, Content CAC, Digital ROI. Next steps: Digital. Contact: user57@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_4",
+    "generated_at": "2025-09-29T14:53:18.050658"
+  },
+  {
+    "subject": "Workshop: 2 Skills",
+    "body": "Workshop 'Python': Learn Data Science, Communication, and 2. Instructor: Python. Materials: included. Capacity: Data Science attendees.",
+    "topic": "training_education",
+    "id": "training_education_33",
+    "generated_at": "2025-09-29T14:53:18.052588"
+  },
+  {
+    "subject": "Position Opening: Senior Engineer - Analyst Team",
+    "body": "Updated Analyst policy effective Analyst: Key changes: Product Manager. All employees must acknowledge by 2.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_20",
+    "generated_at": "2025-09-29T14:53:18.051034"
+  },
+  {
+    "subject": "Customer Inquiry: 4 Issue",
+    "body": "Customer 2 reports Technical issue. Order #2. Problem: Technical. Urgency: General. Last contact: Feature. Call: 717-611-5325",
+    "topic": "customer_support",
+    "id": "customer_support_15",
+    "generated_at": "2025-09-29T14:53:18.051619"
+  },
+  {
+    "subject": "Alpha Sprint Review and Planning",
+    "body": "Project Platform status: On track for Infrastructure delivery. Key achievements: Platform. Risks: Beta. Action items: Migration.",
+    "topic": "work_project",
+    "id": "work_project_17",
+    "generated_at": "2025-09-29T14:53:18.050054"
+  },
+  {
+    "subject": "Conference: Quarterly Review Registration",
+    "body": "Webinar '2' on Quarterly Review. Topics: Planning Session, Planning Session, Planning Session. Register at: Quarterly Review. Q&A included. Meeting: 2025-08-05 at 13:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_21",
+    "generated_at": "2025-09-29T14:53:18.053206"
+  },
+  {
+    "subject": "Incident Report: 3 Breach",
+    "body": "CRITICAL: Security incident detected. Type: SQL Injection. Affected systems: Data Leak. Exposure: SQL Injection. Containment: in progress.",
+    "topic": "security_incident",
+    "id": "security_incident_36",
+    "generated_at": "2025-09-29T14:53:18.052990"
+  },
+  {
+    "subject": "Incident Report: Malware Breach",
+    "body": "Incident response for DDoS: Detection time: SQL Injection, containment: Malware, investigation: DDoS, remediation: SQL Injection. Meeting: 2025-08-19 at 12:00",
+    "topic": "security_incident",
+    "id": "security_incident_33",
+    "generated_at": "2025-09-29T14:53:18.052961"
+  },
+  {
+    "subject": "Meeting Invite: Quarterly Review",
+    "body": "Meeting scheduled: All Hands at 2. Attendees: Quarterly Review. Prep needed: 2. Duration: Quarterly Review minutes.",
+    "topic": "event_meeting",
+    "id": "event_meeting_2",
+    "generated_at": "2025-09-29T14:53:18.053041"
+  },
+  {
+    "subject": "Support Ticket #4: Billing",
+    "body": "Support ticket #General: 1 questions about 1. Response time: General hours. Status: General. Contact: user36@example.com Meeting: 2025-09-26 at 11:00",
+    "topic": "customer_support",
+    "id": "customer_support_17",
+    "generated_at": "2025-09-29T14:53:18.051634"
+  },
+  {
+    "subject": "Health Insurance: Dental",
+    "body": "Lab results available. Key findings: Vision. Follow-up: Dental needed. Next appointment: Physical. Meeting: 2025-08-16 at 13:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_16",
+    "generated_at": "2025-09-29T14:53:18.053734"
+  },
+  {
+    "subject": "Product Launch: 3",
+    "body": "Product launch plan for Dashboard: Target date: Mobile App, marketing: Mobile App, docs: 4, training: Analytics. Risks: API. Call: 715-203-6392",
+    "topic": "product_development",
+    "id": "product_development_10",
+    "generated_at": "2025-09-29T14:53:18.051886"
+  },
+  {
+    "subject": "System Alert: Login Degradation",
+    "body": "Bug found in API module. Steps to reproduce: Payment. Expected behavior: 4. Actual behavior: Database. Stack trace: Database. Call: 675-133-5809",
+    "topic": "technical_support",
+    "id": "technical_support_39",
+    "generated_at": "2025-09-29T14:53:18.050614"
+  },
+  {
+    "subject": "SECURITY ALERT: DDoS",
+    "body": "Vulnerability DDoS identified in SQL Injection. CVSS score: Data Leak. Severity: 1. Patch available: Malware. Apply by: Malware.",
+    "topic": "security_incident",
+    "id": "security_incident_6",
+    "generated_at": "2025-09-29T14:53:18.052695"
+  },
+  {
+    "subject": "Product Launch: Digital Market Analysis",
+    "body": "Customer feedback on Social: NPS Email, CSAT Digital%, key insights: Outbound. Action items: 4.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_22",
+    "generated_at": "2025-09-29T14:53:18.050775"
+  },
+  {
+    "subject": "Social Gathering: Meetup",
+    "body": "Volunteer opportunity: BBQ needs help with BBQ. Time commitment: BBQ hours. Sign up: Park Cleanup.",
+    "topic": "social_community",
+    "id": "social_community_24",
+    "generated_at": "2025-09-29T14:53:18.054500"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Compliance audit for 3: Findings: Vendor Agreement, severity: NDA, remediation: MSA, deadline: SLA. Contact: user52@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_24",
+    "generated_at": "2025-09-29T14:53:18.052244"
+  },
+  {
+    "subject": "Medical Results",
+    "body": "Appointment reminder: Annual checkup on Physical at 4. Location: Vision. Bring: insurance card, ID.",
+    "topic": "health_wellness",
+    "id": "health_wellness_38",
+    "generated_at": "2025-09-29T14:53:18.053872"
+  },
+  {
+    "subject": "Conference: 3 Registration",
+    "body": "Annual conference 'Planning Session': Quarterly Review speakers, 2 sessions, networking. Early bird: $Quarterly Review, regular: $Quarterly Review. Contact: user72@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_14",
+    "generated_at": "2025-09-29T14:53:18.053145"
+  },
+  {
+    "subject": "Beta Sprint Review and Planning",
+    "body": "Sprint retrospective for 4: What went well: Infrastructure. What needs improvement: Beta. Action items: Infrastructure. Contact: user76@example.com",
+    "topic": "work_project",
+    "id": "work_project_25",
+    "generated_at": "2025-09-29T14:53:18.050110"
+  },
+  {
+    "subject": "Support Ticket #API: Login",
+    "body": "User reports Production error when Login. Frequency: Database per hour. Severity: API. Logs: Production. Next steps: API. Call: 420-722-3139",
+    "topic": "technical_support",
+    "id": "technical_support_24",
+    "generated_at": "2025-09-29T14:53:18.050498"
+  },
+  {
+    "subject": "User Feedback: Dashboard Feature",
+    "body": "User feedback on API: 2% satisfied, common complaints: Mobile App, feature requests: Analytics. Insights: Mobile App. Contact: user84@example.com",
+    "topic": "product_development",
+    "id": "product_development_33",
+    "generated_at": "2025-09-29T14:53:18.052041"
+  },
+  {
+    "subject": "Position Opening: Senior Engineer - 3 Team",
+    "body": "Updated Product Manager policy effective Analyst: Key changes: 2. All employees must acknowledge by Product Manager. Contact: user16@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_33",
+    "generated_at": "2025-09-29T14:53:18.051128"
+  },
+  {
+    "subject": "Budget Review: 1 Department",
+    "body": "Payment overdue for invoice #20794. Amount: $20794. Original due date: 20794. Please remit payment ASAP. Contact: user13@example.com",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_2",
+    "generated_at": "2025-09-29T14:53:18.051232"
+  },
+  {
+    "subject": "QOutbound Sales Targets - Outbound Region",
+    "body": "Sales pipeline review: Content qualified leads, Content in negotiation, 1 closing this quarter. Win rate: Outbound%. Contact: user72@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_25",
+    "generated_at": "2025-09-29T14:53:18.050794"
+  },
+  {
+    "subject": "Review Request: Your Order",
+    "body": "Your package #802606 shipped via 2. Tracking: 802606. Estimated delivery: 2. Track at: 802606. Contact: user41@example.com Meeting: 2025-09-16 at 15:00",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_25",
+    "generated_at": "2025-09-29T14:53:18.054058"
+  },
+  {
+    "subject": "Customer Acquisition: Digital Quarter",
+    "body": "4 campaign metrics: 4 leads generated, Email% conversion, Content CAC, Email ROI. Next steps: 4.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_9",
+    "generated_at": "2025-09-29T14:53:18.050691"
+  },
+  {
+    "subject": "Project Deliverables for Infrastructure",
+    "body": "Quick update on 3: Backend API is Alpha, frontend is Infrastructure, database migration is Alpha. Blockers: Platform. ETA: Alpha.",
+    "topic": "work_project",
+    "id": "work_project_32",
+    "generated_at": "2025-09-29T14:53:18.050158"
+  },
+  {
+    "subject": "Support Ticket #API: Login",
+    "body": "Performance degradation in Payment: Response time increased Database%. CPU utilization: API%. Memory: 1%. Database queries: slow.",
+    "topic": "technical_support",
+    "id": "technical_support_18",
+    "generated_at": "2025-09-29T14:53:18.050454"
+  },
+  {
+    "subject": "Vulnerability: DDoS Detected",
+    "body": "CRITICAL: Security incident detected. Type: Data Leak. Affected systems: Data Leak. Exposure: Data Leak. Containment: in progress. Meeting: 2025-09-11 at 12:00",
+    "topic": "security_incident",
+    "id": "security_incident_11",
+    "generated_at": "2025-09-29T14:53:18.052751"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Join us for Sarah's birthday on 2! Location: Kids. Time: Mom. Bring: Kids. RSVP: Kids. Contact: user65@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_34",
+    "generated_at": "2025-09-29T14:53:18.053585"
+  },
+  {
+    "subject": "Health Insurance: Vision",
+    "body": "Appointment reminder: Vision checkup on Vision at Physical. Location: Physical. Bring: insurance card, ID.",
+    "topic": "health_wellness",
+    "id": "health_wellness_10",
+    "generated_at": "2025-09-29T14:53:18.053692"
+  },
+  {
+    "subject": "Technical Incident: Payment Down",
+    "body": "Performance degradation in Payment: Response time increased 2%. CPU utilization: API%. Memory: Production%. Database queries: slow. Contact: user45@example.com Call: 261-982-3817",
+    "topic": "technical_support",
+    "id": "technical_support_26",
+    "generated_at": "2025-09-29T14:53:18.050515"
+  },
+  {
+    "subject": "Candidate Interview: Designer for Analyst",
+    "body": "QDesigner performance reviews: 1% completion rate, average rating: Analyst/5, promotions: 1, raises: 1%. Meeting: 2025-09-08 at 15:00",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_13",
+    "generated_at": "2025-09-29T14:53:18.050991"
+  },
+  {
+    "subject": "Product Launch: Social Market Analysis",
+    "body": "Market analysis for Digital: TAM $Outbound, competitors: Content, our USP: Email, growth rate: Social% YoY.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_2",
+    "generated_at": "2025-09-29T14:53:18.050643"
+  },
+  {
+    "subject": "Migration Milestone Completed - Next Steps",
+    "body": "Quick update on Beta: Backend API is 1, frontend is Infrastructure, database migration is Beta. Blockers: Migration. ETA: Migration.",
+    "topic": "work_project",
+    "id": "work_project_23",
+    "generated_at": "2025-09-29T14:53:18.050098"
+  },
+  {
+    "subject": "Certification Program: Python",
+    "body": "New learning path available: 1 fundamentals. Includes: Python courses, Python projects, Data Science certificate. Contact: user5@example.com",
+    "topic": "training_education",
+    "id": "training_education_38",
+    "generated_at": "2025-09-29T14:53:18.052624"
+  },
+  {
+    "subject": "Learning Path: 4",
+    "body": "Certification program in 4: Leadership modules, Communication weeks, exam on 4. Pass rate: Leadership%. Cost: $Communication.",
+    "topic": "training_education",
+    "id": "training_education_31",
+    "generated_at": "2025-09-29T14:53:18.052572"
+  },
+  {
+    "subject": "Product Recommendation: 2",
+    "body": "Your package #4 shipped via 996594. Tracking: 996594. Estimated delivery: 4. Track at: 4. Contact: user20@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_1",
+    "generated_at": "2025-09-29T14:53:18.053891"
+  },
+  {
+    "subject": "Compliance Audit: 2",
+    "body": "Contract review for SLA: Key terms: Vendor Agreement, liability: Vendor Agreement, termination: MSA. Legal review: 2.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_26",
+    "generated_at": "2025-09-29T14:53:18.052256"
+  },
+  {
+    "subject": "Health Insurance: Dental",
+    "body": "Fitness challenge update: Dental completed this week, Annual participants, leader: 4. Keep it up! Contact: user62@example.com",
+    "topic": "health_wellness",
+    "id": "health_wellness_32",
+    "generated_at": "2025-09-29T14:53:18.053832"
+  },
+  {
+    "subject": "Candidate Interview: Designer for 1",
+    "body": "Designer joins the Senior Engineer team on Senior Engineer. Onboarding checklist: hardware setup, access provisioning, training schedule. Meeting: 2025-07-06 at 9:00 Call: 252-785-7648",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_35",
+    "generated_at": "2025-09-29T14:53:18.051164"
+  },
+  {
+    "subject": "Wellness Program: Physical",
+    "body": "Appointment reminder: Vision checkup on Physical at Annual. Location: Physical. Bring: insurance card, ID. Contact: user62@example.com Meeting: 2025-07-06 at 17:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_36",
+    "generated_at": "2025-09-29T14:53:18.053860"
+  },
+  {
+    "subject": "Team Onboarding: Senior Engineer Starts Designer",
+    "body": "Interview feedback for Designer (Senior Engineer): Technical skills: 4/5, culture fit: Senior Engineer/5, communication: 4/5. Recommendation: Product Manager. Contact: user3@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_3",
+    "generated_at": "2025-09-29T14:53:18.050924"
+  },
+  {
+    "subject": "Phishing Alert: Data Leak",
+    "body": "Security audit findings: Data Leak high-priority items, Malware medium, 2 low. Compliance: SQL Injection%. Action plan: Data Leak.",
+    "topic": "security_incident",
+    "id": "security_incident_39",
+    "generated_at": "2025-09-29T14:53:18.053014"
+  },
+  {
+    "subject": "Marketing Campaign: Digital Results",
+    "body": "Market analysis for 1: TAM $Digital, competitors: Email, our USP: Email, growth rate: Content% YoY.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_31",
+    "generated_at": "2025-09-29T14:53:18.050837"
+  },
+  {
+    "subject": "SECURITY ALERT: SQL Injection",
+    "body": "Security audit findings: SQL Injection high-priority items, Malware medium, 4 low. Compliance: DDoS%. Action plan: Malware. Contact: user17@example.com",
+    "topic": "security_incident",
+    "id": "security_incident_5",
+    "generated_at": "2025-09-29T14:53:18.052687"
+  },
+  {
+    "subject": "Course Enrollment: Communication",
+    "body": "Training completion: Data Science% finished Communication, Communication% passed assessment, Python hours logged. Next: Data Science. Meeting: 2025-09-26 at 10:00",
+    "topic": "training_education",
+    "id": "training_education_18",
+    "generated_at": "2025-09-29T14:53:18.052480"
+  },
+  {
+    "subject": "Technical Incident: 3 Down",
+    "body": "Bug found in 1 module. Steps to reproduce: Login. Expected behavior: API. Actual behavior: Login. Stack trace: Production.",
+    "topic": "technical_support",
+    "id": "technical_support_5",
+    "generated_at": "2025-09-29T14:53:18.050256"
+  },
+  {
+    "subject": "Team Offsite: Quarterly Review",
+    "body": "Meeting scheduled: All Hands at Quarterly Review. Attendees: Quarterly Review. Prep needed: 2. Duration: All Hands minutes.",
+    "topic": "event_meeting",
+    "id": "event_meeting_19",
+    "generated_at": "2025-09-29T14:53:18.053192"
+  },
+  {
+    "subject": "SECURITY ALERT: Malware",
+    "body": "CRITICAL: Security incident detected. Type: 4. Affected systems: 4. Exposure: 4. Containment: in progress.",
+    "topic": "security_incident",
+    "id": "security_incident_22",
+    "generated_at": "2025-09-29T14:53:18.052860"
+  },
+  {
+    "subject": "Learning Path: 4",
+    "body": "Workshop '2': Learn Leadership, Data Science, and Data Science. Instructor: Communication. Materials: included. Capacity: Python attendees.",
+    "topic": "training_education",
+    "id": "training_education_21",
+    "generated_at": "2025-09-29T14:53:18.052499"
+  },
+  {
+    "subject": "Appointment: Vision Checkup",
+    "body": "Lab results available. Key findings: Physical. Follow-up: 1 needed. Next appointment: Dental. Meeting: 2025-08-07 at 14:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_15",
+    "generated_at": "2025-09-29T14:53:18.053726"
+  },
+  {
+    "subject": "Training Session: 1",
+    "body": "Training on Python scheduled for 3. Duration: Communication hours. Prerequisites: 3. Registration: Python.",
+    "topic": "training_education",
+    "id": "training_education_10",
+    "generated_at": "2025-09-29T14:53:18.052423"
+  },
+  {
+    "subject": "Security Patch: Malware",
+    "body": "CRITICAL: Security incident detected. Type: DDoS. Affected systems: Malware. Exposure: SQL Injection. Containment: in progress. Call: 703-832-9312",
+    "topic": "security_incident",
+    "id": "security_incident_8",
+    "generated_at": "2025-09-29T14:53:18.052714"
+  },
+  {
+    "subject": "Learning Path: Communication",
+    "body": "Training completion: Data Science% finished 3, Communication% passed assessment, Communication hours logged. Next: Communication. Contact: user96@example.com Meeting: 2025-08-05 at 13:00",
+    "topic": "training_education",
+    "id": "training_education_29",
+    "generated_at": "2025-09-29T14:53:18.052560"
+  },
+  {
+    "subject": "Legal Notice: Vendor Agreement",
+    "body": "GDPR/CCPA compliance check: Data inventory Vendor Agreement, consent mechanisms MSA, breach procedures SLA. Status: MSA.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_1",
+    "generated_at": "2025-09-29T14:53:18.052090"
+  },
+  {
+    "subject": "Product Question: Billing",
+    "body": "Customer satisfaction score: General%. Common issues: Technical, Billing, 1. Average resolution time: Feature hours. Call: 876-972-2773",
+    "topic": "customer_support",
+    "id": "customer_support_25",
+    "generated_at": "2025-09-29T14:53:18.051692"
+  },
+  {
+    "subject": "Volunteer Opportunity: Meetup",
+    "body": "Active discussion on Book Club: Park Cleanup comments, Park Cleanup participants. Top insights: Book Club. Join at: Park Cleanup.",
+    "topic": "social_community",
+    "id": "social_community_4",
+    "generated_at": "2025-09-29T14:53:18.054346"
+  },
+  {
+    "subject": "Invoice #1: $45395",
+    "body": "Budget variance analysis: 47078 department overspent by 43241% due to 47078. Forecast adjustment needed. Contact: user68@example.com",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_17",
+    "generated_at": "2025-09-29T14:53:18.051344"
+  },
+  {
+    "subject": "Volunteer Opportunity: BBQ",
+    "body": "You're invited to Book Club at Meetup's place on Meetup. Casual gathering, bring: 1. RSVP: Park Cleanup.",
+    "topic": "social_community",
+    "id": "social_community_31",
+    "generated_at": "2025-09-29T14:53:18.054552"
+  },
+  {
+    "subject": "Lead Generation: 4 Strategy",
+    "body": "Customer feedback on Digital: NPS Digital, CSAT Email%, key insights: 3. Action items: 3.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_39",
+    "generated_at": "2025-09-29T14:53:18.050897"
+  },
+  {
+    "subject": "Payment Reminder: Account 63910",
+    "body": "Q11347 financials: Revenue $4, expenses $48724, profit margin 48724%, burn rate $11347/month, runway 48724 months. Contact: user64@example.com Meeting: 2025-08-11 at 16:00",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_31",
+    "generated_at": "2025-09-29T14:53:18.051445"
+  },
+  {
+    "subject": "Vacation Planning: Kids",
+    "body": "Join us for Kids's birthday on John! Location: John. Time: 2. Bring: Sarah. RSVP: Kids. Contact: user41@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_33",
+    "generated_at": "2025-09-29T14:53:18.053578"
+  },
+  {
+    "subject": "System Alert: Production Degradation",
+    "body": "Critical issue detected in API system. Error: Database. Impact: API users affected. Priority: Production. Investigation started at Database. Contact: user2@example.com",
+    "topic": "technical_support",
+    "id": "technical_support_30",
+    "generated_at": "2025-09-29T14:53:18.050544"
+  },
+  {
+    "subject": "Vacation Planning: Mom",
+    "body": "Planning John vacation for 3. Considering: Kids, 3, or John. Budget: $Mom. Thoughts? Contact: user41@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_36",
+    "generated_at": "2025-09-29T14:53:18.053596"
+  },
+  {
+    "subject": "Special Offer: 3% Off",
+    "body": "Order #957773 confirmed! Items: 2. Total: $2. Shipping: 957773. Expected delivery: 2. Contact: user79@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_23",
+    "generated_at": "2025-09-29T14:53:18.054044"
+  },
+  {
+    "subject": "Customer Acquisition: Digital Quarter",
+    "body": "Email campaign metrics: Outbound leads generated, Email% conversion, Email CAC, Outbound ROI. Next steps: 3.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_28",
+    "generated_at": "2025-09-29T14:53:18.050819"
+  },
+  {
+    "subject": "Certification Program: Leadership",
+    "body": "Training completion: Leadership% finished Leadership, 1% passed assessment, Python hours logged. Next: Data Science. Contact: user72@example.com",
+    "topic": "training_education",
+    "id": "training_education_5",
+    "generated_at": "2025-09-29T14:53:18.052387"
+  },
+  {
+    "subject": "Neighborhood Update",
+    "body": "You're invited to 3 at Park Cleanup's place on 3. Casual gathering, bring: BBQ. RSVP: 3.",
+    "topic": "social_community",
+    "id": "social_community_22",
+    "generated_at": "2025-09-29T14:53:18.054487"
+  },
+  {
+    "subject": "Health Insurance: Vision",
+    "body": "Lab results available. Key findings: 3. Follow-up: Vision needed. Next appointment: Vision. Meeting: 2025-09-13 at 16:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_17",
+    "generated_at": "2025-09-29T14:53:18.053743"
+  },
+  {
+    "subject": "Compliance Audit: MSA",
+    "body": "Compliance audit for Vendor Agreement: Findings: MSA, severity: SLA, remediation: NDA, deadline: MSA. Contact: user70@example.com Meeting: 2025-08-22 at 9:00",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_30",
+    "generated_at": "2025-09-29T14:53:18.052285"
+  },
+  {
+    "subject": "Project Deliverables for Platform",
+    "body": "Infrastructure project requires attention. Current status: Migration. Critical path: Beta. Resources needed: Beta. Call: 624-296-2582",
+    "topic": "work_project",
+    "id": "work_project_33",
+    "generated_at": "2025-09-29T14:53:18.050165"
+  },
+  {
+    "subject": "Technical Help Needed",
+    "body": "Customer General reports Feature issue. Order #4. Problem: 4. Urgency: General. Last contact: Billing. Contact: user27@example.com Call: 984-452-2178",
+    "topic": "customer_support",
+    "id": "customer_support_26",
+    "generated_at": "2025-09-29T14:53:18.051699"
+  },
+  {
+    "subject": "Expense Approval: 63964",
+    "body": "Invoice #4 for $22333 is due on 22333. Services: 2264. Payment terms: net 2264. Account: 22333.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_6",
+    "generated_at": "2025-09-29T14:53:18.051270"
+  },
+  {
+    "subject": "Candidate Interview: 2 for Senior Engineer",
+    "body": "QProduct Manager performance reviews: Analyst% completion rate, average rating: Analyst/5, promotions: Analyst, raises: Product Manager%.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_14",
+    "generated_at": "2025-09-29T14:53:18.050997"
+  },
+  {
+    "subject": "Wellness Program: Vision",
+    "body": "New wellness program: Dental challenges, prizes, tracking app. Goal: improve Physical, 3, Dental.",
+    "topic": "health_wellness",
+    "id": "health_wellness_9",
+    "generated_at": "2025-09-29T14:53:18.053686"
+  },
+  {
+    "subject": "Legal Notice: MSA",
+    "body": "Legal notice regarding SLA: Action required: SLA, deadline: 2, consequences: SLA. Contact legal if questions.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_22",
+    "generated_at": "2025-09-29T14:53:18.052228"
+  },
+  {
+    "subject": "Event: All Hands on Quarterly Review",
+    "body": "You're invited to Planning Session on 4. Location: 4. Agenda: Planning Session. RSVP by: 4. Contact: user99@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_13",
+    "generated_at": "2025-09-29T14:53:18.053136"
+  },
+  {
+    "subject": "Workshop: Data Science Skills",
+    "body": "Workshop 'Python': Learn 3, 3, and 3. Instructor: Leadership. Materials: included. Capacity: Python attendees. Contact: user8@example.com",
+    "topic": "training_education",
+    "id": "training_education_20",
+    "generated_at": "2025-09-29T14:53:18.052493"
+  },
+  {
+    "subject": "Community Event: Park Cleanup",
+    "body": "Community event 'Book Club' this Book Club! Join 4 neighbors for Park Cleanup. Location: Meetup. Time: BBQ.",
+    "topic": "social_community",
+    "id": "social_community_7",
+    "generated_at": "2025-09-29T14:53:18.054370"
+  },
+  {
+    "subject": "Vacation Planning: Kids",
+    "body": "Join us for Sarah's birthday on Kids! Location: John. Time: Mom. Bring: John. RSVP: Mom. Contact: user16@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_31",
+    "generated_at": "2025-09-29T14:53:18.053564"
+  },
+  {
+    "subject": "Q1 Financial Report",
+    "body": "Expense report for 34313: Total $36228, categories: travel $34313, meals $4, software $34313. Approval needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_24",
+    "generated_at": "2025-09-29T14:53:18.051386"
+  },
+  {
+    "subject": "Project Deliverables for Infrastructure",
+    "body": "Sprint retrospective for Platform: What went well: Migration. What needs improvement: Beta. Action items: Alpha.",
+    "topic": "work_project",
+    "id": "work_project_35",
+    "generated_at": "2025-09-29T14:53:18.050177"
+  },
+  {
+    "subject": "Support Ticket #General: Feature",
+    "body": "Customer Technical reports Billing issue. Order #Billing. Problem: Technical. Urgency: Technical. Last contact: 4.",
+    "topic": "customer_support",
+    "id": "customer_support_4",
+    "generated_at": "2025-09-29T14:53:18.051527"
+  },
+  {
+    "subject": "Medical Results",
+    "body": "Fitness challenge update: Physical completed this week, Vision participants, leader: Annual. Keep it up! Meeting: 2025-09-27 at 11:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_3",
+    "generated_at": "2025-09-29T14:53:18.053644"
+  },
+  {
+    "subject": "Wellness Program: Dental",
+    "body": "Health insurance enrollment: Plan options: Dental, Physical, 1. Deadline: Dental. Benefits: 1. Meeting: 2025-09-29 at 11:00",
+    "topic": "health_wellness",
+    "id": "health_wellness_4",
+    "generated_at": "2025-09-29T14:53:18.053653"
+  },
+  {
+    "subject": "Social Gathering: BBQ",
+    "body": "Volunteer opportunity: Park Cleanup needs help with Park Cleanup. Time commitment: Meetup hours. Sign up: Park Cleanup. Contact: user67@example.com",
+    "topic": "social_community",
+    "id": "social_community_3",
+    "generated_at": "2025-09-29T14:53:18.054339"
+  },
+  {
+    "subject": "Course Enrollment: Communication",
+    "body": "Training on Data Science scheduled for Leadership. Duration: Data Science hours. Prerequisites: Data Science. Registration: Data Science.",
+    "topic": "training_education",
+    "id": "training_education_3",
+    "generated_at": "2025-09-29T14:53:18.052369"
+  },
+  {
+    "subject": "Contract Review: 4",
+    "body": "Contract review for Vendor Agreement: Key terms: 2, liability: SLA, termination: MSA. Legal review: Vendor Agreement. Contact: user55@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_19",
+    "generated_at": "2025-09-29T14:53:18.052204"
+  },
+  {
+    "subject": "Conference: Quarterly Review Registration",
+    "body": "Meeting scheduled: Planning Session at All Hands. Attendees: Quarterly Review. Prep needed: All Hands. Duration: Planning Session minutes. Contact: user63@example.com Meeting: 2025-07-20 at 16:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_27",
+    "generated_at": "2025-09-29T14:53:18.053249"
+  },
+  {
+    "subject": "Family Update",
+    "body": "Join us for 4's birthday on John! Location: Kids. Time: Sarah. Bring: John. RSVP: 4.",
+    "topic": "personal_family",
+    "id": "personal_family_27",
+    "generated_at": "2025-09-29T14:53:18.053540"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Family reunion at 3 from 3 to John. Accommodations: Mom. Activities: Mom. Looking forward to seeing everyone!",
+    "topic": "personal_family",
+    "id": "personal_family_23",
+    "generated_at": "2025-09-29T14:53:18.053517"
+  },
+  {
+    "subject": "SECURITY ALERT: Malware",
+    "body": "Security audit findings: 3 high-priority items, Malware medium, 3 low. Compliance: DDoS%. Action plan: Malware. Contact: user14@example.com",
+    "topic": "security_incident",
+    "id": "security_incident_14",
+    "generated_at": "2025-09-29T14:53:18.052777"
+  },
+  {
+    "subject": "Migration Milestone Completed - Next Steps",
+    "body": "Quick update on Beta: Backend API is 3, frontend is Alpha, database migration is Infrastructure. Blockers: Infrastructure. ETA: Infrastructure.",
+    "topic": "work_project",
+    "id": "work_project_9",
+    "generated_at": "2025-09-29T14:53:18.050002"
+  },
+  {
+    "subject": "Community Event: Book Club",
+    "body": "Neighborhood update: Meetup, Park Cleanup, and BBQ. Meeting on Meetup at Book Club. All residents welcome.",
+    "topic": "social_community",
+    "id": "social_community_38",
+    "generated_at": "2025-09-29T14:53:18.054607"
+  },
+  {
+    "subject": "Certification Program: Communication",
+    "body": "Workshop 'Python': Learn Communication, 1, and Communication. Instructor: 1. Materials: included. Capacity: Communication attendees.",
+    "topic": "training_education",
+    "id": "training_education_37",
+    "generated_at": "2025-09-29T14:53:18.052616"
+  },
+  {
+    "subject": "QDigital Sales Targets - Outbound Region",
+    "body": "Market analysis for Social: TAM $Digital, competitors: Email, our USP: Social, growth rate: Outbound% YoY.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_1",
+    "generated_at": "2025-09-29T14:53:18.050637"
+  },
+  {
+    "subject": "Certification Program: Data Science",
+    "body": "New learning path available: Data Science fundamentals. Includes: Communication courses, Python projects, 3 certificate.",
+    "topic": "training_education",
+    "id": "training_education_40",
+    "generated_at": "2025-09-29T14:53:18.052641"
+  },
+  {
+    "subject": "Phishing Alert: Data Leak",
+    "body": "Security audit findings: 1 high-priority items, DDoS medium, Data Leak low. Compliance: SQL Injection%. Action plan: 1. Contact: user100@example.com Meeting: 2025-07-13 at 11:00",
+    "topic": "security_incident",
+    "id": "security_incident_18",
+    "generated_at": "2025-09-29T14:53:18.052824"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "GDPR/CCPA compliance check: Data inventory NDA, consent mechanisms NDA, breach procedures NDA. Status: MSA. Meeting: 2025-07-12 at 10:00",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_28",
+    "generated_at": "2025-09-29T14:53:18.052270"
+  },
+  {
+    "subject": "Lead Generation: Content Strategy",
+    "body": "Customer feedback on Outbound: NPS Outbound, CSAT Outbound%, key insights: Digital. Action items: Outbound. Contact: user19@example.com Call: 625-482-5755",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_18",
+    "generated_at": "2025-09-29T14:53:18.050751"
+  },
+  {
+    "subject": "Family Reunion - 2",
+    "body": "This weekend: Mom on Saturday, Sarah on Sunday. Want to join for Sarah? Let me know! Meeting: 2025-07-18 at 17:00",
+    "topic": "personal_family",
+    "id": "personal_family_17",
+    "generated_at": "2025-09-29T14:53:18.053470"
+  },
+  {
+    "subject": "Support Ticket #Billing: Billing",
+    "body": "Billing requests refund for order #Billing. Reason: Technical. Amount: $2. Policy: General. Resolution: Billing. Contact: user16@example.com",
+    "topic": "customer_support",
+    "id": "customer_support_36",
+    "generated_at": "2025-09-29T14:53:18.051770"
+  },
+  {
+    "subject": "ISSUE: Database - Payment Environment",
+    "body": "Performance degradation in 3: Response time increased Production%. CPU utilization: Production%. Memory: 3%. Database queries: slow.",
+    "topic": "technical_support",
+    "id": "technical_support_17",
+    "generated_at": "2025-09-29T14:53:18.050448"
+  },
+  {
+    "subject": "Feature Request: 4",
+    "body": "QMobile App product roadmap: Priority 1: Analytics, Priority 2: 4, Priority 3: Mobile App. Resources: Mobile App engineers.",
+    "topic": "product_development",
+    "id": "product_development_36",
+    "generated_at": "2025-09-29T14:53:18.052060"
+  },
+  {
+    "subject": "Refund Request: Order #General",
+    "body": "Escalated case #Technical: Customer Feature frustrated with Technical. History: Billing previous tickets. Action: Billing.",
+    "topic": "customer_support",
+    "id": "customer_support_9",
+    "generated_at": "2025-09-29T14:53:18.051568"
+  },
+  {
+    "subject": "Q37822 Financial Report",
+    "body": "Expense report for 48251: Total $48251, categories: travel $3, meals $3, software $48251. Approval needed. Contact: user80@example.com Call: 992-795-9042",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_15",
+    "generated_at": "2025-09-29T14:53:18.051332"
+  },
+  {
+    "subject": "QEmail Sales Targets - Email Region",
+    "body": "Customer feedback on 4: NPS Digital, CSAT Digital%, key insights: Digital. Action items: Email. Contact: user74@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_20",
+    "generated_at": "2025-09-29T14:53:18.050763"
+  },
+  {
+    "subject": "Learning Path: Data Science",
+    "body": "Training on 2 scheduled for Python. Duration: Python hours. Prerequisites: Communication. Registration: Leadership. Contact: user78@example.com Meeting: 2025-08-06 at 11:00",
+    "topic": "training_education",
+    "id": "training_education_16",
+    "generated_at": "2025-09-29T14:53:18.052466"
+  },
+  {
+    "subject": "Phishing Alert: SQL Injection",
+    "body": "Security audit findings: DDoS high-priority items, 2 medium, 2 low. Compliance: Data Leak%. Action plan: 2. Meeting: 2025-08-18 at 9:00",
+    "topic": "security_incident",
+    "id": "security_incident_26",
+    "generated_at": "2025-09-29T14:53:18.052895"
+  },
+  {
+    "subject": "Vacation Planning: Mom",
+    "body": "Planning 4 vacation for Kids. Considering: 4, Sarah, or Sarah. Budget: $Kids. Thoughts?",
+    "topic": "personal_family",
+    "id": "personal_family_18",
+    "generated_at": "2025-09-29T14:53:18.053478"
+  },
+  {
+    "subject": "Bug Report: Production in 2 Module",
+    "body": "Production incident: API service is Database. Root cause: 2. Workaround: Database. ETA for fix: Payment.",
+    "topic": "technical_support",
+    "id": "technical_support_11",
+    "generated_at": "2025-09-29T14:53:18.050399"
+  },
+  {
+    "subject": "ISSUE: Database - Payment Environment",
+    "body": "User reports 2 error when API. Frequency: Login per hour. Severity: Production. Logs: API. Next steps: 2. Meeting: 2025-07-01 at 17:00",
+    "topic": "technical_support",
+    "id": "technical_support_1",
+    "generated_at": "2025-09-29T14:53:18.050220"
+  },
+  {
+    "subject": "Lead Generation: Email Strategy",
+    "body": "Market analysis for 2: TAM $Digital, competitors: 2, our USP: Email, growth rate: Social% YoY. Contact: user59@example.com Meeting: 2025-09-26 at 12:00",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_13",
+    "generated_at": "2025-09-29T14:53:18.050719"
+  },
+  {
+    "subject": "Performance Review: Q2 Cycle",
+    "body": "Interview feedback for Senior Engineer (Designer): Technical skills: 1/5, culture fit: Product Manager/5, communication: Product Manager/5. Recommendation: Designer. Meeting: 2025-07-10 at 13:00",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_39",
+    "generated_at": "2025-09-29T14:53:18.051203"
+  },
+  {
+    "subject": "HR Policy Update: Analyst",
+    "body": "Interview feedback for Designer (Analyst): Technical skills: Analyst/5, culture fit: Analyst/5, communication: Senior Engineer/5. Recommendation: Senior Engineer. Contact: user25@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_29",
+    "generated_at": "2025-09-29T14:53:18.051095"
+  },
+  {
+    "subject": "Social Gathering: Book Club",
+    "body": "Neighborhood update: Meetup, Book Club, and Meetup. Meeting on Book Club at Book Club. All residents welcome. Meeting: 2025-07-23 at 16:00",
+    "topic": "social_community",
+    "id": "social_community_11",
+    "generated_at": "2025-09-29T14:53:18.054405"
+  },
+  {
+    "subject": "Community Event: Park Cleanup",
+    "body": "Community event '1' this BBQ! Join 1 neighbors for BBQ. Location: Book Club. Time: 1.",
+    "topic": "social_community",
+    "id": "social_community_36",
+    "generated_at": "2025-09-29T14:53:18.054593"
+  },
+  {
+    "subject": "ISSUE: Database - Login Environment",
+    "body": "User reports API error when Production. Frequency: API per hour. Severity: Database. Logs: Database. Next steps: Login.",
+    "topic": "technical_support",
+    "id": "technical_support_35",
+    "generated_at": "2025-09-29T14:53:18.050579"
+  },
+  {
+    "subject": "Bug Report: Login in Database Module",
+    "body": "Critical issue detected in API system. Error: API. Impact: Production users affected. Priority: Database. Investigation started at 1. Meeting: 2025-09-06 at 10:00",
+    "topic": "technical_support",
+    "id": "technical_support_13",
+    "generated_at": "2025-09-29T14:53:18.050419"
+  },
+  {
+    "subject": "Q12379 Financial Report",
+    "body": "Budget variance analysis: 68854 department overspent by 1% due to 68854. Forecast adjustment needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_20",
+    "generated_at": "2025-09-29T14:53:18.051362"
+  },
+  {
+    "subject": "Social Gathering: BBQ",
+    "body": "Community event 'BBQ' this BBQ! Join Meetup neighbors for BBQ. Location: 3. Time: BBQ. Contact: user4@example.com",
+    "topic": "social_community",
+    "id": "social_community_29",
+    "generated_at": "2025-09-29T14:53:18.054540"
+  },
+  {
+    "subject": "Support Ticket #2: Feature",
+    "body": "Support ticket #1: Technical questions about 1. Response time: Feature hours. Status: General.",
+    "topic": "customer_support",
+    "id": "customer_support_32",
+    "generated_at": "2025-09-29T14:53:18.051736"
+  },
+  {
+    "subject": "Customer Acquisition: 4 Quarter",
+    "body": "Market analysis for Content: TAM $Social, competitors: Digital, our USP: 3, growth rate: Digital% YoY. Contact: user59@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_17",
+    "generated_at": "2025-09-29T14:53:18.050744"
+  },
+  {
+    "subject": "System Alert: API Degradation",
+    "body": "Bug found in Production module. Steps to reproduce: Database. Expected behavior: Database. Actual behavior: 3. Stack trace: Database. Contact: user5@example.com Meeting: 2025-07-18 at 14:00",
+    "topic": "technical_support",
+    "id": "technical_support_12",
+    "generated_at": "2025-09-29T14:53:18.050410"
+  },
+  {
+    "subject": "Support Ticket #1: Login",
+    "body": "Critical issue detected in Login system. Error: Production. Impact: Production users affected. Priority: Production. Investigation started at Payment.",
+    "topic": "technical_support",
+    "id": "technical_support_15",
+    "generated_at": "2025-09-29T14:53:18.050435"
+  },
+  {
+    "subject": "Privacy Policy Update",
+    "body": "Privacy policy updated per SLA regulations. Changes: Vendor Agreement, effective: SLA, user notification: 3.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_38",
+    "generated_at": "2025-09-29T14:53:18.052336"
+  },
+  {
+    "subject": "Invoice #2: $93774",
+    "body": "Budget variance analysis: 1 department overspent by 27049% due to 1. Forecast adjustment needed. Contact: user78@example.com",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_8",
+    "generated_at": "2025-09-29T14:53:18.051285"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "This weekend: Kids on Saturday, Sarah on Sunday. Want to join for Mom? Let me know! Meeting: 2025-08-04 at 13:00",
+    "topic": "personal_family",
+    "id": "personal_family_2",
+    "generated_at": "2025-09-29T14:53:18.053357"
+  },
+  {
+    "subject": "Performance Review: QDesigner Cycle",
+    "body": "We're hiring for Senior Engineer: Senior Engineer+ years experience, skills: Product Manager, location: Designer, salary range: $3. JD attached.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_18",
+    "generated_at": "2025-09-29T14:53:18.051021"
+  },
+  {
+    "subject": "Expense Approval: 48605",
+    "body": "Expense report for 15214: Total $47720, categories: travel $47720, meals $15214, software $3. Approval needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_11",
+    "generated_at": "2025-09-29T14:53:18.051303"
+  },
+  {
+    "subject": "User Feedback: Mobile App Feature",
+    "body": "Product launch plan for API: Target date: API, marketing: Mobile App, docs: Mobile App, training: Analytics. Risks: API. Contact: user75@example.com Meeting: 2025-07-07 at 11:00",
+    "topic": "product_development",
+    "id": "product_development_17",
+    "generated_at": "2025-09-29T14:53:18.051934"
+  },
+  {
+    "subject": "Product Recommendation: 4",
+    "body": "FLASH SALE: 294261% off 294261 today only! Use code: 3. Expires: 294261. Shop now: 294261.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_35",
+    "generated_at": "2025-09-29T14:53:18.054134"
+  },
+  {
+    "subject": "Special Offer: 639398% Off",
+    "body": "FLASH SALE: 811547% off 4 today only! Use code: 4. Expires: 811547. Shop now: 811547.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_10",
+    "generated_at": "2025-09-29T14:53:18.053952"
+  },
+  {
+    "subject": "Platform Milestone Completed - Next Steps",
+    "body": "Platform project requires attention. Current status: Alpha. Critical path: Migration. Resources needed: Beta.",
+    "topic": "work_project",
+    "id": "work_project_16",
+    "generated_at": "2025-09-29T14:53:18.050048"
+  },
+  {
+    "subject": "Appointment: 1 Checkup",
+    "body": "Fitness challenge update: 3 completed this week, Dental participants, leader: 3. Keep it up! Contact: user13@example.com",
+    "topic": "health_wellness",
+    "id": "health_wellness_25",
+    "generated_at": "2025-09-29T14:53:18.053791"
+  },
+  {
+    "subject": "Workshop: 3 Skills",
+    "body": "Workshop 'Leadership': Learn Python, Leadership, and Leadership. Instructor: Python. Materials: included. Capacity: Communication attendees. Contact: user72@example.com",
+    "topic": "training_education",
+    "id": "training_education_30",
+    "generated_at": "2025-09-29T14:53:18.052566"
+  },
+  {
+    "subject": "Product Launch: API",
+    "body": "A/B test 'API': Variant A Analytics% conversion, Variant B 2% conversion. Winner: Mobile App. Confidence: Analytics%. Call: 796-972-9356",
+    "topic": "product_development",
+    "id": "product_development_27",
+    "generated_at": "2025-09-29T14:53:18.052003"
+  },
+  {
+    "subject": "Vulnerability: Malware Detected",
+    "body": "Incident response for SQL Injection: Detection time: SQL Injection, containment: 1, investigation: Data Leak, remediation: DDoS. Meeting: 2025-09-21 at 11:00",
+    "topic": "security_incident",
+    "id": "security_incident_10",
+    "generated_at": "2025-09-29T14:53:18.052739"
+  },
+  {
+    "subject": "Group Discussion: 3",
+    "body": "Active discussion on Park Cleanup: Meetup comments, Meetup participants. Top insights: 3. Join at: BBQ.",
+    "topic": "social_community",
+    "id": "social_community_6",
+    "generated_at": "2025-09-29T14:53:18.054363"
+  },
+  {
+    "subject": "4's Birthday Party",
+    "body": "This weekend: Sarah on Saturday, Mom on Sunday. Want to join for Mom? Let me know! Contact: user11@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_26",
+    "generated_at": "2025-09-29T14:53:18.053534"
+  },
+  {
+    "subject": "Team Sync: Platform Discussion Points",
+    "body": "Migration project requires attention. Current status: Migration. Critical path: Platform. Resources needed: Alpha. Meeting: 2025-09-18 at 16:00 Call: 606-541-6454",
+    "topic": "work_project",
+    "id": "work_project_21",
+    "generated_at": "2025-09-29T14:53:18.050085"
+  },
+  {
+    "subject": "Health Insurance: Dental",
+    "body": "New wellness program: Dental challenges, prizes, tracking app. Goal: improve Annual, 2, Annual.",
+    "topic": "health_wellness",
+    "id": "health_wellness_31",
+    "generated_at": "2025-09-29T14:53:18.053826"
+  },
+  {
+    "subject": "Legal Notice: SLA",
+    "body": "Compliance audit for Vendor Agreement: Findings: MSA, severity: NDA, remediation: 1, deadline: 1. Contact: user81@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_23",
+    "generated_at": "2025-09-29T14:53:18.052236"
+  },
+  {
+    "subject": "Incident Report: 2 Breach",
+    "body": "Vulnerability Malware identified in SQL Injection. CVSS score: SQL Injection. Severity: SQL Injection. Patch available: Data Leak. Apply by: 3.",
+    "topic": "security_incident",
+    "id": "security_incident_40",
+    "generated_at": "2025-09-29T14:53:18.053022"
+  },
+  {
+    "subject": "Budget Review: 47008 Department",
+    "body": "Q54825 financials: Revenue $8885, expenses $8885, profit margin 8885%, burn rate $54825/month, runway 54825 months. Call: 620-431-1481",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_38",
+    "generated_at": "2025-09-29T14:53:18.051490"
+  },
+  {
+    "subject": "Incident Report: Data Leak Breach",
+    "body": "Vulnerability SQL Injection identified in 1. CVSS score: Malware. Severity: 1. Patch available: Data Leak. Apply by: DDoS.",
+    "topic": "security_incident",
+    "id": "security_incident_7",
+    "generated_at": "2025-09-29T14:53:18.052704"
+  },
+  {
+    "subject": "Group Discussion: Meetup",
+    "body": "Active discussion on Park Cleanup: Book Club comments, Park Cleanup participants. Top insights: Book Club. Join at: Book Club.",
+    "topic": "social_community",
+    "id": "social_community_23",
+    "generated_at": "2025-09-29T14:53:18.054493"
+  },
+  {
+    "subject": "Team Onboarding: 1 Starts Designer",
+    "body": "Interview feedback for 4 (4): Technical skills: Designer/5, culture fit: 4/5, communication: Designer/5. Recommendation: Designer.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_6",
+    "generated_at": "2025-09-29T14:53:18.050946"
+  },
+  {
+    "subject": "Position Opening: Analyst - Product Manager Team",
+    "body": "Interview feedback for Product Manager (Product Manager): Technical skills: 1/5, culture fit: 1/5, communication: Product Manager/5. Recommendation: Senior Engineer.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_31",
+    "generated_at": "2025-09-29T14:53:18.051112"
+  },
+  {
+    "subject": "Webinar: 2",
+    "body": "You're invited to Planning Session on All Hands. Location: Planning Session. Agenda: All Hands. RSVP by: Planning Session. Contact: user44@example.com Call: 635-912-5276",
+    "topic": "event_meeting",
+    "id": "event_meeting_31",
+    "generated_at": "2025-09-29T14:53:18.053278"
+  },
+  {
+    "subject": "Vulnerability: SQL Injection Detected",
+    "body": "Vulnerability Malware identified in 4. CVSS score: Malware. Severity: DDoS. Patch available: Malware. Apply by: 4. Meeting: 2025-07-04 at 14:00",
+    "topic": "security_incident",
+    "id": "security_incident_32",
+    "generated_at": "2025-09-29T14:53:18.052950"
+  },
+  {
+    "subject": "Shipping Update: Package #3",
+    "body": "How was your recent order #2? Rate your experience and earn 449853 rewards points. Review: 449853. Contact: user2@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_28",
+    "generated_at": "2025-09-29T14:53:18.054083"
+  },
+  {
+    "subject": "System Alert: Login Degradation",
+    "body": "Performance degradation in Database: Response time increased API%. CPU utilization: API%. Memory: API%. Database queries: slow.",
+    "topic": "technical_support",
+    "id": "technical_support_9",
+    "generated_at": "2025-09-29T14:53:18.050349"
+  },
+  {
+    "subject": "Health Insurance: Dental",
+    "body": "Lab results available. Key findings: Vision. Follow-up: Annual needed. Next appointment: Vision.",
+    "topic": "health_wellness",
+    "id": "health_wellness_18",
+    "generated_at": "2025-09-29T14:53:18.053750"
+  },
+  {
+    "subject": "Fitness Challenge: 4",
+    "body": "Appointment reminder: Dental checkup on Dental at Dental. Location: Annual. Bring: insurance card, ID.",
+    "topic": "health_wellness",
+    "id": "health_wellness_37",
+    "generated_at": "2025-09-29T14:53:18.053866"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "This weekend: 4 on Saturday, 4 on Sunday. Want to join for John? Let me know! Contact: user17@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_21",
+    "generated_at": "2025-09-29T14:53:18.053502"
+  },
+  {
+    "subject": "Compliance Audit: MSA",
+    "body": "GDPR/CCPA compliance check: Data inventory NDA, consent mechanisms MSA, breach procedures 2. Status: 2.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_33",
+    "generated_at": "2025-09-29T14:53:18.052304"
+  },
+  {
+    "subject": "Migration Milestone Completed - Next Steps",
+    "body": "Sprint retrospective for Beta: What went well: 1. What needs improvement: Migration. Action items: Infrastructure. Call: 712-723-4654",
+    "topic": "work_project",
+    "id": "work_project_29",
+    "generated_at": "2025-09-29T14:53:18.050140"
+  },
+  {
+    "subject": "Team Onboarding: Designer Starts 4",
+    "body": "Interview feedback for Analyst (Analyst): Technical skills: 3/5, culture fit: Product Manager/5, communication: Product Manager/5. Recommendation: Designer.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_15",
+    "generated_at": "2025-09-29T14:53:18.051003"
+  },
+  {
+    "subject": "Webinar: All Hands",
+    "body": "Annual conference 'Planning Session': Planning Session speakers, 1 sessions, networking. Early bird: $All Hands, regular: $1. Contact: user94@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_18",
+    "generated_at": "2025-09-29T14:53:18.053184"
+  },
+  {
+    "subject": "Compliance Audit: Vendor Agreement",
+    "body": "GDPR/CCPA compliance check: Data inventory NDA, consent mechanisms NDA, breach procedures SLA. Status: SLA.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_4",
+    "generated_at": "2025-09-29T14:53:18.052109"
+  },
+  {
+    "subject": "Team Onboarding: Senior Engineer Starts 4",
+    "body": "QAnalyst performance reviews: Product Manager% completion rate, average rating: Product Manager/5, promotions: Senior Engineer, raises: Designer%.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_21",
+    "generated_at": "2025-09-29T14:53:18.051039"
+  },
+  {
+    "subject": "Compliance Audit: NDA",
+    "body": "Compliance audit for SLA: Findings: Vendor Agreement, severity: NDA, remediation: 4, deadline: Vendor Agreement.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_32",
+    "generated_at": "2025-09-29T14:53:18.052297"
+  },
+  {
+    "subject": "Appointment: 4 Checkup",
+    "body": "Health insurance enrollment: Plan options: Dental, Annual, 3. Deadline: Annual. Benefits: 3.",
+    "topic": "health_wellness",
+    "id": "health_wellness_8",
+    "generated_at": "2025-09-29T14:53:18.053680"
+  },
+  {
+    "subject": "Expense Approval: 4",
+    "body": "Expense report for 2: Total $7647, categories: travel $7647, meals $48032, software $48032. Approval needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_1",
+    "generated_at": "2025-09-29T14:53:18.051223"
+  },
+  {
+    "subject": "Marketing Campaign: Content Results",
+    "body": "Sales pipeline review: Outbound qualified leads, 4 in negotiation, 4 closing this quarter. Win rate: Social%. Contact: user82@example.com Call: 241-826-2037",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_11",
+    "generated_at": "2025-09-29T14:53:18.050704"
+  },
+  {
+    "subject": "SECURITY ALERT: Data Leak",
+    "body": "Security audit findings: Malware high-priority items, 1 medium, Data Leak low. Compliance: 1%. Action plan: DDoS.",
+    "topic": "security_incident",
+    "id": "security_incident_21",
+    "generated_at": "2025-09-29T14:53:18.052853"
+  },
+  {
+    "subject": "Shipping Update: Package #310082",
+    "body": "FLASH SALE: 4% off 4 today only! Use code: 4. Expires: 4. Shop now: 984452. Contact: user98@example.com Call: 369-145-2972",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_19",
+    "generated_at": "2025-09-29T14:53:18.054017"
+  },
+  {
+    "subject": "Compliance Audit: 4",
+    "body": "Compliance audit for Vendor Agreement: Findings: Vendor Agreement, severity: MSA, remediation: Vendor Agreement, deadline: Vendor Agreement.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_36",
+    "generated_at": "2025-09-29T14:53:18.052324"
+  },
+  {
+    "subject": "Lead Generation: Content Strategy",
+    "body": "Market analysis for Content: TAM $Social, competitors: Digital, our USP: Email, growth rate: Outbound% YoY. Contact: user67@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_37",
+    "generated_at": "2025-09-29T14:53:18.050882"
+  },
+  {
+    "subject": "Product Launch: Analytics",
+    "body": "Product launch plan for Dashboard: Target date: API, marketing: API, docs: Dashboard, training: Analytics. Risks: API. Contact: user15@example.com",
+    "topic": "product_development",
+    "id": "product_development_30",
+    "generated_at": "2025-09-29T14:53:18.052021"
+  },
+  {
+    "subject": "Q2 Sales Targets - 2 Region",
+    "body": "Market analysis for Email: TAM $4, competitors: Email, our USP: 4, growth rate: 4% YoY.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_23",
+    "generated_at": "2025-09-29T14:53:18.050781"
+  },
+  {
+    "subject": "Team Sync: Infrastructure Discussion Points",
+    "body": "Sprint retrospective for Migration: What went well: Platform. What needs improvement: Platform. Action items: Alpha. Meeting: 2025-07-28 at 13:00",
+    "topic": "work_project",
+    "id": "work_project_1",
+    "generated_at": "2025-09-29T14:53:18.049936"
+  },
+  {
+    "subject": "Group Discussion: Book Club",
+    "body": "You're invited to Book Club at Book Club's place on Meetup. Casual gathering, bring: Meetup. RSVP: BBQ. Contact: user16@example.com",
+    "topic": "social_community",
+    "id": "social_community_2",
+    "generated_at": "2025-09-29T14:53:18.054194"
+  },
+  {
+    "subject": "Webinar: Quarterly Review",
+    "body": "Webinar 'Planning Session' on All Hands. Topics: 3, All Hands, All Hands. Register at: Quarterly Review. Q&A included.",
+    "topic": "event_meeting",
+    "id": "event_meeting_5",
+    "generated_at": "2025-09-29T14:53:18.053059"
+  },
+  {
+    "subject": "A/B Test Results: 3",
+    "body": "User feedback on 1: Dashboard% satisfied, common complaints: Mobile App, feature requests: API. Insights: Dashboard.",
+    "topic": "product_development",
+    "id": "product_development_35",
+    "generated_at": "2025-09-29T14:53:18.052054"
+  },
+  {
+    "subject": "Performance Review: QAnalyst Cycle",
+    "body": "Interview feedback for Senior Engineer (Analyst): Technical skills: Analyst/5, culture fit: Product Manager/5, communication: Senior Engineer/5. Recommendation: Designer.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_22",
+    "generated_at": "2025-09-29T14:53:18.051046"
+  },
+  {
+    "subject": "Volunteer Opportunity: Meetup",
+    "body": "Active discussion on BBQ: Meetup comments, 4 participants. Top insights: Book Club. Join at: 4. Contact: user14@example.com",
+    "topic": "social_community",
+    "id": "social_community_15",
+    "generated_at": "2025-09-29T14:53:18.054440"
+  },
+  {
+    "subject": "Product Question: 4",
+    "body": "Support ticket #Technical: General questions about Technical. Response time: 4 hours. Status: Billing.",
+    "topic": "customer_support",
+    "id": "customer_support_21",
+    "generated_at": "2025-09-29T14:53:18.051663"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Family news: Mom started Mom, Sarah graduated from 1, Sarah moved to 1. Everyone doing well!",
+    "topic": "personal_family",
+    "id": "personal_family_1",
+    "generated_at": "2025-09-29T14:53:18.053348"
+  },
+  {
+    "subject": "Review Request: Your Order",
+    "body": "Based on your purchase of 976178, you might like: 976178, 976178, 2. Special price: $976178. Contact: user24@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_11",
+    "generated_at": "2025-09-29T14:53:18.053958"
+  },
+  {
+    "subject": "Incident Report: 1 Breach",
+    "body": "Phishing campaign targeting employees. Subject line: 'Data Leak'. Indicators: Data Leak. Report suspicious emails immediately. Contact: user90@example.com",
+    "topic": "security_incident",
+    "id": "security_incident_30",
+    "generated_at": "2025-09-29T14:53:18.052931"
+  },
+  {
+    "subject": "Product Question: General",
+    "body": "Support ticket #3: Billing questions about Billing. Response time: Technical hours. Status: Billing. Contact: user51@example.com",
+    "topic": "customer_support",
+    "id": "customer_support_6",
+    "generated_at": "2025-09-29T14:53:18.051543"
+  },
+  {
+    "subject": "Candidate Interview: Product Manager for Analyst",
+    "body": "QSenior Engineer performance reviews: Analyst% completion rate, average rating: 2/5, promotions: Analyst, raises: 2%. Meeting: 2025-07-10 at 13:00",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_23",
+    "generated_at": "2025-09-29T14:53:18.051054"
+  },
+  {
+    "subject": "Product Launch: Email Market Analysis",
+    "body": "Market analysis for Email: TAM $Content, competitors: 2, our USP: 2, growth rate: Content% YoY. Call: 608-386-5579",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_24",
+    "generated_at": "2025-09-29T14:53:18.050788"
+  },
+  {
+    "subject": "Workshop: Communication Skills",
+    "body": "Workshop 'Python': Learn Communication, Leadership, and Communication. Instructor: Communication. Materials: included. Capacity: Data Science attendees. Contact: user38@example.com Meeting: 2025-09-29 at 11:00",
+    "topic": "training_education",
+    "id": "training_education_32",
+    "generated_at": "2025-09-29T14:53:18.052582"
+  },
+  {
+    "subject": "Conference: 1 Registration",
+    "body": "You're invited to Planning Session on Quarterly Review. Location: All Hands. Agenda: Quarterly Review. RSVP by: Quarterly Review.",
+    "topic": "event_meeting",
+    "id": "event_meeting_39",
+    "generated_at": "2025-09-29T14:53:18.053331"
+  },
+  {
+    "subject": "Lead Generation: Email Strategy",
+    "body": "Sales pipeline review: Email qualified leads, 2 in negotiation, Outbound closing this quarter. Win rate: Content%. Call: 161-697-7291",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_16",
+    "generated_at": "2025-09-29T14:53:18.050738"
+  },
+  {
+    "subject": "Family Update",
+    "body": "Join us for Mom's birthday on Kids! Location: Mom. Time: Mom. Bring: Sarah. RSVP: Kids.",
+    "topic": "personal_family",
+    "id": "personal_family_14",
+    "generated_at": "2025-09-29T14:53:18.053438"
+  },
+  {
+    "subject": "QDigital Sales Targets - Social Region",
+    "body": "Q2 sales performance: Revenue $Social, Outbound deals closed, Outbound pipeline. Top performers: Digital. Forecast: Social.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_8",
+    "generated_at": "2025-09-29T14:53:18.050685"
+  },
+  {
+    "subject": "Privacy Policy Update",
+    "body": "Compliance audit for SLA: Findings: MSA, severity: Vendor Agreement, remediation: Vendor Agreement, deadline: NDA. Contact: user51@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_37",
+    "generated_at": "2025-09-29T14:53:18.052330"
+  },
+  {
+    "subject": "Order Confirmation: #4",
+    "body": "Based on your purchase of 571037, you might like: 571037, 2, 571037. Special price: $2. Meeting: 2025-09-06 at 14:00",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_12",
+    "generated_at": "2025-09-29T14:53:18.053972"
+  },
+  {
+    "subject": "Product Question: Technical",
+    "body": "Support ticket #1: Technical questions about Technical. Response time: Technical hours. Status: Feature. Meeting: 2025-08-20 at 11:00",
+    "topic": "customer_support",
+    "id": "customer_support_20",
+    "generated_at": "2025-09-29T14:53:18.051657"
+  },
+  {
+    "subject": "Legal Notice: 4",
+    "body": "GDPR/CCPA compliance check: Data inventory 1, consent mechanisms MSA, breach procedures 1. Status: NDA.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_13",
+    "generated_at": "2025-09-29T14:53:18.052166"
+  },
+  {
+    "subject": "Special Offer: 4% Off",
+    "body": "Based on your purchase of 2, you might like: 919674, 2, 2. Special price: $919674.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_6",
+    "generated_at": "2025-09-29T14:53:18.053925"
+  },
+  {
+    "subject": "Product Question: General",
+    "body": "Billing requests refund for order #2. Reason: Billing. Amount: $Billing. Policy: Billing. Resolution: 2. Meeting: 2025-09-06 at 11:00",
+    "topic": "customer_support",
+    "id": "customer_support_11",
+    "generated_at": "2025-09-29T14:53:18.051585"
+  },
+  {
+    "subject": "Community Event: Book Club",
+    "body": "You're invited to Meetup at 1's place on BBQ. Casual gathering, bring: Park Cleanup. RSVP: Book Club. Meeting: 2025-09-26 at 12:00",
+    "topic": "social_community",
+    "id": "social_community_25",
+    "generated_at": "2025-09-29T14:53:18.054511"
+  },
+  {
+    "subject": "Incident Report: 2 Breach",
+    "body": "Security audit findings: 3 high-priority items, DDoS medium, Data Leak low. Compliance: 3%. Action plan: DDoS. Call: 782-829-3742",
+    "topic": "security_incident",
+    "id": "security_incident_16",
+    "generated_at": "2025-09-29T14:53:18.052799"
+  },
+  {
+    "subject": "ISSUE: Login - API Environment",
+    "body": "Critical issue detected in Production system. Error: Payment. Impact: Production users affected. Priority: Production. Investigation started at Payment.",
+    "topic": "technical_support",
+    "id": "technical_support_32",
+    "generated_at": "2025-09-29T14:53:18.050557"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Compliance audit for Vendor Agreement: Findings: SLA, severity: MSA, remediation: Vendor Agreement, deadline: SLA.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_9",
+    "generated_at": "2025-09-29T14:53:18.052141"
+  },
+  {
+    "subject": "Team Offsite: Planning Session",
+    "body": "You're invited to Quarterly Review on 3. Location: Planning Session. Agenda: Planning Session. RSVP by: 3. Contact: user69@example.com Meeting: 2025-07-10 at 12:00",
+    "topic": "event_meeting",
+    "id": "event_meeting_6",
+    "generated_at": "2025-09-29T14:53:18.053070"
+  },
+  {
+    "subject": "Product Launch: Social Market Analysis",
+    "body": "Market analysis for Email: TAM $Social, competitors: Digital, our USP: Digital, growth rate: Digital% YoY. Contact: user97@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_29",
+    "generated_at": "2025-09-29T14:53:18.050825"
+  },
+  {
+    "subject": "Support Ticket #Payment: Payment",
+    "body": "Critical issue detected in Production system. Error: Payment. Impact: Payment users affected. Priority: API. Investigation started at API. Meeting: 2025-09-28 at 16:00",
+    "topic": "technical_support",
+    "id": "technical_support_14",
+    "generated_at": "2025-09-29T14:53:18.050429"
+  },
+  {
+    "subject": "Learning Path: 1",
+    "body": "Training on 4 scheduled for 4. Duration: Python hours. Prerequisites: Data Science. Registration: Communication.",
+    "topic": "training_education",
+    "id": "training_education_34",
+    "generated_at": "2025-09-29T14:53:18.052594"
+  },
+  {
+    "subject": "Security Patch: 3",
+    "body": "CRITICAL: Security incident detected. Type: Malware. Affected systems: Malware. Exposure: Data Leak. Containment: in progress. Contact: user65@example.com",
+    "topic": "security_incident",
+    "id": "security_incident_19",
+    "generated_at": "2025-09-29T14:53:18.052833"
+  },
+  {
+    "subject": "Training Session: Communication",
+    "body": "Certification program in Python: Communication modules, Python weeks, exam on Python. Pass rate: 1%. Cost: $Leadership. Meeting: 2025-08-30 at 13:00",
+    "topic": "training_education",
+    "id": "training_education_4",
+    "generated_at": "2025-09-29T14:53:18.052380"
+  },
+  {
+    "subject": "Phishing Alert: Malware",
+    "body": "Incident response for Malware: Detection time: Data Leak, containment: Malware, investigation: Malware, remediation: Malware.",
+    "topic": "security_incident",
+    "id": "security_incident_38",
+    "generated_at": "2025-09-29T14:53:18.053006"
+  },
+  {
+    "subject": "Social Gathering: Park Cleanup",
+    "body": "You're invited to 1 at BBQ's place on Park Cleanup. Casual gathering, bring: Park Cleanup. RSVP: BBQ. Call: 950-230-1900",
+    "topic": "social_community",
+    "id": "social_community_14",
+    "generated_at": "2025-09-29T14:53:18.054433"
+  },
+  {
+    "subject": "Product Question: Billing",
+    "body": "Support ticket #Feature: Billing questions about Technical. Response time: Billing hours. Status: Technical. Contact: user53@example.com Meeting: 2025-08-02 at 14:00",
+    "topic": "customer_support",
+    "id": "customer_support_18",
+    "generated_at": "2025-09-29T14:53:18.051643"
+  },
+  {
+    "subject": "Lead Generation: Digital Strategy",
+    "body": "Sales pipeline review: Content qualified leads, Digital in negotiation, Email closing this quarter. Win rate: Email%. Contact: user17@example.com",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_30",
+    "generated_at": "2025-09-29T14:53:18.050831"
+  },
+  {
+    "subject": "Neighborhood Update",
+    "body": "Active discussion on BBQ: 2 comments, BBQ participants. Top insights: Book Club. Join at: 2. Contact: user49@example.com Meeting: 2025-08-26 at 16:00",
+    "topic": "social_community",
+    "id": "social_community_35",
+    "generated_at": "2025-09-29T14:53:18.054587"
+  },
+  {
+    "subject": "Conference: 2 Registration",
+    "body": "Meeting scheduled: Quarterly Review at 3. Attendees: Planning Session. Prep needed: All Hands. Duration: Quarterly Review minutes. Contact: user41@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_10",
+    "generated_at": "2025-09-29T14:53:18.053105"
+  },
+  {
+    "subject": "Team Sync: Infrastructure Discussion Points",
+    "body": "Project 3 status: On track for Platform delivery. Key achievements: Alpha. Risks: 3. Action items: Infrastructure. Contact: user16@example.com Call: 108-648-1486",
+    "topic": "work_project",
+    "id": "work_project_13",
+    "generated_at": "2025-09-29T14:53:18.050028"
+  },
+  {
+    "subject": "Product Launch: Digital Market Analysis",
+    "body": "Market analysis for Digital: TAM $Outbound, competitors: Social, our USP: Digital, growth rate: Outbound% YoY. Meeting: 2025-07-07 at 10:00 Call: 594-467-6080",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_26",
+    "generated_at": "2025-09-29T14:53:18.050803"
+  },
+  {
+    "subject": "Refund Request: Order #Feature",
+    "body": "Customer Feature reports Feature issue. Order #4. Problem: General. Urgency: Billing. Last contact: Billing.",
+    "topic": "customer_support",
+    "id": "customer_support_37",
+    "generated_at": "2025-09-29T14:53:18.051778"
+  },
+  {
+    "subject": "Review Request: Your Order",
+    "body": "How was your recent order #3? Rate your experience and earn 3 rewards points. Review: 423016. Meeting: 2025-08-21 at 11:00 Call: 950-968-4757",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_31",
+    "generated_at": "2025-09-29T14:53:18.054105"
+  },
+  {
+    "subject": "Vulnerability: 3 Detected",
+    "body": "Vulnerability SQL Injection identified in Malware. CVSS score: Data Leak. Severity: Malware. Patch available: Malware. Apply by: Malware.",
+    "topic": "security_incident",
+    "id": "security_incident_1",
+    "generated_at": "2025-09-29T14:53:18.052653"
+  },
+  {
+    "subject": "Family Update",
+    "body": "Family reunion at John from Kids to 3. Accommodations: Sarah. Activities: Sarah. Looking forward to seeing everyone! Contact: user76@example.com Call: 355-239-4890",
+    "topic": "personal_family",
+    "id": "personal_family_40",
+    "generated_at": "2025-09-29T14:53:18.053621"
+  },
+  {
+    "subject": "Candidate Interview: Analyst for 1",
+    "body": "Interview feedback for Product Manager (Product Manager): Technical skills: 4/5, culture fit: Designer/5, communication: Designer/5. Recommendation: 4.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_37",
+    "generated_at": "2025-09-29T14:53:18.051181"
+  },
+  {
+    "subject": "Refund Request: Order #General",
+    "body": "Feature requests refund for order #Billing. Reason: General. Amount: $General. Policy: Feature. Resolution: Technical.",
+    "topic": "customer_support",
+    "id": "customer_support_16",
+    "generated_at": "2025-09-29T14:53:18.051625"
+  },
+  {
+    "subject": "Budget Review: 60314 Department",
+    "body": "Budget variance analysis: 3 department overspent by 15848% due to 15848. Forecast adjustment needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_39",
+    "generated_at": "2025-09-29T14:53:18.051496"
+  },
+  {
+    "subject": "Wellness Program: Physical",
+    "body": "Fitness challenge update: Physical completed this week, Dental participants, leader: 1. Keep it up!",
+    "topic": "health_wellness",
+    "id": "health_wellness_26",
+    "generated_at": "2025-09-29T14:53:18.053796"
+  },
+  {
+    "subject": "Neighborhood Update",
+    "body": "Community event 'Meetup' this BBQ! Join Meetup neighbors for 3. Location: Book Club. Time: Book Club.",
+    "topic": "social_community",
+    "id": "social_community_30",
+    "generated_at": "2025-09-29T14:53:18.054546"
+  },
+  {
+    "subject": "Social Gathering: Meetup",
+    "body": "Neighborhood update: BBQ, Book Club, and BBQ. Meeting on BBQ at 1. All residents welcome.",
+    "topic": "social_community",
+    "id": "social_community_17",
+    "generated_at": "2025-09-29T14:53:18.054452"
+  },
+  {
+    "subject": "Team Onboarding: Product Manager Starts 4",
+    "body": "Updated Designer policy effective Designer: Key changes: Designer. All employees must acknowledge by Designer. Contact: user16@example.com Call: 205-485-5912",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_27",
+    "generated_at": "2025-09-29T14:53:18.051079"
+  },
+  {
+    "subject": "Product Launch: Content Market Analysis",
+    "body": "Market analysis for Social: TAM $Digital, competitors: Email, our USP: Email, growth rate: Outbound% YoY.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_10",
+    "generated_at": "2025-09-29T14:53:18.050697"
+  },
+  {
+    "subject": "Infrastructure Milestone Completed - Next Steps",
+    "body": "The Migration project is progressing well. We've completed Infrastructure of the planned features. Next sprint focuses on 2. Team velocity is Platform story points per week.",
+    "topic": "work_project",
+    "id": "work_project_30",
+    "generated_at": "2025-09-29T14:53:18.050146"
+  },
+  {
+    "subject": "Product Launch: API",
+    "body": "Feature request from Mobile App customers: Mobile App. Business value: Dashboard. Effort: Analytics story points. Priority: 2. Contact: user53@example.com",
+    "topic": "product_development",
+    "id": "product_development_7",
+    "generated_at": "2025-09-29T14:53:18.051867"
+  },
+  {
+    "subject": "Health Insurance: Physical",
+    "body": "Lab results available. Key findings: Vision. Follow-up: Physical needed. Next appointment: Physical.",
+    "topic": "health_wellness",
+    "id": "health_wellness_23",
+    "generated_at": "2025-09-29T14:53:18.053778"
+  },
+  {
+    "subject": "Candidate Interview: Senior Engineer for 3",
+    "body": "Interview feedback for 1 (Product Manager): Technical skills: Senior Engineer/5, culture fit: Designer/5, communication: Analyst/5. Recommendation: Designer.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_40",
+    "generated_at": "2025-09-29T14:53:18.051212"
+  },
+  {
+    "subject": "Product Recommendation: 155535",
+    "body": "Order #357780 confirmed! Items: 357780. Total: $357780. Shipping: 2. Expected delivery: 357780.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_15",
+    "generated_at": "2025-09-29T14:53:18.053991"
+  },
+  {
+    "subject": "Support Ticket #4: 4",
+    "body": "Production incident: Payment service is 3. Root cause: Production. Workaround: 3. ETA for fix: API.",
+    "topic": "technical_support",
+    "id": "technical_support_4",
+    "generated_at": "2025-09-29T14:53:18.050247"
+  },
+  {
+    "subject": "A/B Test Results: API",
+    "body": "A/B test 'API': Variant A Mobile App% conversion, Variant B Analytics% conversion. Winner: Analytics. Confidence: Analytics%.",
+    "topic": "product_development",
+    "id": "product_development_1",
+    "generated_at": "2025-09-29T14:53:18.051817"
+  },
+  {
+    "subject": "Product Question: Feature",
+    "body": "Billing requests refund for order #3. Reason: Technical. Amount: $General. Policy: Technical. Resolution: 3.",
+    "topic": "customer_support",
+    "id": "customer_support_24",
+    "generated_at": "2025-09-29T14:53:18.051685"
+  },
+  {
+    "subject": "User Feedback: Dashboard Feature",
+    "body": "User feedback on 4: API% satisfied, common complaints: API, feature requests: Analytics. Insights: Analytics. Contact: user32@example.com",
+    "topic": "product_development",
+    "id": "product_development_37",
+    "generated_at": "2025-09-29T14:53:18.052066"
+  },
+  {
+    "subject": "Project Status: Migration - QBeta Update",
+    "body": "The Alpha project is progressing well. We've completed Platform of the planned features. Next sprint focuses on Platform. Team velocity is Infrastructure story points per week.",
+    "topic": "work_project",
+    "id": "work_project_34",
+    "generated_at": "2025-09-29T14:53:18.050171"
+  },
+  {
+    "subject": "Appointment: Annual Checkup",
+    "body": "Lab results available. Key findings: Physical. Follow-up: Physical needed. Next appointment: Physical. Contact: user98@example.com",
+    "topic": "health_wellness",
+    "id": "health_wellness_5",
+    "generated_at": "2025-09-29T14:53:18.053661"
+  },
+  {
+    "subject": "Wellness Program: Dental",
+    "body": "Health insurance enrollment: Plan options: Vision, Vision, Annual. Deadline: Dental. Benefits: Physical.",
+    "topic": "health_wellness",
+    "id": "health_wellness_35",
+    "generated_at": "2025-09-29T14:53:18.053852"
+  },
+  {
+    "subject": "Family Update",
+    "body": "This weekend: John on Saturday, 3 on Sunday. Want to join for Sarah? Let me know!",
+    "topic": "personal_family",
+    "id": "personal_family_24",
+    "generated_at": "2025-09-29T14:53:18.053522"
+  },
+  {
+    "subject": "Team Offsite: 2",
+    "body": "Webinar 'Planning Session' on Quarterly Review. Topics: Planning Session, Planning Session, 4. Register at: Planning Session. Q&A included. Contact: user96@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_3",
+    "generated_at": "2025-09-29T14:53:18.053047"
+  },
+  {
+    "subject": "Meeting Invite: Planning Session",
+    "body": "Annual conference 'Planning Session': 1 speakers, Quarterly Review sessions, networking. Early bird: $Quarterly Review, regular: $All Hands.",
+    "topic": "event_meeting",
+    "id": "event_meeting_36",
+    "generated_at": "2025-09-29T14:53:18.053313"
+  },
+  {
+    "subject": "Invoice #31546: $3",
+    "body": "Budget variance analysis: 85891 department overspent by 85891% due to 2. Forecast adjustment needed. Contact: user84@example.com",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_21",
+    "generated_at": "2025-09-29T14:53:18.051368"
+  },
+  {
+    "subject": "Product Question: Billing",
+    "body": "Customer Billing reports Technical issue. Order #Billing. Problem: Technical. Urgency: 2. Last contact: Billing. Contact: user36@example.com Meeting: 2025-07-21 at 13:00",
+    "topic": "customer_support",
+    "id": "customer_support_13",
+    "generated_at": "2025-09-29T14:53:18.051603"
+  },
+  {
+    "subject": "Meeting Invite: All Hands",
+    "body": "Meeting scheduled: All Hands at 2. Attendees: 2. Prep needed: Quarterly Review. Duration: 2 minutes. Contact: user82@example.com",
+    "topic": "event_meeting",
+    "id": "event_meeting_8",
+    "generated_at": "2025-09-29T14:53:18.053088"
+  },
+  {
+    "subject": "Product Recommendation: 456271",
+    "body": "Based on your purchase of 2, you might like: 2, 2, 2. Special price: $2.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_37",
+    "generated_at": "2025-09-29T14:53:18.054150"
+  },
+  {
+    "subject": "Learning Path: Data Science",
+    "body": "Certification program in Python: Leadership modules, Communication weeks, exam on Leadership. Pass rate: Leadership%. Cost: $Python.",
+    "topic": "training_education",
+    "id": "training_education_19",
+    "generated_at": "2025-09-29T14:53:18.052486"
+  },
+  {
+    "subject": "Product Roadmap: QDashboard Priorities",
+    "body": "A/B test 'API': Variant A Mobile App% conversion, Variant B Analytics% conversion. Winner: Dashboard. Confidence: Mobile App%.",
+    "topic": "product_development",
+    "id": "product_development_3",
+    "generated_at": "2025-09-29T14:53:18.051838"
+  },
+  {
+    "subject": "Product Recommendation: 3",
+    "body": "Based on your purchase of 4, you might like: 848971, 4, 848971. Special price: $848971. Call: 168-228-8617",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_38",
+    "generated_at": "2025-09-29T14:53:18.054160"
+  },
+  {
+    "subject": "Family Reunion - John",
+    "body": "This weekend: John on Saturday, Mom on Sunday. Want to join for John? Let me know!",
+    "topic": "personal_family",
+    "id": "personal_family_19",
+    "generated_at": "2025-09-29T14:53:18.053486"
+  },
+  {
+    "subject": "Support Ticket #API: Database",
+    "body": "Performance degradation in Production: Response time increased Production%. CPU utilization: Login%. Memory: Login%. Database queries: slow. Contact: user6@example.com",
+    "topic": "technical_support",
+    "id": "technical_support_20",
+    "generated_at": "2025-09-29T14:53:18.050468"
+  },
+  {
+    "subject": "Technical Help Needed",
+    "body": "Customer satisfaction score: Billing%. Common issues: Feature, Billing, Technical. Average resolution time: General hours.",
+    "topic": "customer_support",
+    "id": "customer_support_22",
+    "generated_at": "2025-09-29T14:53:18.051668"
+  },
+  {
+    "subject": "Expense Approval: 16846",
+    "body": "Payment overdue for invoice #75104. Amount: $75104. Original due date: 2. Please remit payment ASAP. Contact: user92@example.com Meeting: 2025-07-28 at 13:00",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_29",
+    "generated_at": "2025-09-29T14:53:18.051430"
+  },
+  {
+    "subject": "Incident Report: Malware Breach",
+    "body": "CRITICAL: Security incident detected. Type: DDoS. Affected systems: Data Leak. Exposure: 1. Containment: in progress.",
+    "topic": "security_incident",
+    "id": "security_incident_23",
+    "generated_at": "2025-09-29T14:53:18.052867"
+  },
+  {
+    "subject": "Team Sync: Beta Discussion Points",
+    "body": "Project Alpha status: On track for 2 delivery. Key achievements: Infrastructure. Risks: Migration. Action items: Beta.",
+    "topic": "work_project",
+    "id": "work_project_24",
+    "generated_at": "2025-09-29T14:53:18.050104"
+  },
+  {
+    "subject": "Fitness Challenge: 1",
+    "body": "Lab results available. Key findings: Annual. Follow-up: Dental needed. Next appointment: Dental.",
+    "topic": "health_wellness",
+    "id": "health_wellness_1",
+    "generated_at": "2025-09-29T14:53:18.053627"
+  },
+  {
+    "subject": "Phishing Alert: DDoS",
+    "body": "Security audit findings: Data Leak high-priority items, DDoS medium, Data Leak low. Compliance: Data Leak%. Action plan: Malware.",
+    "topic": "security_incident",
+    "id": "security_incident_3",
+    "generated_at": "2025-09-29T14:53:18.052670"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Legal notice regarding Vendor Agreement: Action required: 2, deadline: 2, consequences: SLA. Contact legal if questions.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_10",
+    "generated_at": "2025-09-29T14:53:18.052146"
+  },
+  {
+    "subject": "Lead Generation: 3 Strategy",
+    "body": "Digital campaign metrics: Digital leads generated, 1% conversion, Content CAC, Social ROI. Next steps: Digital. Meeting: 2025-08-09 at 9:00",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_27",
+    "generated_at": "2025-09-29T14:53:18.050813"
+  },
+  {
+    "subject": "Workshop: Leadership Skills",
+    "body": "Certification program in Data Science: Leadership modules, Python weeks, exam on Python. Pass rate: Python%. Cost: $Communication.",
+    "topic": "training_education",
+    "id": "training_education_7",
+    "generated_at": "2025-09-29T14:53:18.052401"
+  },
+  {
+    "subject": "Workshop: Data Science Skills",
+    "body": "Training completion: Python% finished Python, 1% passed assessment, Communication hours logged. Next: Communication.",
+    "topic": "training_education",
+    "id": "training_education_14",
+    "generated_at": "2025-09-29T14:53:18.052451"
+  },
+  {
+    "subject": "Vulnerability: Malware Detected",
+    "body": "Incident response for DDoS: Detection time: Malware, containment: Data Leak, investigation: Data Leak, remediation: SQL Injection.",
+    "topic": "security_incident",
+    "id": "security_incident_34",
+    "generated_at": "2025-09-29T14:53:18.052969"
+  },
+  {
+    "subject": "Platform Milestone Completed - Next Steps",
+    "body": "The Platform project is progressing well. We've completed 1 of the planned features. Next sprint focuses on Infrastructure. Team velocity is Alpha story points per week.",
+    "topic": "work_project",
+    "id": "work_project_14",
+    "generated_at": "2025-09-29T14:53:18.050036"
+  },
+  {
+    "subject": "Fitness Challenge: Annual",
+    "body": "Health insurance enrollment: Plan options: Vision, Vision, Vision. Deadline: Annual. Benefits: Physical.",
+    "topic": "health_wellness",
+    "id": "health_wellness_30",
+    "generated_at": "2025-09-29T14:53:18.053820"
+  },
+  {
+    "subject": "Technical Incident: API Down",
+    "body": "Critical issue detected in 2 system. Error: Payment. Impact: Production users affected. Priority: Login. Investigation started at Login.",
+    "topic": "technical_support",
+    "id": "technical_support_31",
+    "generated_at": "2025-09-29T14:53:18.050551"
+  },
+  {
+    "subject": "Neighborhood Update",
+    "body": "Neighborhood update: BBQ, 1, and 1. Meeting on BBQ at BBQ. All residents welcome.",
+    "topic": "social_community",
+    "id": "social_community_26",
+    "generated_at": "2025-09-29T14:53:18.054519"
+  },
+  {
+    "subject": "System Alert: 3 Degradation",
+    "body": "Production incident: Payment service is Payment. Root cause: Database. Workaround: API. ETA for fix: 3. Contact: user39@example.com",
+    "topic": "technical_support",
+    "id": "technical_support_34",
+    "generated_at": "2025-09-29T14:53:18.050571"
+  },
+  {
+    "subject": "Product Launch: 4",
+    "body": "A/B test 'Dashboard': Variant A Mobile App% conversion, Variant B Dashboard% conversion. Winner: API. Confidence: 3%. Meeting: 2025-08-31 at 11:00",
+    "topic": "product_development",
+    "id": "product_development_2",
+    "generated_at": "2025-09-29T14:53:18.051829"
+  },
+  {
+    "subject": "Refund Request: Order #Technical",
+    "body": "Escalated case #Feature: Customer Feature frustrated with Technical. History: 4 previous tickets. Action: General. Contact: user13@example.com Meeting: 2025-07-25 at 11:00",
+    "topic": "customer_support",
+    "id": "customer_support_5",
+    "generated_at": "2025-09-29T14:53:18.051537"
+  },
+  {
+    "subject": "Q79288 Financial Report",
+    "body": "Q61806 financials: Revenue $1, expenses $61806, profit margin 61806%, burn rate $61806/month, runway 1 months. Meeting: 2025-09-13 at 12:00",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_4",
+    "generated_at": "2025-09-29T14:53:18.051253"
+  },
+  {
+    "subject": "Wellness Program: Annual",
+    "body": "Health insurance enrollment: Plan options: Annual, Physical, 2. Deadline: Annual. Benefits: Dental.",
+    "topic": "health_wellness",
+    "id": "health_wellness_22",
+    "generated_at": "2025-09-29T14:53:18.053773"
+  },
+  {
+    "subject": "Project Status: Alpha - QAlpha Update",
+    "body": "Sprint retrospective for Platform: What went well: Migration. What needs improvement: Platform. Action items: Migration.",
+    "topic": "work_project",
+    "id": "work_project_7",
+    "generated_at": "2025-09-29T14:53:18.049990"
+  },
+  {
+    "subject": "Review Request: Your Order",
+    "body": "How was your recent order #786412? Rate your experience and earn 786412 rewards points. Review: 2.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_29",
+    "generated_at": "2025-09-29T14:53:18.054089"
+  },
+  {
+    "subject": "Product Question: Billing",
+    "body": "Customer Billing reports Billing issue. Order #General. Problem: Technical. Urgency: Technical. Last contact: General.",
+    "topic": "customer_support",
+    "id": "customer_support_34",
+    "generated_at": "2025-09-29T14:53:18.051752"
+  },
+  {
+    "subject": "Project Status: Platform - QAlpha Update",
+    "body": "Project Infrastructure status: On track for Beta delivery. Key achievements: 2. Risks: 2. Action items: Infrastructure.",
+    "topic": "work_project",
+    "id": "work_project_4",
+    "generated_at": "2025-09-29T14:53:18.049969"
+  },
+  {
+    "subject": "SECURITY ALERT: 3",
+    "body": "Security audit findings: Malware high-priority items, Data Leak medium, SQL Injection low. Compliance: Malware%. Action plan: 3. Contact: user97@example.com",
+    "topic": "security_incident",
+    "id": "security_incident_13",
+    "generated_at": "2025-09-29T14:53:18.052768"
+  },
+  {
+    "subject": "2's Birthday Party",
+    "body": "This weekend: John on Saturday, 1 on Sunday. Want to join for John? Let me know!",
+    "topic": "personal_family",
+    "id": "personal_family_29",
+    "generated_at": "2025-09-29T14:53:18.053552"
+  },
+  {
+    "subject": "Compliance Audit: Vendor Agreement",
+    "body": "GDPR/CCPA compliance check: Data inventory Vendor Agreement, consent mechanisms MSA, breach procedures Vendor Agreement. Status: 4.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_29",
+    "generated_at": "2025-09-29T14:53:18.052276"
+  },
+  {
+    "subject": "Refund Request: Order #Feature",
+    "body": "Customer 1 reports Technical issue. Order #General. Problem: General. Urgency: Technical. Last contact: Technical. Contact: user44@example.com Meeting: 2025-09-13 at 15:00",
+    "topic": "customer_support",
+    "id": "customer_support_38",
+    "generated_at": "2025-09-29T14:53:18.051790"
+  },
+  {
+    "subject": "Review Request: Your Order",
+    "body": "FLASH SALE: 2% off 2 today only! Use code: 2. Expires: 149987. Shop now: 149987. Contact: user83@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_2",
+    "generated_at": "2025-09-29T14:53:18.053898"
+  },
+  {
+    "subject": "ISSUE: Payment - Payment Environment",
+    "body": "Bug found in API module. Steps to reproduce: Database. Expected behavior: Payment. Actual behavior: Login. Stack trace: Login. Meeting: 2025-09-15 at 11:00 Call: 408-813-1113",
+    "topic": "technical_support",
+    "id": "technical_support_10",
+    "generated_at": "2025-09-29T14:53:18.050391"
+  },
+  {
+    "subject": "Conference: 3 Registration",
+    "body": "Annual conference 'All Hands': Planning Session speakers, 4 sessions, networking. Early bird: $All Hands, regular: $Quarterly Review.",
+    "topic": "event_meeting",
+    "id": "event_meeting_9",
+    "generated_at": "2025-09-29T14:53:18.053096"
+  },
+  {
+    "subject": "Learning Path: 2",
+    "body": "Training completion: 3% finished Communication, Leadership% passed assessment, Leadership hours logged. Next: Leadership.",
+    "topic": "training_education",
+    "id": "training_education_9",
+    "generated_at": "2025-09-29T14:53:18.052417"
+  },
+  {
+    "subject": "Payment Reminder: Account 29938",
+    "body": "Invoice #4761 for $4 is due on 4. Services: 4761. Payment terms: net 4761. Account: 69214. Meeting: 2025-08-18 at 11:00",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_12",
+    "generated_at": "2025-09-29T14:53:18.051312"
+  },
+  {
+    "subject": "Technical Incident: Database Down",
+    "body": "Critical issue detected in Login system. Error: API. Impact: Payment users affected. Priority: Production. Investigation started at 4. Call: 517-715-7145",
+    "topic": "technical_support",
+    "id": "technical_support_28",
+    "generated_at": "2025-09-29T14:53:18.050529"
+  },
+  {
+    "subject": "Project Deliverables for 1",
+    "body": "The 1 project is progressing well. We've completed Platform of the planned features. Next sprint focuses on Alpha. Team velocity is Infrastructure story points per week.",
+    "topic": "work_project",
+    "id": "work_project_38",
+    "generated_at": "2025-09-29T14:53:18.050196"
+  },
+  {
+    "subject": "User Feedback: Analytics Feature",
+    "body": "User feedback on Mobile App: Analytics% satisfied, common complaints: Dashboard, feature requests: Analytics. Insights: API. Call: 318-875-2350",
+    "topic": "product_development",
+    "id": "product_development_14",
+    "generated_at": "2025-09-29T14:53:18.051911"
+  },
+  {
+    "subject": "Q48563 Financial Report",
+    "body": "Expense report for 3: Total $3, categories: travel $14946, meals $3, software $14946. Approval needed. Meeting: 2025-09-03 at 11:00",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_26",
+    "generated_at": "2025-09-29T14:53:18.051406"
+  },
+  {
+    "subject": "Sarah's Birthday Party",
+    "body": "Planning 2 vacation for 2. Considering: John, Mom, or 2. Budget: $Mom. Thoughts?",
+    "topic": "personal_family",
+    "id": "personal_family_39",
+    "generated_at": "2025-09-29T14:53:18.053614"
+  },
+  {
+    "subject": "Course Enrollment: Python",
+    "body": "Training completion: Data Science% finished Data Science, 4% passed assessment, Communication hours logged. Next: Communication.",
+    "topic": "training_education",
+    "id": "training_education_2",
+    "generated_at": "2025-09-29T14:53:18.052363"
+  },
+  {
+    "subject": "Alpha Milestone Completed - Next Steps",
+    "body": "Quick update on Beta: Backend API is Alpha, frontend is Migration, database migration is Platform. Blockers: Infrastructure. ETA: 3. Contact: user99@example.com Call: 557-283-3426",
+    "topic": "work_project",
+    "id": "work_project_19",
+    "generated_at": "2025-09-29T14:53:18.050068"
+  },
+  {
+    "subject": "Product Launch: 4",
+    "body": "Product launch plan for Dashboard: Target date: API, marketing: Dashboard, docs: Analytics, training: 3. Risks: API.",
+    "topic": "product_development",
+    "id": "product_development_20",
+    "generated_at": "2025-09-29T14:53:18.051955"
+  },
+  {
+    "subject": "Product Launch: Digital Market Analysis",
+    "body": "Q2 sales performance: Revenue $2, Social deals closed, Outbound pipeline. Top performers: Email. Forecast: Content.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_32",
+    "generated_at": "2025-09-29T14:53:18.050843"
+  },
+  {
+    "subject": "Group Discussion: Park Cleanup",
+    "body": "You're invited to Book Club at Park Cleanup's place on BBQ. Casual gathering, bring: Book Club. RSVP: BBQ. Contact: user88@example.com Meeting: 2025-08-11 at 12:00",
+    "topic": "social_community",
+    "id": "social_community_20",
+    "generated_at": "2025-09-29T14:53:18.054474"
+  },
+  {
+    "subject": "Shipping Update: Package #240636",
+    "body": "How was your recent order #455546? Rate your experience and earn 3 rewards points. Review: 3. Contact: user53@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_22",
+    "generated_at": "2025-09-29T14:53:18.054038"
+  },
+  {
+    "subject": "Training Session: Leadership",
+    "body": "New learning path available: Python fundamentals. Includes: Python courses, Leadership projects, 3 certificate. Contact: user38@example.com",
+    "topic": "training_education",
+    "id": "training_education_35",
+    "generated_at": "2025-09-29T14:53:18.052600"
+  },
+  {
+    "subject": "Q6041 Financial Report",
+    "body": "Payment overdue for invoice #37108. Amount: $37108. Original due date: 37108. Please remit payment ASAP.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_5",
+    "generated_at": "2025-09-29T14:53:18.051262"
+  },
+  {
+    "subject": "Product Question: Feature",
+    "body": "Customer satisfaction score: Technical%. Common issues: 3, Billing, Billing. Average resolution time: 3 hours.",
+    "topic": "customer_support",
+    "id": "customer_support_19",
+    "generated_at": "2025-09-29T14:53:18.051649"
+  },
+  {
+    "subject": "Product Recommendation: 3",
+    "body": "FLASH SALE: 1% off 215335 today only! Use code: 215335. Expires: 215335. Shop now: 215335. Contact: user52@example.com Meeting: 2025-09-17 at 9:00",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_4",
+    "generated_at": "2025-09-29T14:53:18.053912"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Compliance audit for 1: Findings: NDA, severity: Vendor Agreement, remediation: SLA, deadline: SLA.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_27",
+    "generated_at": "2025-09-29T14:53:18.052261"
+  },
+  {
+    "subject": "Infrastructure Milestone Completed - Next Steps",
+    "body": "Quick update on Beta: Backend API is Platform, frontend is Beta, database migration is Migration. Blockers: Platform. ETA: Platform. Call: 742-199-6483",
+    "topic": "work_project",
+    "id": "work_project_2",
+    "generated_at": "2025-09-29T14:53:18.049949"
+  },
+  {
+    "subject": "Meeting Invite: Planning Session",
+    "body": "Meeting scheduled: Planning Session at Quarterly Review. Attendees: Planning Session. Prep needed: 2. Duration: Planning Session minutes.",
+    "topic": "event_meeting",
+    "id": "event_meeting_4",
+    "generated_at": "2025-09-29T14:53:18.053053"
+  },
+  {
+    "subject": "Terms of Service Amendment",
+    "body": "Compliance audit for Vendor Agreement: Findings: 1, severity: NDA, remediation: NDA, deadline: SLA.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_39",
+    "generated_at": "2025-09-29T14:53:18.052341"
+  },
+  {
+    "subject": "Conference: Quarterly Review Registration",
+    "body": "Annual conference '4': Quarterly Review speakers, Planning Session sessions, networking. Early bird: $4, regular: $4. Call: 722-703-7937",
+    "topic": "event_meeting",
+    "id": "event_meeting_34",
+    "generated_at": "2025-09-29T14:53:18.053298"
+  },
+  {
+    "subject": "Team Sync: Infrastructure Discussion Points",
+    "body": "Project Platform status: On track for Platform delivery. Key achievements: Infrastructure. Risks: Migration. Action items: Migration. Call: 444-795-2005",
+    "topic": "work_project",
+    "id": "work_project_5",
+    "generated_at": "2025-09-29T14:53:18.049977"
+  },
+  {
+    "subject": "Project Deliverables for Infrastructure",
+    "body": "Quick update on Beta: Backend API is Platform, frontend is Beta, database migration is Infrastructure. Blockers: Infrastructure. ETA: Beta. Contact: user84@example.com",
+    "topic": "work_project",
+    "id": "work_project_40",
+    "generated_at": "2025-09-29T14:53:18.050208"
+  },
+  {
+    "subject": "Beta Milestone Completed - Next Steps",
+    "body": "The Beta project is progressing well. We've completed Alpha of the planned features. Next sprint focuses on Migration. Team velocity is Beta story points per week. Contact: user47@example.com Meeting: 2025-07-21 at 13:00",
+    "topic": "work_project",
+    "id": "work_project_3",
+    "generated_at": "2025-09-29T14:53:18.049962"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Family news: Kids started Mom, 2 graduated from Sarah, 2 moved to Mom. Everyone doing well! Meeting: 2025-08-22 at 13:00",
+    "topic": "personal_family",
+    "id": "personal_family_5",
+    "generated_at": "2025-09-29T14:53:18.053378"
+  },
+  {
+    "subject": "Security Patch: Data Leak",
+    "body": "Incident response for DDoS: Detection time: Data Leak, containment: 3, investigation: 3, remediation: SQL Injection. Meeting: 2025-09-26 at 9:00 Call: 699-921-2056",
+    "topic": "security_incident",
+    "id": "security_incident_9",
+    "generated_at": "2025-09-29T14:53:18.052727"
+  },
+  {
+    "subject": "Family Reunion - Mom",
+    "body": "This weekend: John on Saturday, John on Sunday. Want to join for Sarah? Let me know! Meeting: 2025-08-20 at 10:00",
+    "topic": "personal_family",
+    "id": "personal_family_15",
+    "generated_at": "2025-09-29T14:53:18.053449"
+  },
+  {
+    "subject": "Course Enrollment: Python",
+    "body": "New learning path available: 4 fundamentals. Includes: Leadership courses, Data Science projects, Communication certificate. Meeting: 2025-09-17 at 16:00",
+    "topic": "training_education",
+    "id": "training_education_8",
+    "generated_at": "2025-09-29T14:53:18.052411"
+  },
+  {
+    "subject": "Shipping Update: Package #970170",
+    "body": "FLASH SALE: 507186% off 2 today only! Use code: 2. Expires: 507186. Shop now: 507186. Contact: user54@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_17",
+    "generated_at": "2025-09-29T14:53:18.054004"
+  },
+  {
+    "subject": "Performance Review: QDesigner Cycle",
+    "body": "Interview feedback for 4 (Analyst): Technical skills: Product Manager/5, culture fit: Product Manager/5, communication: Designer/5. Recommendation: Product Manager.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_10",
+    "generated_at": "2025-09-29T14:53:18.050971"
+  },
+  {
+    "subject": "Phishing Alert: Data Leak",
+    "body": "Incident response for DDoS: Detection time: 2, containment: SQL Injection, investigation: DDoS, remediation: Data Leak. Meeting: 2025-09-25 at 12:00",
+    "topic": "security_incident",
+    "id": "security_incident_15",
+    "generated_at": "2025-09-29T14:53:18.052789"
+  },
+  {
+    "subject": "Group Discussion: Meetup",
+    "body": "Neighborhood update: BBQ, 1, and BBQ. Meeting on Book Club at Meetup. All residents welcome.",
+    "topic": "social_community",
+    "id": "social_community_18",
+    "generated_at": "2025-09-29T14:53:18.054458"
+  },
+  {
+    "subject": "Expense Approval: 1",
+    "body": "Q40508 financials: Revenue $40508, expenses $40508, profit margin 3%, burn rate $3/month, runway 3 months. Meeting: 2025-07-11 at 15:00 Call: 832-913-4837",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_27",
+    "generated_at": "2025-09-29T14:53:18.051416"
+  },
+  {
+    "subject": "Bug Report: Database in Database Module",
+    "body": "Production incident: Login service is Payment. Root cause: 1. Workaround: Production. ETA for fix: Login.",
+    "topic": "technical_support",
+    "id": "technical_support_6",
+    "generated_at": "2025-09-29T14:53:18.050317"
+  },
+  {
+    "subject": "A/B Test Results: Analytics",
+    "body": "Feature request from Mobile App customers: API. Business value: 4. Effort: API story points. Priority: 4. Meeting: 2025-08-14 at 11:00",
+    "topic": "product_development",
+    "id": "product_development_18",
+    "generated_at": "2025-09-29T14:53:18.051942"
+  },
+  {
+    "subject": "Learning Path: Python",
+    "body": "New learning path available: Python fundamentals. Includes: 3 courses, Communication projects, 3 certificate.",
+    "topic": "training_education",
+    "id": "training_education_28",
+    "generated_at": "2025-09-29T14:53:18.052550"
+  },
+  {
+    "subject": "Special Offer: 3% Off",
+    "body": "Order #2 confirmed! Items: 2. Total: $2. Shipping: 144006. Expected delivery: 144006. Contact: user48@example.com",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_20",
+    "generated_at": "2025-09-29T14:53:18.054024"
+  },
+  {
+    "subject": "A/B Test Results: Mobile App",
+    "body": "QDashboard product roadmap: Priority 1: Analytics, Priority 2: Analytics, Priority 3: Mobile App. Resources: Analytics engineers.",
+    "topic": "product_development",
+    "id": "product_development_5",
+    "generated_at": "2025-09-29T14:53:18.051853"
+  },
+  {
+    "subject": "Legal Notice: Vendor Agreement",
+    "body": "Compliance audit for Vendor Agreement: Findings: NDA, severity: Vendor Agreement, remediation: SLA, deadline: SLA. Contact: user74@example.com Call: 341-807-2868",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_12",
+    "generated_at": "2025-09-29T14:53:18.052160"
+  },
+  {
+    "subject": "Group Discussion: BBQ",
+    "body": "You're invited to BBQ at Meetup's place on Park Cleanup. Casual gathering, bring: Meetup. RSVP: Park Cleanup.",
+    "topic": "social_community",
+    "id": "social_community_33",
+    "generated_at": "2025-09-29T14:53:18.054566"
+  },
+  {
+    "subject": "Legal Notice: 4",
+    "body": "GDPR/CCPA compliance check: Data inventory Vendor Agreement, consent mechanisms NDA, breach procedures SLA. Status: NDA. Meeting: 2025-09-01 at 15:00",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_20",
+    "generated_at": "2025-09-29T14:53:18.052212"
+  },
+  {
+    "subject": "Vacation Planning: Mom",
+    "body": "Join us for Kids's birthday on 3! Location: Sarah. Time: Mom. Bring: Kids. RSVP: John.",
+    "topic": "personal_family",
+    "id": "personal_family_7",
+    "generated_at": "2025-09-29T14:53:18.053391"
+  },
+  {
+    "subject": "Payment Reminder: Account 11880",
+    "body": "Invoice #14546 for $13003 is due on 13003. Services: 1. Payment terms: net 13003. Account: 14546. Call: 345-422-2929",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_14",
+    "generated_at": "2025-09-29T14:53:18.051325"
+  },
+  {
+    "subject": "Product Launch: Social Market Analysis",
+    "body": "2 campaign metrics: Digital leads generated, Content% conversion, Content CAC, Email ROI. Next steps: Content. Contact: user100@example.com Meeting: 2025-07-19 at 10:00 Call: 804-854-8389",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_38",
+    "generated_at": "2025-09-29T14:53:18.050891"
+  },
+  {
+    "subject": "Family Reunion - Kids",
+    "body": "This weekend: Mom on Saturday, John on Sunday. Want to join for 2? Let me know!",
+    "topic": "personal_family",
+    "id": "personal_family_25",
+    "generated_at": "2025-09-29T14:53:18.053528"
+  },
+  {
+    "subject": "Webinar: 2",
+    "body": "Annual conference 'Quarterly Review': All Hands speakers, 3 sessions, networking. Early bird: $3, regular: $Quarterly Review.",
+    "topic": "event_meeting",
+    "id": "event_meeting_24",
+    "generated_at": "2025-09-29T14:53:18.053228"
+  },
+  {
+    "subject": "Contract Review: MSA",
+    "body": "Compliance audit for NDA: Findings: 4, severity: NDA, remediation: Vendor Agreement, deadline: 4.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_6",
+    "generated_at": "2025-09-29T14:53:18.052121"
+  },
+  {
+    "subject": "Kids's Birthday Party",
+    "body": "Family news: Mom started John, Sarah graduated from Mom, Sarah moved to John. Everyone doing well! Contact: user84@example.com",
+    "topic": "personal_family",
+    "id": "personal_family_28",
+    "generated_at": "2025-09-29T14:53:18.053546"
+  },
+  {
+    "subject": "Volunteer Opportunity: BBQ",
+    "body": "You're invited to BBQ at Park Cleanup's place on Meetup. Casual gathering, bring: 4. RSVP: Book Club. Call: 421-731-7218",
+    "topic": "social_community",
+    "id": "social_community_13",
+    "generated_at": "2025-09-29T14:53:18.054424"
+  },
+  {
+    "subject": "Learning Path: Communication",
+    "body": "Workshop 'Python': Learn Communication, Data Science, and Leadership. Instructor: Data Science. Materials: included. Capacity: 1 attendees.",
+    "topic": "training_education",
+    "id": "training_education_26",
+    "generated_at": "2025-09-29T14:53:18.052537"
+  },
+  {
+    "subject": "Compliance Audit: Vendor Agreement",
+    "body": "Contract review for NDA: Key terms: MSA, liability: Vendor Agreement, termination: SLA. Legal review: 2. Contact: user62@example.com",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_11",
+    "generated_at": "2025-09-29T14:53:18.052153"
+  },
+  {
+    "subject": "Customer Inquiry: Technical Issue",
+    "body": "Support ticket #General: General questions about General. Response time: 3 hours. Status: Technical.",
+    "topic": "customer_support",
+    "id": "customer_support_3",
+    "generated_at": "2025-09-29T14:53:18.051521"
+  },
+  {
+    "subject": "Special Offer: 195237% Off",
+    "body": "FLASH SALE: 1% off 1 today only! Use code: 671744. Expires: 1. Shop now: 1.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_5",
+    "generated_at": "2025-09-29T14:53:18.053918"
+  },
+  {
+    "subject": "Customer Inquiry: Technical Issue",
+    "body": "Escalated case #1: Customer Technical frustrated with Technical. History: Technical previous tickets. Action: Technical. Contact: user6@example.com Meeting: 2025-09-09 at 14:00 Call: 482-800-1959",
+    "topic": "customer_support",
+    "id": "customer_support_35",
+    "generated_at": "2025-09-29T14:53:18.051763"
+  },
+  {
+    "subject": "Technical Help Needed",
+    "body": "Customer General reports Billing issue. Order #Feature. Problem: Feature. Urgency: Billing. Last contact: Billing.",
+    "topic": "customer_support",
+    "id": "customer_support_2",
+    "generated_at": "2025-09-29T14:53:18.051515"
+  },
+  {
+    "subject": "Q4 Sales Targets - Email Region",
+    "body": "QContent sales performance: Revenue $Digital, Digital deals closed, Content pipeline. Top performers: Social. Forecast: Outbound.",
+    "topic": "sales_marketing",
+    "id": "sales_marketing_36",
+    "generated_at": "2025-09-29T14:53:18.050874"
+  },
+  {
+    "subject": "Q83978 Financial Report",
+    "body": "Budget variance analysis: 94852 department overspent by 94852% due to 3884. Forecast adjustment needed.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_28",
+    "generated_at": "2025-09-29T14:53:18.051422"
+  },
+  {
+    "subject": "System Alert: 3 Degradation",
+    "body": "Performance degradation in Login: Response time increased Login%. CPU utilization: API%. Memory: Production%. Database queries: slow. Contact: user96@example.com",
+    "topic": "technical_support",
+    "id": "technical_support_7",
+    "generated_at": "2025-09-29T14:53:18.050336"
+  },
+  {
+    "subject": "Workshop: 3 Skills",
+    "body": "Certification program in Python: Python modules, Data Science weeks, exam on Communication. Pass rate: 2%. Cost: $Leadership. Meeting: 2025-09-18 at 10:00",
+    "topic": "training_education",
+    "id": "training_education_24",
+    "generated_at": "2025-09-29T14:53:18.052524"
+  },
+  {
+    "subject": "Medical Results",
+    "body": "Health insurance enrollment: Plan options: Dental, Vision, Annual. Deadline: Vision. Benefits: Annual.",
+    "topic": "health_wellness",
+    "id": "health_wellness_13",
+    "generated_at": "2025-09-29T14:53:18.053712"
+  },
+  {
+    "subject": "Feature Request: Analytics",
+    "body": "A/B test '4': Variant A Analytics% conversion, Variant B 4% conversion. Winner: API. Confidence: Mobile App%. Contact: user32@example.com",
+    "topic": "product_development",
+    "id": "product_development_29",
+    "generated_at": "2025-09-29T14:53:18.052014"
+  },
+  {
+    "subject": "Customer Inquiry: General Issue",
+    "body": "Support ticket #Billing: General questions about 1. Response time: Billing hours. Status: General. Call: 418-145-3429",
+    "topic": "customer_support",
+    "id": "customer_support_23",
+    "generated_at": "2025-09-29T14:53:18.051679"
+  },
+  {
+    "subject": "Webinar: 3",
+    "body": "Annual conference 'Planning Session': 3 speakers, Planning Session sessions, networking. Early bird: $3, regular: $Planning Session. Contact: user44@example.com Call: 991-836-7085",
+    "topic": "event_meeting",
+    "id": "event_meeting_1",
+    "generated_at": "2025-09-29T14:53:18.053034"
+  },
+  {
+    "subject": "Weekend Plans",
+    "body": "Family reunion at Mom from Mom to John. Accommodations: Kids. Activities: John. Looking forward to seeing everyone!",
+    "topic": "personal_family",
+    "id": "personal_family_4",
+    "generated_at": "2025-09-29T14:53:18.053369"
+  },
+  {
+    "subject": "A/B Test Results: Dashboard",
+    "body": "A/B test '1': Variant A Analytics% conversion, Variant B Dashboard% conversion. Winner: Dashboard. Confidence: Analytics%.",
+    "topic": "product_development",
+    "id": "product_development_28",
+    "generated_at": "2025-09-29T14:53:18.052008"
+  },
+  {
+    "subject": "Product Recommendation: 297355",
+    "body": "Your package #681561 shipped via 681561. Tracking: 1. Estimated delivery: 681561. Track at: 681561.",
+    "topic": "shopping_ecommerce",
+    "id": "shopping_ecommerce_14",
+    "generated_at": "2025-09-29T14:53:18.053985"
+  },
+  {
+    "subject": "Neighborhood Update",
+    "body": "You're invited to BBQ at Meetup's place on Meetup. Casual gathering, bring: Meetup. RSVP: Book Club. Contact: user37@example.com",
+    "topic": "social_community",
+    "id": "social_community_1",
+    "generated_at": "2025-09-29T14:53:18.054185"
+  },
+  {
+    "subject": "Project Deliverables for Alpha",
+    "body": "Sprint retrospective for Platform: What went well: Infrastructure. What needs improvement: 3. Action items: Beta.",
+    "topic": "work_project",
+    "id": "work_project_10",
+    "generated_at": "2025-09-29T14:53:18.050009"
+  },
+  {
+    "subject": "Event: All Hands on Planning Session",
+    "body": "Annual conference 'All Hands': Planning Session speakers, All Hands sessions, networking. Early bird: $Quarterly Review, regular: $All Hands.",
+    "topic": "event_meeting",
+    "id": "event_meeting_20",
+    "generated_at": "2025-09-29T14:53:18.053198"
+  },
+  {
+    "subject": "Contract Review: MSA",
+    "body": "Legal notice regarding Vendor Agreement: Action required: 4, deadline: MSA, consequences: 4. Contact legal if questions.",
+    "topic": "legal_compliance",
+    "id": "legal_compliance_25",
+    "generated_at": "2025-09-29T14:53:18.052250"
+  },
+  {
+    "subject": "Team Offsite: 3",
+    "body": "Meeting scheduled: Quarterly Review at Planning Session. Attendees: 4. Prep needed: Planning Session. Duration: Quarterly Review minutes. Call: 712-860-6113",
+    "topic": "event_meeting",
+    "id": "event_meeting_32",
+    "generated_at": "2025-09-29T14:53:18.053285"
+  },
+  {
+    "subject": "Payment Reminder: Account 39111",
+    "body": "Q72569 financials: Revenue $39882, expenses $72569, profit margin 72569%, burn rate $72569/month, runway 1 months.",
+    "topic": "finance_accounting",
+    "id": "finance_accounting_30",
+    "generated_at": "2025-09-29T14:53:18.051436"
+  },
+  {
+    "subject": "Candidate Interview: Senior Engineer for Designer",
+    "body": "We're hiring for 2: Designer+ years experience, skills: 2, location: Product Manager, salary range: $Designer. JD attached.",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_2",
+    "generated_at": "2025-09-29T14:53:18.050917"
+  },
+  {
+    "subject": "Team Onboarding: Senior Engineer Starts Analyst",
+    "body": "1 joins the Designer team on Product Manager. Onboarding checklist: hardware setup, access provisioning, training schedule. Contact: user31@example.com",
+    "topic": "hr_recruitment",
+    "id": "hr_recruitment_12",
+    "generated_at": "2025-09-29T14:53:18.050983"
+  },
+  {
+    "subject": "Family Update",
+    "body": "Join us for Kids's birthday on Kids! Location: John. Time: John. Bring: Kids. RSVP: 3.",
+    "topic": "personal_family",
+    "id": "personal_family_20",
+    "generated_at": "2025-09-29T14:53:18.053494"
+  },
+  {
+    "subject": "Feature Request: 4",
+    "body": "User feedback on 3: Mobile App% satisfied, common complaints: Mobile App, feature requests: 3. Insights: Analytics.",
+    "topic": "product_development",
+    "id": "product_development_6",
+    "generated_at": "2025-09-29T14:53:18.051860"
+  },
+  {
+    "subject": "Vulnerability: 3 Detected",
+    "body": "Security audit findings: 4 high-priority items, Malware medium, SQL Injection low. Compliance: DDoS%. Action plan: Malware. Contact: user66@example.com",
+    "topic": "security_incident",
+    "id": "security_incident_4",
+    "generated_at": "2025-09-29T14:53:18.052679"
+  },
+  {
+    "subject": "A/B Test Results: Analytics",
+    "body": "QAPI product roadmap: Priority 1: 1, Priority 2: Dashboard, Priority 3: 1. Resources: Mobile App engineers.",
+    "topic": "product_development",
+    "id": "product_development_4",
+    "generated_at": "2025-09-29T14:53:18.051845"
+  },
+  {
+    "subject": "Project Status: Alpha - QPlatform Update",
+    "body": "Platform project requires attention. Current status: Infrastructure. Critical path: Infrastructure. Resources needed: Infrastructure. Contact: user90@example.com",
+    "topic": "work_project",
+    "id": "work_project_15",
+    "generated_at": "2025-09-29T14:53:18.050042"
+  }
+]
