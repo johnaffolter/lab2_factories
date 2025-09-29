@@ -103,8 +103,12 @@ class MLOpsKnowledgeGraph:
             )
 
             # 2. Create Topic node and classification relationship
-            predicted_topic = classification_result.get("predicted_topic")
-            confidence = classification_result.get("confidence_scores", {}).get(predicted_topic, 0)
+            predicted_topic = classification_result.get("predicted_topic") or classification_result.get("predicted_label")
+            if not predicted_topic:
+                raise ValueError("Classification result must contain 'predicted_topic' or 'predicted_label'")
+
+            confidence_scores = classification_result.get("confidence_scores", classification_result.get("all_scores", {}))
+            confidence = confidence_scores.get(predicted_topic, classification_result.get("confidence", 0))
 
             topic_query = """
             MATCH (e:Email {id: $email_id})
@@ -120,8 +124,8 @@ class MLOpsKnowledgeGraph:
                 topic_query,
                 email_id=email_id,
                 topic_name=predicted_topic,
-                confidence=confidence,
-                all_scores=json.dumps(classification_result.get("confidence_scores", {}))
+                confidence=float(confidence) if confidence else 0.0,
+                all_scores=json.dumps(confidence_scores)
             )
 
             # 3. Create ML Model node and prediction relationship
@@ -786,25 +790,25 @@ class MLOpsKnowledgeGraph:
 
         with self.driver.session(database=self.database) as session:
             overview_query = """
-            CALL {
+            CALL () {
                 MATCH (e:Email) RETURN count(e) as total_emails
             }
-            CALL {
+            CALL () {
                 MATCH (e:Email)-[:HAS_GROUND_TRUTH]->(:Topic) RETURN count(e) as labeled_emails
             }
-            CALL {
+            CALL () {
                 MATCH (m:MLModel) RETURN count(m) as total_models
             }
-            CALL {
+            CALL () {
                 MATCH (f:TrainingFlow) RETURN count(f) as total_flows
             }
-            CALL {
+            CALL () {
                 MATCH (t:Topic) RETURN count(t) as total_topics
             }
-            CALL {
+            CALL () {
                 MATCH (g:FeatureGenerator) RETURN count(g) as total_generators
             }
-            CALL {
+            CALL () {
                 MATCH (ex:Experiment) RETURN count(ex) as total_experiments
             }
             RETURN total_emails, labeled_emails, total_models, total_flows,
