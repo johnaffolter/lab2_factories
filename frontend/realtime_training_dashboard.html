@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time MLOps Training Dashboard</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@2.29.3/index.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: #ffffff;
+        }
+
+        .dashboard-container {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .connection-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .status-connected {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+
+        .status-disconnected {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+
+        .status-connecting {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .metric-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .metric-icon {
+            font-size: 2rem;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .metric-trend {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 20px 0;
+        }
+
+        .training-controls {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .control-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .control-input {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        .control-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .btn-success {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: white;
+        }
+
+        .btn-warning {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .feedback-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .feedback-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-textarea {
+            grid-column: 1 / -1;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .rating-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .rating-star {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .rating-star.active {
+            color: #ffd700;
+        }
+
+        .rating-star:hover {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+
+        .suggestions-panel {
+            background: rgba(46, 204, 113, 0.1);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .suggestion-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .alerts-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            max-width: 400px;
+            z-index: 1000;
+        }
+
+        .alert {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transform: translateX(100%);
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .alert-success {
+            border-left: 4px solid #2ecc71;
+        }
+
+        .alert-warning {
+            border-left: 4px solid #f39c12;
+        }
+
+        .alert-error {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .training-log {
+            background: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            border-radius: 10px;
+            height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 2px 0;
+        }
+
+        .log-info {
+            color: #00aaff;
+        }
+
+        .log-success {
+            color: #00ff88;
+        }
+
+        .log-warning {
+            color: #ffaa00;
+        }
+
+        .log-error {
+            color: #ff4444;
+        }
+
+        .performance-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .indicator-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .indicator-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71);
+            transition: width 0.8s ease;
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="dashboard-container">
+            <!-- Header -->
+            <div class="header">
+                <h1>🚀 Real-time MLOps Training Dashboard</h1>
+                <p style="margin: 10px 0;">Enhanced Training with Continuous Feedback Integration</p>
+                <div class="connection-status" :class="connectionStatusClass">
+                    <span class="pulse">●</span>
+                    {{ connectionStatus }}
+                </div>
+            </div>
+
+            <!-- Training Controls -->
+            <div class="training-controls">
+                <h3 style="margin-bottom: 20px;">🎛️ Training Configuration</h3>
+                <div class="control-group">
+                    <input v-model="trainingConfig.model_id" class="control-input" placeholder="Model ID">
+                    <input v-model.number="trainingConfig.epochs" type="number" class="control-input" placeholder="Epochs">
+                    <input v-model.number="trainingConfig.learning_rate" type="number" step="0.001" class="control-input" placeholder="Learning Rate">
+                    <button @click="startTraining" :disabled="isTraining" class="btn btn-success">
+                        {{ isTraining ? '🔄 Training...' : '🚀 Start Training' }}
+                    </button>
+                    <button @click="stopTraining" :disabled="!isTraining" class="btn btn-warning">
+                        ⏹️ Stop Training
+                    </button>
+                </div>
+            </div>
+
+            <!-- Real-time Metrics Grid -->
+            <div class="metrics-grid">
+                <!-- Accuracy Metric -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-title">🎯 Accuracy</div>
+                        <div class="metric-icon">📈</div>
+                    </div>
+                    <div class="metric-value" :style="{ color: getMetricColor('accuracy') }">
+                        {{ formatMetric(currentMetrics.accuracy) }}
+                    </div>
+                    <div class="performance-indicator">
+                        <div class="indicator-bar">
+                            <div class="indicator-fill" :style="{ width: (currentMetrics.accuracy * 100) + '%' }"></div>
+                        </div>
+                        <span>{{ (currentMetrics.accuracy * 100).toFixed(1) }}%</span>
+                    </div>
+                    <div class="metric-trend">
+                        {{ getMetricTrend('accuracy') }}
+                    </div>
+                </div>
+
+                <!-- Loss Metric -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-title">📉 Loss</div>
+                        <div class="metric-icon">⚡</div>
+                    </div>
+                    <div class="metric-value" :style="{ color: getMetricColor('loss', true) }">
+                        {{ formatMetric(currentMetrics.loss) }}
+                    </div>
+                    <div class="performance-indicator">
+                        <div class="indicator-bar">
+                            <div class="indicator-fill" :style="{ width: Math.max(0, 100 - (currentMetrics.loss * 100)) + '%' }"></div>
+                        </div>
+                    </div>
+                    <div class="metric-trend">
+                        {{ getMetricTrend('loss', true) }}
+                    </div>
+                </div>
+
+                <!-- User Satisfaction -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-title">👥 User Satisfaction</div>
+                        <div class="metric-icon">⭐</div>
+                    </div>
+                    <div class="metric-value" :style="{ color: getMetricColor('user_satisfaction') }">
+                        {{ formatMetric(currentMetrics.user_feedback_score || 0) }}
+                    </div>
+                    <div class="rating-group">
+                        <span v-for="n in 5" :key="n"
+                              class="rating-star"
+                              :class="{ active: n <= Math.round(currentMetrics.user_feedback_score || 0) }">
+                            ⭐
+                        </span>
+                    </div>
+                    <div class="metric-trend">
+                        Based on {{ feedbackCount }} feedback entries
+                    </div>
+                </div>
+
+                <!-- Training Progress -->
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div class="metric-title">🔄 Training Progress</div>
+                        <div class="metric-icon">⏰</div>
+                    </div>
+                    <div class="metric-value">
+                        {{ currentMetrics.epoch || 0 }} / {{ trainingConfig.epochs }}
+                    </div>
+                    <div class="performance-indicator">
+                        <div class="indicator-bar">
+                            <div class="indicator-fill" :style="{ width: getTrainingProgress() + '%' }"></div>
+                        </div>
+                        <span>{{ getTrainingProgress().toFixed(1) }}%</span>
+                    </div>
+                    <div class="metric-trend">
+                        {{ isTraining ? 'Training in progress...' : 'Ready to train' }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                <!-- Performance Chart -->
+                <div class="metric-card">
+                    <h3 style="margin-bottom: 20px;">📊 Training Performance</h3>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Feedback Trends -->
+                <div class="metric-card">
+                    <h3 style="margin-bottom: 20px;">💬 Feedback Trends</h3>
+                    <div class="chart-container">
+                        <canvas id="feedbackChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Section -->
+            <div class="feedback-section">
+                <h3 style="margin-bottom: 20px;">💬 Real-time Feedback Integration</h3>
+                <div class="feedback-form">
+                    <input v-model="feedback.prediction_id" class="control-input" placeholder="Prediction ID">
+                    <input v-model="feedback.original_prediction" class="control-input" placeholder="Original Prediction">
+                    <textarea v-model="feedback.corrected_prediction" class="feedback-textarea"
+                              placeholder="Corrected prediction or feedback details..."></textarea>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <span>Confidence Rating:</span>
+                        <div class="rating-group">
+                            <span v-for="n in 5" :key="n"
+                                  class="rating-star"
+                                  :class="{ active: n <= feedback.confidence_rating }"
+                                  @click="feedback.confidence_rating = n">
+                                ⭐
+                            </span>
+                        </div>
+                    </div>
+                    <select v-model="feedback.feedback_type" class="control-input">
+                        <option value="validation">Validation</option>
+                        <option value="correction">Correction</option>
+                        <option value="improvement">Improvement</option>
+                    </select>
+                    <button @click="submitFeedback" class="btn btn-primary">
+                        📤 Submit Feedback
+                    </button>
+                </div>
+
+                <!-- AI Suggestions -->
+                <div v-if="suggestions.length > 0" class="suggestions-panel">
+                    <h4 style="margin-bottom: 15px;">🤖 AI-Powered Suggestions</h4>
+                    <div v-for="(suggestion, index) in suggestions" :key="index" class="suggestion-item">
+                        {{ suggestion }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Log -->
+            <div class="metric-card">
+                <h3 style="margin-bottom: 20px;">📝 Real-time Training Log</h3>
+                <div class="training-log" ref="trainingLog">
+                    <div v-for="(log, index) in trainingLogs" :key="index"
+                         class="log-entry" :class="'log-' + log.level">
+                        [{{ formatTime(log.timestamp) }}] {{ log.message }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alerts Container -->
+        <div class="alerts-container">
+            <div v-for="alert in alerts" :key="alert.id"
+                 class="alert" :class="'alert-' + alert.type">
+                <strong>{{ alert.title }}</strong><br>
+                {{ alert.message }}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    // WebSocket connection
+                    ws: null,
+                    connectionStatus: 'Connecting...',
+                    connectionStatusClass: 'status-connecting',
+
+                    // Training state
+                    isTraining: false,
+                    trainingConfig: {
+                        model_id: 'enhanced_model_' + Date.now(),
+                        epochs: 10,
+                        learning_rate: 0.001
+                    },
+
+                    // Current metrics
+                    currentMetrics: {
+                        accuracy: 0,
+                        precision: 0,
+                        recall: 0,
+                        f1_score: 0,
+                        loss: 0,
+                        learning_rate: 0.001,
+                        epoch: 0,
+                        user_feedback_score: 0,
+                        correction_count: 0
+                    },
+
+                    // Historical data
+                    metricsHistory: {
+                        accuracy: [],
+                        loss: [],
+                        user_satisfaction: []
+                    },
+
+                    // Feedback system
+                    feedback: {
+                        prediction_id: '',
+                        original_prediction: '',
+                        corrected_prediction: '',
+                        confidence_rating: 3,
+                        feedback_type: 'validation'
+                    },
+                    feedbackCount: 0,
+
+                    // UI state
+                    suggestions: [],
+                    trainingLogs: [],
+                    alerts: [],
+                    alertCounter: 0,
+
+                    // Charts
+                    performanceChart: null,
+                    feedbackChart: null
+                }
+            },
+
+            mounted() {
+                this.initializeWebSocket();
+                this.initializeCharts();
+                this.addLog('Dashboard initialized', 'success');
+            },
+
+            methods: {
+                initializeWebSocket() {
+                    try {
+                        this.ws = new WebSocket('ws://localhost:8765');
+
+                        this.ws.onopen = () => {
+                            this.connectionStatus = 'Connected';
+                            this.connectionStatusClass = 'status-connected';
+                            this.addLog('Connected to enhanced training system', 'success');
+                            this.showAlert('Connection established', 'Connected to real-time training monitor', 'success');
+                        };
+
+                        this.ws.onmessage = (event) => {
+                            const data = JSON.parse(event.data);
+                            this.handleWebSocketMessage(data);
+                        };
+
+                        this.ws.onerror = (error) => {
+                            this.connectionStatus = 'Connection Error';
+                            this.connectionStatusClass = 'status-disconnected';
+                            this.addLog('WebSocket error: ' + error, 'error');
+                        };
+
+                        this.ws.onclose = () => {
+                            this.connectionStatus = 'Disconnected';
+                            this.connectionStatusClass = 'status-disconnected';
+                            this.addLog('Disconnected from server', 'warning');
+
+                            // Attempt reconnection
+                            setTimeout(() => {
+                                this.initializeWebSocket();
+                            }, 5000);
+                        };
+
+                    } catch (error) {
+                        this.addLog('Failed to connect: ' + error, 'error');
+                        this.connectionStatus = 'Failed to Connect';
+                        this.connectionStatusClass = 'status-disconnected';
+                    }
+                },
+
+                handleWebSocketMessage(data) {
+                    switch (data.type) {
+                        case 'training_progress':
+                            this.updateTrainingMetrics(data);
+                            break;
+                        case 'feedback_received':
+                            this.handleFeedbackResponse(data);
+                            break;
+                        case 'improvement_suggestions':
+                            this.updateSuggestions(data.suggestions);
+                            break;
+                        case 'training_completed':
+                            this.handleTrainingCompleted(data);
+                            break;
+                        case 'feedback_insights':
+                            this.handleFeedbackInsights(data);
+                            break;
+                        case 'performance_snapshot':
+                            this.updatePerformanceSnapshot(data);
+                            break;
+                        default:
+                            this.addLog('Received: ' + data.type, 'info');
+                    }
+                },
+
+                updateTrainingMetrics(data) {
+                    this.currentMetrics = data.metrics;
+
+                    // Update history for charts
+                    this.metricsHistory.accuracy.push(data.metrics.accuracy);
+                    this.metricsHistory.loss.push(data.metrics.loss);
+
+                    if (data.metrics.user_feedback_score) {
+                        this.metricsHistory.user_satisfaction.push(data.metrics.user_feedback_score);
+                    }
+
+                    // Keep only last 50 data points
+                    Object.keys(this.metricsHistory).forEach(key => {
+                        if (this.metricsHistory[key].length > 50) {
+                            this.metricsHistory[key] = this.metricsHistory[key].slice(-50);
+                        }
+                    });
+
+                    // Update charts
+                    this.updateCharts();
+
+                    // Update suggestions
+                    if (data.improvement_suggestions) {
+                        this.suggestions = data.improvement_suggestions;
+                    }
+
+                    this.addLog(`Epoch ${data.metrics.epoch}: Accuracy ${data.metrics.accuracy.toFixed(3)}, Loss ${data.metrics.loss.toFixed(3)}`, 'info');
+                },
+
+                startTraining() {
+                    if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+                        this.isTraining = true;
+                        this.trainingLogs = []; // Clear previous logs
+
+                        const message = {
+                            type: 'start_training',
+                            ...this.trainingConfig
+                        };
+
+                        this.ws.send(JSON.stringify(message));
+                        this.addLog(`Starting training for model: ${this.trainingConfig.model_id}`, 'success');
+                        this.showAlert('Training Started', `Model ${this.trainingConfig.model_id} training initiated`, 'success');
+                    }
+                },
+
+                stopTraining() {
+                    this.isTraining = false;
+                    this.addLog('Training stopped by user', 'warning');
+                    this.showAlert('Training Stopped', 'Training has been manually stopped', 'warning');
+                },
+
+                submitFeedback() {
+                    if (this.ws && this.ws.readyState === WebSocket.OPEN) {
+                        const feedbackData = {
+                            type: 'user_feedback',
+                            ...this.feedback,
+                            user_id: 'dashboard_user'
+                        };
+
+                        this.ws.send(JSON.stringify(feedbackData));
+                        this.addLog(`Submitted ${this.feedback.feedback_type} feedback`, 'success');
+                        this.feedbackCount++;
+
+                        // Clear form
+                        this.feedback = {
+                            prediction_id: '',
+                            original_prediction: '',
+                            corrected_prediction: '',
+                            confidence_rating: 3,
+                            feedback_type: 'validation'
+                        };
+
+                        this.showAlert('Feedback Submitted', 'Your feedback has been integrated into the training system', 'success');
+                    }
+                },
+
+                handleFeedbackResponse(data) {
+                    this.addLog(`Feedback received with impact score: ${data.impact_score?.toFixed(3) || 'N/A'}`, 'success');
+                },
+
+                handleTrainingCompleted(data) {
+                    this.isTraining = false;
+                    this.addLog(`Training completed! Final accuracy: ${data.final_metrics.accuracy.toFixed(3)}`, 'success');
+                    this.showAlert('Training Complete', data.summary, 'success');
+                },
+
+                handleFeedbackInsights(data) {
+                    this.addLog(`Feedback insights: ${data.impact_analysis?.suggested_action || 'Processing'}`, 'info');
+
+                    if (data.suggestions) {
+                        this.suggestions = [...this.suggestions, ...data.suggestions];
+                    }
+                },
+
+                updateSuggestions(newSuggestions) {
+                    this.suggestions = newSuggestions;
+                    this.addLog(`Received ${newSuggestions.length} improvement suggestions`, 'info');
+                },
+
+                updatePerformanceSnapshot(data) {
+                    // Update UI with performance snapshot data
+                    this.addLog(`Performance snapshot updated for model: ${data.model_id}`, 'info');
+                },
+
+                initializeCharts() {
+                    // Performance Chart
+                    const perfCtx = document.getElementById('performanceChart');
+                    if (perfCtx) {
+                        this.performanceChart = new Chart(perfCtx, {
+                            type: 'line',
+                            data: {
+                                labels: [],
+                                datasets: [
+                                    {
+                                        label: 'Accuracy',
+                                        data: [],
+                                        borderColor: '#2ecc71',
+                                        backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                                        tension: 0.4
+                                    },
+                                    {
+                                        label: 'Loss',
+                                        data: [],
+                                        borderColor: '#e74c3c',
+                                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                                        tension: 0.4,
+                                        yAxisID: 'y1'
+                                    }
+                                ]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        labels: { color: '#ffffff' }
+                                    }
+                                },
+                                scales: {
+                                    x: {
+                                        ticks: { color: '#ffffff' },
+                                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                                    },
+                                    y: {
+                                        type: 'linear',
+                                        display: true,
+                                        position: 'left',
+                                        ticks: { color: '#ffffff' },
+                                        grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                                    },
+                                    y1: {
+                                        type: 'linear',
+                                        display: true,
+                                        position: 'right',
+                                        ticks: { color: '#ffffff' },
+                                        grid: { drawOnChartArea: false }
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                    // Feedback Chart
+                    const feedCtx = document.getElementById('feedbackChart');
+                    if (feedCtx) {
+                        this.feedbackChart = new Chart(feedCtx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: ['Validation', 'Correction', 'Improvement'],
+                                datasets: [{
+                                    data: [60, 25, 15],
+                                    backgroundColor: ['#3498db', '#e74c3c', '#f39c12'],
+                                    borderWidth: 0
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        labels: { color: '#ffffff' }
+                                    }
+                                }
+                            }
+                        });
+                    }
+                },
+
+                updateCharts() {
+                    if (this.performanceChart) {
+                        const chart = this.performanceChart;
+                        const maxPoints = 20;
+
+                        // Update labels
+                        chart.data.labels = Array.from({ length: this.metricsHistory.accuracy.length },
+                            (_, i) => `Epoch ${i + 1}`);
+
+                        // Update datasets
+                        chart.data.datasets[0].data = this.metricsHistory.accuracy.slice(-maxPoints);
+                        chart.data.datasets[1].data = this.metricsHistory.loss.slice(-maxPoints);
+
+                        chart.update();
+                    }
+                },
+
+                formatMetric(value) {
+                    return typeof value === 'number' ? value.toFixed(3) : '0.000';
+                },
+
+                getMetricColor(metric, inverse = false) {
+                    const value = this.currentMetrics[metric] || 0;
+                    let color;
+
+                    if (inverse) {
+                        // For loss - lower is better
+                        color = value < 0.3 ? '#2ecc71' : value < 0.7 ? '#f39c12' : '#e74c3c';
+                    } else {
+                        // For accuracy, precision, etc. - higher is better
+                        color = value > 0.8 ? '#2ecc71' : value > 0.6 ? '#f39c12' : '#e74c3c';
+                    }
+
+                    return color;
+                },
+
+                getMetricTrend(metric, inverse = false) {
+                    const history = this.metricsHistory[metric] || this.metricsHistory.accuracy;
+                    if (history.length < 2) return 'No trend data';
+
+                    const recent = history.slice(-2);
+                    const trend = recent[1] - recent[0];
+
+                    if (Math.abs(trend) < 0.001) return 'Stable';
+
+                    const isImproving = inverse ? trend < 0 : trend > 0;
+                    return isImproving ? '📈 Improving' : '📉 Declining';
+                },
+
+                getTrainingProgress() {
+                    if (!this.trainingConfig.epochs) return 0;
+                    return (this.currentMetrics.epoch / this.trainingConfig.epochs) * 100;
+                },
+
+                addLog(message, level = 'info') {
+                    this.trainingLogs.push({
+                        message,
+                        level,
+                        timestamp: new Date()
+                    });
+
+                    // Keep only last 100 logs
+                    if (this.trainingLogs.length > 100) {
+                        this.trainingLogs = this.trainingLogs.slice(-100);
+                    }
+
+                    // Auto-scroll log
+                    this.$nextTick(() => {
+                        const logElement = this.$refs.trainingLog;
+                        if (logElement) {
+                            logElement.scrollTop = logElement.scrollHeight;
+                        }
+                    });
+                },
+
+                showAlert(title, message, type = 'info') {
+                    const alert = {
+                        id: this.alertCounter++,
+                        title,
+                        message,
+                        type
+                    };
+
+                    this.alerts.push(alert);
+
+                    // Remove alert after 5 seconds
+                    setTimeout(() => {
+                        const index = this.alerts.findIndex(a => a.id === alert.id);
+                        if (index > -1) {
+                            this.alerts.splice(index, 1);
+                        }
+                    }, 5000);
+                },
+
+                formatTime(timestamp) {
+                    return new Date(timestamp).toLocaleTimeString();
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

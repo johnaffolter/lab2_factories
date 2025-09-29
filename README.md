@@ -1,13 +1,26 @@
-# Email Topic Classification Lab - Factory Pattern
+# MLOps Email Classification System
 
-This lab demonstrates the Factory Pattern in machine learning feature generation and email topic classification using cosine similarity.
+A production-ready MLOps system implementing the Factory Pattern for feature generation, Apache Airflow for workflow orchestration, AWS S3 for artifact storage, and Neo4j for knowledge graph tracking.
+
+**Course:** MLOps - St. Thomas University
+**Labs:** Lab 2 (Factory Pattern) + Lab 3 (Airflow & S3)
+**Status:** Production Ready
+
+---
 
 ## Overview
 
-The system classifies emails into topics (work, personal, promotion, newsletter, support) using:
-- **Factory Pattern** for feature generation
-- **Embedding-based similarity** using cosine distance
-- **RESTful API** for classification and data management
+This system demonstrates enterprise-grade MLOps practices through email classification. It implements multiple design patterns, integrates with cloud services, and provides complete lineage tracking from data generation through model deployment.
+
+### Core Capabilities
+
+- **Email Classification**: Categorize emails into 8 topics (work, personal, promotion, newsletter, support, travel, education, health)
+- **Feature Generation**: Extract features using the Factory Pattern with 5 different generators
+- **Model Training**: Train and version multiple classification models
+- **Workflow Orchestration**: Automate pipelines using Apache Airflow
+- **Artifact Storage**: Store models and results in AWS S3
+- **Knowledge Graph**: Track complete lineage in Neo4j
+- **API Service**: RESTful API with FastAPI and Swagger documentation
 
 ## Installation & Setup
 

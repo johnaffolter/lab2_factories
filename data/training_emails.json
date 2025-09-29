@@ -1,0 +1,1282 @@
+[
+  {
+    "id": "email_0001",
+    "subject": "Team Meeting Rescheduled to 11:00",
+    "body": "Hi team, the weekly standup has been moved to 9:00 today in conference room B. Please update your calendars.",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358311"
+  },
+  {
+    "id": "email_0002",
+    "subject": "Team Meeting Rescheduled to 14:00",
+    "body": "Hi team, the weekly standup has been moved to 17:00 today in conference room B. Please update your calendars.",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358329"
+  },
+  {
+    "id": "email_0003",
+    "subject": "Q2 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358340"
+  },
+  {
+    "id": "email_0004",
+    "subject": "Q4 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358350"
+  },
+  {
+    "id": "email_0005",
+    "subject": "Q2 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358360"
+  },
+  {
+    "id": "email_0006",
+    "subject": "Team Meeting Rescheduled to 16:00",
+    "body": "Hi team, the weekly standup has been moved to 10:00 today in conference room B. Please update your calendars.",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358370"
+  },
+  {
+    "id": "email_0007",
+    "subject": "Project Deadline Update - Action Required",
+    "body": "The project deadline has been moved up. We need to complete the deliverables by end of week. Please prioritize this work.",
+    "sender": "pm@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358380"
+  },
+  {
+    "id": "email_0008",
+    "subject": "Q2 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358389"
+  },
+  {
+    "id": "email_0009",
+    "subject": "Client Presentation Tomorrow",
+    "body": "Reminder: client presentation is tomorrow at 2pm. Please review the slides and be prepared to discuss the proposal.",
+    "sender": "sales@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358399"
+  },
+  {
+    "id": "email_0010",
+    "subject": "Project Deadline Update - Action Required",
+    "body": "The project deadline has been moved up. We need to complete the deliverables by end of week. Please prioritize this work.",
+    "sender": "pm@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358409"
+  },
+  {
+    "id": "email_0011",
+    "subject": "Client Presentation Tomorrow",
+    "body": "Reminder: client presentation is tomorrow at 2pm. Please review the slides and be prepared to discuss the proposal.",
+    "sender": "sales@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358418"
+  },
+  {
+    "id": "email_0012",
+    "subject": "Q4 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358428"
+  },
+  {
+    "id": "email_0013",
+    "subject": "Team Meeting Rescheduled to 15:00",
+    "body": "Hi team, the weekly standup has been moved to 12:00 today in conference room B. Please update your calendars.",
+    "sender": "manager@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358438"
+  },
+  {
+    "id": "email_0014",
+    "subject": "Q1 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358448"
+  },
+  {
+    "id": "email_0015",
+    "subject": "Q1 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358457"
+  },
+  {
+    "id": "email_0016",
+    "subject": "Project Deadline Update - Action Required",
+    "body": "The project deadline has been moved up. We need to complete the deliverables by end of week. Please prioritize this work.",
+    "sender": "pm@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358466"
+  },
+  {
+    "id": "email_0017",
+    "subject": "Client Presentation Tomorrow",
+    "body": "Reminder: client presentation is tomorrow at 2pm. Please review the slides and be prepared to discuss the proposal.",
+    "sender": "sales@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358475"
+  },
+  {
+    "id": "email_0018",
+    "subject": "Q2 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358484"
+  },
+  {
+    "id": "email_0019",
+    "subject": "Q2 Financial Report Ready for Review",
+    "body": "The quarterly financial report is ready. Please review the revenue figures and provide feedback by Friday.",
+    "sender": "finance@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358493"
+  },
+  {
+    "id": "email_0020",
+    "subject": "Project Deadline Update - Action Required",
+    "body": "The project deadline has been moved up. We need to complete the deliverables by end of week. Please prioritize this work.",
+    "sender": "pm@company.com",
+    "label": "work",
+    "timestamp": "2025-09-29T13:47:08.358503"
+  },
+  {
+    "id": "email_0021",
+    "subject": "Catching up soon",
+    "body": "Been too long! Want to catch up over coffee this week? I'm free Tuesday or Thursday afternoon.",
+    "sender": "friend@outlook.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358514"
+  },
+  {
+    "id": "email_0022",
+    "subject": "Catching up soon",
+    "body": "Been too long! Want to catch up over coffee this week? I'm free Tuesday or Thursday afternoon.",
+    "sender": "friend@outlook.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358522"
+  },
+  {
+    "id": "email_0023",
+    "subject": "Catching up soon",
+    "body": "Been too long! Want to catch up over coffee this week? I'm free Tuesday or Thursday afternoon.",
+    "sender": "friend@outlook.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358531"
+  },
+  {
+    "id": "email_0024",
+    "subject": "Movie night Friday?",
+    "body": "Thinking about having a movie night this Friday. Are you free? We could watch that new sci-fi film.",
+    "sender": "buddy@yahoo.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358539"
+  },
+  {
+    "id": "email_0025",
+    "subject": "Movie night Friday?",
+    "body": "Thinking about having a movie night this Friday. Are you free? We could watch that new sci-fi film.",
+    "sender": "buddy@yahoo.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358548"
+  },
+  {
+    "id": "email_0026",
+    "subject": "Movie night Friday?",
+    "body": "Thinking about having a movie night this Friday. Are you free? We could watch that new sci-fi film.",
+    "sender": "buddy@yahoo.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358557"
+  },
+  {
+    "id": "email_0027",
+    "subject": "Weekend getaway idea",
+    "body": "Found this cool cabin in the mountains for rent. Want to do a weekend trip next month with the group?",
+    "sender": "friend@email.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358565"
+  },
+  {
+    "id": "email_0028",
+    "subject": "Weekend getaway idea",
+    "body": "Found this cool cabin in the mountains for rent. Want to do a weekend trip next month with the group?",
+    "sender": "friend@email.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358574"
+  },
+  {
+    "id": "email_0029",
+    "subject": "Dinner plans this weekend?",
+    "body": "Hey! Want to grab dinner Saturday? I found a great new Italian place downtown. Let me know!",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358583"
+  },
+  {
+    "id": "email_0030",
+    "subject": "Dinner plans this weekend?",
+    "body": "Hey! Want to grab dinner Saturday? I found a great new Italian place downtown. Let me know!",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358593"
+  },
+  {
+    "id": "email_0031",
+    "subject": "Movie night Friday?",
+    "body": "Thinking about having a movie night this Friday. Are you free? We could watch that new sci-fi film.",
+    "sender": "buddy@yahoo.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358602"
+  },
+  {
+    "id": "email_0032",
+    "subject": "Weekend getaway idea",
+    "body": "Found this cool cabin in the mountains for rent. Want to do a weekend trip next month with the group?",
+    "sender": "friend@email.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358610"
+  },
+  {
+    "id": "email_0033",
+    "subject": "Dinner plans this weekend?",
+    "body": "Hey! Want to grab dinner Saturday? I found a great new Italian place downtown. Let me know!",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358619"
+  },
+  {
+    "id": "email_0034",
+    "subject": "Movie night Friday?",
+    "body": "Thinking about having a movie night this Friday. Are you free? We could watch that new sci-fi film.",
+    "sender": "buddy@yahoo.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358627"
+  },
+  {
+    "id": "email_0035",
+    "subject": "Dinner plans this weekend?",
+    "body": "Hey! Want to grab dinner Saturday? I found a great new Italian place downtown. Let me know!",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358636"
+  },
+  {
+    "id": "email_0036",
+    "subject": "Dinner plans this weekend?",
+    "body": "Hey! Want to grab dinner Saturday? I found a great new Italian place downtown. Let me know!",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358644"
+  },
+  {
+    "id": "email_0037",
+    "subject": "Dinner plans this weekend?",
+    "body": "Hey! Want to grab dinner Saturday? I found a great new Italian place downtown. Let me know!",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358653"
+  },
+  {
+    "id": "email_0038",
+    "subject": "Weekend getaway idea",
+    "body": "Found this cool cabin in the mountains for rent. Want to do a weekend trip next month with the group?",
+    "sender": "friend@email.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358661"
+  },
+  {
+    "id": "email_0039",
+    "subject": "Dinner plans this weekend?",
+    "body": "Hey! Want to grab dinner Saturday? I found a great new Italian place downtown. Let me know!",
+    "sender": "friend@gmail.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358669"
+  },
+  {
+    "id": "email_0040",
+    "subject": "Catching up soon",
+    "body": "Been too long! Want to catch up over coffee this week? I'm free Tuesday or Thursday afternoon.",
+    "sender": "friend@outlook.com",
+    "label": "personal",
+    "timestamp": "2025-09-29T13:47:08.358678"
+  },
+  {
+    "id": "email_0041",
+    "subject": "URGENT: Claim Your Reward NOW!!!",
+    "body": "Your exclusive reward is waiting! CLICK HERE immediately to claim! Offer expires in 24 hours! ACT FAST!!!",
+    "sender": "rewards@offer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358687"
+  },
+  {
+    "id": "email_0042",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358696"
+  },
+  {
+    "id": "email_0043",
+    "subject": "URGENT: Claim Your Reward NOW!!!",
+    "body": "Your exclusive reward is waiting! CLICK HERE immediately to claim! Offer expires in 24 hours! ACT FAST!!!",
+    "sender": "rewards@offer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358704"
+  },
+  {
+    "id": "email_0044",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358713"
+  },
+  {
+    "id": "email_0045",
+    "subject": "URGENT: Claim Your Reward NOW!!!",
+    "body": "Your exclusive reward is waiting! CLICK HERE immediately to claim! Offer expires in 24 hours! ACT FAST!!!",
+    "sender": "rewards@offer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358722"
+  },
+  {
+    "id": "email_0046",
+    "subject": "WIN FREE iPHONE - Click NOW!!!",
+    "body": "You've been selected to win a FREE iPhone 15! Click here now to claim your prize before it expires! ACT NOW!!!",
+    "sender": "promo@deals.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358730"
+  },
+  {
+    "id": "email_0047",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358739"
+  },
+  {
+    "id": "email_0048",
+    "subject": "WIN FREE iPHONE - Click NOW!!!",
+    "body": "You've been selected to win a FREE iPhone 15! Click here now to claim your prize before it expires! ACT NOW!!!",
+    "sender": "promo@deals.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358747"
+  },
+  {
+    "id": "email_0049",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358755"
+  },
+  {
+    "id": "email_0050",
+    "subject": "URGENT: Claim Your Reward NOW!!!",
+    "body": "Your exclusive reward is waiting! CLICK HERE immediately to claim! Offer expires in 24 hours! ACT FAST!!!",
+    "sender": "rewards@offer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358764"
+  },
+  {
+    "id": "email_0051",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358772"
+  },
+  {
+    "id": "email_0052",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358781"
+  },
+  {
+    "id": "email_0053",
+    "subject": "WIN FREE iPHONE - Click NOW!!!",
+    "body": "You've been selected to win a FREE iPhone 15! Click here now to claim your prize before it expires! ACT NOW!!!",
+    "sender": "promo@deals.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358790"
+  },
+  {
+    "id": "email_0054",
+    "subject": "URGENT: Claim Your Reward NOW!!!",
+    "body": "Your exclusive reward is waiting! CLICK HERE immediately to claim! Offer expires in 24 hours! ACT FAST!!!",
+    "sender": "rewards@offer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358798"
+  },
+  {
+    "id": "email_0055",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358807"
+  },
+  {
+    "id": "email_0056",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358815"
+  },
+  {
+    "id": "email_0057",
+    "subject": "URGENT: Claim Your Reward NOW!!!",
+    "body": "Your exclusive reward is waiting! CLICK HERE immediately to claim! Offer expires in 24 hours! ACT FAST!!!",
+    "sender": "rewards@offer.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358823"
+  },
+  {
+    "id": "email_0058",
+    "subject": "WIN FREE iPHONE - Click NOW!!!",
+    "body": "You've been selected to win a FREE iPhone 15! Click here now to claim your prize before it expires! ACT NOW!!!",
+    "sender": "promo@deals.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358832"
+  },
+  {
+    "id": "email_0059",
+    "subject": "EXCLUSIVE OFFER: 47% OFF Everything!!!",
+    "body": "LIMITED TIME ONLY! Get 43% OFF on ALL products! This amazing offer won't last! CLICK NOW to SAVE BIG!!!",
+    "sender": "sale@shopping.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358841"
+  },
+  {
+    "id": "email_0060",
+    "subject": "You WON $1000 Cash Prize!!!",
+    "body": "CONGRATULATIONS! You've won $1000 CASH! No purchase necessary! Click to claim your winnings NOW! Don't miss this!",
+    "sender": "winner@prize.com",
+    "label": "promotion",
+    "timestamp": "2025-09-29T13:47:08.358850"
+  },
+  {
+    "id": "email_0061",
+    "subject": "This Week in Tech - Your Weekly Digest",
+    "body": "Welcome to this week's tech newsletter! Top stories: AI breakthroughs, startup funding, and new gadget releases. Read more inside.",
+    "sender": "newsletter@techcrunch.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358859"
+  },
+  {
+    "id": "email_0062",
+    "subject": "Weekly Update from Medium",
+    "body": "Here are this week's top stories from writers you follow. Topics include technology, design, and business insights.",
+    "sender": "weekly@medium.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358867"
+  },
+  {
+    "id": "email_0063",
+    "subject": "Your Substack Digest",
+    "body": "New posts from your subscriptions: Economics Weekly, Tech Trends, and Creative Writing. Check out what you missed!",
+    "sender": "updates@substack.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358876"
+  },
+  {
+    "id": "email_0064",
+    "subject": "Your Substack Digest",
+    "body": "New posts from your subscriptions: Economics Weekly, Tech Trends, and Creative Writing. Check out what you missed!",
+    "sender": "updates@substack.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358885"
+  },
+  {
+    "id": "email_0065",
+    "subject": "Your Substack Digest",
+    "body": "New posts from your subscriptions: Economics Weekly, Tech Trends, and Creative Writing. Check out what you missed!",
+    "sender": "updates@substack.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358893"
+  },
+  {
+    "id": "email_0066",
+    "subject": "This Week in Tech - Your Weekly Digest",
+    "body": "Welcome to this week's tech newsletter! Top stories: AI breakthroughs, startup funding, and new gadget releases. Read more inside.",
+    "sender": "newsletter@techcrunch.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358902"
+  },
+  {
+    "id": "email_0067",
+    "subject": "Weekly Update from Medium",
+    "body": "Here are this week's top stories from writers you follow. Topics include technology, design, and business insights.",
+    "sender": "weekly@medium.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358910"
+  },
+  {
+    "id": "email_0068",
+    "subject": "Your Substack Digest",
+    "body": "New posts from your subscriptions: Economics Weekly, Tech Trends, and Creative Writing. Check out what you missed!",
+    "sender": "updates@substack.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358919"
+  },
+  {
+    "id": "email_0069",
+    "subject": "Your Substack Digest",
+    "body": "New posts from your subscriptions: Economics Weekly, Tech Trends, and Creative Writing. Check out what you missed!",
+    "sender": "updates@substack.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358927"
+  },
+  {
+    "id": "email_0070",
+    "subject": "This Week in Tech - Your Weekly Digest",
+    "body": "Welcome to this week's tech newsletter! Top stories: AI breakthroughs, startup funding, and new gadget releases. Read more inside.",
+    "sender": "newsletter@techcrunch.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358935"
+  },
+  {
+    "id": "email_0071",
+    "subject": "Weekly Update from Medium",
+    "body": "Here are this week's top stories from writers you follow. Topics include technology, design, and business insights.",
+    "sender": "weekly@medium.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358944"
+  },
+  {
+    "id": "email_0072",
+    "subject": "Monthly Newsletter - May Edition",
+    "body": "Your monthly update is here! This month's highlights include industry news, upcoming events, and featured articles. Enjoy!",
+    "sender": "digest@nytimes.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358953"
+  },
+  {
+    "id": "email_0073",
+    "subject": "Monthly Newsletter - February Edition",
+    "body": "Your monthly update is here! This month's highlights include industry news, upcoming events, and featured articles. Enjoy!",
+    "sender": "digest@nytimes.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358961"
+  },
+  {
+    "id": "email_0074",
+    "subject": "This Week in Tech - Your Weekly Digest",
+    "body": "Welcome to this week's tech newsletter! Top stories: AI breakthroughs, startup funding, and new gadget releases. Read more inside.",
+    "sender": "newsletter@techcrunch.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358970"
+  },
+  {
+    "id": "email_0075",
+    "subject": "Weekly Update from Medium",
+    "body": "Here are this week's top stories from writers you follow. Topics include technology, design, and business insights.",
+    "sender": "weekly@medium.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358978"
+  },
+  {
+    "id": "email_0076",
+    "subject": "This Week in Tech - Your Weekly Digest",
+    "body": "Welcome to this week's tech newsletter! Top stories: AI breakthroughs, startup funding, and new gadget releases. Read more inside.",
+    "sender": "newsletter@techcrunch.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358987"
+  },
+  {
+    "id": "email_0077",
+    "subject": "Weekly Update from Medium",
+    "body": "Here are this week's top stories from writers you follow. Topics include technology, design, and business insights.",
+    "sender": "weekly@medium.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.358996"
+  },
+  {
+    "id": "email_0078",
+    "subject": "Monthly Newsletter - April Edition",
+    "body": "Your monthly update is here! This month's highlights include industry news, upcoming events, and featured articles. Enjoy!",
+    "sender": "digest@nytimes.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.359005"
+  },
+  {
+    "id": "email_0079",
+    "subject": "Your Substack Digest",
+    "body": "New posts from your subscriptions: Economics Weekly, Tech Trends, and Creative Writing. Check out what you missed!",
+    "sender": "updates@substack.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.359015"
+  },
+  {
+    "id": "email_0080",
+    "subject": "This Week in Tech - Your Weekly Digest",
+    "body": "Welcome to this week's tech newsletter! Top stories: AI breakthroughs, startup funding, and new gadget releases. Read more inside.",
+    "sender": "newsletter@techcrunch.com",
+    "label": "newsletter",
+    "timestamp": "2025-09-29T13:47:08.359026"
+  },
+  {
+    "id": "email_0081",
+    "subject": "Your Support Request - Case #38501",
+    "body": "Thank you for contacting support. Your request (Case #54148) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359036"
+  },
+  {
+    "id": "email_0082",
+    "subject": "Re: Support Ticket #4860 - Issue Resolved",
+    "body": "Good news! Your support ticket #7530 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359045"
+  },
+  {
+    "id": "email_0083",
+    "subject": "Re: Support Ticket #4278 - Issue Resolved",
+    "body": "Good news! Your support ticket #5931 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359054"
+  },
+  {
+    "id": "email_0084",
+    "subject": "Re: Support Ticket #6476 - Issue Resolved",
+    "body": "Good news! Your support ticket #9138 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359063"
+  },
+  {
+    "id": "email_0085",
+    "subject": "Follow-up on Your Recent Inquiry",
+    "body": "This is a follow-up regarding your recent support inquiry. We want to ensure your issue has been fully resolved. Please reply if you need additional help.",
+    "sender": "care@customer.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359073"
+  },
+  {
+    "id": "email_0086",
+    "subject": "Your Support Request - Case #82194",
+    "body": "Thank you for contacting support. Your request (Case #74361) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359086"
+  },
+  {
+    "id": "email_0087",
+    "subject": "Re: Support Ticket #7595 - Issue Resolved",
+    "body": "Good news! Your support ticket #3519 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359098"
+  },
+  {
+    "id": "email_0088",
+    "subject": "Your Support Request - Case #39784",
+    "body": "Thank you for contacting support. Your request (Case #92259) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359109"
+  },
+  {
+    "id": "email_0089",
+    "subject": "Your Support Request - Case #82427",
+    "body": "Thank you for contacting support. Your request (Case #27821) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359118"
+  },
+  {
+    "id": "email_0090",
+    "subject": "Your Support Request - Case #83116",
+    "body": "Thank you for contacting support. Your request (Case #64523) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359128"
+  },
+  {
+    "id": "email_0091",
+    "subject": "Re: Support Ticket #1087 - Issue Resolved",
+    "body": "Good news! Your support ticket #5372 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359137"
+  },
+  {
+    "id": "email_0092",
+    "subject": "Follow-up on Your Recent Inquiry",
+    "body": "This is a follow-up regarding your recent support inquiry. We want to ensure your issue has been fully resolved. Please reply if you need additional help.",
+    "sender": "care@customer.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359147"
+  },
+  {
+    "id": "email_0093",
+    "subject": "Re: Support Ticket #8204 - Issue Resolved",
+    "body": "Good news! Your support ticket #6055 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359158"
+  },
+  {
+    "id": "email_0094",
+    "subject": "Your Support Request - Case #39474",
+    "body": "Thank you for contacting support. Your request (Case #43401) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359171"
+  },
+  {
+    "id": "email_0095",
+    "subject": "Your Support Request - Case #24197",
+    "body": "Thank you for contacting support. Your request (Case #53841) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359181"
+  },
+  {
+    "id": "email_0096",
+    "subject": "Follow-up on Your Recent Inquiry",
+    "body": "This is a follow-up regarding your recent support inquiry. We want to ensure your issue has been fully resolved. Please reply if you need additional help.",
+    "sender": "care@customer.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359191"
+  },
+  {
+    "id": "email_0097",
+    "subject": "Your Support Request - Case #94502",
+    "body": "Thank you for contacting support. Your request (Case #10062) has been received and assigned to our technical team. We'll update you within 24 hours.",
+    "sender": "help@company.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359201"
+  },
+  {
+    "id": "email_0098",
+    "subject": "Follow-up on Your Recent Inquiry",
+    "body": "This is a follow-up regarding your recent support inquiry. We want to ensure your issue has been fully resolved. Please reply if you need additional help.",
+    "sender": "care@customer.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359212"
+  },
+  {
+    "id": "email_0099",
+    "subject": "Re: Support Ticket #7796 - Issue Resolved",
+    "body": "Good news! Your support ticket #1267 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359222"
+  },
+  {
+    "id": "email_0100",
+    "subject": "Re: Support Ticket #6878 - Issue Resolved",
+    "body": "Good news! Your support ticket #8242 has been resolved. We've fixed the login issue you reported. Please let us know if you need further assistance.",
+    "sender": "support@service.com",
+    "label": "support",
+    "timestamp": "2025-09-29T13:47:08.359232"
+  },
+  {
+    "id": "email_0101",
+    "subject": "Flight Booking Confirmation - AA",
+    "body": "Your flight has been confirmed! Confirmation number: ABC4322. Flight AA762 departs on Friday. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359243"
+  },
+  {
+    "id": "email_0102",
+    "subject": "Flight Booking Confirmation - UA",
+    "body": "Your flight has been confirmed! Confirmation number: ABC9966. Flight DL819 departs on Friday. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359254"
+  },
+  {
+    "id": "email_0103",
+    "subject": "Your Itinerary for Upcoming Trip",
+    "body": "Your complete travel itinerary is attached. Flight details, hotel confirmation, and rental car information included. Have a great trip!",
+    "sender": "trips@expedia.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359263"
+  },
+  {
+    "id": "email_0104",
+    "subject": "Flight Booking Confirmation - AA",
+    "body": "Your flight has been confirmed! Confirmation number: ABC9397. Flight AA919 departs on next Monday. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359273"
+  },
+  {
+    "id": "email_0105",
+    "subject": "Hotel Reservation Confirmed",
+    "body": "Your hotel reservation is confirmed. Check-in: next Tuesday. Confirmation code: QRS6824. We look forward to welcoming you!",
+    "sender": "reservations@hotel.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359283"
+  },
+  {
+    "id": "email_0106",
+    "subject": "Flight Booking Confirmation - SW",
+    "body": "Your flight has been confirmed! Confirmation number: ABC8648. Flight DL603 departs on next Tuesday. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359293"
+  },
+  {
+    "id": "email_0107",
+    "subject": "Flight Booking Confirmation - DL",
+    "body": "Your flight has been confirmed! Confirmation number: XYZ5162. Flight DL100 departs on tomorrow. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359303"
+  },
+  {
+    "id": "email_0108",
+    "subject": "Your Itinerary for Upcoming Trip",
+    "body": "Your complete travel itinerary is attached. Flight details, hotel confirmation, and rental car information included. Have a great trip!",
+    "sender": "trips@expedia.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359313"
+  },
+  {
+    "id": "email_0109",
+    "subject": "Your Itinerary for Upcoming Trip",
+    "body": "Your complete travel itinerary is attached. Flight details, hotel confirmation, and rental car information included. Have a great trip!",
+    "sender": "trips@expedia.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359323"
+  },
+  {
+    "id": "email_0110",
+    "subject": "Flight Booking Confirmation - SW",
+    "body": "Your flight has been confirmed! Confirmation number: ABC5737. Flight AA854 departs on Friday. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359333"
+  },
+  {
+    "id": "email_0111",
+    "subject": "Your Itinerary for Upcoming Trip",
+    "body": "Your complete travel itinerary is attached. Flight details, hotel confirmation, and rental car information included. Have a great trip!",
+    "sender": "trips@expedia.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359343"
+  },
+  {
+    "id": "email_0112",
+    "subject": "Flight Booking Confirmation - SW",
+    "body": "Your flight has been confirmed! Confirmation number: XYZ3926. Flight DL534 departs on next Tuesday. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359353"
+  },
+  {
+    "id": "email_0113",
+    "subject": "Hotel Reservation Confirmed",
+    "body": "Your hotel reservation is confirmed. Check-in: Friday. Confirmation code: XYZ6126. We look forward to welcoming you!",
+    "sender": "reservations@hotel.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359362"
+  },
+  {
+    "id": "email_0114",
+    "subject": "Hotel Reservation Confirmed",
+    "body": "Your hotel reservation is confirmed. Check-in: next Monday. Confirmation code: QRS6436. We look forward to welcoming you!",
+    "sender": "reservations@hotel.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359372"
+  },
+  {
+    "id": "email_0115",
+    "subject": "Hotel Reservation Confirmed",
+    "body": "Your hotel reservation is confirmed. Check-in: next Monday. Confirmation code: XYZ9457. We look forward to welcoming you!",
+    "sender": "reservations@hotel.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359381"
+  },
+  {
+    "id": "email_0116",
+    "subject": "Your Itinerary for Upcoming Trip",
+    "body": "Your complete travel itinerary is attached. Flight details, hotel confirmation, and rental car information included. Have a great trip!",
+    "sender": "trips@expedia.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359391"
+  },
+  {
+    "id": "email_0117",
+    "subject": "Flight Booking Confirmation - DL",
+    "body": "Your flight has been confirmed! Confirmation number: QRS4798. Flight DL791 departs on tomorrow. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359418"
+  },
+  {
+    "id": "email_0118",
+    "subject": "Flight Booking Confirmation - DL",
+    "body": "Your flight has been confirmed! Confirmation number: QRS7492. Flight AA357 departs on tomorrow. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359432"
+  },
+  {
+    "id": "email_0119",
+    "subject": "Flight Booking Confirmation - SW",
+    "body": "Your flight has been confirmed! Confirmation number: QRS2669. Flight UA692 departs on Friday. Please check in 24 hours before departure.",
+    "sender": "booking@airline.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359443"
+  },
+  {
+    "id": "email_0120",
+    "subject": "Hotel Reservation Confirmed",
+    "body": "Your hotel reservation is confirmed. Check-in: Friday. Confirmation code: XYZ7314. We look forward to welcoming you!",
+    "sender": "reservations@hotel.com",
+    "label": "travel",
+    "timestamp": "2025-09-29T13:47:08.359453"
+  },
+  {
+    "id": "email_0121",
+    "subject": "Lecture Notes - Week 9",
+    "body": "This week's lecture notes and study materials are now available. Topics covered: networking and optimization. Next class is on next week.",
+    "sender": "prof@academy.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359467"
+  },
+  {
+    "id": "email_0122",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359477"
+  },
+  {
+    "id": "email_0123",
+    "subject": "Assignment Due Monday - Reminder",
+    "body": "This is a reminder that your assignment is due on Friday. Please submit via the course portal before 11:59 PM. Review the grading rubric before submitting.",
+    "sender": "professor@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359487"
+  },
+  {
+    "id": "email_0124",
+    "subject": "Lecture Notes - Week 9",
+    "body": "This week's lecture notes and study materials are now available. Topics covered: security and testing. Next class is on Monday.",
+    "sender": "prof@academy.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359497"
+  },
+  {
+    "id": "email_0125",
+    "subject": "Assignment Due next week - Reminder",
+    "body": "This is a reminder that your assignment is due on Friday. Please submit via the course portal before 11:59 PM. Review the grading rubric before submitting.",
+    "sender": "professor@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359507"
+  },
+  {
+    "id": "email_0126",
+    "subject": "Assignment Due Wednesday - Reminder",
+    "body": "This is a reminder that your assignment is due on Monday. Please submit via the course portal before 11:59 PM. Review the grading rubric before submitting.",
+    "sender": "professor@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359517"
+  },
+  {
+    "id": "email_0127",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359527"
+  },
+  {
+    "id": "email_0128",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359537"
+  },
+  {
+    "id": "email_0129",
+    "subject": "Lecture Notes - Week 2",
+    "body": "This week's lecture notes and study materials are now available. Topics covered: algorithms and optimization. Next class is on next week.",
+    "sender": "prof@academy.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359547"
+  },
+  {
+    "id": "email_0130",
+    "subject": "Lecture Notes - Week 11",
+    "body": "This week's lecture notes and study materials are now available. Topics covered: security and testing. Next class is on Friday.",
+    "sender": "prof@academy.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359566"
+  },
+  {
+    "id": "email_0131",
+    "subject": "Assignment Due Friday - Reminder",
+    "body": "This is a reminder that your assignment is due on Friday. Please submit via the course portal before 11:59 PM. Review the grading rubric before submitting.",
+    "sender": "professor@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359576"
+  },
+  {
+    "id": "email_0132",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359585"
+  },
+  {
+    "id": "email_0133",
+    "subject": "Assignment Due Friday - Reminder",
+    "body": "This is a reminder that your assignment is due on Monday. Please submit via the course portal before 11:59 PM. Review the grading rubric before submitting.",
+    "sender": "professor@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359595"
+  },
+  {
+    "id": "email_0134",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359605"
+  },
+  {
+    "id": "email_0135",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359614"
+  },
+  {
+    "id": "email_0136",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359624"
+  },
+  {
+    "id": "email_0137",
+    "subject": "Lecture Notes - Week 5",
+    "body": "This week's lecture notes and study materials are now available. Topics covered: algorithms and architecture. Next class is on Friday.",
+    "sender": "prof@academy.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359634"
+  },
+  {
+    "id": "email_0138",
+    "subject": "Lecture Notes - Week 2",
+    "body": "This week's lecture notes and study materials are now available. Topics covered: security and testing. Next class is on Wednesday.",
+    "sender": "prof@academy.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359644"
+  },
+  {
+    "id": "email_0139",
+    "subject": "Course Grades Posted",
+    "body": "Grades for the midterm exam have been posted in the student portal. Please review your results and see me during office hours if you have questions.",
+    "sender": "instructor@college.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359653"
+  },
+  {
+    "id": "email_0140",
+    "subject": "Assignment Due Monday - Reminder",
+    "body": "This is a reminder that your assignment is due on Wednesday. Please submit via the course portal before 11:59 PM. Review the grading rubric before submitting.",
+    "sender": "professor@university.edu",
+    "label": "education",
+    "timestamp": "2025-09-29T13:47:08.359663"
+  },
+  {
+    "id": "email_0141",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359673"
+  },
+  {
+    "id": "email_0142",
+    "subject": "Prescription Ready for Pickup",
+    "body": "Your prescription is ready for pickup at our pharmacy. Available Mon-Fri 9am-6pm, Sat 9am-2pm. Please bring your ID.",
+    "sender": "pharmacy@health.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359683"
+  },
+  {
+    "id": "email_0143",
+    "subject": "Prescription Ready for Pickup",
+    "body": "Your prescription is ready for pickup at our pharmacy. Available Mon-Fri 9am-6pm, Sat 9am-2pm. Please bring your ID.",
+    "sender": "pharmacy@health.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359692"
+  },
+  {
+    "id": "email_0144",
+    "subject": "Appointment Reminder - Monday at 17:00",
+    "body": "This is a reminder of your upcoming appointment on Wednesday at 13:00. Please arrive 15 minutes early to complete paperwork. Bring your insurance card.",
+    "sender": "office@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359702"
+  },
+  {
+    "id": "email_0145",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359712"
+  },
+  {
+    "id": "email_0146",
+    "subject": "Appointment Reminder - Wednesday at 14:00",
+    "body": "This is a reminder of your upcoming appointment on Monday at 17:00. Please arrive 15 minutes early to complete paperwork. Bring your insurance card.",
+    "sender": "office@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359721"
+  },
+  {
+    "id": "email_0147",
+    "subject": "Appointment Reminder - Wednesday at 16:00",
+    "body": "This is a reminder of your upcoming appointment on Friday at 12:00. Please arrive 15 minutes early to complete paperwork. Bring your insurance card.",
+    "sender": "office@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359732"
+  },
+  {
+    "id": "email_0148",
+    "subject": "Appointment Reminder - Monday at 10:00",
+    "body": "This is a reminder of your upcoming appointment on Monday at 9:00. Please arrive 15 minutes early to complete paperwork. Bring your insurance card.",
+    "sender": "office@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359742"
+  },
+  {
+    "id": "email_0149",
+    "subject": "Appointment Reminder - Wednesday at 12:00",
+    "body": "This is a reminder of your upcoming appointment on Monday at 10:00. Please arrive 15 minutes early to complete paperwork. Bring your insurance card.",
+    "sender": "office@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359752"
+  },
+  {
+    "id": "email_0150",
+    "subject": "Prescription Ready for Pickup",
+    "body": "Your prescription is ready for pickup at our pharmacy. Available Mon-Fri 9am-6pm, Sat 9am-2pm. Please bring your ID.",
+    "sender": "pharmacy@health.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359762"
+  },
+  {
+    "id": "email_0151",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359776"
+  },
+  {
+    "id": "email_0152",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359786"
+  },
+  {
+    "id": "email_0153",
+    "subject": "Appointment Reminder - Friday at 17:00",
+    "body": "This is a reminder of your upcoming appointment on next week at 14:00. Please arrive 15 minutes early to complete paperwork. Bring your insurance card.",
+    "sender": "office@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359796"
+  },
+  {
+    "id": "email_0154",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359805"
+  },
+  {
+    "id": "email_0155",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359815"
+  },
+  {
+    "id": "email_0156",
+    "subject": "Prescription Ready for Pickup",
+    "body": "Your prescription is ready for pickup at our pharmacy. Available Mon-Fri 9am-6pm, Sat 9am-2pm. Please bring your ID.",
+    "sender": "pharmacy@health.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359824"
+  },
+  {
+    "id": "email_0157",
+    "subject": "Appointment Reminder - Friday at 10:00",
+    "body": "This is a reminder of your upcoming appointment on Monday at 13:00. Please arrive 15 minutes early to complete paperwork. Bring your insurance card.",
+    "sender": "office@clinic.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359834"
+  },
+  {
+    "id": "email_0158",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359844"
+  },
+  {
+    "id": "email_0159",
+    "subject": "Your Test Results Are Ready",
+    "body": "Your recent test results are now available in the patient portal. Please log in to review. Contact us if you have questions or would like to schedule a follow-up.",
+    "sender": "results@hospital.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359853"
+  },
+  {
+    "id": "email_0160",
+    "subject": "Prescription Ready for Pickup",
+    "body": "Your prescription is ready for pickup at our pharmacy. Available Mon-Fri 9am-6pm, Sat 9am-2pm. Please bring your ID.",
+    "sender": "pharmacy@health.com",
+    "label": "health",
+    "timestamp": "2025-09-29T13:47:08.359863"
+  }
+]

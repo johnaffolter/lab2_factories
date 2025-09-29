@@ -1,0 +1,24 @@
+{
+  "total_emails": 160,
+  "categories": [
+    "work",
+    "personal",
+    "promotion",
+    "newsletter",
+    "support",
+    "travel",
+    "education",
+    "health"
+  ],
+  "distribution": {
+    "work": 20,
+    "personal": 20,
+    "promotion": 20,
+    "newsletter": 20,
+    "support": 20,
+    "travel": 20,
+    "education": 20,
+    "health": 20
+  },
+  "generated_at": "2025-09-29T13:47:08.360769"
+}

@@ -1,0 +1,620 @@
+#!/usr/bin/env python3
+"""
+Complete Data Lineage Mapping from Airbyte to Enhanced Views
+Comprehensive documentation of data flow and transformation pipeline
+
+This creates detailed mapping of:
+1. Original API calls and data ingestion via Airbyte
+2. Raw data storage and initial processing
+3. Feature engineering and transformation steps
+4. Enhanced semantic view creation
+5. Business intelligence and analytics layers
+"""
+
+import json
+from datetime import datetime
+from pathlib import Path
+
+class DataLineageMapper:
+    """Map complete data lineage from source APIs through enhanced views"""
+
+    def __init__(self):
+        self.lineage_map = {}
+        self.transformation_flows = {}
+        self.api_mappings = {}
+        self.feature_engineering_flows = {}
+
+    def map_airbyte_ingestion_flow(self):
+        """Map the complete Airbyte data ingestion flow"""
+        print("=" * 80)
+        print("MAPPING AIRBYTE DATA INGESTION FLOW")
+        print("=" * 80)
+
+        airbyte_flow = {
+            'weather_api_ingestion': {
+                'source_system': 'Weather API Service',
+                'ingestion_method': 'Airbyte Connector',
+                'api_endpoint_pattern': 'https://api.weather.service/v2/daily',
+                'authentication': 'API Key based authentication',
+                'ingestion_frequency': 'Daily at 06:00 UTC',
+                'data_format': 'JSON via REST API',
+                'raw_api_response_structure': {
+                    'weather_id': 'Unique identifier for weather record',
+                    'date': 'ISO date format (YYYY-MM-DD)',
+                    'location_id': 'Numeric location identifier',
+                    'temperature': 'Temperature in Fahrenheit (float)',
+                    'humidity': 'Relative humidity percentage (float)',
+                    'precipitation': 'Precipitation amount in inches (float)',
+                    'wind_speed': 'Wind speed in MPH (float)'
+                },
+                'airbyte_transformation_steps': [
+                    '1. API Response Validation: Check data types and required fields',
+                    '2. Duplicate Detection: Identify and handle duplicate records',
+                    '3. Data Type Conversion: Ensure numeric fields are proper types',
+                    '4. Timestamp Standardization: Convert to UTC timezone',
+                    '5. Schema Validation: Verify against predefined schema',
+                    '6. Data Quality Flags: Add quality indicators'
+                ],
+                'destination_table': 'raw_weather_data',
+                'destination_schema': {
+                    'weather_id': 'INTEGER PRIMARY KEY',
+                    'date': 'DATE NOT NULL',
+                    'location_id': 'INTEGER NOT NULL',
+                    'temperature': 'DECIMAL(5,2)',
+                    'humidity': 'DECIMAL(5,2)',
+                    'precipitation': 'DECIMAL(6,3)',
+                    'wind_speed': 'DECIMAL(5,2)',
+                    'ingested_at': 'TIMESTAMP DEFAULT CURRENT_TIMESTAMP',
+                    'data_quality_score': 'INTEGER DEFAULT 100'
+                }
+            },
+            'enhanced_weather_parsing': {
+                'source_system': 'Enhanced Weather Service',
+                'ingestion_method': 'Airbyte Custom Connector',
+                'api_endpoint_pattern': 'https://api.enhanced-weather.service/v1/parsed-daily',
+                'data_enrichment': 'Additional weather attributes and forecasting',
+                'enhanced_api_response_structure': {
+                    'date': 'ISO date format with timezone',
+                    'precipitation': 'Detailed precipitation measurements',
+                    'condition': 'Categorical weather condition',
+                    'temperature_avg': 'Average temperature for the day',
+                    'temperature_low': 'Minimum temperature recorded',
+                    'temperature_high': 'Maximum temperature recorded',
+                    'icon': 'Weather icon identifier for UI display',
+                    'description': 'Human-readable weather description',
+                    'humidity': 'Detailed humidity measurements',
+                    'wind_speed': 'Enhanced wind speed with direction',
+                    'location_id': 'Location identifier with enhanced metadata',
+                    'communities': 'Associated community identifiers (array)'
+                },
+                'parsing_transformations': [
+                    '1. Weather Condition Categorization: Map raw conditions to business categories',
+                    '2. Temperature Range Calculation: Derive daily temperature ranges',
+                    '3. Precipitation Classification: Categorize precipitation levels',
+                    '4. Community Mapping: Link weather data to community boundaries',
+                    '5. Seasonal Pattern Recognition: Add seasonal context',
+                    '6. Weather Impact Scoring: Calculate business impact metrics'
+                ],
+                'destination_table': 'enhanced_weather_data'
+            },
+            'business_data_ingestion': {
+                'toast_pos_integration': {
+                    'source_system': 'Toast Point of Sale API',
+                    'ingestion_method': 'Airbyte REST API Connector',
+                    'api_endpoint_pattern': 'https://api.toasttab.com/orders/v2/orders',
+                    'authentication': 'OAuth 2.0 with refresh tokens',
+                    'ingestion_frequency': 'Real-time via webhooks + hourly batch sync',
+                    'data_complexity': 'Nested JSON with deep object hierarchies',
+                    'key_api_objects': {
+                        'Order': 'Root order object with metadata',
+                        'Check': 'Individual check within an order',
+                        'Selection': 'Menu item selections with modifiers',
+                        'Payment': 'Payment information and methods',
+                        'Customer': 'Customer information when available'
+                    },
+                    'flattening_strategy': [
+                        '1. Order-level extraction: Basic order metadata',
+                        '2. Check-level aggregation: Sum amounts and items per order',
+                        '3. Selection-level analysis: Item-by-item breakdown',
+                        '4. Payment-level tracking: Payment method distribution',
+                        '5. Temporal analysis: Order timing and duration patterns'
+                    ]
+                },
+                'crm_lead_integration': {
+                    'source_system': 'CRM and Lead Management System',
+                    'ingestion_method': 'Airbyte Custom Source Connector',
+                    'data_sources': [
+                        'LinkedIn Sales Navigator API',
+                        'HubSpot CRM API',
+                        'Custom prospecting tools',
+                        'Industry databases'
+                    ],
+                    'lead_enrichment_process': [
+                        '1. Initial Lead Capture: Basic contact and company information',
+                        '2. Company Enrichment: Revenue, employee count, industry classification',
+                        '3. Decision Maker Identification: Role analysis and authority scoring',
+                        '4. Engagement Scoring: Likelihood of response and conversion',
+                        '5. Priority Calculation: Composite score for sales prioritization',
+                        '6. Timing Optimization: Best engagement windows based on patterns'
+                    ]
+                }
+            }
+        }
+
+        print("Airbyte Ingestion Flow Mapped:")
+        print(f"  Weather API Sources: 2 connectors")
+        print(f"  Business Data Sources: 2 systems")
+        print(f"  Total API Endpoints: 4+ endpoints")
+        print(f"  Transformation Steps: 20+ documented steps")
+
+        self.lineage_map['airbyte_ingestion'] = airbyte_flow
+        return airbyte_flow
+
+    def map_feature_engineering_pipeline(self):
+        """Map the complete feature engineering pipeline"""
+        print("\n" + "=" * 80)
+        print("MAPPING FEATURE ENGINEERING PIPELINE")
+        print("=" * 80)
+
+        feature_engineering = {
+            'weather_feature_engineering': {
+                'input_sources': ['raw_weather_data', 'enhanced_weather_data'],
+                'feature_categories': {
+                    'temperature_features': {
+                        'source_transformation': 'temperature -> temperature_fahrenheit (direct)',
+                        'derived_features': [
+                            'temperature_celsius: (temperature_fahrenheit - 32) * 5/9',
+                            'temperature_category: binning into Cold/Cool/Warm/Hot ranges',
+                            'temperature_deviation: difference from seasonal average',
+                            'temperature_trend: 7-day moving average calculation'
+                        ],
+                        'business_context': 'Temperature impacts customer comfort and outdoor activity preferences'
+                    },
+                    'precipitation_features': {
+                        'source_transformation': 'precipitation -> precipitation_inches (direct)',
+                        'derived_features': [
+                            'precipitation_category: None/Light/Moderate/Heavy classification',
+                            'precipitation_cumulative_7d: 7-day rolling sum',
+                            'dry_day_streak: consecutive days without precipitation',
+                            'precipitation_intensity: rate of precipitation per hour'
+                        ],
+                        'business_context': 'Precipitation affects outdoor events and customer traffic patterns'
+                    },
+                    'composite_weather_features': {
+                        'outdoor_activity_score': {
+                            'formula': 'f(temperature, humidity, wind_speed, precipitation)',
+                            'calculation_logic': [
+                                'Base score: 50',
+                                'Temperature adjustment: +20 for 60-80°F, +10 for 50-90°F, -20 otherwise',
+                                'Precipitation penalty: -15 if > 0',
+                                'Wind adjustment: -10 if > 15 MPH',
+                                'Humidity adjustment: +5 for 30-70%, -5 otherwise',
+                                'Final score: clipped to 0-100 range'
+                            ],
+                            'business_use': 'Predict customer likelihood for outdoor dining and events'
+                        },
+                        'customer_comfort_index': {
+                            'formula': '(temp_comfort + humidity_comfort + wind_comfort) / 3',
+                            'calculation_logic': [
+                                'temp_comfort: 100 - abs(temperature - 72) * 2',
+                                'humidity_comfort: 100 - abs(humidity - 50) * 1.5',
+                                'wind_comfort: max(0, 100 - wind_speed * 3)',
+                                'Final index: clipped to 0-100 range'
+                            ],
+                            'business_use': 'Optimize HVAC and seating arrangements'
+                        },
+                        'operational_impact_flag': {
+                            'conditions': [
+                                'extreme_temperature: < 20°F or > 95°F',
+                                'heavy_precipitation: > 0.25 inches',
+                                'high_wind: > 20 MPH'
+                            ],
+                            'calculation': 'binary flag if any condition is true',
+                            'business_use': 'Alert system for operational adjustments'
+                        }
+                    }
+                },
+                'temporal_features': {
+                    'seasonal_patterns': [
+                        'season: derived from month (Winter/Spring/Summer/Fall)',
+                        'day_of_week: extracted from date',
+                        'is_weekend: boolean flag for Saturday/Sunday',
+                        'is_holiday: lookup against holiday calendar'
+                    ],
+                    'trend_analysis': [
+                        'temperature_ma_7d: 7-day moving average',
+                        'temperature_ma_30d: 30-day moving average',
+                        'seasonal_deviation: difference from historical seasonal average'
+                    ]
+                }
+            },
+            'business_feature_engineering': {
+                'order_features': {
+                    'revenue_metrics': [
+                        'order_value: sum of all check totals',
+                        'average_item_price: total_value / item_count',
+                        'party_size_adjusted_value: order_value / number_of_guests',
+                        'upsell_rate: (order_value - base_items) / base_items'
+                    ],
+                    'operational_metrics': [
+                        'service_duration_minutes: closed_date - opened_date',
+                        'order_complexity_score: function of item_count and modifications',
+                        'kitchen_efficiency: prep_time / item_count',
+                        'table_turnover_rate: orders_per_day / table_capacity'
+                    ],
+                    'customer_behavior': [
+                        'repeat_customer_flag: based on customer_id history',
+                        'payment_preference: dominant payment method',
+                        'dining_preference: dine_in vs takeout patterns',
+                        'peak_hour_preference: preferred dining time slots'
+                    ]
+                },
+                'lead_features': {
+                    'qualification_scoring': [
+                        'priority_score: weighted algorithm (0-10 scale)',
+                        'decision_maker_probability: ML model prediction (0-1)',
+                        'engagement_likelihood: historical pattern analysis (0-1)',
+                        'revenue_potential: industry and size-based estimation'
+                    ],
+                    'behavioral_signals': [
+                        'decision_signals_count: number of authority indicators',
+                        'recent_activity_score: timeliness of business activities',
+                        'digital_engagement_level: online presence and activity',
+                        'network_connectivity: mutual connections and referrals'
+                    ],
+                    'firmographic_features': [
+                        'industry_category: standardized industry classification',
+                        'company_size_tier: employee count buckets',
+                        'revenue_tier: annual revenue buckets',
+                        'geographic_market: city/metro area classification'
+                    ]
+                }
+            },
+            'integrated_feature_engineering': {
+                'weather_business_correlation': {
+                    'weather_adjusted_revenue': {
+                        'inputs': ['daily_revenue', 'outdoor_activity_score', 'operational_impact_flag'],
+                        'calculation': 'revenue * weather_adjustment_factor',
+                        'weather_adjustment_factor': 'function of outdoor_activity_score and impact_flag',
+                        'business_use': 'Normalize revenue for weather conditions'
+                    },
+                    'demand_prediction_features': [
+                        'weather_sensitive_demand: historical correlation patterns',
+                        'optimal_staffing_weather: staffing needs based on weather forecast',
+                        'inventory_weather_adjustment: stock levels for weather-dependent items',
+                        'marketing_weather_timing: optimal promotion timing based on weather'
+                    ]
+                },
+                'location_intelligence': {
+                    'market_performance_index': {
+                        'inputs': ['location_revenue', 'weather_patterns', 'demographic_data'],
+                        'normalization': 'account for local weather and market conditions',
+                        'calculation': 'performance relative to weather-adjusted expectations',
+                        'business_use': 'Fair comparison across different markets'
+                    },
+                    'expansion_opportunity_scoring': [
+                        'weather_suitability: climate compatibility for business model',
+                        'market_saturation: competitor density and market share',
+                        'demographic_alignment: target customer concentration',
+                        'seasonal_viability: year-round business sustainability'
+                    ]
+                }
+            }
+        }
+
+        print("Feature Engineering Pipeline Mapped:")
+        print(f"  Weather Feature Categories: 4 categories")
+        print(f"  Business Feature Categories: 3 categories")
+        print(f"  Integrated Features: 2 correlation types")
+        print(f"  Total Derived Features: 50+ documented features")
+
+        self.feature_engineering_flows = feature_engineering
+        return feature_engineering
+
+    def map_semantic_view_creation(self):
+        """Map the enhanced semantic view creation process"""
+        print("\n" + "=" * 80)
+        print("MAPPING SEMANTIC VIEW CREATION PROCESS")
+        print("=" * 80)
+
+        semantic_views = {
+            'weather_intelligence_view': {
+                'purpose': 'Transform raw weather data into business intelligence',
+                'source_tables': [
+                    'raw_weather_data: Basic weather measurements',
+                    'enhanced_weather_data: Extended weather attributes',
+                    'weather_features: Engineered weather features'
+                ],
+                'view_definition': {
+                    'base_query': '''
+                        SELECT
+                            w.date,
+                            w.location_id,
+                            w.temperature AS temperature_fahrenheit,
+                            (w.temperature - 32) * 5/9 AS temperature_celsius,
+                            CASE
+                                WHEN w.temperature < 32 THEN 'Freezing'
+                                WHEN w.temperature < 50 THEN 'Cold'
+                                WHEN w.temperature < 70 THEN 'Cool'
+                                WHEN w.temperature < 85 THEN 'Warm'
+                                ELSE 'Hot'
+                            END AS temperature_category,
+                            wf.outdoor_activity_score,
+                            wf.customer_comfort_index,
+                            wf.operational_impact_flag
+                        FROM raw_weather_data w
+                        JOIN weather_features wf ON w.weather_id = wf.weather_id
+                    ''',
+                    'business_calculations': [
+                        'outdoor_activity_score: Suitability for outdoor activities (0-100)',
+                        'customer_comfort_index: Overall comfort level (0-100)',
+                        'operational_impact_flag: Alert for extreme conditions (0/1)'
+                    ]
+                },
+                'explainable_columns': {
+                    'temperature_celsius': 'Fahrenheit temperature converted to Celsius using (F-32)*5/9 formula',
+                    'temperature_category': 'Business-friendly temperature ranges: Freezing (<32°F), Cold (32-50°F), Cool (50-70°F), Warm (70-85°F), Hot (>85°F)',
+                    'outdoor_activity_score': 'Composite score (0-100) indicating suitability for outdoor activities, calculated from temperature, humidity, wind, and precipitation',
+                    'customer_comfort_index': 'Customer comfort level (0-100) for indoor/outdoor dining, optimized around 72°F temperature and 50% humidity',
+                    'operational_impact_flag': 'Binary flag (0/1) indicating extreme weather conditions that may require operational adjustments'
+                },
+                'business_context': 'Enable business users to understand weather impact on operations without needing meteorological expertise'
+            },
+            'customer_intelligence_view': {
+                'purpose': 'Integrate customer and lead data for sales intelligence',
+                'source_tables': [
+                    'comprehensive_leads: Enriched lead information',
+                    'toast_orders: Transaction history',
+                    'ai_insights: ML-generated business insights'
+                ],
+                'view_definition': {
+                    'base_query': '''
+                        SELECT
+                            l.organization,
+                            l.industry,
+                            l.location,
+                            l.revenue_potential,
+                            l.priority_score,
+                            l.decision_maker_probability,
+                            l.engagement_likelihood,
+                            CASE
+                                WHEN l.priority_score >= 8.0 THEN 'High'
+                                WHEN l.priority_score >= 6.0 THEN 'Medium'
+                                ELSE 'Low'
+                            END AS priority_category,
+                            CASE
+                                WHEN l.revenue_potential >= 75000 THEN 'Enterprise'
+                                WHEN l.revenue_potential >= 25000 THEN 'Mid-Market'
+                                ELSE 'SMB'
+                            END AS deal_size_category
+                        FROM comprehensive_leads l
+                    ''',
+                    'intelligence_calculations': [
+                        'priority_category: High/Medium/Low based on priority_score thresholds',
+                        'deal_size_category: Enterprise/Mid-Market/SMB based on revenue_potential',
+                        'engagement_probability: ML-predicted likelihood of positive response'
+                    ]
+                },
+                'explainable_columns': {
+                    'priority_score': 'Weighted score (0-10) combining decision authority, company size, timing, and engagement signals',
+                    'decision_maker_probability': 'ML model prediction (0-1) of whether contact has decision-making authority for purchases',
+                    'engagement_likelihood': 'Historical pattern-based prediction (0-1) of positive response to outreach',
+                    'revenue_potential': 'Estimated annual contract value based on industry benchmarks and company size',
+                    'priority_category': 'Business-friendly prioritization: High (8.0+), Medium (6.0-7.9), Low (<6.0)',
+                    'deal_size_category': 'Deal classification: Enterprise ($75K+), Mid-Market ($25K-$75K), SMB (<$25K)'
+                },
+                'business_context': 'Provide sales teams with actionable intelligence for lead prioritization and outreach strategy'
+            },
+            'operational_intelligence_view': {
+                'purpose': 'Combine operational data with environmental factors for optimization',
+                'source_tables': [
+                    'toast_orders: POS transaction data',
+                    'weather_intelligence_view: Weather business impact',
+                    'location_data: Geographic and demographic information'
+                ],
+                'integration_logic': {
+                    'temporal_correlation': 'Match order dates with weather data for same day correlation',
+                    'location_correlation': 'Link order locations with weather monitoring stations',
+                    'performance_normalization': 'Adjust performance metrics for weather conditions'
+                },
+                'key_metrics': [
+                    'weather_adjusted_revenue: Revenue normalized for weather impact',
+                    'optimal_conditions_performance: Performance during ideal weather',
+                    'weather_sensitivity_score: Business sensitivity to weather changes',
+                    'predictive_demand_index: Demand forecast incorporating weather'
+                ],
+                'explainable_columns': {
+                    'weather_adjusted_revenue': 'Daily revenue adjusted for weather impact using historical correlation patterns',
+                    'optimal_conditions_performance': 'Revenue performance during ideal weather conditions (outdoor_activity_score > 80)',
+                    'weather_sensitivity_score': 'Correlation coefficient between weather conditions and business performance',
+                    'predictive_demand_index': 'Forward-looking demand prediction combining historical patterns with weather forecast'
+                }
+            }
+        }
+
+        print("Semantic View Creation Mapped:")
+        print(f"  Weather Intelligence View: Business-friendly weather data")
+        print(f"  Customer Intelligence View: Sales-focused lead data")
+        print(f"  Operational Intelligence View: Weather-business integration")
+        print(f"  Total Explainable Columns: 15+ documented columns")
+
+        return semantic_views
+
+    def generate_complete_lineage_documentation(self):
+        """Generate comprehensive data lineage documentation"""
+        print("\n" + "=" * 80)
+        print("GENERATING COMPLETE LINEAGE DOCUMENTATION")
+        print("=" * 80)
+
+        # Map all components
+        airbyte_flow = self.map_airbyte_ingestion_flow()
+        feature_engineering = self.map_feature_engineering_pipeline()
+        semantic_views = self.map_semantic_view_creation()
+
+        complete_lineage = {
+            'data_lineage_overview': {
+                'purpose': 'Trace data from original API sources through to business intelligence views',
+                'scope': 'Weather data, business transactions, customer intelligence, and integrated analytics',
+                'methodology': 'Airbyte-based ingestion with feature engineering and semantic view layers'
+            },
+            'end_to_end_flow': {
+                'stage_1_ingestion': {
+                    'description': 'Raw data ingestion from external APIs via Airbyte',
+                    'systems': ['Weather API', 'Toast POS API', 'CRM APIs', 'Lead Intelligence APIs'],
+                    'output': 'Raw data tables with basic validation and type conversion'
+                },
+                'stage_2_processing': {
+                    'description': 'Data quality improvement and initial transformations',
+                    'transformations': ['Duplicate removal', 'Data validation', 'Schema standardization', 'Quality scoring'],
+                    'output': 'Clean, validated data ready for feature engineering'
+                },
+                'stage_3_feature_engineering': {
+                    'description': 'Business-relevant feature creation and enrichment',
+                    'feature_types': ['Weather impact metrics', 'Customer behavior patterns', 'Operational efficiency indicators'],
+                    'output': 'Feature-rich datasets with business context'
+                },
+                'stage_4_semantic_views': {
+                    'description': 'Business-friendly views with explainable columns',
+                    'view_types': ['Weather Intelligence', 'Customer Intelligence', 'Operational Intelligence'],
+                    'output': 'Ready-to-use business intelligence views'
+                },
+                'stage_5_analytics': {
+                    'description': 'Advanced analytics and machine learning applications',
+                    'capabilities': ['Predictive modeling', 'Correlation analysis', 'Performance optimization'],
+                    'output': 'Actionable business insights and recommendations'
+                }
+            },
+            'data_quality_lineage': {
+                'quality_gates': [
+                    'API Response Validation: Ensure data completeness and type correctness',
+                    'Business Rule Validation: Apply domain-specific validation rules',
+                    'Referential Integrity: Maintain relationships between datasets',
+                    'Temporal Consistency: Ensure proper time-series continuity',
+                    'Statistical Validation: Detect outliers and anomalies'
+                ],
+                'quality_metrics': [
+                    'Completeness Score: Percentage of required fields populated',
+                    'Accuracy Score: Validation against known correct values',
+                    'Consistency Score: Internal consistency across related fields',
+                    'Timeliness Score: Data freshness and update frequency',
+                    'Validity Score: Conformance to business rules and constraints'
+                ]
+            },
+            'transformation_audit_trail': {
+                'weather_transformations': {
+                    'temperature_celsius': 'Source: API temperature_fahrenheit, Formula: (F-32)*5/9, Validation: Range check -50 to 50°C',
+                    'outdoor_activity_score': 'Sources: temperature, humidity, wind, precipitation, Formula: Composite scoring algorithm, Range: 0-100',
+                    'operational_impact_flag': 'Sources: temperature, precipitation, wind, Logic: Boolean OR of extreme conditions, Values: 0/1'
+                },
+                'business_transformations': {
+                    'priority_score': 'Sources: decision_signals, company_size, industry, Formula: Weighted scoring algorithm, Range: 0-10',
+                    'revenue_potential': 'Sources: industry, employee_count, company_revenue, Formula: Industry benchmark calculation, Currency: USD',
+                    'weather_adjusted_revenue': 'Sources: daily_revenue, outdoor_activity_score, Formula: Revenue * weather_factor, Currency: USD'
+                }
+            },
+            'integration_patterns': {
+                'temporal_integration': {
+                    'method': 'Date-based joins between weather and business data',
+                    'grain': 'Daily aggregation for trend analysis',
+                    'handling': 'Missing dates filled with interpolation or seasonal averages'
+                },
+                'spatial_integration': {
+                    'method': 'Location-based correlation using geographic proximity',
+                    'precision': 'City/metro area level for weather station mapping',
+                    'fallback': 'Regional weather data when local unavailable'
+                },
+                'semantic_integration': {
+                    'method': 'Business context layering on technical data structures',
+                    'approach': 'Domain-specific interpretation and categorization',
+                    'benefit': 'Enable business user self-service analytics'
+                }
+            }
+        }
+
+        print("Complete Lineage Documentation Generated:")
+        print(f"  End-to-End Flow Stages: 5 documented stages")
+        print(f"  Data Quality Gates: 5 validation points")
+        print(f"  Transformation Audit Trail: Complete for all derived fields")
+        print(f"  Integration Patterns: 3 integration methodologies")
+
+        return {
+            'airbyte_ingestion': airbyte_flow,
+            'feature_engineering': feature_engineering,
+            'semantic_views': semantic_views,
+            'complete_lineage': complete_lineage
+        }
+
+    def create_lineage_summary_report(self):
+        """Create executive summary of data lineage"""
+        print("\n" + "=" * 80)
+        print("CREATING LINEAGE SUMMARY REPORT")
+        print("=" * 80)
+
+        summary_report = {
+            'executive_summary': {
+                'scope': 'Complete data lineage from API ingestion to business intelligence',
+                'data_sources': '4+ external APIs integrated via Airbyte',
+                'transformation_layers': '5 distinct processing stages',
+                'business_value': 'Explainable data pipeline enabling self-service analytics'
+            },
+            'technical_achievements': [
+                'Airbyte-based ingestion handling complex nested JSON structures',
+                'Comprehensive feature engineering with business context',
+                'Weather-business correlation analysis and integration',
+                'Self-documenting semantic views with explainable columns',
+                'End-to-end data quality and audit trail maintenance'
+            ],
+            'business_impact': [
+                'Weather Intelligence: Operational optimization based on weather conditions',
+                'Customer Intelligence: Data-driven sales prioritization and targeting',
+                'Operational Intelligence: Performance normalization and predictive analytics',
+                'Integration Intelligence: Cross-domain insights and correlation analysis'
+            ],
+            'data_governance': {
+                'lineage_tracking': 'Complete field-level lineage from source to consumption',
+                'quality_assurance': 'Multi-stage validation with quality scoring',
+                'audit_capability': 'Full transformation audit trail for compliance',
+                'business_definitions': 'Domain-specific definitions for all derived metrics'
+            }
+        }
+
+        print("Lineage Summary Report Created:")
+        print(f"  Technical Achievements: {len(summary_report['technical_achievements'])} documented")
+        print(f"  Business Impact Areas: {len(summary_report['business_impact'])} identified")
+        print(f"  Data Governance: 4 governance capabilities documented")
+
+        return summary_report
+
+if __name__ == "__main__":
+    print("COMPLETE DATA LINEAGE MAPPING")
+    print("Documenting end-to-end data flow from Airbyte to enhanced views")
+    print("=" * 80)
+
+    # Initialize mapper
+    mapper = DataLineageMapper()
+
+    # Generate complete documentation
+    lineage_documentation = mapper.generate_complete_lineage_documentation()
+
+    # Create summary report
+    summary_report = mapper.create_lineage_summary_report()
+
+    print("\n" + "=" * 80)
+    print("DATA LINEAGE MAPPING COMPLETE")
+    print("=" * 80)
+    print("Complete data flow documented from API to analytics")
+    print("All transformations traced with business context")
+    print("Explainable columns and metrics fully defined")
+    print("Integration patterns and quality gates established")
+
+    # Save documentation
+    output_path = Path("/Users/johnaffolter/lab_2_homework/lab2_factories/data_lineage_documentation.json")
+    with open(output_path, 'w') as f:
+        json.dump({
+            'lineage_documentation': lineage_documentation,
+            'summary_report': summary_report,
+            'generated_at': datetime.now().isoformat()
+        }, f, indent=2)
+
+    print(f"\nDocumentation saved to: {output_path}")
+    print("Ready for business user consumption and technical review")

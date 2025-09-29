@@ -1,0 +1,2 @@
+# Make this similar to the upload dag but with a validator for invalid words. 
+# Use the test_download to download just the contents to memory and look for an invalid word.  If invalid then don't download.

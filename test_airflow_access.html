@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Airflow Access Tester</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f9fafb;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 { color: #1f2937; }
+        h2 { color: #374151; font-size: 18px; margin-top: 24px; }
+        .endpoint {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 8px;
+            background: #eff6ff;
+            border: 2px solid #3b82f6;
+            border-radius: 6px;
+            color: #1e40af;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .endpoint:hover {
+            background: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+        }
+        button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 15px;
+        }
+        button:hover { background: #059669; }
+        .status {
+            padding: 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        .success { background: #d1fae5; color: #065f46; }
+        .error { background: #fee2e2; color: #991b1b; }
+        .info { background: #dbeafe; color: #1e40af; }
+        code {
+            background: #f3f4f6;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .test-result {
+            padding: 8px;
+            margin: 5px 0;
+            border-left: 4px solid #e5e7eb;
+        }
+        .test-result.pass {
+            border-left-color: #10b981;
+            background: #f0fdf4;
+        }
+        .test-result.fail {
+            border-left-color: #ef4444;
+            background: #fef2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🚀 Airflow Access Tester & Fixer</h1>
+        <p>This page helps you access Airflow by testing different methods and clearing browser data.</p>
+
+        <h2>Step 1: Clear Browser Data</h2>
+        <button onclick="clearEverything()">🧹 Clear All Data</button>
+        <button onclick="testConnections()">🔍 Test All Endpoints</button>
+
+        <div id="clear-status"></div>
+
+        <h2>Step 2: Access Airflow (Try in Order)</h2>
+        <div class="endpoints">
+            <a href="http://localhost:8888" target="_blank" class="endpoint">
+                Nginx Proxy (8888) - Best Option
+            </a>
+            <a href="http://127.0.0.1:8080" target="_blank" class="endpoint">
+                IP Address (127.0.0.1)
+            </a>
+            <a href="http://localhost:8080" target="_blank" class="endpoint">
+                Direct (localhost)
+            </a>
+            <a href="http://[::1]:8080" target="_blank" class="endpoint">
+                IPv6 ([::1])
+            </a>
+        </div>
+
+        <h2>Test Results:</h2>
+        <div id="test-results"></div>
+
+        <h2>Manual Browser Fixes:</h2>
+        <div class="status info">
+            <strong>Chrome/Edge:</strong><br>
+            1. Press F12 → Application tab → Storage → Clear site data<br>
+            2. Or visit: <code>chrome://settings/siteData</code> → Search "localhost" → Remove all<br>
+            3. Or use Incognito mode (Ctrl+Shift+N)
+        </div>
+
+        <div class="status info">
+            <strong>Firefox:</strong><br>
+            1. Press F12 → Storage tab → Right-click cookies → Delete All<br>
+            2. Or visit: <code>about:preferences#privacy</code> → Manage Data → Remove localhost<br>
+            3. Or use Private Window (Ctrl+Shift+P)
+        </div>
+
+        <div class="status info">
+            <strong>Safari:</strong><br>
+            1. Preferences → Privacy → Manage Website Data → Remove localhost<br>
+            2. Or use Private Window (Cmd+Shift+N)
+        </div>
+    </div>
+
+    <script>
+        function clearEverything() {
+            const status = document.getElementById('clear-status');
+
+            // Clear cookies
+            document.cookie.split(";").forEach(function(c) {
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" +
+                    new Date(0).toUTCString() + ";path=/");
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" +
+                    new Date(0).toUTCString() + ";path=/;domain=localhost");
+                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" +
+                    new Date(0).toUTCString() + ";path=/;domain=.localhost");
+            });
+
+            // Clear storage
+            try {
+                localStorage.clear();
+                sessionStorage.clear();
+                status.innerHTML = '<div class="status success">✅ Browser data cleared!</div>';
+            } catch(e) {
+                status.innerHTML = '<div class="status error">⚠️ Partial clear: ' + e.message + '</div>';
+            }
+
+            // Clear IndexedDB
+            if (window.indexedDB) {
+                indexedDB.databases().then(dbs => {
+                    dbs.forEach(db => indexedDB.deleteDatabase(db.name));
+                });
+            }
+
+            // Clear cache if possible
+            if ('caches' in window) {
+                caches.keys().then(names => {
+                    names.forEach(name => caches.delete(name));
+                });
+            }
+        }
+
+        async function testConnections() {
+            const results = document.getElementById('test-results');
+            results.innerHTML = '<div class="status info">Testing endpoints...</div>';
+
+            const endpoints = [
+                {url: 'http://localhost:8888/health', name: 'Nginx Proxy (8888)'},
+                {url: 'http://127.0.0.1:8080/health', name: 'IP Address (127.0.0.1)'},
+                {url: 'http://localhost:8080/health', name: 'Direct (localhost)'},
+            ];
+
+            let html = '';
+
+            for (const endpoint of endpoints) {
+                try {
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 3000);
+
+                    const response = await fetch(endpoint.url, {
+                        mode: 'no-cors',
+                        signal: controller.signal
+                    });
+
+                    clearTimeout(timeoutId);
+                    html += `<div class="test-result pass">✅ ${endpoint.name}: Reachable</div>`;
+                } catch (e) {
+                    html += `<div class="test-result fail">❌ ${endpoint.name}: ${e.message}</div>`;
+                }
+            }
+
+            results.innerHTML = html;
+        }
+
+        // Auto-clear on load
+        window.onload = function() {
+            clearEverything();
+            setTimeout(testConnections, 1000);
+        };
+    </script>
+</body>
+</html>

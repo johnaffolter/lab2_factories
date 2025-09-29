@@ -1,0 +1,32 @@
+FROM apache/airflow:2.7.0
+
+USER root
+
+# Install additional packages
+RUN apt-get update && apt-get install -y \
+    nginx \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy custom configurations
+COPY gunicorn_config.py /opt/airflow/gunicorn_config.py
+COPY custom_airflow_webserver_config.py /opt/airflow/custom_airflow_webserver_config.py
+
+# Create nginx config for internal proxy
+RUN echo 'server { \
+    listen 8081; \
+    large_client_header_buffers 8 64k; \
+    client_header_buffer_size 64k; \
+    location / { \
+        proxy_pass http://127.0.0.1:8080; \
+        proxy_set_header Host $host; \
+        proxy_hide_header X-Powered-By; \
+    } \
+}' > /etc/nginx/sites-available/airflow
+
+USER airflow
+
+# Set environment variables for large headers
+ENV AIRFLOW__WEBSERVER__WEB_SERVER_WORKER_CLASS=sync
+ENV AIRFLOW__WEBSERVER__WORKER_REFRESH_INTERVAL=30
+ENV AIRFLOW__WEBSERVER__WEB_SERVER_WORKER_TIMEOUT=120
+ENV GUNICORN_CMD_ARGS="--config /opt/airflow/gunicorn_config.py"

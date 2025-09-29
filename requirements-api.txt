@@ -1,0 +1,28 @@
+# FastAPI Web Server Environment Requirements
+# For running the FastAPI application with full features
+# Install with: uv pip install -r requirements-api.txt
+
+# Core
+python-dotenv>=1.0.0
+
+# FastAPI and Web
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+python-multipart>=0.0.6
+
+# Neo4j
+neo4j>=5.14.0,<6.0.0
+
+# AWS S3
+boto3>=1.29.0
+botocore>=1.32.0
+
+# OpenAI and LLM
+openai>=1.3.0,<2.0.0
+
+# ML Libraries
+numpy>=1.24.0,<2.0.0
+pandas>=2.0.0
+scikit-learn>=1.3.0

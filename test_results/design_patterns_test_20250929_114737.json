@@ -1,0 +1,153 @@
+{
+  "summary": {
+    "total_tests": 14,
+    "passed": 12,
+    "failed": 0,
+    "success_rate": "85.7%"
+  },
+  "pattern_summary": {
+    "Factory Pattern": {
+      "PASS": 4,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Dataclass Pattern": {
+      "PASS": 2,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Strategy Pattern": {
+      "PASS": 2,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Singleton Pattern": {
+      "PASS": 0,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 1
+    },
+    "Builder Pattern": {
+      "PASS": 0,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 1
+    },
+    "Model Pattern": {
+      "PASS": 2,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Integration Pattern": {
+      "PASS": 2,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "test": "Factory Instantiation",
+      "pattern": "Factory Pattern",
+      "status": "PASS",
+      "details": "FeatureGeneratorFactory created successfully",
+      "timestamp": "2025-09-29T11:47:37.948450"
+    },
+    {
+      "test": "Product Creation",
+      "pattern": "Factory Pattern",
+      "status": "PASS",
+      "details": "Created 3 generators: ['SpamFeatureGenerator', 'AverageWordLengthFeatureGenerator', 'EmailEmbeddingsFeatureGenerator']",
+      "timestamp": "2025-09-29T11:47:37.948471"
+    },
+    {
+      "test": "Factory Method Pattern",
+      "pattern": "Factory Pattern",
+      "status": "PASS",
+      "details": "Successfully created specific generator types",
+      "timestamp": "2025-09-29T11:47:37.948474"
+    },
+    {
+      "test": "Abstract Base Class Compliance",
+      "pattern": "Factory Pattern",
+      "status": "PASS",
+      "details": "All generators inherit from BaseFeatureGenerator",
+      "timestamp": "2025-09-29T11:47:37.948479"
+    },
+    {
+      "test": "Email Dataclass Creation",
+      "pattern": "Dataclass Pattern",
+      "status": "PASS",
+      "details": "Email dataclass created with fields: ['subject', 'body']",
+      "timestamp": "2025-09-29T11:47:37.948485"
+    },
+    {
+      "test": "Dataclass Properties",
+      "pattern": "Dataclass Pattern",
+      "status": "PASS",
+      "details": "Dataclass properties accessible, str representation: 47 chars",
+      "timestamp": "2025-09-29T11:47:37.948489"
+    },
+    {
+      "test": "Multiple Feature Strategies",
+      "pattern": "Strategy Pattern",
+      "status": "PASS",
+      "details": "Spam features: {'has_spam_words': 1}, Word features: {'average_word_length': 5.833333333333333}",
+      "timestamp": "2025-09-29T11:47:37.948500"
+    },
+    {
+      "test": "Strategy Interface Compliance",
+      "pattern": "Strategy Pattern",
+      "status": "PASS",
+      "details": "All strategies implement required interface",
+      "timestamp": "2025-09-29T11:47:37.948504"
+    },
+    {
+      "test": "Singleton Pattern Check",
+      "pattern": "Singleton Pattern",
+      "status": "INFO",
+      "details": "Singleton pattern not required for this homework",
+      "timestamp": "2025-09-29T11:47:37.948506"
+    },
+    {
+      "test": "Builder Pattern Check",
+      "pattern": "Builder Pattern",
+      "status": "INFO",
+      "details": "Builder pattern not implemented (not required for basic factory)",
+      "timestamp": "2025-09-29T11:47:37.948511"
+    },
+    {
+      "test": "Model Interface",
+      "pattern": "Model Pattern",
+      "status": "PASS",
+      "details": "Model implements interface with 18 topics",
+      "timestamp": "2025-09-29T11:47:37.949480"
+    },
+    {
+      "test": "Model Strategy Pattern",
+      "pattern": "Model Pattern",
+      "status": "PASS",
+      "details": "Two strategies: topic_sim='support', email_sim='support'",
+      "timestamp": "2025-09-29T11:47:37.949845"
+    },
+    {
+      "test": "Factory-Strategy Integration",
+      "pattern": "Integration Pattern",
+      "status": "PASS",
+      "details": "Generated 6 features using factory pattern",
+      "timestamp": "2025-09-29T11:47:37.949871"
+    },
+    {
+      "test": "Model-Feature Integration",
+      "pattern": "Integration Pattern",
+      "status": "PASS",
+      "details": "Model prediction: 'test_analysis_1759111124', 18 topic scores",
+      "timestamp": "2025-09-29T11:47:37.949906"
+    }
+  ],
+  "timestamp": "2025-09-29T11:47:37.949953"
+}

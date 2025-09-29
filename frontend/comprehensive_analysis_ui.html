@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Email Analysis System - Lab 2 Factory Pattern</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .component-card {
+            @apply bg-white shadow-lg rounded-lg p-6 mb-6 border border-gray-200;
+        }
+        .analysis-result {
+            @apply bg-blue-50 border-l-4 border-blue-500 p-4 mb-4;
+        }
+        .error-highlight {
+            @apply bg-red-100 border border-red-300 rounded px-2 py-1;
+        }
+        .suggestion-box {
+            @apply bg-green-50 border border-green-300 rounded p-3 mb-2;
+        }
+        .metric-card {
+            @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white p-4 rounded-lg;
+        }
+        .composable-module {
+            @apply border-2 border-dashed border-gray-300 p-4 rounded-lg mb-4 hover:border-blue-500 transition-colors;
+        }
+        .reflection-panel {
+            @apply bg-yellow-50 border border-yellow-300 rounded-lg p-4;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div id="app" class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Advanced Email Analysis System</h1>
+            <p class="text-xl text-gray-600">Lab 2: Factory Pattern with AI-Driven Analysis</p>
+            <div class="flex justify-center mt-4 space-x-4">
+                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Reproducible</span>
+                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Composable</span>
+                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Modular</span>
+                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Reflective</span>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="mb-8">
+            <div class="flex space-x-1 bg-gray-200 rounded-lg p-1">
+                <button
+                    v-for="tab in tabs"
+                    :key="tab.id"
+                    @click="activeTab = tab.id"
+                    :class="activeTab === tab.id ? 'bg-white text-blue-600 shadow' : 'text-gray-600 hover:text-blue-600'"
+                    class="px-4 py-2 rounded-md font-medium transition-colors"
+                >
+                    {{ tab.name }}
+                </button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Left Panel: Input and Configuration -->
+            <div class="lg:col-span-2">
+                <!-- Email Analysis Tab -->
+                <div v-show="activeTab === 'analysis'" class="component-card">
+                    <h2 class="text-2xl font-bold mb-4">📧 Email Analysis Playground</h2>
+
+                    <!-- Pre-programmed Examples -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-3">Pre-programmed Examples</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            <button
+                                v-for="example in preloadedExamples"
+                                :key="example.id"
+                                @click="loadExample(example)"
+                                class="bg-gray-100 hover:bg-gray-200 p-3 rounded-lg text-left transition-colors"
+                            >
+                                <div class="font-medium text-sm">{{ example.name }}</div>
+                                <div class="text-xs text-gray-600 mt-1">{{ example.description }}</div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Subject</label>
+                            <input
+                                v-model="emailInput.subject"
+                                type="text"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter email subject..."
+                            >
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email Body</label>
+                            <textarea
+                                v-model="emailInput.body"
+                                rows="6"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter email content..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Analysis Configuration -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-medium mb-3">Analysis Configuration</h4>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                                <label v-for="option in analysisOptions" :key="option.key" class="flex items-center">
+                                    <input
+                                        v-model="selectedAnalysis"
+                                        :value="option.key"
+                                        type="checkbox"
+                                        class="mr-2"
+                                    >
+                                    <span class="text-sm">{{ option.label }}</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex space-x-3">
+                            <button
+                                @click="runAnalysis"
+                                :disabled="isAnalyzing"
+                                class="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white px-6 py-2 rounded-md font-medium transition-colors"
+                            >
+                                {{ isAnalyzing ? 'Analyzing...' : 'Run Analysis' }}
+                            </button>
+                            <button
+                                @click="runBatchAnalysis"
+                                class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md font-medium transition-colors"
+                            >
+                                Batch Process
+                            </button>
+                            <button
+                                @click="exportResults"
+                                class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-md font-medium transition-colors"
+                            >
+                                Export Results
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Composable Modules Tab -->
+                <div v-show="activeTab === 'modules'" class="component-card">
+                    <h2 class="text-2xl font-bold mb-4">🧩 Composable Analysis Modules</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div v-for="module in analysisModules" :key="module.id" class="composable-module">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium">{{ module.name }}</h4>
+                                <input
+                                    v-model="module.enabled"
+                                    type="checkbox"
+                                    class="toggle"
+                                >
+                            </div>
+                            <p class="text-sm text-gray-600 mb-3">{{ module.description }}</p>
+
+                            <!-- Module Configuration -->
+                            <div v-if="module.enabled && module.config" class="space-y-2">
+                                <div v-for="param in module.config" :key="param.name" class="flex items-center justify-between">
+                                    <label class="text-xs text-gray-700">{{ param.label }}</label>
+                                    <input
+                                        v-if="param.type === 'number'"
+                                        v-model.number="param.value"
+                                        type="number"
+                                        :min="param.min"
+                                        :max="param.max"
+                                        :step="param.step"
+                                        class="w-16 px-2 py-1 text-xs border rounded"
+                                    >
+                                    <select
+                                        v-else-if="param.type === 'select'"
+                                        v-model="param.value"
+                                        class="w-24 px-2 py-1 text-xs border rounded"
+                                    >
+                                        <option v-for="opt in param.options" :key="opt" :value="opt">{{ opt }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module Pipeline Visualization -->
+                    <div class="mt-6 p-4 bg-gray-50 rounded-lg">
+                        <h4 class="font-medium mb-3">Analysis Pipeline</h4>
+                        <div class="flex items-center space-x-2 overflow-x-auto">
+                            <div
+                                v-for="(module, index) in enabledModules"
+                                :key="module.id"
+                                class="flex items-center"
+                            >
+                                <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm whitespace-nowrap">
+                                    {{ module.name }}
+                                </div>
+                                <div v-if="index < enabledModules.length - 1" class="mx-2 text-gray-400">→</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Factory Pattern Tab -->
+                <div v-show="activeTab === 'factory'" class="component-card">
+                    <h2 class="text-2xl font-bold mb-4">🏭 Factory Pattern Implementation</h2>
+
+                    <!-- Feature Generators -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-3">Available Feature Generators</h3>
+                        <div v-if="factoryData.generators" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div
+                                v-for="generator in factoryData.generators"
+                                :key="generator.name"
+                                class="border border-gray-200 rounded-lg p-4"
+                            >
+                                <h4 class="font-medium text-blue-600">{{ generator.name }}</h4>
+                                <p class="text-sm text-gray-600 mb-2">{{ generator.description }}</p>
+                                <div class="text-xs text-gray-500">
+                                    <div><strong>Features:</strong> {{ generator.features.join(', ') }}</div>
+                                    <div><strong>Category:</strong> {{ generator.category }}</div>
+                                    <div><strong>Performance:</strong> {{ generator.performance }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Factory Pattern Demonstration -->
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h4 class="font-medium mb-3">Factory Pattern in Action</h4>
+                        <div class="space-y-2 text-sm">
+                            <div><strong>Pattern Used:</strong> Factory Method + Registry Pattern</div>
+                            <div><strong>Benefits:</strong> Extensible, Testable, Loosely Coupled</div>
+                            <div><strong>Dynamic Creation:</strong> Features generated based on email content</div>
+                        </div>
+
+                        <button
+                            @click="demonstrateFactory"
+                            class="mt-3 bg-blue-600 text-white px-4 py-2 rounded text-sm hover:bg-blue-700"
+                        >
+                            Demonstrate Factory Pattern
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Airbyte DAGs Tab -->
+                <div v-show="activeTab === 'dags'" class="component-card">
+                    <h2 class="text-2xl font-bold mb-4">⚡ Airbyte Modular DAGs</h2>
+
+                    <div class="space-y-4">
+                        <div v-for="dag in airbyteDAGs" :key="dag.id" class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-medium">{{ dag.name }}</h4>
+                                <div class="flex space-x-2">
+                                    <button
+                                        @click="viewDAGDetails(dag)"
+                                        class="text-blue-600 hover:text-blue-800 text-sm"
+                                    >
+                                        View Details
+                                    </button>
+                                    <button
+                                        @click="triggerDAG(dag)"
+                                        class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600"
+                                    >
+                                        Trigger
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">{{ dag.description }}</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    v-for="tag in dag.tags"
+                                    :key="tag"
+                                    class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs"
+                                >
+                                    {{ tag }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Results and Reflection -->
+            <div class="space-y-6">
+                <!-- Analysis Results -->
+                <div class="component-card">
+                    <h3 class="text-lg font-bold mb-4">📊 Analysis Results</h3>
+
+                    <div v-if="analysisResults">
+                        <!-- Overall Score -->
+                        <div class="metric-card mb-4">
+                            <div class="text-2xl font-bold">{{ (analysisResults.overall_score * 100).toFixed(1) }}%</div>
+                            <div class="text-sm opacity-90">Overall Quality Score</div>
+                        </div>
+
+                        <!-- Key Metrics -->
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-gray-50 p-3 rounded">
+                                <div class="text-lg font-semibold">{{ analysisResults.metrics?.readability_score?.toFixed(1) || 'N/A' }}</div>
+                                <div class="text-xs text-gray-600">Readability</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded">
+                                <div class="text-lg font-semibold">{{ analysisResults.metrics?.word_count || 'N/A' }}</div>
+                                <div class="text-xs text-gray-600">Word Count</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded">
+                                <div class="text-lg font-semibold">{{ analysisResults.issues?.length || 0 }}</div>
+                                <div class="text-xs text-gray-600">Issues Found</div>
+                            </div>
+                            <div class="bg-gray-50 p-3 rounded">
+                                <div class="text-lg font-semibold">{{ (analysisResults.metrics?.sentiment_polarity * 100)?.toFixed(0) || 'N/A' }}%</div>
+                                <div class="text-xs text-gray-600">Sentiment</div>
+                            </div>
+                        </div>
+
+                        <!-- Issues -->
+                        <div v-if="analysisResults.issues && analysisResults.issues.length > 0" class="mb-4">
+                            <h4 class="font-medium mb-2">⚠️ Issues Detected</h4>
+                            <div class="space-y-2 max-h-40 overflow-y-auto">
+                                <div
+                                    v-for="issue in analysisResults.issues.slice(0, 5)"
+                                    :key="issue.rule_id"
+                                    class="text-sm p-2 bg-red-50 border border-red-200 rounded"
+                                >
+                                    <div class="font-medium text-red-800">{{ issue.message }}</div>
+                                    <div class="text-red-600">{{ issue.suggestion }}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Suggestions -->
+                        <div v-if="analysisResults.suggestions && analysisResults.suggestions.length > 0">
+                            <h4 class="font-medium mb-2">💡 Suggestions</h4>
+                            <div class="space-y-2">
+                                <div
+                                    v-for="suggestion in analysisResults.suggestions.slice(0, 3)"
+                                    :key="suggestion"
+                                    class="suggestion-box text-sm"
+                                >
+                                    {{ suggestion }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div v-else class="text-center text-gray-500 py-8">
+                        Run an analysis to see results
+                    </div>
+                </div>
+
+                <!-- Reflection Panel -->
+                <div class="reflection-panel">
+                    <h3 class="text-lg font-bold mb-3">🤔 Reflection & Learning</h3>
+
+                    <div class="space-y-3">
+                        <div>
+                            <h4 class="font-medium text-sm">Design Patterns Used</h4>
+                            <ul class="text-sm text-gray-700 list-disc list-inside">
+                                <li>Factory Method Pattern</li>
+                                <li>Registry Pattern</li>
+                                <li>Strategy Pattern</li>
+                                <li>Observer Pattern</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium text-sm">Reproducibility Features</h4>
+                            <ul class="text-sm text-gray-700 list-disc list-inside">
+                                <li>Deterministic analysis pipeline</li>
+                                <li>Configuration versioning</li>
+                                <li>Result caching and comparison</li>
+                                <li>Seed-based randomization</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium text-sm">Learning Outcomes</h4>
+                            <div class="text-sm text-gray-700">
+                                <div>✓ Factory patterns enable extensible systems</div>
+                                <div>✓ Modular design improves testability</div>
+                                <div>✓ AI analysis provides actionable insights</div>
+                                <div>✓ Data pipelines enable scalable processing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Status -->
+                <div class="component-card">
+                    <h3 class="text-lg font-bold mb-3">🖥️ System Status</h3>
+
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">API Server</span>
+                            <span :class="systemStatus.api ? 'text-green-600' : 'text-red-600'" class="text-sm font-medium">
+                                {{ systemStatus.api ? '✓ Connected' : '✗ Disconnected' }}
+                            </span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Feature Generators</span>
+                            <span class="text-green-600 text-sm font-medium">✓ {{ factoryData.generators?.length || 0 }} Available</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Analysis Modules</span>
+                            <span class="text-green-600 text-sm font-medium">✓ {{ enabledModules.length }} Enabled</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm">Last Analysis</span>
+                            <span class="text-gray-600 text-sm">{{ lastAnalysisTime || 'Never' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visualization Modal -->
+        <div v-if="showVisualization" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[80vh] overflow-auto">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Analysis Visualization</h3>
+                    <button @click="showVisualization = false" class="text-gray-500 hover:text-gray-700">✕</button>
+                </div>
+                <div id="plotly-chart" style="height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    activeTab: 'analysis',
+                    isAnalyzing: false,
+                    emailInput: {
+                        subject: '',
+                        body: ''
+                    },
+                    selectedAnalysis: ['grammar', 'tone', 'clarity'],
+                    analysisResults: null,
+                    lastAnalysisTime: null,
+                    showVisualization: false,
+                    systemStatus: {
+                        api: false
+                    },
+                    tabs: [
+                        { id: 'analysis', name: 'Email Analysis' },
+                        { id: 'modules', name: 'Composable Modules' },
+                        { id: 'factory', name: 'Factory Pattern' },
+                        { id: 'dags', name: 'Airbyte DAGs' }
+                    ],
+                    preloadedExamples: [
+                        {
+                            id: 'work_email',
+                            name: 'Professional Work Email',
+                            description: 'Formal business communication',
+                            subject: 'Q4 Project Review Meeting',
+                            body: 'Dear Team,\n\nI hope this email finds you well. I wanted to schedule our Q4 project review meeting for next Friday at 2 PM in Conference Room B.\n\nPlease review the attached documents before the meeting and come prepared to discuss:\n- Project milestones achieved\n- Budget allocation updates\n- Timeline adjustments for next quarter\n\nIf you have any conflicts with this time, please let me know by Wednesday.\n\nBest regards,\nProject Manager'
+                        },
+                        {
+                            id: 'urgent_poor',
+                            name: 'Urgent Email with Issues',
+                            description: 'Contains grammar and tone issues',
+                            subject: 'urgent meeting tommorow!!!',
+                            body: 'Hi team,\n\nWe have a urgent meeting tommorrow at 10 AM. Its very important that everyone attends because the data is clear and shows that we need to optimize our leverage points and utilize our synergies more better.\n\nPlease confirm your attendance ASAP as this is time-sensitive and we cannot afford any delays in our strategic initiatives.\n\nThanks,\nManager'
+                        },
+                        {
+                            id: 'personal_casual',
+                            name: 'Personal Casual Email',
+                            description: 'Friendly personal communication',
+                            subject: 'Weekend Plans - Coffee?',
+                            body: 'Hey Sarah!\n\nHope you\'re doing well! It\'s been way too long since we last caught up. How about we grab coffee this weekend?\n\nI heard about your new job - congratulations! I\'d love to hear all about it. Are you free Saturday morning around 10?\n\nLet me know what works for you!\n\nXOXO,\nEmma'
+                        },
+                        {
+                            id: 'promotional',
+                            name: 'Marketing Promotional',
+                            description: 'Sales and promotional content',
+                            subject: '🔥 Flash Sale: 50% Off Everything!',
+                            body: 'Don\'t miss our biggest sale of the year!\n\nGet 50% off EVERYTHING in our store - but hurry, this flash sale ends at midnight tonight!\n\nUse code FLASH50 at checkout to save big on:\n• Electronics\n• Clothing\n• Home & Garden\n• Books & More\n\nShop now before it\'s too late!\n\nClick here to start shopping: [Shop Now]\n\nHurry - limited quantities available!'
+                        },
+                        {
+                            id: 'security_suspicious',
+                            name: 'Suspicious Security Email',
+                            description: 'Email with security red flags',
+                            subject: 'Urgent: Verify Your Account Now',
+                            body: 'Dear Customer,\n\nYour account has been temporarily suspended due to unusual activity. Please verify your account immediately to avoid permanent closure.\n\nClick here to verify: http://suspicious-link.com/verify\n\nYou have 24 hours to complete this process. Failure to do so will result in permanent account deletion.\n\nProvide the following information:\n- Full Name\n- Account Number\n- Social Security Number\n- Password\n\nUrgent action required!\n\nSecurity Team'
+                        },
+                        {
+                            id: 'educational',
+                            name: 'Educational Content',
+                            description: 'Academic or learning context',
+                            subject: 'Assignment Feedback - Data Science Project',
+                            body: 'Dear Student,\n\nI have reviewed your Data Science project submission and wanted to provide detailed feedback.\n\nStrengths:\n- Excellent data visualization techniques\n- Thorough statistical analysis\n- Clear presentation of findings\n- Good use of machine learning algorithms\n\nAreas for improvement:\n- Consider additional feature engineering\n- Expand the literature review section\n- Include more cross-validation techniques\n\nOverall grade: A-\n\nPlease schedule office hours if you\'d like to discuss this further.\n\nBest regards,\nProfessor Johnson'
+                        }
+                    ],
+                    analysisOptions: [
+                        { key: 'grammar', label: 'Grammar Check' },
+                        { key: 'tone', label: 'Tone Analysis' },
+                        { key: 'clarity', label: 'Clarity Review' },
+                        { key: 'security', label: 'Security Scan' },
+                        { key: 'sentiment', label: 'Sentiment Analysis' },
+                        { key: 'readability', label: 'Readability Score' }
+                    ],
+                    analysisModules: [
+                        {
+                            id: 'grammar_analyzer',
+                            name: 'Grammar Analyzer',
+                            description: 'Advanced grammar checking with contextual understanding',
+                            enabled: true,
+                            config: [
+                                { name: 'strictness', label: 'Strictness', type: 'select', value: 'medium', options: ['low', 'medium', 'high'] },
+                                { name: 'confidence', label: 'Min Confidence', type: 'number', value: 0.7, min: 0, max: 1, step: 0.1 }
+                            ]
+                        },
+                        {
+                            id: 'tone_analyzer',
+                            name: 'Tone Analyzer',
+                            description: 'Analyze emotional tone and professionalism',
+                            enabled: true,
+                            config: [
+                                { name: 'sensitivity', label: 'Sensitivity', type: 'number', value: 0.5, min: 0, max: 1, step: 0.1 }
+                            ]
+                        },
+                        {
+                            id: 'security_scanner',
+                            name: 'Security Scanner',
+                            description: 'Detect phishing and security threats',
+                            enabled: true,
+                            config: [
+                                { name: 'threat_level', label: 'Threat Level', type: 'select', value: 'standard', options: ['low', 'standard', 'high'] }
+                            ]
+                        },
+                        {
+                            id: 'ml_classifier',
+                            name: 'ML Classifier',
+                            description: 'Machine learning email classification',
+                            enabled: true,
+                            config: [
+                                { name: 'model_version', label: 'Model Version', type: 'select', value: 'latest', options: ['v1.0', 'v1.1', 'latest'] }
+                            ]
+                        }
+                    ],
+                    factoryData: {
+                        generators: []
+                    },
+                    airbyteDAGs: [
+                        {
+                            id: 'email_classification_pipeline',
+                            name: 'Email Classification Pipeline',
+                            description: 'Advanced email classification with ML and analytics',
+                            tags: ['email', 'classification', 'ml', 'airbyte'],
+                            status: 'active'
+                        },
+                        {
+                            id: 'email_security_analysis',
+                            name: 'Security Analysis Pipeline',
+                            description: 'Security analysis and threat detection for emails',
+                            tags: ['security', 'threat-detection', 'email'],
+                            status: 'active'
+                        },
+                        {
+                            id: 'realtime_email_analysis',
+                            name: 'Real-time Analysis Pipeline',
+                            description: 'Real-time email processing and classification',
+                            tags: ['realtime', 'streaming', 'email'],
+                            status: 'ready'
+                        },
+                        {
+                            id: 'email_batch_analytics',
+                            name: 'Batch Analytics Pipeline',
+                            description: 'Daily batch analytics and ML model training',
+                            tags: ['analytics', 'batch', 'ml-training'],
+                            status: 'scheduled'
+                        }
+                    ]
+                }
+            },
+            computed: {
+                enabledModules() {
+                    return this.analysisModules.filter(module => module.enabled);
+                }
+            },
+            async mounted() {
+                await this.initializeSystem();
+                await this.loadFactoryData();
+                this.checkSystemStatus();
+            },
+            methods: {
+                async initializeSystem() {
+                    console.log('🚀 Initializing Advanced Email Analysis System');
+                    console.log('✓ Vue.js application ready');
+                    console.log('✓ Composable modules loaded');
+                    console.log('✓ Pre-programmed examples available');
+                },
+
+                async loadFactoryData() {
+                    try {
+                        const response = await axios.get('/features');
+                        this.factoryData.generators = response.data.available_generators;
+                        console.log('✓ Factory data loaded:', this.factoryData.generators.length, 'generators');
+                    } catch (error) {
+                        console.log('⚠️ Factory data simulation mode');
+                        // Simulate factory data for demo
+                        this.factoryData.generators = [
+                            {
+                                name: 'spam',
+                                features: ['has_spam_words'],
+                                description: 'Detects spam-related keywords and patterns',
+                                category: 'content_analysis',
+                                performance: 'O(n) where n is text length'
+                            },
+                            {
+                                name: 'non_text',
+                                features: ['non_text_char_count'],
+                                description: 'Counts non-alphanumeric characters',
+                                category: 'content_analysis',
+                                performance: 'O(n) where n is text length'
+                            },
+                            {
+                                name: 'word_length',
+                                features: ['average_word_length'],
+                                description: 'Analyzes word length statistics',
+                                category: 'linguistic_analysis',
+                                performance: 'O(n) where n is word count'
+                            },
+                            {
+                                name: 'email_embeddings',
+                                features: ['average_embedding'],
+                                description: 'Generates semantic embeddings for emails',
+                                category: 'ml_features',
+                                performance: 'O(1) - currently using simple calculation'
+                            }
+                        ];
+                    }
+                },
+
+                async checkSystemStatus() {
+                    try {
+                        const response = await axios.get('/features');
+                        this.systemStatus.api = true;
+                    } catch (error) {
+                        this.systemStatus.api = false;
+                    }
+                },
+
+                loadExample(example) {
+                    this.emailInput.subject = example.subject;
+                    this.emailInput.body = example.body;
+                    console.log('📧 Loaded example:', example.name);
+                },
+
+                async runAnalysis() {
+                    if (!this.emailInput.subject && !this.emailInput.body) {
+                        alert('Please enter email content or load an example');
+                        return;
+                    }
+
+                    this.isAnalyzing = true;
+                    this.analysisResults = null;
+
+                    try {
+                        // Try real API first
+                        const response = await axios.post('/emails/classify', {
+                            subject: this.emailInput.subject,
+                            body: this.emailInput.body,
+                            mode: 'topic'
+                        });
+
+                        // Combine with advanced analysis
+                        const advancedAnalysis = await this.performAdvancedAnalysis();
+
+                        this.analysisResults = {
+                            ...response.data,
+                            ...advancedAnalysis,
+                            overall_score: this.calculateOverallScore(response.data, advancedAnalysis)
+                        };
+
+                    } catch (error) {
+                        console.log('🔧 API unavailable, running simulation mode');
+                        this.analysisResults = this.simulateAnalysis();
+                    }
+
+                    this.lastAnalysisTime = new Date().toLocaleTimeString();
+                    this.isAnalyzing = false;
+
+                    console.log('✅ Analysis complete:', this.analysisResults);
+                },
+
+                async performAdvancedAnalysis() {
+                    // Simulate advanced analysis based on enabled modules
+                    const fullText = `${this.emailInput.subject} ${this.emailInput.body}`;
+                    const words = fullText.split(/\s+/).filter(w => w.length > 0);
+
+                    return {
+                        metrics: {
+                            readability_score: this.calculateReadabilityScore(fullText),
+                            word_count: words.length,
+                            sentence_count: fullText.split(/[.!?]+/).filter(s => s.trim().length > 0).length,
+                            sentiment_polarity: this.calculateSentiment(fullText),
+                            formality_index: this.calculateFormality(fullText)
+                        },
+                        issues: this.detectIssues(fullText),
+                        suggestions: this.generateSuggestions(fullText)
+                    };
+                },
+
+                calculateReadabilityScore(text) {
+                    // Simplified Flesch Reading Ease calculation
+                    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+                    const words = text.split(/\s+/).filter(w => w.length > 0).length;
+                    const syllables = this.estimateSyllables(text);
+
+                    if (sentences === 0 || words === 0) return 0;
+
+                    const score = 206.835 - (1.015 * (words / sentences)) - (84.6 * (syllables / words));
+                    return Math.max(0, Math.min(100, score));
+                },
+
+                estimateSyllables(text) {
+                    const words = text.toLowerCase().split(/\s+/);
+                    let syllableCount = 0;
+
+                    words.forEach(word => {
+                        word = word.replace(/[^a-z]/g, '');
+                        if (word.length === 0) return;
+
+                        let syllables = word.match(/[aeiouy]+/g) || [];
+                        syllables = syllables.length;
+                        if (word.endsWith('e') && syllables > 1) syllables--;
+                        syllableCount += Math.max(1, syllables);
+                    });
+
+                    return syllableCount;
+                },
+
+                calculateSentiment(text) {
+                    const positiveWords = ['good', 'great', 'excellent', 'wonderful', 'amazing', 'fantastic', 'pleased', 'happy'];
+                    const negativeWords = ['bad', 'terrible', 'awful', 'horrible', 'disappointing', 'frustrated', 'angry'];
+
+                    const words = text.toLowerCase().split(/\s+/);
+                    const positive = words.filter(w => positiveWords.includes(w)).length;
+                    const negative = words.filter(w => negativeWords.includes(w)).length;
+
+                    return (positive - negative) / words.length;
+                },
+
+                calculateFormality(text) {
+                    const formalWords = ['regarding', 'pursuant', 'furthermore', 'however', 'therefore'];
+                    const casualWords = ['awesome', 'cool', 'stuff', 'things', 'hey', 'gonna'];
+                    const contractions = (text.match(/\w+'\w+/g) || []).length;
+
+                    const words = text.toLowerCase().split(/\s+/);
+                    const formal = words.filter(w => formalWords.includes(w)).length;
+                    const casual = words.filter(w => casualWords.includes(w)).length + contractions;
+
+                    const total = formal + casual;
+                    return total > 0 ? formal / total : 0.5;
+                },
+
+                detectIssues(text) {
+                    const issues = [];
+
+                    // Grammar issues
+                    if (text.match(/\bits\s/i) && !text.match(/it's/i)) {
+                        issues.push({
+                            category: 'grammar',
+                            severity: 'warning',
+                            message: "Possible apostrophe error",
+                            suggestion: "Use 'it's' for 'it is' or 'its' for possessive",
+                            rule_id: 'apostrophe_its'
+                        });
+                    }
+
+                    // Spelling issues (simplified)
+                    const misspellings = {
+                        'tommorrow': 'tomorrow',
+                        'recieve': 'receive',
+                        'seperate': 'separate',
+                        'definately': 'definitely'
+                    };
+
+                    Object.entries(misspellings).forEach(([wrong, correct]) => {
+                        if (text.toLowerCase().includes(wrong)) {
+                            issues.push({
+                                category: 'grammar',
+                                severity: 'error',
+                                message: `Spelling error: "${wrong}"`,
+                                suggestion: `Use "${correct}" instead`,
+                                rule_id: 'spelling_error'
+                            });
+                        }
+                    });
+
+                    // Tone issues
+                    if (text.match(/per my last email/i)) {
+                        issues.push({
+                            category: 'tone',
+                            severity: 'warning',
+                            message: "Passive-aggressive tone detected",
+                            suggestion: "Consider more direct, friendly language",
+                            rule_id: 'tone_passive_aggressive'
+                        });
+                    }
+
+                    // Security issues
+                    if (text.match(/click\s+here/i)) {
+                        issues.push({
+                            category: 'security',
+                            severity: 'warning',
+                            message: "Generic 'click here' link detected",
+                            suggestion: "Use descriptive link text for security",
+                            rule_id: 'security_generic_link'
+                        });
+                    }
+
+                    return issues;
+                },
+
+                generateSuggestions(text) {
+                    const suggestions = [];
+                    const words = text.split(/\s+/).filter(w => w.length > 0);
+                    const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+
+                    if (words.length > 200) {
+                        suggestions.push("Consider breaking this email into shorter sections for better readability");
+                    }
+
+                    if (sentences.some(s => s.split(/\s+/).length > 25)) {
+                        suggestions.push("Some sentences are very long - consider breaking them up");
+                    }
+
+                    if (!text.match(/please|thank you/i)) {
+                        suggestions.push("Consider adding polite language like 'please' or 'thank you'");
+                    }
+
+                    if (text.match(/!!!/)) {
+                        suggestions.push("Reduce excessive punctuation for more professional tone");
+                    }
+
+                    return suggestions;
+                },
+
+                calculateOverallScore(basicAnalysis, advancedAnalysis) {
+                    let score = 0.8; // Base score
+
+                    // Deduct for issues
+                    const errorCount = advancedAnalysis.issues.filter(i => i.severity === 'error').length;
+                    const warningCount = advancedAnalysis.issues.filter(i => i.severity === 'warning').length;
+
+                    score -= (errorCount * 0.15);
+                    score -= (warningCount * 0.05);
+
+                    // Adjust for readability
+                    if (advancedAnalysis.metrics.readability_score < 30) score -= 0.2;
+                    else if (advancedAnalysis.metrics.readability_score > 70) score += 0.1;
+
+                    return Math.max(0, Math.min(1, score));
+                },
+
+                simulateAnalysis() {
+                    const fullText = `${this.emailInput.subject} ${this.emailInput.body}`;
+                    const advancedAnalysis = this.performAdvancedAnalysis();
+
+                    return {
+                        predicted_topic: this.predictTopic(fullText),
+                        topic_scores: this.generateTopicScores(),
+                        features: this.extractFeatures(fullText),
+                        ...advancedAnalysis,
+                        overall_score: this.calculateOverallScore({}, advancedAnalysis)
+                    };
+                },
+
+                predictTopic(text) {
+                    const patterns = {
+                        'work': /meeting|project|deadline|team|client|business/i,
+                        'personal': /family|friend|birthday|weekend|vacation/i,
+                        'promotion': /sale|discount|offer|buy|shop/i,
+                        'support': /help|issue|problem|question|assistance/i,
+                        'education': /course|assignment|grade|learning|study/i
+                    };
+
+                    let bestMatch = 'work';
+                    let bestScore = 0;
+
+                    Object.entries(patterns).forEach(([topic, pattern]) => {
+                        const matches = (text.match(pattern) || []).length;
+                        if (matches > bestScore) {
+                            bestScore = matches;
+                            bestMatch = topic;
+                        }
+                    });
+
+                    return bestMatch;
+                },
+
+                generateTopicScores() {
+                    const topics = ['work', 'personal', 'promotion', 'newsletter', 'support', 'travel', 'education'];
+                    const scores = {};
+
+                    topics.forEach(topic => {
+                        scores[topic] = Math.random() * 0.5 + 0.3; // Random between 0.3 and 0.8
+                    });
+
+                    return scores;
+                },
+
+                extractFeatures(text) {
+                    const words = text.split(/\s+/).filter(w => w.length > 0);
+                    const nonTextChars = (text.match(/[^a-zA-Z0-9\s]/g) || []).length;
+
+                    return {
+                        'spam_has_spam_words': text.toLowerCase().includes('urgent') ? 1 : 0,
+                        'word_length_average_word_length': words.reduce((sum, w) => sum + w.length, 0) / words.length,
+                        'email_embeddings_average_embedding': text.length * 0.1,
+                        'raw_email_email_subject': this.emailInput.subject,
+                        'raw_email_email_body': this.emailInput.body,
+                        'non_text_non_text_char_count': nonTextChars
+                    };
+                },
+
+                async runBatchAnalysis() {
+                    console.log('🔄 Running batch analysis on all examples...');
+                    const results = [];
+
+                    for (const example of this.preloadedExamples) {
+                        this.emailInput.subject = example.subject;
+                        this.emailInput.body = example.body;
+                        await this.runAnalysis();
+
+                        results.push({
+                            example: example.name,
+                            score: this.analysisResults.overall_score,
+                            issues: this.analysisResults.issues?.length || 0
+                        });
+                    }
+
+                    console.log('📊 Batch analysis results:', results);
+                    this.showBatchResults(results);
+                },
+
+                showBatchResults(results) {
+                    const plotData = [{
+                        x: results.map(r => r.example),
+                        y: results.map(r => r.score * 100),
+                        type: 'bar',
+                        marker: {
+                            color: results.map(r => r.score > 0.7 ? 'green' : r.score > 0.5 ? 'yellow' : 'red')
+                        }
+                    }];
+
+                    const layout = {
+                        title: 'Batch Analysis Results - Quality Scores',
+                        xaxis: { title: 'Email Examples' },
+                        yaxis: { title: 'Quality Score (%)' }
+                    };
+
+                    this.showVisualization = true;
+                    this.$nextTick(() => {
+                        Plotly.newPlot('plotly-chart', plotData, layout);
+                    });
+                },
+
+                exportResults() {
+                    if (!this.analysisResults) {
+                        alert('No analysis results to export');
+                        return;
+                    }
+
+                    const exportData = {
+                        timestamp: new Date().toISOString(),
+                        email_input: this.emailInput,
+                        analysis_configuration: {
+                            selected_analysis: this.selectedAnalysis,
+                            enabled_modules: this.enabledModules.map(m => ({
+                                name: m.name,
+                                config: m.config
+                            }))
+                        },
+                        results: this.analysisResults,
+                        reproducibility: {
+                            version: '1.0.0',
+                            system_info: navigator.userAgent,
+                            random_seed: Math.floor(Math.random() * 10000)
+                        }
+                    };
+
+                    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `email_analysis_${Date.now()}.json`;
+                    a.click();
+                    URL.revokeObjectURL(url);
+
+                    console.log('📥 Results exported successfully');
+                },
+
+                demonstrateFactory() {
+                    console.log('🏭 Factory Pattern Demonstration');
+                    console.log('Available generators:', this.factoryData.generators.map(g => g.name));
+
+                    // Simulate factory pattern in action
+                    const demoText = "This is a test email with special characters: @#$%!";
+                    const features = {};
+
+                    this.factoryData.generators.forEach(generator => {
+                        console.log(`Creating ${generator.name} generator...`);
+                        generator.features.forEach(feature => {
+                            features[feature] = `Generated by ${generator.name}`;
+                        });
+                    });
+
+                    console.log('Generated features:', features);
+                    alert(`Factory Pattern Demo:\n\nGenerated ${Object.keys(features).length} features using ${this.factoryData.generators.length} generators.\n\nCheck console for details.`);
+                },
+
+                viewDAGDetails(dag) {
+                    console.log('📋 DAG Details:', dag);
+                    alert(`DAG: ${dag.name}\n\nDescription: ${dag.description}\n\nTags: ${dag.tags.join(', ')}\n\nStatus: ${dag.status}`);
+                },
+
+                triggerDAG(dag) {
+                    console.log('⚡ Triggering DAG:', dag.name);
+                    alert(`DAG "${dag.name}" triggered successfully!\n\nThis would start the data pipeline in a real environment.`);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

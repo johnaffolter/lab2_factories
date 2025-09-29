@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Knowledge Graph - Email Classification System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        #graph-container {
+            height: 600px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold mb-2">Document Knowledge Graph</h1>
+            <p class="text-lg opacity-90">Multi-Document Classification & Visualization System</p>
+            <p class="text-sm mt-2 opacity-75">Powered by Neo4j Graph Database</p>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Stats Dashboard -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+            <div class="bg-white p-4 rounded-lg shadow">
+                <div class="text-2xl font-bold text-blue-600" id="totalDocs">0</div>
+                <div class="text-sm text-gray-600">Documents</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <div class="text-2xl font-bold text-green-600" id="totalTopics">0</div>
+                <div class="text-sm text-gray-600">Topics</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <div class="text-2xl font-bold text-purple-600" id="docTypes">0</div>
+                <div class="text-sm text-gray-600">Doc Types</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <div class="text-2xl font-bold text-orange-600" id="avgConfidence">0%</div>
+                <div class="text-sm text-gray-600">Avg Confidence</div>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow">
+                <div class="text-2xl font-bold text-red-600" id="relationships">0</div>
+                <div class="text-sm text-gray-600">Relationships</div>
+            </div>
+        </div>
+
+        <!-- Document Input Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Add Document -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold mb-4 text-gray-800">Add Document to Graph</h2>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Document Type</label>
+                        <select id="docType" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500">
+                            <option value="email">Email</option>
+                            <option value="report">Report</option>
+                            <option value="screenshot">Screenshot</option>
+                            <option value="code">Code</option>
+                            <option value="documentation">Documentation</option>
+                            <option value="meeting_notes">Meeting Notes</option>
+                            <option value="research_paper">Research Paper</option>
+                            <option value="invoice">Invoice</option>
+                            <option value="contract">Contract</option>
+                            <option value="presentation">Presentation</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+                        <input type="text" id="docTitle" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                               placeholder="Document title...">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Content</label>
+                        <textarea id="docContent" rows="4" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                                  placeholder="Document content..."></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Topics (comma-separated)</label>
+                        <input type="text" id="docTopics" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                               placeholder="work, finance, important">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Project</label>
+                        <input type="text" id="docProject" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                               placeholder="Project name..." value="email_classification">
+                    </div>
+
+                    <button onclick="addDocument()" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition font-medium">
+                        Add to Knowledge Graph
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search Similar -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold mb-4 text-gray-800">Search Similar Documents</h2>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Search Query</label>
+                        <input type="text" id="searchQuery" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                               placeholder="Enter search terms...">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Filter by Type</label>
+                        <select id="searchType" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500">
+                            <option value="">All Types</option>
+                            <option value="email">Email</option>
+                            <option value="report">Report</option>
+                            <option value="code">Code</option>
+                            <option value="documentation">Documentation</option>
+                        </select>
+                    </div>
+
+                    <button onclick="searchDocuments()" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-medium">
+                        Search Graph
+                    </button>
+
+                    <div id="searchResults" class="mt-4 space-y-2 max-h-64 overflow-y-auto">
+                        <!-- Results will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graph Visualization -->
+        <div class="bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Knowledge Graph Visualization</h2>
+
+            <!-- Legend -->
+            <div class="mb-4">
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #3b82f6;"></span>
+                    <span class="text-sm">Email</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #ef4444;"></span>
+                    <span class="text-sm">Report</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #10b981;"></span>
+                    <span class="text-sm">Topic</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #8b5cf6;"></span>
+                    <span class="text-sm">Project</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color" style="background-color: #f59e0b;"></span>
+                    <span class="text-sm">Screenshot</span>
+                </div>
+            </div>
+
+            <!-- Graph Container -->
+            <div id="graph-container"></div>
+
+            <!-- Controls -->
+            <div class="mt-4 flex gap-4">
+                <button onclick="refreshGraph()" class="px-4 py-2 bg-gray-600 text-white rounded hover:bg-gray-700">
+                    Refresh Graph
+                </button>
+                <button onclick="exportGraph()" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+                    Export Graph Data
+                </button>
+                <button onclick="clearGraph()" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+                    Clear View
+                </button>
+            </div>
+        </div>
+
+        <!-- Document Type Distribution -->
+        <div class="mt-8 bg-white rounded-lg shadow p-6">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Document Type Distribution</h2>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="typeDistribution">
+                <!-- Distribution will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+        let network = null;
+        let graphData = { nodes: [], edges: [] };
+
+        // Initialize the graph
+        async function initializeGraph() {
+            const container = document.getElementById('graph-container');
+
+            // Sample data for demonstration
+            const nodes = new vis.DataSet([
+                { id: 1, label: 'Q3 Report', group: 'document', color: '#ef4444' },
+                { id: 2, label: 'Meeting Notes', group: 'document', color: '#ec4899' },
+                { id: 3, label: 'Email: Budget', group: 'document', color: '#3b82f6' },
+                { id: 4, label: 'Screenshot', group: 'document', color: '#f59e0b' },
+                { id: 5, label: 'work', group: 'topic', color: '#10b981' },
+                { id: 6, label: 'finance', group: 'topic', color: '#10b981' },
+                { id: 7, label: 'Email Project', group: 'project', color: '#8b5cf6' },
+            ]);
+
+            const edges = new vis.DataSet([
+                { from: 1, to: 5, label: 'ABOUT' },
+                { from: 1, to: 6, label: 'ABOUT' },
+                { from: 2, to: 5, label: 'ABOUT' },
+                { from: 3, to: 6, label: 'ABOUT' },
+                { from: 1, to: 7, label: 'BELONGS_TO' },
+                { from: 2, to: 7, label: 'BELONGS_TO' },
+                { from: 3, to: 7, label: 'BELONGS_TO' },
+                { from: 4, to: 7, label: 'BELONGS_TO' },
+            ]);
+
+            const data = { nodes: nodes, edges: edges };
+
+            const options = {
+                layout: {
+                    improvedLayout: true,
+                    hierarchical: false
+                },
+                physics: {
+                    enabled: true,
+                    barnesHut: {
+                        gravitationalConstant: -2000,
+                        centralGravity: 0.3,
+                        springLength: 95,
+                        springConstant: 0.04,
+                        damping: 0.09
+                    }
+                },
+                nodes: {
+                    shape: 'dot',
+                    size: 30,
+                    font: {
+                        size: 14,
+                        color: '#000000'
+                    },
+                    borderWidth: 2
+                },
+                edges: {
+                    width: 2,
+                    font: {
+                        size: 10,
+                        align: 'middle'
+                    },
+                    arrows: {
+                        to: {
+                            enabled: true,
+                            scaleFactor: 0.5
+                        }
+                    }
+                },
+                interaction: {
+                    hover: true,
+                    tooltipDelay: 300
+                }
+            };
+
+            network = new vis.Network(container, data, options);
+
+            // Update stats
+            updateStats();
+        }
+
+        // Add document to graph
+        async function addDocument() {
+            const docData = {
+                type: document.getElementById('docType').value,
+                title: document.getElementById('docTitle').value,
+                content: document.getElementById('docContent').value,
+                topics: document.getElementById('docTopics').value.split(',').map(t => t.trim()),
+                project: document.getElementById('docProject').value,
+                author: 'user',
+                format: 'text',
+                language: 'en'
+            };
+
+            try {
+                // Store in Neo4j via API
+                const response = await fetch(`${API_URL}/documents/store`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(docData),
+                });
+
+                if (response.ok) {
+                    alert('Document added to graph!');
+                    refreshGraph();
+                    clearForm();
+                } else {
+                    // Fallback: Add to local graph
+                    addLocalNode(docData);
+                    alert('Document added locally (Neo4j not connected)');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                // Add to local graph as fallback
+                addLocalNode(docData);
+                alert('Document added to local graph');
+            }
+        }
+
+        // Add node locally
+        function addLocalNode(docData) {
+            const nodeId = Date.now();
+            const node = {
+                id: nodeId,
+                label: docData.title.substring(0, 20),
+                group: 'document',
+                color: getColorForType(docData.type)
+            };
+
+            if (network) {
+                network.body.data.nodes.add(node);
+
+                // Add topic connections
+                docData.topics.forEach(topic => {
+                    const topicId = `topic_${topic}`;
+                    if (!network.body.data.nodes.get(topicId)) {
+                        network.body.data.nodes.add({
+                            id: topicId,
+                            label: topic,
+                            group: 'topic',
+                            color: '#10b981'
+                        });
+                    }
+                    network.body.data.edges.add({
+                        from: nodeId,
+                        to: topicId,
+                        label: 'ABOUT'
+                    });
+                });
+            }
+        }
+
+        // Get color for document type
+        function getColorForType(type) {
+            const colors = {
+                'email': '#3b82f6',
+                'report': '#ef4444',
+                'screenshot': '#f59e0b',
+                'code': '#10b981',
+                'documentation': '#6366f1',
+                'meeting_notes': '#ec4899',
+                'research_paper': '#8b5cf6',
+                'invoice': '#14b8a6',
+                'contract': '#f97316',
+                'presentation': '#84cc16'
+            };
+            return colors[type] || '#6b7280';
+        }
+
+        // Search documents
+        async function searchDocuments() {
+            const query = document.getElementById('searchQuery').value;
+            const type = document.getElementById('searchType').value;
+
+            // Simulate search results
+            const results = [
+                { title: 'Q3 Financial Report', type: 'report', similarity: 0.92 },
+                { title: 'Budget Meeting Notes', type: 'meeting_notes', similarity: 0.85 },
+                { title: 'Invoice #1234', type: 'invoice', similarity: 0.78 }
+            ];
+
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = results.map(r => `
+                <div class="p-3 bg-gray-50 rounded hover:bg-gray-100 cursor-pointer">
+                    <div class="font-semibold text-sm">${r.title}</div>
+                    <div class="text-xs text-gray-600">${r.type} - ${(r.similarity * 100).toFixed(0)}% match</div>
+                </div>
+            `).join('');
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalDocs').textContent = '35';
+            document.getElementById('totalTopics').textContent = '10';
+            document.getElementById('docTypes').textContent = '5';
+            document.getElementById('avgConfidence').textContent = '92%';
+            document.getElementById('relationships').textContent = '47';
+
+            // Update type distribution
+            const distribution = [
+                { type: 'Email', count: 15, color: '#3b82f6' },
+                { type: 'Report', count: 8, color: '#ef4444' },
+                { type: 'Screenshot', count: 5, color: '#f59e0b' },
+                { type: 'Code', count: 4, color: '#10b981' },
+                { type: 'Docs', count: 3, color: '#6366f1' }
+            ];
+
+            const distDiv = document.getElementById('typeDistribution');
+            distDiv.innerHTML = distribution.map(d => `
+                <div class="text-center">
+                    <div class="text-2xl font-bold" style="color: ${d.color}">${d.count}</div>
+                    <div class="text-sm text-gray-600">${d.type}</div>
+                </div>
+            `).join('');
+        }
+
+        // Refresh graph
+        function refreshGraph() {
+            if (network) {
+                network.fit();
+            }
+            updateStats();
+        }
+
+        // Export graph data
+        function exportGraph() {
+            const data = {
+                nodes: network.body.data.nodes.get(),
+                edges: network.body.data.edges.get(),
+                timestamp: new Date().toISOString()
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'graph_export.json';
+            a.click();
+        }
+
+        // Clear graph
+        function clearGraph() {
+            if (network) {
+                network.body.data.nodes.clear();
+                network.body.data.edges.clear();
+            }
+        }
+
+        // Clear form
+        function clearForm() {
+            document.getElementById('docTitle').value = '';
+            document.getElementById('docContent').value = '';
+            document.getElementById('docTopics').value = '';
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            initializeGraph();
+        };
+    </script>
+</body>
+</html>

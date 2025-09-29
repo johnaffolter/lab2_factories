@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced MLOps Control Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        .gradient-border {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+            padding: 2px;
+            border-radius: 0.5rem;
+        }
+
+        .dark-panel {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .status-online { color: #10B981; }
+        .status-offline { color: #EF4444; }
+        .status-warning { color: #F59E0B; }
+
+        .metric-card {
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+        }
+
+        .service-node {
+            transition: all 0.3s ease;
+        }
+
+        .terminal {
+            background: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            padding: 15px;
+            border-radius: 8px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        .log-entry {
+            margin-bottom: 5px;
+            padding: 2px 5px;
+        }
+
+        .log-error { color: #ff4444; }
+        .log-warning { color: #ffaa00; }
+        .log-info { color: #00aaff; }
+        .log-success { color: #00ff88; }
+
+        #serviceGraph, #traceVisualization {
+            height: 400px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+        }
+
+        .control-button {
+            transition: all 0.3s ease;
+        }
+
+        .control-button:hover {
+            transform: scale(1.05);
+        }
+
+        .alert-banner {
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+
+        .tab-button.active {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Header -->
+    <header class="bg-gray-800 shadow-xl border-b border-blue-500">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
+                        🚀 MLOps Control Center
+                    </h1>
+                    <span id="connectionStatus" class="px-3 py-1 rounded-full text-sm bg-gray-700">
+                        <span class="inline-block w-2 h-2 rounded-full bg-yellow-500 mr-2"></span>
+                        Connecting...
+                    </span>
+                </div>
+                <div class="flex space-x-2">
+                    <button onclick="toggleFullscreen()" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">
+                        🖥️ Fullscreen
+                    </button>
+                    <button onclick="exportDashboard()" class="px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                        📊 Export
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="bg-gray-800 px-6 py-2">
+        <div class="container mx-auto">
+            <div class="flex space-x-1">
+                <button class="tab-button active px-4 py-2 rounded-t-lg" onclick="switchTab('overview')">
+                    📊 Overview
+                </button>
+                <button class="tab-button px-4 py-2 rounded-t-lg" onclick="switchTab('services')">
+                    🔧 Services
+                </button>
+                <button class="tab-button px-4 py-2 rounded-t-lg" onclick="switchTab('traces')">
+                    🔍 Traces
+                </button>
+                <button class="tab-button px-4 py-2 rounded-t-lg" onclick="switchTab('databases')">
+                    🗄️ Databases
+                </button>
+                <button class="tab-button px-4 py-2 rounded-t-lg" onclick="switchTab('airbyte')">
+                    🔄 Airbyte
+                </button>
+                <button class="tab-button px-4 py-2 rounded-t-lg" onclick="switchTab('deployment')">
+                    🚀 Deployment
+                </button>
+                <button class="tab-button px-4 py-2 rounded-t-lg" onclick="switchTab('logs')">
+                    📝 Logs
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-6">
+        <!-- Overview Tab -->
+        <div id="overview-tab" class="tab-content active">
+            <!-- System Metrics Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- CPU Metric -->
+                <div class="metric-card dark-panel p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-400 text-sm">CPU Usage</p>
+                            <p class="text-3xl font-bold" id="cpuUsage">--</p>
+                        </div>
+                        <span class="text-2xl">💻</span>
+                    </div>
+                    <canvas id="cpuSparkline" height="50"></canvas>
+                </div>
+
+                <!-- Memory Metric -->
+                <div class="metric-card dark-panel p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-400 text-sm">Memory</p>
+                            <p class="text-3xl font-bold" id="memoryUsage">--</p>
+                        </div>
+                        <span class="text-2xl">🧠</span>
+                    </div>
+                    <canvas id="memorySparkline" height="50"></canvas>
+                </div>
+
+                <!-- Active Services -->
+                <div class="metric-card dark-panel p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-400 text-sm">Active Services</p>
+                            <p class="text-3xl font-bold" id="activeServices">0</p>
+                        </div>
+                        <span class="text-2xl">⚙️</span>
+                    </div>
+                    <div id="serviceStatusBar" class="h-12"></div>
+                </div>
+
+                <!-- Anomalies -->
+                <div class="metric-card dark-panel p-6 rounded-lg">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <p class="text-gray-400 text-sm">Anomalies</p>
+                            <p class="text-3xl font-bold" id="anomalyCount">0</p>
+                        </div>
+                        <span class="text-2xl">⚠️</span>
+                    </div>
+                    <div id="anomalyIndicator" class="h-12"></div>
+                </div>
+            </div>
+
+            <!-- Main Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <!-- System Performance Chart -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">System Performance</h3>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+
+                <!-- Service Dependency Graph -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Service Dependencies</h3>
+                    <div id="serviceGraph"></div>
+                </div>
+            </div>
+
+            <!-- Alert Stream -->
+            <div class="dark-panel p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Real-time Alerts</h3>
+                <div id="alertStream" class="space-y-2 max-h-48 overflow-y-auto">
+                    <!-- Alerts will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Tab -->
+        <div id="services-tab" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Service List -->
+                <div class="lg:col-span-2">
+                    <div class="dark-panel p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4">Service Management</h3>
+                        <div id="serviceList" class="space-y-3">
+                            <!-- Services will be listed here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Controls -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button onclick="startAllServices()" class="w-full px-4 py-3 bg-green-600 rounded-lg hover:bg-green-700 transition">
+                            ▶️ Start All Services
+                        </button>
+                        <button onclick="stopAllServices()" class="w-full px-4 py-3 bg-red-600 rounded-lg hover:bg-red-700 transition">
+                            ⏹️ Stop All Services
+                        </button>
+                        <button onclick="restartFailedServices()" class="w-full px-4 py-3 bg-yellow-600 rounded-lg hover:bg-yellow-700 transition">
+                            🔄 Restart Failed
+                        </button>
+                        <button onclick="healthCheckAll()" class="w-full px-4 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                            🏥 Health Check
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Traces Tab -->
+        <div id="traces-tab" class="tab-content">
+            <div class="dark-panel p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4">Distributed Trace Visualization</h3>
+                <div id="traceVisualization"></div>
+            </div>
+            <div class="dark-panel p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Recent Traces</h3>
+                <div id="traceList" class="space-y-2">
+                    <!-- Traces will be listed here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Databases Tab -->
+        <div id="databases-tab" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Neo4j Status -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Neo4j</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span>Status:</span>
+                            <span id="neo4jStatus" class="font-bold">--</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Nodes:</span>
+                            <span id="neo4jNodes">--</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Relationships:</span>
+                            <span id="neo4jRelationships">--</span>
+                        </div>
+                        <button onclick="testNeo4j()" class="w-full mt-4 px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">
+                            Test Connection
+                        </button>
+                    </div>
+                </div>
+
+                <!-- PostgreSQL Status -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">PostgreSQL</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span>Status:</span>
+                            <span id="postgresStatus" class="font-bold">--</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Active Connections:</span>
+                            <span id="postgresConnections">--</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Database Size:</span>
+                            <span id="postgresSize">--</span>
+                        </div>
+                        <button onclick="testPostgres()" class="w-full mt-4 px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">
+                            Test Connection
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Snowflake Status -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Snowflake</h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span>Status:</span>
+                            <span id="snowflakeStatus" class="font-bold">--</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Warehouse:</span>
+                            <span id="snowflakeWarehouse">--</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Credits Used:</span>
+                            <span id="snowflakeCredits">--</span>
+                        </div>
+                        <button onclick="testSnowflake()" class="w-full mt-4 px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">
+                            Test Connection
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Airbyte Tab -->
+        <div id="airbyte-tab" class="tab-content">
+            <div class="dark-panel p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4">Airbyte Integration</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Airbyte Status -->
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Airbyte Server</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span>Status:</span>
+                                <span id="airbyteStatus" class="font-bold">--</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Version:</span>
+                                <span id="airbyteVersion">--</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Active Connections:</span>
+                                <span id="airbyteConnections">0</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 space-y-2">
+                            <button onclick="startAirbyte()" class="w-full px-4 py-2 bg-green-600 rounded hover:bg-green-700">
+                                🚀 Start Airbyte
+                            </button>
+                            <button onclick="openAirbyteUI()" class="w-full px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">
+                                🌐 Open Airbyte UI
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Connector Configuration -->
+                    <div>
+                        <h4 class="text-lg font-medium mb-3">Quick Setup</h4>
+                        <div class="space-y-3">
+                            <button onclick="setupS3Connector()" class="w-full px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 text-left">
+                                📦 S3 → Snowflake
+                            </button>
+                            <button onclick="setupPostgresConnector()" class="w-full px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 text-left">
+                                🐘 PostgreSQL → Neo4j
+                            </button>
+                            <button onclick="setupAPIConnector()" class="w-full px-4 py-2 bg-gray-700 rounded hover:bg-gray-600 text-left">
+                                🌐 API → S3
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Syncs -->
+            <div class="dark-panel p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Active Sync Jobs</h3>
+                <div id="syncJobs" class="space-y-3">
+                    <!-- Sync jobs will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Deployment Tab -->
+        <div id="deployment-tab" class="tab-content">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Deployment Actions -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Deployment Actions</h3>
+                    <div class="space-y-3">
+                        <button onclick="deployToDocker()" class="w-full px-4 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition flex items-center justify-center">
+                            <span class="mr-2">🐳</span> Deploy to Docker
+                        </button>
+                        <button onclick="deployToKubernetes()" class="w-full px-4 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition flex items-center justify-center">
+                            <span class="mr-2">☸️</span> Deploy to Kubernetes
+                        </button>
+                        <button onclick="deployToAWS()" class="w-full px-4 py-3 bg-orange-600 rounded-lg hover:bg-orange-700 transition flex items-center justify-center">
+                            <span class="mr-2">☁️</span> Deploy to AWS
+                        </button>
+                        <button onclick="runCleanup()" class="w-full px-4 py-3 bg-red-600 rounded-lg hover:bg-red-700 transition flex items-center justify-center">
+                            <span class="mr-2">🧹</span> Run Cleanup
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Deployment Status -->
+                <div class="dark-panel p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Deployment Status</h3>
+                    <div id="deploymentStatus" class="space-y-2">
+                        <!-- Status will be shown here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environment Configuration -->
+            <div class="dark-panel p-6 rounded-lg mt-6">
+                <h3 class="text-xl font-semibold mb-4">Environment Configuration</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Environment</label>
+                        <select id="deployEnvironment" class="w-full px-3 py-2 bg-gray-700 rounded">
+                            <option value="development">Development</option>
+                            <option value="staging">Staging</option>
+                            <option value="production">Production</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Region</label>
+                        <select id="deployRegion" class="w-full px-3 py-2 bg-gray-700 rounded">
+                            <option value="us-west-2">US West (Oregon)</option>
+                            <option value="us-east-1">US East (Virginia)</option>
+                            <option value="eu-west-1">EU (Ireland)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logs Tab -->
+        <div id="logs-tab" class="tab-content">
+            <div class="dark-panel p-6 rounded-lg">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-semibold">System Logs</h3>
+                    <div class="flex space-x-2">
+                        <button onclick="clearLogs()" class="px-3 py-1 bg-gray-700 rounded hover:bg-gray-600">
+                            Clear
+                        </button>
+                        <button onclick="downloadLogs()" class="px-3 py-1 bg-blue-600 rounded hover:bg-blue-700">
+                            Download
+                        </button>
+                    </div>
+                </div>
+                <div id="logTerminal" class="terminal">
+                    <!-- Logs will appear here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Alert Modal -->
+    <div id="alertModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-gray-800 p-6 rounded-lg max-w-md w-full">
+            <h3 id="alertTitle" class="text-xl font-semibold mb-4">Alert</h3>
+            <p id="alertMessage" class="text-gray-300 mb-6"></p>
+            <button onclick="closeAlert()" class="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // WebSocket connection
+        let ws = null;
+        let charts = {};
+        let serviceNetwork = null;
+        let traceNetwork = null;
+        let metricsHistory = {
+            cpu: [],
+            memory: [],
+            disk: [],
+            network: []
+        };
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeWebSocket();
+            initializeCharts();
+            initializeNetworkGraphs();
+            startMetricsPolling();
+            loadServiceStatus();
+        });
+
+        // WebSocket initialization
+        function initializeWebSocket() {
+            ws = new WebSocket('ws://localhost:8765');
+
+            ws.onopen = () => {
+                updateConnectionStatus('connected');
+                logMessage('Connected to monitoring server', 'success');
+            };
+
+            ws.onmessage = (event) => {
+                const data = JSON.parse(event.data);
+                handleWebSocketMessage(data);
+            };
+
+            ws.onerror = (error) => {
+                updateConnectionStatus('error');
+                logMessage('WebSocket error: ' + error, 'error');
+            };
+
+            ws.onclose = () => {
+                updateConnectionStatus('disconnected');
+                logMessage('Disconnected from server', 'warning');
+                // Attempt reconnection
+                setTimeout(initializeWebSocket, 5000);
+            };
+        }
+
+        // Handle incoming WebSocket messages
+        function handleWebSocketMessage(data) {
+            if (data.type === 'update') {
+                updateMetrics(data.data);
+            } else if (data.type === 'alert') {
+                showAlert(data);
+            } else if (data.type === 'service_update') {
+                updateServiceStatus(data);
+            }
+        }
+
+        // Update metrics displays
+        function updateMetrics(data) {
+            if (data.system) {
+                document.getElementById('cpuUsage').textContent = `${data.system.cpu?.percent || 0}%`;
+                document.getElementById('memoryUsage').textContent = `${data.system.memory?.percent || 0}%`;
+
+                // Update sparklines
+                updateSparkline('cpu', data.system.cpu?.percent || 0);
+                updateSparkline('memory', data.system.memory?.percent || 0);
+
+                // Update main chart
+                updatePerformanceChart(data.system);
+            }
+
+            if (data.databases) {
+                updateDatabaseStatus(data.databases);
+            }
+
+            if (data.services) {
+                updateActiveServices(data.services);
+            }
+        }
+
+        // Initialize charts
+        function initializeCharts() {
+            // Performance Chart
+            const perfCtx = document.getElementById('performanceChart');
+            if (perfCtx) {
+                charts.performance = new Chart(perfCtx.getContext('2d'), {
+                    type: 'line',
+                    data: {
+                        labels: [],
+                        datasets: [
+                            {
+                                label: 'CPU',
+                                data: [],
+                                borderColor: '#3B82F6',
+                                backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                                tension: 0.4
+                            },
+                            {
+                                label: 'Memory',
+                                data: [],
+                                borderColor: '#8B5CF6',
+                                backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                                tension: 0.4
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Initialize sparklines
+            initializeSparkline('cpuSparkline');
+            initializeSparkline('memorySparkline');
+        }
+
+        // Initialize network graphs
+        function initializeNetworkGraphs() {
+            // Service dependency graph
+            const serviceContainer = document.getElementById('serviceGraph');
+            if (serviceContainer) {
+                const nodes = new vis.DataSet([
+                    {id: 1, label: 'API Gateway', group: 'gateway'},
+                    {id: 2, label: 'Auth Service', group: 'service'},
+                    {id: 3, label: 'User Service', group: 'service'},
+                    {id: 4, label: 'Database', group: 'database'},
+                    {id: 5, label: 'Cache', group: 'cache'}
+                ]);
+
+                const edges = new vis.DataSet([
+                    {from: 1, to: 2},
+                    {from: 1, to: 3},
+                    {from: 3, to: 4},
+                    {from: 3, to: 5}
+                ]);
+
+                serviceNetwork = new vis.Network(serviceContainer, {nodes, edges}, {
+                    physics: {
+                        enabled: true,
+                        stabilization: {iterations: 100}
+                    },
+                    nodes: {
+                        shape: 'dot',
+                        size: 20,
+                        font: {color: '#ffffff'}
+                    },
+                    edges: {
+                        color: {color: '#3B82F6'},
+                        arrows: 'to'
+                    }
+                });
+            }
+        }
+
+        // Tab switching
+        function switchTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Service management functions
+        function startAllServices() {
+            logMessage('Starting all services...', 'info');
+            sendCommand('start_all_services');
+        }
+
+        function stopAllServices() {
+            logMessage('Stopping all services...', 'warning');
+            sendCommand('stop_all_services');
+        }
+
+        function restartFailedServices() {
+            logMessage('Restarting failed services...', 'info');
+            sendCommand('restart_failed');
+        }
+
+        function healthCheckAll() {
+            logMessage('Running health checks...', 'info');
+            sendCommand('health_check_all');
+        }
+
+        // Airbyte functions
+        function startAirbyte() {
+            logMessage('Starting Airbyte...', 'info');
+            sendCommand('start_airbyte');
+            updateAirbyteStatus('starting');
+        }
+
+        function openAirbyteUI() {
+            window.open('http://localhost:8000', '_blank');
+        }
+
+        function setupS3Connector() {
+            logMessage('Setting up S3 to Snowflake connector...', 'info');
+            sendCommand('setup_s3_connector');
+        }
+
+        // Deployment functions
+        function deployToDocker() {
+            const env = document.getElementById('deployEnvironment').value;
+            logMessage(`Deploying to Docker (${env})...`, 'info');
+            sendCommand('deploy_docker', {environment: env});
+        }
+
+        function deployToKubernetes() {
+            const env = document.getElementById('deployEnvironment').value;
+            const region = document.getElementById('deployRegion').value;
+            logMessage(`Deploying to Kubernetes (${env}, ${region})...`, 'info');
+            sendCommand('deploy_kubernetes', {environment: env, region: region});
+        }
+
+        function deployToAWS() {
+            const region = document.getElementById('deployRegion').value;
+            logMessage(`Deploying to AWS (${region})...`, 'info');
+            sendCommand('deploy_aws', {region: region});
+        }
+
+        function runCleanup() {
+            if (confirm('This will clean up all temporary files and unused resources. Continue?')) {
+                logMessage('Running cleanup...', 'warning');
+                sendCommand('run_cleanup');
+            }
+        }
+
+        // Database testing
+        function testNeo4j() {
+            logMessage('Testing Neo4j connection...', 'info');
+            sendCommand('test_neo4j');
+        }
+
+        function testPostgres() {
+            logMessage('Testing PostgreSQL connection...', 'info');
+            sendCommand('test_postgres');
+        }
+
+        function testSnowflake() {
+            logMessage('Testing Snowflake connection...', 'info');
+            sendCommand('test_snowflake');
+        }
+
+        // Utility functions
+        function sendCommand(command, params = {}) {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({command, params}));
+            }
+        }
+
+        function logMessage(message, level = 'info') {
+            const terminal = document.getElementById('logTerminal');
+            const entry = document.createElement('div');
+            entry.className = `log-entry log-${level}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            terminal.appendChild(entry);
+            terminal.scrollTop = terminal.scrollHeight;
+
+            // Also add to alert stream for important messages
+            if (level === 'error' || level === 'warning') {
+                addAlert(message, level);
+            }
+        }
+
+        function addAlert(message, severity) {
+            const alertStream = document.getElementById('alertStream');
+            const alert = document.createElement('div');
+            alert.className = `p-3 rounded bg-gray-800 border-l-4 ${
+                severity === 'error' ? 'border-red-500' :
+                severity === 'warning' ? 'border-yellow-500' :
+                'border-blue-500'
+            }`;
+            alert.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <span>${message}</span>
+                    <span class="text-xs text-gray-400">${new Date().toLocaleTimeString()}</span>
+                </div>
+            `;
+            alertStream.prepend(alert);
+
+            // Keep only last 10 alerts
+            while (alertStream.children.length > 10) {
+                alertStream.lastChild.remove();
+            }
+        }
+
+        function updateConnectionStatus(status) {
+            const statusEl = document.getElementById('connectionStatus');
+            const statusMap = {
+                connected: {text: 'Connected', color: 'bg-green-500'},
+                disconnected: {text: 'Disconnected', color: 'bg-red-500'},
+                error: {text: 'Error', color: 'bg-red-500'},
+                connecting: {text: 'Connecting...', color: 'bg-yellow-500'}
+            };
+
+            const config = statusMap[status] || statusMap.connecting;
+            statusEl.innerHTML = `
+                <span class="inline-block w-2 h-2 rounded-full ${config.color} mr-2"></span>
+                ${config.text}
+            `;
+        }
+
+        function updateAirbyteStatus(status) {
+            const statusEl = document.getElementById('airbyteStatus');
+            const statusMap = {
+                running: {text: 'Running', class: 'status-online'},
+                stopped: {text: 'Stopped', class: 'status-offline'},
+                starting: {text: 'Starting...', class: 'status-warning'}
+            };
+
+            const config = statusMap[status] || statusMap.stopped;
+            statusEl.className = `font-bold ${config.class}`;
+            statusEl.textContent = config.text;
+        }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        function exportDashboard() {
+            const data = {
+                timestamp: new Date().toISOString(),
+                metrics: metricsHistory,
+                services: getServiceStatus(),
+                alerts: getAlertHistory()
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `dashboard_export_${Date.now()}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+
+            logMessage('Dashboard exported successfully', 'success');
+        }
+
+        function clearLogs() {
+            document.getElementById('logTerminal').innerHTML = '';
+            logMessage('Logs cleared', 'info');
+        }
+
+        function downloadLogs() {
+            const terminal = document.getElementById('logTerminal');
+            const logs = terminal.textContent;
+            const blob = new Blob([logs], {type: 'text/plain'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `system_logs_${Date.now()}.txt`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Placeholder functions for data retrieval
+        function getServiceStatus() {
+            return {
+                total: 5,
+                active: 3,
+                failed: 1,
+                stopped: 1
+            };
+        }
+
+        function getAlertHistory() {
+            return [];
+        }
+
+        function loadServiceStatus() {
+            // This would load actual service status
+            document.getElementById('activeServices').textContent = '3';
+        }
+
+        function updateDatabaseStatus(databases) {
+            // Update database status displays
+            if (databases.neo4j) {
+                document.getElementById('neo4jStatus').textContent =
+                    databases.neo4j.status === 'connected' ? 'Connected' : 'Disconnected';
+                document.getElementById('neo4jStatus').className =
+                    `font-bold ${databases.neo4j.status === 'connected' ? 'status-online' : 'status-offline'}`;
+            }
+        }
+
+        function updateActiveServices(services) {
+            const count = Object.values(services).filter(s => s.status === 'running').length;
+            document.getElementById('activeServices').textContent = count;
+        }
+
+        function initializeSparkline(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+
+            const ctx = canvas.getContext('2d');
+            return new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Array(20).fill(''),
+                    datasets: [{
+                        data: Array(20).fill(0),
+                        borderColor: '#3B82F6',
+                        borderWidth: 2,
+                        fill: false,
+                        pointRadius: 0,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {legend: {display: false}},
+                    scales: {
+                        x: {display: false},
+                        y: {display: false, beginAtZero: true, max: 100}
+                    }
+                }
+            });
+        }
+
+        function updateSparkline(metric, value) {
+            // Implementation would update the sparkline chart
+        }
+
+        function updatePerformanceChart(system) {
+            if (!charts.performance) return;
+
+            const chart = charts.performance;
+            const timestamp = new Date().toLocaleTimeString();
+
+            // Add new data point
+            chart.data.labels.push(timestamp);
+            chart.data.datasets[0].data.push(system.cpu?.percent || 0);
+            chart.data.datasets[1].data.push(system.memory?.percent || 0);
+
+            // Keep only last 20 points
+            if (chart.data.labels.length > 20) {
+                chart.data.labels.shift();
+                chart.data.datasets.forEach(dataset => dataset.data.shift());
+            }
+
+            chart.update();
+        }
+
+        function startMetricsPolling() {
+            // Poll for metrics every 5 seconds if WebSocket is down
+            setInterval(() => {
+                if (!ws || ws.readyState !== WebSocket.OPEN) {
+                    // Fallback polling
+                    fetch('/api/metrics')
+                        .then(response => response.json())
+                        .then(data => updateMetrics(data))
+                        .catch(error => console.error('Polling error:', error));
+                }
+            }, 5000);
+        }
+
+        function showAlert(data) {
+            document.getElementById('alertTitle').textContent = data.title || 'Alert';
+            document.getElementById('alertMessage').textContent = data.message || '';
+            document.getElementById('alertModal').classList.remove('hidden');
+        }
+
+        function closeAlert() {
+            document.getElementById('alertModal').classList.add('hidden');
+        }
+
+        // Initialize on load
+        logMessage('Dashboard initialized', 'success');
+    </script>
+</body>
+</html>

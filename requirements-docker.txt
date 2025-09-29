@@ -1,0 +1,16 @@
+# Docker/Airflow Environment Requirements
+# Minimal dependencies for running DAGs in Airflow Docker container
+# Install with: uv pip install -r requirements-docker.txt
+
+# Core
+python-dotenv>=1.0.0
+
+# Neo4j
+neo4j>=5.14.0,<6.0.0
+
+# AWS S3
+boto3>=1.29.0
+botocore>=1.32.0
+
+# Note: apache-airflow is pre-installed in the Airflow Docker image
+# Do not install it separately to avoid version conflicts

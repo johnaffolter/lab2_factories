@@ -1,0 +1,14 @@
+apache-airflow==2.5.0
+apache-airflow-providers-postgres
+apache-airflow-providers-slack
+apache-airflow-providers-http
+psycopg2-binary
+sqlalchemy
+pandas
+numpy
+scikit-learn
+spacy
+neo4j
+requests
+pyyaml
+mlflow

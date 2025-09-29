@@ -272,5 +272,17 @@
     "subject": "Final Test Email",
     "body": "Testing email storage functionality",
     "ground_truth": "education"
+  },
+  {
+    "id": 48,
+    "subject": "Test Homework Email",
+    "body": "This is a test email for homework validation with special characters: @#$%",
+    "ground_truth": "test_homework"
+  },
+  {
+    "id": 49,
+    "subject": "Homework Validation Email",
+    "body": "Testing email storage with ground truth labeling @#$%^&*()",
+    "ground_truth": "homework_test_topic"
   }
 ]

@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Airbyte Flow Builder</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+    <script src="https://unpkg.com/cytoscape-dagre@2.5.0/cytoscape-dagre.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+            min-height: 800px;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            overflow-y: auto;
+        }
+
+        .panel h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .sources-panel {
+            max-height: 800px;
+        }
+
+        .flow-canvas {
+            height: 800px;
+            border: 2px dashed #bdc3c7;
+            border-radius: 10px;
+            position: relative;
+            background: #f8f9fa;
+        }
+
+        .config-panel {
+            max-height: 800px;
+        }
+
+        .source-item {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .source-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(116, 185, 255, 0.4);
+        }
+
+        .source-item.processor {
+            background: linear-gradient(135deg, #00b894, #00a085);
+        }
+
+        .source-item.destination {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+        }
+
+        .source-item.analysis {
+            background: linear-gradient(135deg, #fdcb6e, #e17055);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn.secondary {
+            background: linear-gradient(135deg, #ddd, #bbb);
+            color: #333;
+        }
+
+        .btn.danger {
+            background: linear-gradient(135deg, #ff7675, #d63031);
+        }
+
+        .status-bar {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 15px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2ecc71;
+        }
+
+        .status-dot.warning {
+            background: #f39c12;
+        }
+
+        .status-dot.error {
+            background: #e74c3c;
+        }
+
+        .flow-node {
+            position: absolute;
+            background: white;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 150px;
+            cursor: move;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .flow-node.selected {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.3);
+        }
+
+        .flow-node h4 {
+            margin: 0 0 5px 0;
+            color: #2c3e50;
+        }
+
+        .flow-node p {
+            margin: 0;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px;
+            background: transparent;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .cytoscape-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        .deployment-section {
+            background: rgba(46, 204, 113, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .code-preview {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            width: 90%;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.3s ease;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.error {
+            background: #e74c3c;
+        }
+
+        .notification.warning {
+            background: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="header">
+                <h1>🚀 Enhanced Airbyte Flow Builder</h1>
+                <p>Build, deploy, and monitor advanced data pipelines with OCR integration and intelligent analysis</p>
+            </div>
+
+            <div class="main-grid">
+                <!-- Sources Panel -->
+                <div class="panel sources-panel">
+                    <div class="tabs">
+                        <button class="tab" :class="{ active: activeTab === 'sources' }" @click="activeTab = 'sources'">Sources</button>
+                        <button class="tab" :class="{ active: activeTab === 'processors' }" @click="activeTab = 'processors'">Processors</button>
+                        <button class="tab" :class="{ active: activeTab === 'destinations' }" @click="activeTab = 'destinations'">Destinations</button>
+                    </div>
+
+                    <div v-if="activeTab === 'sources'">
+                        <h3>📥 Data Sources</h3>
+                        <button
+                            v-for="source in dataSources"
+                            :key="source.id"
+                            class="source-item"
+                            @click="addNodeToFlow(source)"
+                        >
+                            <strong>{{ source.name }}</strong>
+                            <p>{{ source.description }}</p>
+                        </button>
+                    </div>
+
+                    <div v-if="activeTab === 'processors'">
+                        <h3>⚙️ Processors</h3>
+                        <button
+                            v-for="processor in processors"
+                            :key="processor.id"
+                            class="source-item processor"
+                            @click="addNodeToFlow(processor)"
+                        >
+                            <strong>{{ processor.name }}</strong>
+                            <p>{{ processor.description }}</p>
+                        </button>
+                    </div>
+
+                    <div v-if="activeTab === 'destinations'">
+                        <h3>📤 Destinations</h3>
+                        <button
+                            v-for="destination in destinations"
+                            :key="destination.id"
+                            class="source-item destination"
+                            @click="addNodeToFlow(destination)"
+                        >
+                            <strong>{{ destination.name }}</strong>
+                            <p>{{ destination.description }}</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Flow Canvas -->
+                <div class="panel">
+                    <h3>🔄 Flow Designer</h3>
+                    <div class="flow-canvas">
+                        <div id="cy" class="cytoscape-container"></div>
+                    </div>
+                    <div style="margin-top: 15px;">
+                        <button class="btn" @click="validateFlow">✅ Validate Flow</button>
+                        <button class="btn" @click="generateCode">🔧 Generate Code</button>
+                        <button class="btn" @click="deployFlow">🚀 Deploy Flow</button>
+                        <button class="btn danger" @click="clearFlow">🗑️ Clear Flow</button>
+                    </div>
+                </div>
+
+                <!-- Configuration Panel -->
+                <div class="panel config-panel">
+                    <h3>⚙️ Configuration</h3>
+
+                    <div v-if="selectedNode">
+                        <h4>{{ selectedNode.data.name }}</h4>
+                        <div class="form-group" v-for="(config, key) in selectedNode.data.config" :key="key">
+                            <label>{{ formatLabel(key) }}</label>
+                            <input
+                                v-if="typeof config === 'string'"
+                                v-model="selectedNode.data.config[key]"
+                                type="text"
+                            />
+                            <select
+                                v-else-if="Array.isArray(config)"
+                                v-model="selectedNode.data.config[key]"
+                            >
+                                <option v-for="option in config" :key="option" :value="option">{{ option }}</option>
+                            </select>
+                            <input
+                                v-else-if="typeof config === 'number'"
+                                v-model.number="selectedNode.data.config[key]"
+                                type="number"
+                            />
+                        </div>
+                    </div>
+
+                    <div v-else>
+                        <p>Select a node to configure its properties</p>
+                    </div>
+
+                    <div class="deployment-section">
+                        <h4>📊 Deployment Metrics</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">{{ flowMetrics.nodes }}</div>
+                                <div class="metric-label">Nodes</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">{{ flowMetrics.connections }}</div>
+                                <div class="metric-label">Connections</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">{{ flowMetrics.estimatedRuntime }}</div>
+                                <div class="metric-label">Est. Runtime</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">{{ flowMetrics.complexity }}</div>
+                                <div class="metric-label">Complexity</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-bar">
+                <div class="status-indicator">
+                    <div class="status-dot" :class="systemStatus"></div>
+                    <span>System Status: {{ systemStatusText }}</span>
+                </div>
+                <div>
+                    <button class="btn secondary" @click="showTemplates = true">📋 Templates</button>
+                    <button class="btn secondary" @click="showMetrics = true">📈 Analytics</button>
+                    <button class="btn secondary" @click="exportConfiguration">💾 Export</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Templates Modal -->
+        <div v-if="showTemplates" class="modal" @click="showTemplates = false">
+            <div class="modal-content" @click.stop>
+                <h2>📋 Pipeline Templates</h2>
+                <div style="margin: 20px 0;">
+                    <div v-for="template in templates" :key="template.id" style="margin: 15px 0;">
+                        <button class="btn" @click="loadTemplate(template)" style="width: 100%; text-align: left;">
+                            <strong>{{ template.name }}</strong><br>
+                            <small>{{ template.description }}</small>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn secondary" @click="showTemplates = false">Close</button>
+            </div>
+        </div>
+
+        <!-- Code Generation Modal -->
+        <div v-if="showCodeModal" class="modal" @click="showCodeModal = false">
+            <div class="modal-content" @click.stop>
+                <h2>🔧 Generated Configuration</h2>
+                <div class="tabs">
+                    <button class="tab" :class="{ active: codeTab === 'yaml' }" @click="codeTab = 'yaml'">Airbyte YAML</button>
+                    <button class="tab" :class="{ active: codeTab === 'dag' }" @click="codeTab = 'dag'">Airflow DAG</button>
+                    <button class="tab" :class="{ active: codeTab === 'docker' }" @click="codeTab = 'docker'">Docker Compose</button>
+                </div>
+                <div class="code-preview">{{ currentCode }}</div>
+                <div style="margin-top: 15px;">
+                    <button class="btn" @click="copyCode">📋 Copy Code</button>
+                    <button class="btn" @click="downloadCode">💾 Download</button>
+                    <button class="btn secondary" @click="showCodeModal = false">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deployment Progress Modal -->
+        <div v-if="showDeployModal" class="modal">
+            <div class="modal-content">
+                <h2>🚀 Deploying Pipeline</h2>
+                <div class="progress-bar">
+                    <div class="progress-fill" :style="{ width: deployProgress + '%' }"></div>
+                </div>
+                <p>{{ deployStatus }}</p>
+                <div v-if="deploymentLogs.length > 0" style="margin-top: 15px;">
+                    <h4>Deployment Logs:</h4>
+                    <div class="code-preview" style="max-height: 200px; overflow-y: auto;">
+                        <div v-for="log in deploymentLogs" :key="log.timestamp">
+                            [{{ log.timestamp }}] {{ log.message }}
+                        </div>
+                    </div>
+                </div>
+                <button v-if="deployProgress === 100" class="btn" @click="showDeployModal = false">Close</button>
+            </div>
+        </div>
+
+        <!-- Notification -->
+        <div v-if="notification.show" class="notification" :class="[notification.type, { show: notification.show }]">
+            {{ notification.message }}
+        </div>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    activeTab: 'sources',
+                    selectedNode: null,
+                    cy: null,
+                    showTemplates: false,
+                    showCodeModal: false,
+                    showDeployModal: false,
+                    showMetrics: false,
+                    codeTab: 'yaml',
+                    deployProgress: 0,
+                    deployStatus: 'Initializing...',
+                    deploymentLogs: [],
+                    systemStatus: 'success',
+                    systemStatusText: 'Connected',
+                    notification: {
+                        show: false,
+                        message: '',
+                        type: 'success'
+                    },
+                    flowMetrics: {
+                        nodes: 0,
+                        connections: 0,
+                        estimatedRuntime: '0m',
+                        complexity: 'Low'
+                    },
+                    dataSources: [
+                        {
+                            id: 'gmail',
+                            name: 'Gmail API',
+                            description: 'Extract emails from Gmail accounts',
+                            type: 'source',
+                            config: {
+                                client_id: '',
+                                client_secret: '',
+                                refresh_token: '',
+                                query: 'is:unread',
+                                batch_size: 100
+                            }
+                        },
+                        {
+                            id: 'outlook',
+                            name: 'Outlook API',
+                            description: 'Microsoft Outlook email extraction',
+                            type: 'source',
+                            config: {
+                                tenant_id: '',
+                                client_id: '',
+                                client_secret: '',
+                                start_date: '2024-01-01'
+                            }
+                        },
+                        {
+                            id: 'file_upload',
+                            name: 'File Upload',
+                            description: 'Upload email files for processing',
+                            type: 'source',
+                            config: {
+                                file_format: ['json', 'csv', 'eml'],
+                                batch_size: 1000,
+                                encoding: 'utf-8'
+                            }
+                        },
+                        {
+                            id: 'webhook',
+                            name: 'Webhook Listener',
+                            description: 'Real-time email webhook processing',
+                            type: 'source',
+                            config: {
+                                webhook_url: '',
+                                authentication: ['none', 'bearer', 'basic'],
+                                retry_attempts: 3
+                            }
+                        }
+                    ],
+                    processors: [
+                        {
+                            id: 'email_classifier',
+                            name: 'Email Classifier',
+                            description: 'ML-based email classification',
+                            type: 'processor',
+                            config: {
+                                model_path: '/models/classifier.pkl',
+                                confidence_threshold: 0.8,
+                                feature_extractors: ['spam', 'word_length', 'non_text'],
+                                batch_processing: true
+                            }
+                        },
+                        {
+                            id: 'ocr_analyzer',
+                            name: 'OCR Document Analyzer',
+                            description: 'Advanced OCR with business domain classification',
+                            type: 'processor',
+                            config: {
+                                supported_formats: ['pdf', 'png', 'jpg', 'tiff'],
+                                business_domains: ['finance', 'marketing', 'executive', 'operations'],
+                                quality_threshold: 0.7,
+                                extract_entities: true
+                            }
+                        },
+                        {
+                            id: 'grammar_analyzer',
+                            name: 'Grammar & Style Analyzer',
+                            description: 'Advanced grammar and style analysis',
+                            type: 'processor',
+                            config: {
+                                check_grammar: true,
+                                analyze_tone: true,
+                                clarity_score: true,
+                                generate_suggestions: true
+                            }
+                        },
+                        {
+                            id: 'security_scanner',
+                            name: 'Security Scanner',
+                            description: 'Email security and threat analysis',
+                            type: 'processor',
+                            config: {
+                                scan_attachments: true,
+                                check_phishing: true,
+                                malware_detection: true,
+                                sensitivity_analysis: true
+                            }
+                        },
+                        {
+                            id: 'sentiment_analyzer',
+                            name: 'Sentiment Analyzer',
+                            description: 'Emotion and sentiment detection',
+                            type: 'processor',
+                            config: {
+                                model_type: ['transformer', 'traditional'],
+                                emotions: ['positive', 'negative', 'neutral'],
+                                confidence_reporting: true
+                            }
+                        }
+                    ],
+                    destinations: [
+                        {
+                            id: 'postgres',
+                            name: 'PostgreSQL',
+                            description: 'Store processed data in PostgreSQL',
+                            type: 'destination',
+                            config: {
+                                host: 'localhost',
+                                port: 5432,
+                                database: 'email_analytics',
+                                schema: 'processed_emails',
+                                batch_size: 1000
+                            }
+                        },
+                        {
+                            id: 'neo4j',
+                            name: 'Neo4j Graph Database',
+                            description: 'Build knowledge graphs from email data',
+                            type: 'destination',
+                            config: {
+                                uri: 'bolt://localhost:7687',
+                                database: 'email_graph',
+                                create_relationships: true,
+                                node_types: ['Email', 'Person', 'Organization']
+                            }
+                        },
+                        {
+                            id: 'snowflake',
+                            name: 'Snowflake',
+                            description: 'Enterprise data warehouse storage',
+                            type: 'destination',
+                            config: {
+                                account: '',
+                                warehouse: 'AIRBYTE_WAREHOUSE',
+                                database: 'EMAIL_ANALYTICS',
+                                schema: 'RAW_DATA'
+                            }
+                        },
+                        {
+                            id: 's3',
+                            name: 'Amazon S3',
+                            description: 'Cloud object storage for email data',
+                            type: 'destination',
+                            config: {
+                                bucket_name: '',
+                                bucket_path: 'email-data',
+                                region: 'us-west-2',
+                                format_type: ['JSON', 'Parquet', 'CSV']
+                            }
+                        }
+                    ],
+                    templates: [
+                        {
+                            id: 'basic_classification',
+                            name: 'Basic Email Classification',
+                            description: 'Simple email classification pipeline with PostgreSQL storage',
+                            nodes: ['gmail', 'email_classifier', 'postgres']
+                        },
+                        {
+                            id: 'advanced_analysis',
+                            name: 'Advanced Email Analysis',
+                            description: 'Comprehensive analysis with OCR, grammar, and security scanning',
+                            nodes: ['gmail', 'ocr_analyzer', 'grammar_analyzer', 'security_scanner', 'neo4j']
+                        },
+                        {
+                            id: 'realtime_processing',
+                            name: 'Real-time Processing',
+                            description: 'Real-time email processing with webhook integration',
+                            nodes: ['webhook', 'email_classifier', 'sentiment_analyzer', 's3']
+                        },
+                        {
+                            id: 'enterprise_pipeline',
+                            name: 'Enterprise Pipeline',
+                            description: 'Full enterprise pipeline with all analysis features',
+                            nodes: ['outlook', 'ocr_analyzer', 'grammar_analyzer', 'security_scanner', 'sentiment_analyzer', 'snowflake', 'neo4j']
+                        }
+                    ]
+                }
+            },
+            mounted() {
+                this.initCytoscape();
+                this.updateMetrics();
+            },
+            methods: {
+                initCytoscape() {
+                    this.cy = cytoscape({
+                        container: document.getElementById('cy'),
+                        elements: [],
+                        style: [
+                            {
+                                selector: 'node',
+                                style: {
+                                    'background-color': '#667eea',
+                                    'label': 'data(name)',
+                                    'text-valign': 'center',
+                                    'text-halign': 'center',
+                                    'color': 'white',
+                                    'text-outline-width': 2,
+                                    'text-outline-color': '#667eea',
+                                    'font-size': '12px',
+                                    'width': '80px',
+                                    'height': '80px'
+                                }
+                            },
+                            {
+                                selector: 'node[type="source"]',
+                                style: {
+                                    'background-color': '#74b9ff'
+                                }
+                            },
+                            {
+                                selector: 'node[type="processor"]',
+                                style: {
+                                    'background-color': '#00b894'
+                                }
+                            },
+                            {
+                                selector: 'node[type="destination"]',
+                                style: {
+                                    'background-color': '#fd79a8'
+                                }
+                            },
+                            {
+                                selector: 'edge',
+                                style: {
+                                    'width': 3,
+                                    'line-color': '#ccc',
+                                    'target-arrow-color': '#ccc',
+                                    'target-arrow-shape': 'triangle',
+                                    'curve-style': 'bezier'
+                                }
+                            },
+                            {
+                                selector: ':selected',
+                                style: {
+                                    'border-width': 3,
+                                    'border-color': '#e74c3c'
+                                }
+                            }
+                        ],
+                        layout: {
+                            name: 'dagre',
+                            rankDir: 'LR',
+                            spacingFactor: 1.5
+                        }
+                    });
+
+                    // Node selection handler
+                    this.cy.on('tap', 'node', (evt) => {
+                        this.selectedNode = evt.target;
+                    });
+
+                    // Canvas click handler (deselect)
+                    this.cy.on('tap', (evt) => {
+                        if (evt.target === this.cy) {
+                            this.selectedNode = null;
+                        }
+                    });
+                },
+
+                addNodeToFlow(nodeTemplate) {
+                    const nodeId = `${nodeTemplate.id}_${Date.now()}`;
+                    const node = {
+                        data: {
+                            id: nodeId,
+                            name: nodeTemplate.name,
+                            type: nodeTemplate.type,
+                            config: { ...nodeTemplate.config }
+                        }
+                    };
+
+                    this.cy.add(node);
+                    this.cy.layout({ name: 'dagre', rankDir: 'LR' }).run();
+                    this.updateMetrics();
+                    this.showNotification('Node added to flow', 'success');
+                },
+
+                validateFlow() {
+                    const nodes = this.cy.nodes();
+                    const edges = this.cy.edges();
+
+                    if (nodes.length === 0) {
+                        this.showNotification('Flow is empty. Add some nodes first.', 'warning');
+                        return false;
+                    }
+
+                    // Check for at least one source and one destination
+                    const sources = nodes.filter(n => n.data('type') === 'source');
+                    const destinations = nodes.filter(n => n.data('type') === 'destination');
+
+                    if (sources.length === 0) {
+                        this.showNotification('Flow needs at least one data source', 'error');
+                        return false;
+                    }
+
+                    if (destinations.length === 0) {
+                        this.showNotification('Flow needs at least one destination', 'error');
+                        return false;
+                    }
+
+                    this.showNotification('Flow validation passed!', 'success');
+                    return true;
+                },
+
+                generateCode() {
+                    if (!this.validateFlow()) return;
+
+                    this.showCodeModal = true;
+                    this.generateAirbyteConfig();
+                },
+
+                generateAirbyteConfig() {
+                    const nodes = this.cy.nodes();
+                    const config = {
+                        version: "0.50.0",
+                        project_name: `email_pipeline_${Date.now()}`,
+                        connections: []
+                    };
+
+                    // Generate connections based on flow
+                    nodes.forEach(node => {
+                        const nodeData = node.data();
+                        if (nodeData.type === 'source') {
+                            config.connections.push({
+                                name: `${nodeData.id}_connection`,
+                                source: {
+                                    name: nodeData.name,
+                                    configuration: nodeData.config
+                                },
+                                destination: {
+                                    name: "PostgreSQL",
+                                    configuration: {
+                                        host: "localhost",
+                                        port: 5432,
+                                        database: "email_analytics"
+                                    }
+                                }
+                            });
+                        }
+                    });
+
+                    this.generatedCode = {
+                        yaml: this.formatYaml(config),
+                        dag: this.generateDAGCode(),
+                        docker: this.generateDockerCompose()
+                    };
+                },
+
+                generateDAGCode() {
+                    const nodes = this.cy.nodes();
+                    let dagCode = `
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+from datetime import datetime, timedelta
+
+default_args = {
+    'owner': 'data-team',
+    'start_date': datetime(2024, 1, 1),
+    'retries': 2
+}
+
+dag = DAG(
+    'email_analysis_pipeline',
+    default_args=default_args,
+    schedule_interval=timedelta(hours=1),
+    catchup=False
+)
+
+# Task definitions
+`;
+
+                    nodes.forEach(node => {
+                        const nodeData = node.data();
+                        dagCode += `
+${nodeData.id} = PythonOperator(
+    task_id='${nodeData.id}',
+    python_callable=${nodeData.type}_function,
+    op_kwargs=${JSON.stringify(nodeData.config, null, 2)},
+    dag=dag
+)
+`;
+                    });
+
+                    return dagCode;
+                },
+
+                generateDockerCompose() {
+                    return `
+version: '3.8'
+services:
+  airbyte-server:
+    image: airbyte/server:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://airbyte:password@airbyte-db:5432/airbyte
+
+  airflow-webserver:
+    image: apache/airflow:2.5.0
+    ports:
+      - "8080:8080"
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    volumes:
+      - ./dags:/opt/airflow/dags
+
+  postgres:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=email_analytics
+      - POSTGRES_USER=analytics
+      - POSTGRES_PASSWORD=analytics
+`;
+                },
+
+                deployFlow() {
+                    if (!this.validateFlow()) return;
+
+                    this.showDeployModal = true;
+                    this.deployProgress = 0;
+                    this.deploymentLogs = [];
+
+                    this.simulateDeployment();
+                },
+
+                simulateDeployment() {
+                    const steps = [
+                        { progress: 10, status: 'Generating configurations...', delay: 1000 },
+                        { progress: 25, status: 'Creating Airbyte connections...', delay: 1500 },
+                        { progress: 40, status: 'Deploying Airflow DAGs...', delay: 2000 },
+                        { progress: 60, status: 'Starting data synchronization...', delay: 1500 },
+                        { progress: 80, status: 'Validating pipeline health...', delay: 1000 },
+                        { progress: 100, status: 'Deployment complete!', delay: 500 }
+                    ];
+
+                    let currentStep = 0;
+                    const executeStep = () => {
+                        if (currentStep < steps.length) {
+                            const step = steps[currentStep];
+                            setTimeout(() => {
+                                this.deployProgress = step.progress;
+                                this.deployStatus = step.status;
+                                this.deploymentLogs.push({
+                                    timestamp: new Date().toISOString(),
+                                    message: step.status
+                                });
+                                currentStep++;
+                                executeStep();
+                            }, step.delay);
+                        } else {
+                            this.showNotification('Pipeline deployed successfully!', 'success');
+                        }
+                    };
+
+                    executeStep();
+                },
+
+                clearFlow() {
+                    this.cy.elements().remove();
+                    this.selectedNode = null;
+                    this.updateMetrics();
+                    this.showNotification('Flow cleared', 'success');
+                },
+
+                loadTemplate(template) {
+                    this.clearFlow();
+
+                    template.nodes.forEach((nodeId, index) => {
+                        const nodeTemplate = [...this.dataSources, ...this.processors, ...this.destinations]
+                            .find(n => n.id === nodeId);
+
+                        if (nodeTemplate) {
+                            setTimeout(() => {
+                                this.addNodeToFlow(nodeTemplate);
+                            }, index * 200);
+                        }
+                    });
+
+                    this.showTemplates = false;
+                    this.showNotification(`Template "${template.name}" loaded`, 'success');
+                },
+
+                updateMetrics() {
+                    const nodes = this.cy.nodes();
+                    const edges = this.cy.edges();
+
+                    this.flowMetrics.nodes = nodes.length;
+                    this.flowMetrics.connections = edges.length;
+                    this.flowMetrics.estimatedRuntime = `${Math.max(5, nodes.length * 2)}m`;
+
+                    if (nodes.length <= 3) {
+                        this.flowMetrics.complexity = 'Low';
+                    } else if (nodes.length <= 6) {
+                        this.flowMetrics.complexity = 'Medium';
+                    } else {
+                        this.flowMetrics.complexity = 'High';
+                    }
+                },
+
+                formatLabel(key) {
+                    return key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                },
+
+                formatYaml(obj) {
+                    return JSON.stringify(obj, null, 2);
+                },
+
+                copyCode() {
+                    navigator.clipboard.writeText(this.currentCode);
+                    this.showNotification('Code copied to clipboard', 'success');
+                },
+
+                downloadCode() {
+                    const element = document.createElement('a');
+                    const file = new Blob([this.currentCode], { type: 'text/plain' });
+                    element.href = URL.createObjectURL(file);
+                    element.download = `pipeline_${this.codeTab}.${this.codeTab === 'yaml' ? 'yml' : this.codeTab === 'dag' ? 'py' : 'yml'}`;
+                    document.body.appendChild(element);
+                    element.click();
+                    document.body.removeChild(element);
+                },
+
+                exportConfiguration() {
+                    const config = {
+                        nodes: this.cy.nodes().map(n => n.data()),
+                        edges: this.cy.edges().map(e => e.data()),
+                        timestamp: new Date().toISOString()
+                    };
+
+                    const element = document.createElement('a');
+                    const file = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
+                    element.href = URL.createObjectURL(file);
+                    element.download = `pipeline_config_${Date.now()}.json`;
+                    document.body.appendChild(element);
+                    element.click();
+                    document.body.removeChild(element);
+
+                    this.showNotification('Configuration exported', 'success');
+                },
+
+                showNotification(message, type = 'success') {
+                    this.notification = { show: true, message, type };
+                    setTimeout(() => {
+                        this.notification.show = false;
+                    }, 3000);
+                }
+            },
+
+            computed: {
+                currentCode() {
+                    if (!this.generatedCode) return '';
+                    return this.generatedCode[this.codeTab] || '';
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

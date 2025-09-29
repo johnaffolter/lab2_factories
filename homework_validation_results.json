@@ -1,0 +1,12 @@
+{
+  "passed": 4,
+  "total": 5,
+  "score": 80.0,
+  "details": {
+    "features_endpoint": "\u2713 PASSED: NonTextCharacterFeatureGenerator found",
+    "topic_management": "\u2713 PASSED: Topic added successfully",
+    "email_storage": "\u2713 PASSED: Email stored with ground truth",
+    "classification_modes": "\u2713 PASSED: Both classification modes working",
+    "non_text_generator": "Failed: Unexpected count 31 (expected ~26)"
+  }
+}

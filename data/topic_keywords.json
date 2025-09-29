@@ -46,5 +46,11 @@
   },
   "final_test_topic": {
     "description": "Final validation topic"
+  },
+  "test_homework": {
+    "description": "Homework validation topic"
+  },
+  "homework_test_topic": {
+    "description": "Test topic for homework validation"
   }
 }

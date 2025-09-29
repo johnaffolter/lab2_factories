@@ -1,0 +1,146 @@
+{
+  "summary": {
+    "total_tests": 13,
+    "passed": 4,
+    "failed": 7,
+    "success_rate": "30.8%"
+  },
+  "pattern_summary": {
+    "Factory Pattern": {
+      "PASS": 1,
+      "FAIL": 3,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Dataclass Pattern": {
+      "PASS": 0,
+      "FAIL": 1,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Strategy Pattern": {
+      "PASS": 1,
+      "FAIL": 1,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Singleton Pattern": {
+      "PASS": 0,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 1
+    },
+    "Builder Pattern": {
+      "PASS": 0,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 1
+    },
+    "Model Pattern": {
+      "PASS": 2,
+      "FAIL": 0,
+      "WARN": 0,
+      "INFO": 0
+    },
+    "Integration Pattern": {
+      "PASS": 0,
+      "FAIL": 2,
+      "WARN": 0,
+      "INFO": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "test": "Factory Instantiation",
+      "pattern": "Factory Pattern",
+      "status": "PASS",
+      "details": "FeatureGeneratorFactory created successfully",
+      "timestamp": "2025-09-29T11:46:36.444026"
+    },
+    {
+      "test": "Product Creation",
+      "pattern": "Factory Pattern",
+      "status": "FAIL",
+      "details": "Could not create products: 'FeatureGeneratorFactory' object has no attribute 'get_all_generators'",
+      "timestamp": "2025-09-29T11:46:36.444038"
+    },
+    {
+      "test": "Factory Method Pattern",
+      "pattern": "Factory Pattern",
+      "status": "FAIL",
+      "details": "Factory method test failed: cannot access local variable 'generators' where it is not associated with a value",
+      "timestamp": "2025-09-29T11:46:36.444043"
+    },
+    {
+      "test": "Abstract Base Class Compliance",
+      "pattern": "Factory Pattern",
+      "status": "FAIL",
+      "details": "Base class test failed: cannot access local variable 'generators' where it is not associated with a value",
+      "timestamp": "2025-09-29T11:46:36.444046"
+    },
+    {
+      "test": "Email Dataclass Creation",
+      "pattern": "Dataclass Pattern",
+      "status": "FAIL",
+      "details": "Could not create Email dataclass: Email.__init__() got an unexpected keyword argument 'sender'",
+      "timestamp": "2025-09-29T11:46:36.444053"
+    },
+    {
+      "test": "Multiple Feature Strategies",
+      "pattern": "Strategy Pattern",
+      "status": "FAIL",
+      "details": "Strategy pattern test failed: Email.__init__() got an unexpected keyword argument 'sender'",
+      "timestamp": "2025-09-29T11:46:36.444058"
+    },
+    {
+      "test": "Strategy Interface Compliance",
+      "pattern": "Strategy Pattern",
+      "status": "PASS",
+      "details": "All strategies implement required interface",
+      "timestamp": "2025-09-29T11:46:36.444061"
+    },
+    {
+      "test": "Singleton Pattern Check",
+      "pattern": "Singleton Pattern",
+      "status": "INFO",
+      "details": "Singleton pattern not required for this homework",
+      "timestamp": "2025-09-29T11:46:36.444064"
+    },
+    {
+      "test": "Builder Pattern Check",
+      "pattern": "Builder Pattern",
+      "status": "INFO",
+      "details": "Builder pattern not implemented (not required for basic factory)",
+      "timestamp": "2025-09-29T11:46:36.444068"
+    },
+    {
+      "test": "Model Interface",
+      "pattern": "Model Pattern",
+      "status": "PASS",
+      "details": "Model implements interface with 18 topics",
+      "timestamp": "2025-09-29T11:46:36.445833"
+    },
+    {
+      "test": "Model Strategy Pattern",
+      "pattern": "Model Pattern",
+      "status": "PASS",
+      "details": "Two strategies: topic_sim='support', email_sim='support'",
+      "timestamp": "2025-09-29T11:46:36.446525"
+    },
+    {
+      "test": "Factory-Strategy Integration",
+      "pattern": "Integration Pattern",
+      "status": "FAIL",
+      "details": "Integration test failed: 'FeatureGeneratorFactory' object has no attribute 'get_all_generators'",
+      "timestamp": "2025-09-29T11:46:36.446535"
+    },
+    {
+      "test": "Model-Feature Integration",
+      "pattern": "Integration Pattern",
+      "status": "FAIL",
+      "details": "Model-feature integration failed: cannot access local variable 'all_features' where it is not associated with a value",
+      "timestamp": "2025-09-29T11:46:36.446561"
+    }
+  ],
+  "timestamp": "2025-09-29T11:46:36.446654"
+}

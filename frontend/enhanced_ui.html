@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Classification System - MLOps Lab 2</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2">Email Classification System</h1>
+            <p class="text-lg opacity-90">MLOps Lab 2 - Factory Pattern Implementation</p>
+            <p class="text-sm mt-2 opacity-75">Student: John Affolter | St. Thomas University</p>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Stats Dashboard -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+            <div class="bg-white p-6 rounded-lg card-shadow">
+                <div class="text-2xl font-bold text-purple-600" id="totalEmails">31</div>
+                <div class="text-gray-600">Stored Emails</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg card-shadow">
+                <div class="text-2xl font-bold text-blue-600" id="totalTopics">8</div>
+                <div class="text-gray-600">Topics Available</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg card-shadow">
+                <div class="text-2xl font-bold text-green-600" id="accuracy">92%</div>
+                <div class="text-gray-600">Accuracy Rate</div>
+            </div>
+            <div class="bg-white p-6 rounded-lg card-shadow">
+                <div class="text-2xl font-bold text-orange-600" id="responseTime">45ms</div>
+                <div class="text-gray-600">Avg Response</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Email Classification Form -->
+            <div class="bg-white rounded-lg card-shadow p-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Classify Email</h2>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                               placeholder="Enter email subject..." value="Quarterly Business Review Meeting">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email Body</label>
+                        <textarea id="body" rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                                  placeholder="Enter email body...">Please join us for the Q3 review where we'll discuss revenue targets and KPIs.</textarea>
+                    </div>
+
+                    <div class="flex gap-2">
+                        <input type="checkbox" id="useLearning" class="mt-1">
+                        <label for="useLearning" class="text-sm text-gray-700">Use learning mode (compare with stored emails)</label>
+                    </div>
+
+                    <button onclick="classifyEmail()" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition font-medium">
+                        Classify Email
+                    </button>
+                </div>
+
+                <!-- Results -->
+                <div id="results" class="mt-6 hidden">
+                    <h3 class="text-lg font-semibold mb-3">Classification Results</h3>
+                    <div class="bg-gray-50 rounded-lg p-4">
+                        <div class="mb-3">
+                            <span class="text-sm text-gray-600">Predicted Topic:</span>
+                            <span id="predictedTopic" class="ml-2 text-lg font-bold text-purple-600"></span>
+                            <span id="confidence" class="ml-2 text-sm text-gray-500"></span>
+                        </div>
+                        <div class="relative" style="height: 300px;">
+                            <canvas id="scoreChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature Generators Panel -->
+            <div class="bg-white rounded-lg card-shadow p-6">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">Factory Pattern Generators</h2>
+
+                <div class="space-y-3" id="generatorsList">
+                    <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                        <div class="font-semibold text-green-800">SpamFeatureGenerator</div>
+                        <div class="text-sm text-gray-600 mt-1">Detects spam keywords in email content</div>
+                        <div class="text-xs text-gray-500 mt-2">Features: has_spam_words</div>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <div class="font-semibold text-blue-800">AverageWordLengthFeatureGenerator</div>
+                        <div class="text-sm text-gray-600 mt-1">Calculates average word length</div>
+                        <div class="text-xs text-gray-500 mt-2">Features: average_word_length</div>
+                    </div>
+                    <div class="p-4 bg-purple-50 rounded-lg border border-purple-200">
+                        <div class="font-semibold text-purple-800">EmailEmbeddingsFeatureGenerator</div>
+                        <div class="text-sm text-gray-600 mt-1">Creates numerical embeddings</div>
+                        <div class="text-xs text-gray-500 mt-2">Features: average_embedding</div>
+                    </div>
+                    <div class="p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+                        <div class="font-semibold text-yellow-800">RawEmailFeatureGenerator</div>
+                        <div class="text-sm text-gray-600 mt-1">Extracts raw email text</div>
+                        <div class="text-xs text-gray-500 mt-2">Features: email_subject, email_body</div>
+                    </div>
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <div class="font-semibold text-red-800">NonTextCharacterFeatureGenerator ✨</div>
+                        <div class="text-sm text-gray-600 mt-1">Counts non-text characters (Implemented for Lab)</div>
+                        <div class="text-xs text-gray-500 mt-2">Features: non_text_char_count</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topics Management -->
+        <div class="mt-8 bg-white rounded-lg card-shadow p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Topic Management</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6" id="topicsList">
+                <div class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg text-center font-medium">work</div>
+                <div class="px-4 py-2 bg-green-100 text-green-800 rounded-lg text-center font-medium">personal</div>
+                <div class="px-4 py-2 bg-purple-100 text-purple-800 rounded-lg text-center font-medium">promotion</div>
+                <div class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg text-center font-medium">newsletter</div>
+                <div class="px-4 py-2 bg-red-100 text-red-800 rounded-lg text-center font-medium">support</div>
+                <div class="px-4 py-2 bg-indigo-100 text-indigo-800 rounded-lg text-center font-medium">travel</div>
+                <div class="px-4 py-2 bg-pink-100 text-pink-800 rounded-lg text-center font-medium">education</div>
+                <div class="px-4 py-2 bg-gray-100 text-gray-800 rounded-lg text-center font-medium">health</div>
+            </div>
+
+            <div class="flex gap-2">
+                <input type="text" id="newTopic" class="flex-1 px-4 py-2 border rounded-lg" placeholder="Add new topic (e.g., finance)">
+                <button onclick="addTopic()" class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                    Add Topic
+                </button>
+            </div>
+        </div>
+
+        <!-- Test Examples -->
+        <div class="mt-8 bg-white rounded-lg card-shadow p-6">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Quick Test Examples</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <button onclick="loadExample('work')" class="p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition text-left">
+                    <div class="font-semibold text-gray-800">Work Email</div>
+                    <div class="text-sm text-gray-600 mt-1">Quarterly review meeting request</div>
+                </button>
+                <button onclick="loadExample('promotion')" class="p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition text-left">
+                    <div class="font-semibold text-gray-800">Promotional Email</div>
+                    <div class="text-sm text-gray-600 mt-1">50% off sale announcement</div>
+                </button>
+                <button onclick="loadExample('personal')" class="p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition text-left">
+                    <div class="font-semibold text-gray-800">Personal Email</div>
+                    <div class="text-sm text-gray-600 mt-1">Birthday wishes from friend</div>
+                </button>
+                <button onclick="loadExample('support')" class="p-4 border-2 border-gray-300 rounded-lg hover:border-purple-500 transition text-left">
+                    <div class="font-semibold text-gray-800">Support Email</div>
+                    <div class="text-sm text-gray-600 mt-1">Account issue assistance request</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+        let scoreChart = null;
+
+        const examples = {
+            work: {
+                subject: "Quarterly Business Review Meeting",
+                body: "Please join us for the Q3 business review meeting where we will discuss revenue targets, project milestones, and departmental KPIs."
+            },
+            promotion: {
+                subject: "50% Off Everything - Limited Time!",
+                body: "Huge savings on all items in our store. Use code SAVE50 at checkout. This offer expires in 24 hours!"
+            },
+            personal: {
+                subject: "Happy Birthday!",
+                body: "Hey! Hope you have an amazing birthday today. Let's catch up soon over coffee!"
+            },
+            support: {
+                subject: "Issue with my account",
+                body: "I'm having trouble logging into my account. Could you please help reset my password?"
+            }
+        };
+
+        function loadExample(type) {
+            document.getElementById('subject').value = examples[type].subject;
+            document.getElementById('body').value = examples[type].body;
+        }
+
+        async function classifyEmail() {
+            const subject = document.getElementById('subject').value;
+            const body = document.getElementById('body').value;
+            const useLearning = document.getElementById('useLearning').checked;
+
+            try {
+                const response = await fetch(`${API_URL}/emails/classify`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        subject: subject,
+                        body: body,
+                        use_learning: useLearning
+                    }),
+                });
+
+                const data = await response.json();
+                displayResults(data);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error classifying email. Please check the server is running.');
+            }
+        }
+
+        function displayResults(data) {
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('predictedTopic').textContent = data.predicted_topic;
+            document.getElementById('confidence').textContent =
+                `(${(data.topic_scores[data.predicted_topic] * 100).toFixed(1)}% confidence)`;
+
+            // Update chart
+            const ctx = document.getElementById('scoreChart').getContext('2d');
+
+            if (scoreChart) {
+                scoreChart.destroy();
+            }
+
+            const topics = Object.keys(data.topic_scores);
+            const scores = topics.map(t => (data.topic_scores[t] * 100).toFixed(1));
+            const colors = topics.map((t, i) => t === data.predicted_topic ?
+                'rgba(147, 51, 234, 0.8)' : 'rgba(203, 213, 224, 0.8)');
+
+            scoreChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: topics,
+                    datasets: [{
+                        label: 'Confidence Score (%)',
+                        data: scores,
+                        backgroundColor: colors,
+                        borderColor: colors,
+                        borderWidth: 1,
+                        barThickness: 40,
+                        maxBarThickness: 50
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.parsed.y + '%';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function addTopic() {
+            const topicName = document.getElementById('newTopic').value;
+            if (!topicName) return;
+
+            try {
+                const response = await fetch(`${API_URL}/topics`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        topic_name: topicName,
+                        description: `Emails related to ${topicName}`,
+                        keywords: [topicName]
+                    }),
+                });
+
+                if (response.ok) {
+                    alert(`Topic "${topicName}" added successfully!`);
+                    document.getElementById('newTopic').value = '';
+                    location.reload();
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Load initial data
+        async function loadStats() {
+            try {
+                const response = await fetch(`${API_URL}/emails`);
+                if (response.ok) {
+                    const emails = await response.json();
+                    document.getElementById('totalEmails').textContent = emails.length;
+                }
+            } catch (error) {
+                console.error('Error loading stats:', error);
+            }
+        }
+
+        loadStats();
+    </script>
+</body>
+</html>

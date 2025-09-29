@@ -1,0 +1,160 @@
+version: '3.8'
+
+services:
+  # Airbyte Services
+  airbyte-server:
+    image: airbyte/server:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://airbyte:password@airbyte-db:5432/airbyte
+      - CONFIG_DATABASE_URL=postgresql://airbyte:password@airbyte-db:5432/airbyte_config
+    depends_on:
+      - airbyte-db
+    volumes:
+      - airbyte_workspace:/tmp/airbyte_local
+      - airbyte_data:/tmp/airbyte_local_data
+      - airbyte_logs:/tmp/airbyte_local_logs
+
+  airbyte-worker:
+    image: airbyte/worker:latest
+    environment:
+      - DATABASE_URL=postgresql://airbyte:password@airbyte-db:5432/airbyte
+      - CONFIG_DATABASE_URL=postgresql://airbyte:password@airbyte-db:5432/airbyte_config
+    depends_on:
+      - airbyte-db
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - airbyte_workspace:/tmp/airbyte_local
+      - airbyte_data:/tmp/airbyte_local_data
+      - airbyte_logs:/tmp/airbyte_local_logs
+
+  airbyte-webapp:
+    image: airbyte/webapp:latest
+    ports:
+      - "8001:80"
+    environment:
+      - API_URL=http://airbyte-server:8000/api/v1/
+
+  airbyte-db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=airbyte
+      - POSTGRES_USER=airbyte
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - airbyte_db_data:/var/lib/postgresql/data
+
+  # Airflow Services
+  airflow-webserver:
+    image: apache/airflow:2.5.0
+    ports:
+      - "8080:8080"
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      - AIRFLOW__CORE__FERNET_KEY=your_fernet_key_here
+      - AIRFLOW__WEBSERVER__SECRET_KEY=your_secret_key_here
+    depends_on:
+      - airflow-db
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./includes:/opt/airflow/dags/includes
+    command: webserver
+
+  airflow-scheduler:
+    image: apache/airflow:2.5.0
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      - AIRFLOW__CORE__FERNET_KEY=your_fernet_key_here
+    depends_on:
+      - airflow-db
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - ./includes:/opt/airflow/dags/includes
+    command: scheduler
+
+  airflow-db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=airflow
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+    volumes:
+      - airflow_db_data:/var/lib/postgresql/data
+
+  # Data Stores
+  neo4j:
+    image: neo4j:5.0
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_PLUGINS=["apoc", "graph-data-science"]
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+
+  postgres-analytics:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=email_analytics
+      - POSTGRES_USER=analytics
+      - POSTGRES_PASSWORD=analytics
+    volumes:
+      - postgres_analytics_data:/var/lib/postgresql/data
+
+  # ML Services
+  mlflow:
+    image: python:3.9
+    ports:
+      - "5000:5000"
+    command: >
+      bash -c "pip install mlflow psycopg2-binary &&
+               mlflow server --host 0.0.0.0 --port 5000
+               --backend-store-uri postgresql://mlflow:mlflow@mlflow-db:5432/mlflow
+               --default-artifact-root /mlflow/artifacts"
+    depends_on:
+      - mlflow-db
+    volumes:
+      - mlflow_artifacts:/mlflow/artifacts
+
+  mlflow-db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=mlflow
+      - POSTGRES_USER=mlflow
+      - POSTGRES_PASSWORD=mlflow
+    volumes:
+      - mlflow_db_data:/var/lib/postgresql/data
+
+  # Monitoring
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  airbyte_workspace:
+  airbyte_data:
+  airbyte_logs:
+  airbyte_db_data:
+  airflow_db_data:
+  neo4j_data:
+  neo4j_logs:
+  postgres_analytics_data:
+  mlflow_artifacts:
+  mlflow_db_data:
+  grafana_data:

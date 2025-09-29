@@ -1,0 +1,52 @@
+connections:
+- destination:
+    configuration:
+      database: email_analytics
+      host: '{{ var.value.postgres_host }}'
+      password: '{{ var.value.postgres_password }}'
+      port: 5432
+      schema: raw_emails
+      username: '{{ var.value.postgres_user }}'
+    connector_type: destination-postgres
+    name: PostgreSQL
+  name: gmail_api_connection
+  schedule:
+    cron_expression: 0 */1 * * *
+    schedule_type: cron
+  source:
+    configuration:
+      batch_size: 100
+      credentials:
+        auth_type: oauth2
+        client_id: '{{ var.value.gmail_client_id }}'
+        client_secret: '{{ var.value.gmail_client_secret }}'
+        refresh_token: '{{ var.value.gmail_refresh_token }}'
+      query: is:unread
+      start_date: '2024-01-01T00:00:00Z'
+    connector_type: source-gmail
+    name: Gmail
+  sync_mode: incremental
+- destination:
+    configuration:
+      database: EMAIL_ANALYTICS
+      host: '{{ var.value.snowflake_account }}.snowflakecomputing.com'
+      role: AIRBYTE_ROLE
+      schema: RAW_DATA
+      warehouse: AIRBYTE_WAREHOUSE
+    connector_type: destination-snowflake
+    name: Snowflake
+  name: outlook_api_connection
+  schedule:
+    cron_expression: 0 */1 * * *
+    schedule_type: cron
+  source:
+    configuration:
+      client_id: '{{ var.value.outlook_client_id }}'
+      client_secret: '{{ var.value.outlook_client_secret }}'
+      start_date: '2024-01-01T00:00:00Z'
+      tenant_id: '{{ var.value.outlook_tenant_id }}'
+    connector_type: source-microsoft-outlook
+    name: Outlook
+  sync_mode: incremental
+project_name: email_analytics_email_classification_pipeline
+version: 0.50.0
