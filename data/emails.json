@@ -244,5 +244,33 @@
     "id": 42,
     "subject": "Team Building Event",
     "body": "Join us for team building activities next Friday at the park."
+  },
+  {
+    "id": 43,
+    "subject": "Q4 Financial Report",
+    "body": "Please review the quarterly financial statements. Revenue increased by 12%.",
+    "ground_truth": "finance"
+  },
+  {
+    "id": 44,
+    "subject": "Team Building Event",
+    "body": "Join us for team building activities next Friday at the park."
+  },
+  {
+    "id": 45,
+    "subject": "Analysis Test Email",
+    "body": "This email is for analysis testing purposes",
+    "ground_truth": "education"
+  },
+  {
+    "id": 46,
+    "subject": "Analysis Test No GT",
+    "body": "This email has no ground truth label"
+  },
+  {
+    "id": 47,
+    "subject": "Final Test Email",
+    "body": "Testing email storage functionality",
+    "ground_truth": "education"
   }
 ]
