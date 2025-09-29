@@ -24,7 +24,8 @@ from .generators import (
     AverageWordLengthFeatureGenerator,
     EmailEmbeddingsFeatureGenerator,
     RawEmailFeatureGenerator,
-    NonTextCharacterFeatureGenerator
+    NonTextCharacterFeatureGenerator,
+    CausalImpactFeatureGenerator
 )
 from app.dataclasses import Email
 
@@ -35,7 +36,8 @@ GENERATORS: Dict[str, Type[BaseFeatureGenerator]] = {
     "word_length": AverageWordLengthFeatureGenerator,
     "email_embeddings": EmailEmbeddingsFeatureGenerator,
     "raw_email": RawEmailFeatureGenerator,
-    "non_text": NonTextCharacterFeatureGenerator
+    "non_text": NonTextCharacterFeatureGenerator,
+    "causal_impact": CausalImpactFeatureGenerator
 }
 
 # Generator metadata for documentation
@@ -69,6 +71,12 @@ GENERATOR_METADATA = {
         "category": "content_analysis",
         "version": "1.1.0",
         "performance": "O(n) where n is text length"
+    },
+    "causal_impact": {
+        "description": "Generates causal impact and intervention features",
+        "category": "causal_analysis",
+        "version": "1.0.0",
+        "performance": "O(1) - direct computation"
     }
 }
 

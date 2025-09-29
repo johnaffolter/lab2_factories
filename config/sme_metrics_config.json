@@ -1,0 +1,339 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-09-29",
+  "description": "SME-friendly metrics configuration for email classification causality analysis",
+  "metrics": [
+    {
+      "id": "causal_impact",
+      "name": "Causal Impact Score",
+      "business_question": "How much does this feature influence the final classification?",
+      "technical_name": "causal_impact_score",
+      "category": "causality",
+      "unit": "score (0-1)",
+      "higher_is_better": true,
+      "thresholds": [
+        {
+          "name": "critical",
+          "label": "Critical Impact",
+          "description": "This feature is a major driver of the classification decision",
+          "condition": "> 0.8",
+          "color": "#DC2626",
+          "icon": "🔴",
+          "priority": 1,
+          "action_required": true,
+          "recommended_actions": [
+            "Immediate review required",
+            "Validate feature correctness",
+            "Check for data quality issues"
+          ],
+          "next_best_steps": [
+            "Review historical data for this feature",
+            "Consult domain expert",
+            "Consider creating alert rule"
+          ]
+        },
+        {
+          "name": "high",
+          "label": "High Impact",
+          "description": "This feature significantly influences the classification",
+          "condition": "0.6 to 0.8",
+          "color": "#F97316",
+          "icon": "🟠",
+          "priority": 2,
+          "action_required": false,
+          "recommended_actions": [
+            "Monitor weekly",
+            "Track changes over time"
+          ],
+          "next_best_steps": [
+            "Add to monitoring dashboard",
+            "Schedule monthly review"
+          ]
+        },
+        {
+          "name": "medium",
+          "label": "Medium Impact",
+          "description": "This feature has moderate influence",
+          "condition": "0.3 to 0.6",
+          "color": "#EAB308",
+          "icon": "🟡",
+          "priority": 3,
+          "action_required": false,
+          "recommended_actions": [
+            "Track monthly"
+          ],
+          "next_best_steps": [
+            "Include in quarterly reports"
+          ]
+        },
+        {
+          "name": "low",
+          "label": "Low Impact",
+          "description": "This feature has minimal influence",
+          "condition": "< 0.3",
+          "color": "#22C55E",
+          "icon": "🟢",
+          "priority": 4,
+          "action_required": false,
+          "recommended_actions": [
+            "No immediate action needed"
+          ],
+          "next_best_steps": [
+            "Consider removing if consistently low"
+          ]
+        }
+      ],
+      "binning": {
+        "strategy": "semantic",
+        "bins": [
+          {"label": "Negligible", "min": 0.0, "max": 0.1, "description": "Almost no influence"},
+          {"label": "Low", "min": 0.1, "max": 0.3, "description": "Minor influence"},
+          {"label": "Medium", "min": 0.3, "max": 0.6, "description": "Moderate influence"},
+          {"label": "High", "min": 0.6, "max": 0.8, "description": "Strong influence"},
+          {"label": "Critical", "min": 0.8, "max": 1.0, "description": "Dominant influence"}
+        ]
+      }
+    },
+    {
+      "id": "classification_confidence",
+      "name": "Classification Confidence",
+      "business_question": "How confident is the model in its prediction?",
+      "technical_name": "prediction_confidence",
+      "category": "model_performance",
+      "unit": "percentage",
+      "higher_is_better": true,
+      "thresholds": [
+        {
+          "name": "very_high",
+          "label": "Very High Confidence",
+          "description": "Model is extremely confident - proceed with automated action",
+          "condition": "> 0.9",
+          "color": "#16A34A",
+          "icon": "✅",
+          "priority": 1,
+          "action_required": false,
+          "recommended_actions": [
+            "Auto-approve classification",
+            "No manual review needed"
+          ],
+          "next_best_steps": [
+            "Use for automated routing"
+          ]
+        },
+        {
+          "name": "high",
+          "label": "High Confidence",
+          "description": "Model is confident - minimal risk",
+          "condition": "0.75 to 0.9",
+          "color": "#4ADE80",
+          "icon": "✓",
+          "priority": 2,
+          "action_required": false,
+          "recommended_actions": [
+            "Proceed with classification",
+            "Random spot-check for quality"
+          ],
+          "next_best_steps": [
+            "Add to quality assurance sample pool"
+          ]
+        },
+        {
+          "name": "medium",
+          "label": "Medium Confidence",
+          "description": "Model is unsure - review recommended",
+          "condition": "0.5 to 0.75",
+          "color": "#FBBF24",
+          "icon": "⚠️",
+          "priority": 3,
+          "action_required": true,
+          "recommended_actions": [
+            "Manual review recommended",
+            "Flag for second opinion"
+          ],
+          "next_best_steps": [
+            "Route to specialist team",
+            "Gather additional context"
+          ]
+        },
+        {
+          "name": "low",
+          "label": "Low Confidence",
+          "description": "Model is very unsure - manual intervention required",
+          "condition": "< 0.5",
+          "color": "#EF4444",
+          "icon": "❌",
+          "priority": 4,
+          "action_required": true,
+          "recommended_actions": [
+            "Mandatory manual review",
+            "Escalate to expert",
+            "Do not auto-classify"
+          ],
+          "next_best_steps": [
+            "Create support ticket",
+            "Request additional information",
+            "Consider model retraining"
+          ]
+        }
+      ],
+      "binning": {
+        "strategy": "semantic",
+        "bins": [
+          {"label": "Very Low", "min": 0.0, "max": 0.3, "description": "Model is guessing"},
+          {"label": "Low", "min": 0.3, "max": 0.5, "description": "High uncertainty"},
+          {"label": "Medium", "min": 0.5, "max": 0.75, "description": "Moderate certainty"},
+          {"label": "High", "min": 0.75, "max": 0.9, "description": "Strong certainty"},
+          {"label": "Very High", "min": 0.9, "max": 1.0, "description": "Extremely confident"}
+        ]
+      }
+    },
+    {
+      "id": "intervention_cost",
+      "name": "Intervention Cost",
+      "business_question": "How much effort is needed to change the classification?",
+      "technical_name": "intervention_effort",
+      "category": "actionability",
+      "unit": "effort score",
+      "higher_is_better": false,
+      "thresholds": [
+        {
+          "name": "easy",
+          "label": "Easy to Change",
+          "description": "Small tweaks can flip the classification",
+          "condition": "< 0.3",
+          "color": "#22C55E",
+          "icon": "💚",
+          "priority": 1,
+          "action_required": false,
+          "recommended_actions": [
+            "Quick wins available",
+            "Test minor adjustments"
+          ],
+          "next_best_steps": [
+            "Identify specific feature to modify",
+            "Calculate exact change needed"
+          ]
+        },
+        {
+          "name": "moderate",
+          "label": "Moderate Effort",
+          "description": "Requires focused changes",
+          "condition": "0.3 to 0.7",
+          "color": "#FBBF24",
+          "icon": "💛",
+          "priority": 2,
+          "action_required": false,
+          "recommended_actions": [
+            "Plan intervention strategy",
+            "Allocate resources"
+          ],
+          "next_best_steps": [
+            "Prioritize top 3 features",
+            "Estimate time required"
+          ]
+        },
+        {
+          "name": "difficult",
+          "label": "Difficult to Change",
+          "description": "Major changes required",
+          "condition": "> 0.7",
+          "color": "#EF4444",
+          "icon": "💔",
+          "priority": 3,
+          "action_required": true,
+          "recommended_actions": [
+            "Consider if intervention is worth the effort",
+            "Look for alternative approaches"
+          ],
+          "next_best_steps": [
+            "Evaluate cost-benefit",
+            "Explore workarounds"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "feature_stability",
+      "name": "Feature Stability",
+      "business_question": "How consistent is this feature over time?",
+      "technical_name": "feature_stability_score",
+      "category": "reliability",
+      "unit": "stability score",
+      "higher_is_better": true,
+      "thresholds": [
+        {
+          "name": "stable",
+          "label": "Stable",
+          "description": "Feature values are consistent and reliable",
+          "condition": "> 0.7",
+          "color": "#22C55E",
+          "icon": "📊",
+          "priority": 1,
+          "action_required": false,
+          "recommended_actions": [
+            "Trust for automated decisions",
+            "Use as key decision factor"
+          ],
+          "next_best_steps": [
+            "Continue monitoring",
+            "Document stable behavior"
+          ]
+        },
+        {
+          "name": "volatile",
+          "label": "Volatile",
+          "description": "Feature values fluctuate significantly",
+          "condition": "< 0.7",
+          "color": "#F97316",
+          "icon": "📉",
+          "priority": 2,
+          "action_required": true,
+          "recommended_actions": [
+            "Investigate root cause of volatility",
+            "Reduce weight in decision-making"
+          ],
+          "next_best_steps": [
+            "Analyze historical trends",
+            "Check data quality",
+            "Consider alternative features"
+          ]
+        }
+      ]
+    }
+  ],
+  "metric_groups": [
+    {
+      "name": "Causal Analysis",
+      "description": "Metrics related to cause-and-effect relationships",
+      "metrics": ["causal_impact", "intervention_cost"],
+      "icon": "🔗"
+    },
+    {
+      "name": "Model Performance",
+      "description": "Metrics evaluating model quality and reliability",
+      "metrics": ["classification_confidence", "feature_stability"],
+      "icon": "🎯"
+    }
+  ],
+  "dashboards": [
+    {
+      "name": "Executive Summary",
+      "description": "High-level view for decision makers",
+      "metrics": ["causal_impact", "classification_confidence"],
+      "refresh_frequency": "daily"
+    },
+    {
+      "name": "Technical Deep Dive",
+      "description": "Detailed metrics for data scientists",
+      "metrics": ["causal_impact", "classification_confidence", "intervention_cost", "feature_stability"],
+      "refresh_frequency": "hourly"
+    }
+  ],
+  "glossary": {
+    "causal_impact": "Measures how changing a feature affects the prediction outcome. Think of it as 'if I change X, how much does Y change?'",
+    "intervention": "A deliberate change to a feature to see its effect on the outcome",
+    "counterfactual": "What would have happened if things were different? Example: 'What if the email had no spam words?'",
+    "threshold": "A cutoff point that triggers different actions. Example: 'If confidence < 50%, require manual review'",
+    "binning": "Grouping continuous values into categories. Example: scores 0-0.3 = 'Low', 0.3-0.7 = 'Medium', 0.7-1.0 = 'High'"
+  }
+}

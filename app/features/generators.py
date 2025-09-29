@@ -109,3 +109,51 @@ class NonTextCharacterFeatureGenerator(BaseFeatureGenerator):
     @property
     def feature_names(self) -> list[str]:
         return ["non_text_char_count"]
+
+
+class CausalImpactFeatureGenerator(BaseFeatureGenerator):
+    """
+    Generates causal impact features for interventional analysis.
+
+    Computes counterfactual features and causal signatures that enable
+    downstream causal inference and impact analysis.
+    """
+
+    def generate_features(self, email: Email) -> Dict[str, Any]:
+        subject = email.subject
+        body = email.body
+        all_text = f"{subject} {body}"
+
+        # Baseline features for comparison
+        subject_length = len(subject)
+        body_length = len(body)
+        total_length = len(all_text)
+
+        # Causal signature: feature stability metrics
+        # (how much would changing this affect downstream?)
+        features = {
+            # Intervention readiness scores
+            "subject_intervention_impact": subject_length / (total_length + 1),
+            "body_intervention_impact": body_length / (total_length + 1),
+
+            # Counterfactual deltas (deviation from expected)
+            "length_deviation": abs(total_length - 200) / 200,  # 200 = expected avg
+
+            # Causal interaction features
+            "subject_body_interaction": (subject_length * body_length) / (total_length + 1),
+
+            # Stability indicator (variance proxy)
+            "feature_stability_score": 1.0 - (abs(subject_length - body_length) / (total_length + 1))
+        }
+
+        return features
+
+    @property
+    def feature_names(self) -> list[str]:
+        return [
+            "subject_intervention_impact",
+            "body_intervention_impact",
+            "length_deviation",
+            "subject_body_interaction",
+            "feature_stability_score"
+        ]
