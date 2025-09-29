@@ -295,5 +295,60 @@
     "id": 51,
     "subject": "Team Building Event",
     "body": "Join us for team building activities next Friday at the park."
+  },
+  {
+    "id": 52,
+    "subject": "Test order inquiry",
+    "body": "Where is my order #12345?",
+    "ground_truth": "order_status"
+  },
+  {
+    "id": 53,
+    "subject": "Meeting tomorrow",
+    "body": "Please join us at 2pm"
+  },
+  {
+    "id": 54,
+    "subject": "Invoice Payment Overdue",
+    "body": "Your invoice #2024-789 for $2,500 is now 15 days overdue. Please remit payment.",
+    "ground_truth": "finance"
+  },
+  {
+    "id": 55,
+    "subject": "Quarterly Team Offsite",
+    "body": "Save the date for our Q1 team building event on March 15th at the lake house."
+  },
+  {
+    "id": 56,
+    "subject": "URGENT: System Down",
+    "body": "Production system is experiencing critical errors. Immediate attention required!",
+    "ground_truth": "urgent_issues"
+  },
+  {
+    "id": 57,
+    "subject": "Weekly Team Sync",
+    "body": "Let's meet on Friday at 3pm to discuss project progress"
+  },
+  {
+    "id": 58,
+    "subject": "System Performance Report",
+    "body": "Q4 metrics show 15% improvement in response time and 20% reduction in errors",
+    "ground_truth": "work"
+  },
+  {
+    "id": 59,
+    "subject": "Team Happy Hour Friday",
+    "body": "Join us at Joe's Bar at 6pm for drinks and appetizers"
+  },
+  {
+    "id": 60,
+    "subject": "Q4 Financial Results",
+    "body": "Revenue: $2.5M, Profit: $450K, Growth: 18% YoY",
+    "ground_truth": "finance"
+  },
+  {
+    "id": 61,
+    "subject": "Office Party Next Week",
+    "body": "Join us for pizza and games in the break room"
   }
 ]

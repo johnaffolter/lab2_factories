@@ -55,5 +55,17 @@
   },
   "test_reproducible_1759175269": {
     "description": "Reproducible test topic"
+  },
+  "demo_homework_topic": {
+    "description": "Topic created specifically for homework demonstration"
+  },
+  "urgent_issues": {
+    "description": "Urgent issues requiring immediate attention"
+  },
+  "test_visual_demo": {
+    "description": "Topic for visual demonstration"
+  },
+  "homework_demo_complete": {
+    "description": "Complete homework demonstration topic"
   }
 }
