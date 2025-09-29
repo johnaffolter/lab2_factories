@@ -1,12 +1,17 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from app.api.routes import router as api_router
+from app.api.composable_routes import router as composable_router
 from app.core.config import settings
 
+# Import composable components to register them
+from app.features.composable_generators import *
+
 app = FastAPI(
-    title=settings.PROJECT_NAME,
-    description="ML Server with Feature Generation Factory",
-    version="1.0.0"
+    title="MLOps Composable Platform",
+    description="Composable ML Components with Visual Pipeline Builder",
+    version="2.0.0"
 )
 
 # Add CORS middleware to allow frontend access
@@ -18,7 +23,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Include routers
 app.include_router(api_router)
+app.include_router(composable_router)
+
+# Serve static files for UI
+try:
+    app.mount("/static", StaticFiles(directory="static"), name="static")
+except Exception:
+    pass  # Directory might not exist yet
 
 @app.get("/health")
 def health_check():

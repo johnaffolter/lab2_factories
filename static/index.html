@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLOps Composable Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card .icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .stat-card h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .stat-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-card .label {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .panel h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .component-card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .component-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .component-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .component-icon {
+            font-size: 2em;
+        }
+
+        .component-info h3 {
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .component-info p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .tags {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .tag {
+            background: #e0e7ff;
+            color: #667eea;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8em;
+        }
+
+        .pipeline-builder {
+            margin-top: 20px;
+        }
+
+        .pipeline-step {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: scale(1.05);
+        }
+
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .input-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .result-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .result-box pre {
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4caf50;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🚀 MLOps Composable Platform</h1>
+            <p>Build custom ML pipelines with drag-and-drop composable components</p>
+            <p style="margin-top: 10px;">
+                <span class="status-indicator"></span>
+                <span style="color: #4caf50; font-weight: 500;">System Online</span>
+            </p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="icon">📦</div>
+                <h3>Components</h3>
+                <div class="value" id="stat-components">-</div>
+                <div class="label">Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon">🔗</div>
+                <h3>Pipelines</h3>
+                <div class="value" id="stat-pipelines">-</div>
+                <div class="label">Created</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon">📧</div>
+                <h3>Emails</h3>
+                <div class="value" id="stat-emails">-</div>
+                <div class="label">In Neo4j</div>
+            </div>
+            <div class="stat-card">
+                <div class="icon">⚡</div>
+                <h3>Executions</h3>
+                <div class="value" id="stat-executions">-</div>
+                <div class="label">Total</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Component Library -->
+            <div class="panel">
+                <h2>📚 Component Library</h2>
+                <div id="components-list">
+                    <div class="loading"></div>
+                </div>
+            </div>
+
+            <!-- Pipeline Tester -->
+            <div class="panel">
+                <h2>🧪 Pipeline Tester</h2>
+
+                <div class="input-group">
+                    <label>Email Subject:</label>
+                    <input type="text" id="test-subject" placeholder="Enter email subject...">
+                </div>
+
+                <div class="input-group">
+                    <label>Email Body:</label>
+                    <textarea id="test-body" placeholder="Enter email content..."></textarea>
+                </div>
+
+                <div class="pipeline-builder">
+                    <h3>Selected Components:</h3>
+                    <div id="selected-components">
+                        <p style="color: #999; font-style: italic;">Click components to add them to the pipeline</p>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" onclick="executePipeline()" style="margin-top: 15px;">
+                    ▶️ Execute Pipeline
+                </button>
+
+                <div id="results"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE = '/api/composable';
+        let selectedComponents = [];
+
+        // Load system status
+        async function loadStatus() {
+            try {
+                const response = await fetch(`${API_BASE}/status`);
+                const data = await response.json();
+
+                document.getElementById('stat-components').textContent = data.components.total;
+                document.getElementById('stat-pipelines').textContent = data.pipelines.total;
+                document.getElementById('stat-emails').textContent = data.neo4j.emails;
+                document.getElementById('stat-executions').textContent = data.pipelines.total_executions;
+            } catch (error) {
+                console.error('Error loading status:', error);
+            }
+        }
+
+        // Load components
+        async function loadComponents() {
+            try {
+                const response = await fetch(`${API_BASE}/components`);
+                const data = await response.json();
+
+                const container = document.getElementById('components-list');
+                container.innerHTML = '';
+
+                data.components.forEach(comp => {
+                    const card = document.createElement('div');
+                    card.className = 'component-card';
+                    card.style.borderLeftColor = comp.color;
+                    card.onclick = () => addToSelectedComponents(comp);
+
+                    card.innerHTML = `
+                        <div class="component-header">
+                            <div class="component-icon">${comp.icon}</div>
+                            <div class="component-info">
+                                <h3>${comp.name}</h3>
+                                <p>${comp.description}</p>
+                            </div>
+                        </div>
+                        <div class="tags">
+                            ${comp.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    `;
+
+                    container.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading components:', error);
+            }
+        }
+
+        // Add component to pipeline
+        function addToSelectedComponents(comp) {
+            if (!selectedComponents.find(c => c.name === comp.name)) {
+                selectedComponents.push(comp);
+                renderSelectedComponents();
+            }
+        }
+
+        // Remove component from pipeline
+        function removeComponent(compName) {
+            selectedComponents = selectedComponents.filter(c => c.name !== compName);
+            renderSelectedComponents();
+        }
+
+        // Render selected components
+        function renderSelectedComponents() {
+            const container = document.getElementById('selected-components');
+
+            if (selectedComponents.length === 0) {
+                container.innerHTML = '<p style="color: #999; font-style: italic;">Click components to add them to the pipeline</p>';
+                return;
+            }
+
+            container.innerHTML = selectedComponents.map((comp, index) => `
+                <div class="pipeline-step">
+                    <span>
+                        ${index + 1}. ${comp.icon} ${comp.name}
+                    </span>
+                    <button class="btn btn-danger" onclick="removeComponent('${comp.name}')" style="padding: 5px 15px;">
+                        ✕
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Execute pipeline
+        async function executePipeline() {
+            const subject = document.getElementById('test-subject').value;
+            const body = document.getElementById('test-body').value;
+
+            if (!subject || !body) {
+                alert('Please enter both subject and body');
+                return;
+            }
+
+            if (selectedComponents.length === 0) {
+                alert('Please select at least one component');
+                return;
+            }
+
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<div class="loading"></div>';
+
+            try {
+                // Create pipeline
+                const createResponse = await fetch(`${API_BASE}/pipelines`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        name: 'Test Pipeline',
+                        components: selectedComponents.map(c => ({name: c.name, config: {}}))
+                    })
+                });
+
+                const pipeline = await createResponse.json();
+
+                // Execute pipeline
+                const execResponse = await fetch(`${API_BASE}/pipelines/${pipeline.id}/execute`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        email_subject: subject,
+                        email_body: body
+                    })
+                });
+
+                const results = await execResponse.json();
+
+                // Display results
+                resultsDiv.innerHTML = `
+                    <div class="result-box">
+                        <h3>✅ Pipeline Results</h3>
+                        <pre>${JSON.stringify(results, null, 2)}</pre>
+                    </div>
+                `;
+
+                // Reload status
+                loadStatus();
+            } catch (error) {
+                resultsDiv.innerHTML = `
+                    <div class="result-box" style="background: #ffebee; border-color: #f44336;">
+                        <h3>❌ Error</h3>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize
+        loadStatus();
+        loadComponents();
+
+        // Refresh status every 5 seconds
+        setInterval(loadStatus, 5000);
+    </script>
+</body>
+</html>
