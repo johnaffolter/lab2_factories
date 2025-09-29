@@ -172,5 +172,77 @@
     "subject": "Flight LH654 - Check-in Now Available",
     "body": "Travel insurance for your Tokyo trip: Coverage includes Lost luggage. Premium: $100. Protect your trip today.",
     "ground_truth": "travel"
+  },
+  {
+    "id": 30,
+    "subject": "Your Portfolio Performance Report",
+    "body": "Your investment portfolio gained 5% this month. See detailed breakdown of your stocks and bonds."
+  },
+  {
+    "id": 31,
+    "subject": "Team Standup at 10am",
+    "body": "Daily standup meeting to discuss sprint progress and blockers."
+  },
+  {
+    "id": 32,
+    "subject": "eek!  new bugs",
+    "body": "hey there are bugs"
+  },
+  {
+    "id": 33,
+    "subject": "Q3 Financial Results",
+    "body": "Our quarterly earnings exceeded expectations with 15% growth.",
+    "ground_truth": "finance"
+  },
+  {
+    "id": 34,
+    "subject": "Team Standup Meeting",
+    "body": "Daily sync to discuss sprint progress and blockers.",
+    "ground_truth": "work"
+  },
+  {
+    "id": 35,
+    "subject": "Happy Birthday!",
+    "body": "Hope you have an amazing day! Let's celebrate this weekend.",
+    "ground_truth": "personal"
+  },
+  {
+    "id": 36,
+    "subject": "Q4 Budget Review",
+    "body": "Please review the Q4 budget before our meeting tomorrow.",
+    "ground_truth": "work"
+  },
+  {
+    "id": 37,
+    "subject": "Quarterly Financial Report",
+    "body": "Please review the attached Q3 financial report before the board meeting.",
+    "ground_truth": "work"
+  },
+  {
+    "id": 38,
+    "subject": "Team Lunch",
+    "body": "Let's have lunch together tomorrow at noon."
+  },
+  {
+    "id": 39,
+    "subject": "Quarterly Report",
+    "body": "Please review the Q3 financial report",
+    "ground_truth": "work"
+  },
+  {
+    "id": 40,
+    "subject": "Team Meeting",
+    "body": "Meeting at 2pm"
+  },
+  {
+    "id": 41,
+    "subject": "Q4 Financial Report",
+    "body": "Please review the quarterly financial statements. Revenue increased by 12%.",
+    "ground_truth": "finance"
+  },
+  {
+    "id": 42,
+    "subject": "Team Building Event",
+    "body": "Join us for team building activities next Friday at the park."
   }
 ]

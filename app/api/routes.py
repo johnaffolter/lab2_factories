@@ -38,8 +38,19 @@ class EmailStoreRequest(BaseModel):
     body: str
     ground_truth: Optional[str] = None
 
-@router.post("/emails/classify", response_model=EmailClassificationResponse)
+@router.post("/emails/classify", response_model=EmailClassificationResponse,
+             summary="Classify Email",
+             description="Classify an email into predefined topics using machine learning")
 async def classify_email(request: EmailRequest):
+    """
+    Classify an email into one of the available topics.
+
+    - **subject**: Email subject line
+    - **body**: Email body content
+    - **use_email_similarity**: Use email similarity mode instead of topic similarity
+
+    Returns classification result with confidence scores and extracted features.
+    """
     try:
         inference_service = EmailTopicInferenceService(use_email_similarity=request.use_email_similarity)
         email = Email(subject=request.subject, body=request.body)
@@ -54,9 +65,16 @@ async def classify_email(request: EmailRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/topics")
+@router.get("/topics", summary="Get Available Topics",
+            description="Retrieve all available email classification topics",
+            response_description="List of topic names")
 async def topics():
-    """Get available email topics"""
+    """
+    Get all available email classification topics.
+
+    Returns a list of topics that emails can be classified into,
+    including any dynamically added topics.
+    """
     inference_service = EmailTopicInferenceService()
     info = inference_service.get_pipeline_info()
     return {"topics": info["available_topics"]}

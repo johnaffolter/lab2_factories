@@ -22,5 +22,20 @@
   },
   "health": {
     "description": "Health updates, medical appointments, and wellness information"
+  },
+  "new ai deal": {
+    "description": "New deals in Artificial Intelligence"
+  },
+  "finance": {
+    "description": "Financial emails about banking, investments, and money matters"
+  },
+  "test_topic_1759107444": {
+    "description": "Test topic for homework demo"
+  },
+  "test_topic_1759108278": {
+    "description": "Test topic for grading"
+  },
+  "test_reproducible_1759109850": {
+    "description": "Reproducible test topic"
   }
 }

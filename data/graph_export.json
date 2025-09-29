@@ -1,0 +1,389 @@
+{
+  "nodes": [
+    {
+      "id": "doc_1c92ef0dae18bf4c746d6d181c1a58b4",
+      "label": "Investment Portfolio Update",
+      "type": "document",
+      "doc_type": "email",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "topic_finance",
+      "label": "finance",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "project_email_classification",
+      "label": "email_classification",
+      "type": "project",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "doc_f95cfd18e39f209b334bd25350693520",
+      "label": "MLOps Team Standup",
+      "type": "document",
+      "doc_type": "meeting_notes",
+      "color": "#ec4899"
+    },
+    {
+      "id": "topic_mlops",
+      "label": "mlops",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_meetings",
+      "label": "meetings",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_progress",
+      "label": "progress",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "doc_e7c686c27d007868c253c6f6a62bfd9c",
+      "label": "API Documentation",
+      "type": "document",
+      "doc_type": "documentation",
+      "color": "#6366f1"
+    },
+    {
+      "id": "topic_api",
+      "label": "api",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_documentation",
+      "label": "documentation",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_rest",
+      "label": "rest",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "doc_beb8465d4a9d3d3beff172089863b73c",
+      "label": "feature_factory.py",
+      "type": "document",
+      "doc_type": "code",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_python",
+      "label": "python",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_design_patterns",
+      "label": "design_patterns",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "doc_a71746c8211bfd1a5d9d0ecdf353db80",
+      "label": "Email Classification Performan",
+      "type": "document",
+      "doc_type": "report",
+      "color": "#ef4444"
+    },
+    {
+      "id": "topic_performance",
+      "label": "performance",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_analytics",
+      "label": "analytics",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "doc_970f031de22408a2db0e9a291899a7bb",
+      "label": "Q3 Budget Review Request",
+      "type": "document",
+      "doc_type": "email",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "topic_work",
+      "label": "work",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_urgent",
+      "label": "urgent",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "doc_5251099a0653adfa9d58c04ceea249db",
+      "label": "test_results",
+      "type": "document",
+      "doc_type": "screenshot",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "topic_ui",
+      "label": "ui",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "topic_testing",
+      "label": "testing",
+      "type": "topic",
+      "color": "#10b981"
+    },
+    {
+      "id": "doc_8c5ac2b930bccb1610f648e4c0cf1ab9",
+      "label": "topic_management",
+      "type": "document",
+      "doc_type": "screenshot",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "doc_9a6315524f61af7119d08f43c0425606",
+      "label": "feature_generators",
+      "type": "document",
+      "doc_type": "screenshot",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "doc_21adaf6fb555dca68a8459e269a61c2b",
+      "label": "classification_form",
+      "type": "document",
+      "doc_type": "screenshot",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "doc_1111df476330d9917fe0049fd173606f",
+      "label": "main_dashboard",
+      "type": "document",
+      "doc_type": "screenshot",
+      "color": "#f59e0b"
+    }
+  ],
+  "edges": [
+    {
+      "source": "doc_1c92ef0dae18bf4c746d6d181c1a58b4",
+      "target": "topic_finance",
+      "type": "about"
+    },
+    {
+      "source": "doc_1c92ef0dae18bf4c746d6d181c1a58b4",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_f95cfd18e39f209b334bd25350693520",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_f95cfd18e39f209b334bd25350693520",
+      "target": "topic_meetings",
+      "type": "about"
+    },
+    {
+      "source": "doc_f95cfd18e39f209b334bd25350693520",
+      "target": "topic_progress",
+      "type": "about"
+    },
+    {
+      "source": "doc_f95cfd18e39f209b334bd25350693520",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_e7c686c27d007868c253c6f6a62bfd9c",
+      "target": "topic_api",
+      "type": "about"
+    },
+    {
+      "source": "doc_e7c686c27d007868c253c6f6a62bfd9c",
+      "target": "topic_documentation",
+      "type": "about"
+    },
+    {
+      "source": "doc_e7c686c27d007868c253c6f6a62bfd9c",
+      "target": "topic_rest",
+      "type": "about"
+    },
+    {
+      "source": "doc_e7c686c27d007868c253c6f6a62bfd9c",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_beb8465d4a9d3d3beff172089863b73c",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_beb8465d4a9d3d3beff172089863b73c",
+      "target": "topic_python",
+      "type": "about"
+    },
+    {
+      "source": "doc_beb8465d4a9d3d3beff172089863b73c",
+      "target": "topic_design_patterns",
+      "type": "about"
+    },
+    {
+      "source": "doc_beb8465d4a9d3d3beff172089863b73c",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_a71746c8211bfd1a5d9d0ecdf353db80",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_a71746c8211bfd1a5d9d0ecdf353db80",
+      "target": "topic_performance",
+      "type": "about"
+    },
+    {
+      "source": "doc_a71746c8211bfd1a5d9d0ecdf353db80",
+      "target": "topic_analytics",
+      "type": "about"
+    },
+    {
+      "source": "doc_a71746c8211bfd1a5d9d0ecdf353db80",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_970f031de22408a2db0e9a291899a7bb",
+      "target": "topic_finance",
+      "type": "about"
+    },
+    {
+      "source": "doc_970f031de22408a2db0e9a291899a7bb",
+      "target": "topic_work",
+      "type": "about"
+    },
+    {
+      "source": "doc_970f031de22408a2db0e9a291899a7bb",
+      "target": "topic_urgent",
+      "type": "about"
+    },
+    {
+      "source": "doc_970f031de22408a2db0e9a291899a7bb",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_5251099a0653adfa9d58c04ceea249db",
+      "target": "topic_ui",
+      "type": "about"
+    },
+    {
+      "source": "doc_5251099a0653adfa9d58c04ceea249db",
+      "target": "topic_testing",
+      "type": "about"
+    },
+    {
+      "source": "doc_5251099a0653adfa9d58c04ceea249db",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_5251099a0653adfa9d58c04ceea249db",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_8c5ac2b930bccb1610f648e4c0cf1ab9",
+      "target": "topic_ui",
+      "type": "about"
+    },
+    {
+      "source": "doc_8c5ac2b930bccb1610f648e4c0cf1ab9",
+      "target": "topic_testing",
+      "type": "about"
+    },
+    {
+      "source": "doc_8c5ac2b930bccb1610f648e4c0cf1ab9",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_8c5ac2b930bccb1610f648e4c0cf1ab9",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_9a6315524f61af7119d08f43c0425606",
+      "target": "topic_ui",
+      "type": "about"
+    },
+    {
+      "source": "doc_9a6315524f61af7119d08f43c0425606",
+      "target": "topic_testing",
+      "type": "about"
+    },
+    {
+      "source": "doc_9a6315524f61af7119d08f43c0425606",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_9a6315524f61af7119d08f43c0425606",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_21adaf6fb555dca68a8459e269a61c2b",
+      "target": "topic_ui",
+      "type": "about"
+    },
+    {
+      "source": "doc_21adaf6fb555dca68a8459e269a61c2b",
+      "target": "topic_testing",
+      "type": "about"
+    },
+    {
+      "source": "doc_21adaf6fb555dca68a8459e269a61c2b",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_21adaf6fb555dca68a8459e269a61c2b",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    },
+    {
+      "source": "doc_1111df476330d9917fe0049fd173606f",
+      "target": "topic_ui",
+      "type": "about"
+    },
+    {
+      "source": "doc_1111df476330d9917fe0049fd173606f",
+      "target": "topic_testing",
+      "type": "about"
+    },
+    {
+      "source": "doc_1111df476330d9917fe0049fd173606f",
+      "target": "topic_mlops",
+      "type": "about"
+    },
+    {
+      "source": "doc_1111df476330d9917fe0049fd173606f",
+      "target": "project_email_classification",
+      "type": "belongs_to"
+    }
+  ]
+}
